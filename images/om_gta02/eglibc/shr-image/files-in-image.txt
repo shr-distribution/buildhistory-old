@@ -917,6 +917,7 @@ drwxr-xr-x root       root             4096 ./etc/systemd
 drwxr-xr-x root       root             4096 ./etc/systemd/system  
 -rw-r--r-- root       root              636 ./etc/systemd/system.conf  
 drwxr-xr-x root       root             4096 ./etc/systemd/system/basic.target.wants  
+lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/frameworkd.service -> /lib/systemd/system/frameworkd.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/fsoaudiod.service -> /lib/systemd/system/fsoaudiod.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsodeviced.service -> /lib/systemd/system/fsodeviced.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsosystemd.service -> /lib/systemd/system/fsosystemd.service
@@ -1262,6 +1263,7 @@ lrwxrwxrwx root       root                9 ./lib/systemd/system/dnsmasq.service
 -rw-r--r-- root       root              423 ./lib/systemd/system/emergency.target  
 lrwxrwxrwx root       root                9 ./lib/systemd/system/fbsetup.service -> /dev/null
 -rw-r--r-- root       root              432 ./lib/systemd/system/final.target  
+-rw-r--r-- root       root              186 ./lib/systemd/system/frameworkd.service  
 -rw-r--r-- root       root              726 ./lib/systemd/system/fsck-root.service  
 -rw-r--r-- root       root              598 ./lib/systemd/system/fsck@.service  
 -rw-r--r-- root       root              149 ./lib/systemd/system/fsoaudiod.service  
@@ -1906,7 +1908,7 @@ lrwxrwxrwx root       root               12 ./usr/bin/id -> id.coreutils
 -rwxr-xr-x root       root            18792 ./usr/bin/id3info  
 -rwxr-xr-x root       root            11776 ./usr/bin/id3tag  
 -rwxr-xr-x root       root             3188 ./usr/bin/igawk  
--rwxr-xr-x root       root            48312 ./usr/bin/iliwi  
+-rwxr-xr-x root       root            48336 ./usr/bin/iliwi  
 -rwxr-xr-x root       root             9816 ./usr/bin/inkscape2edc  
 lrwxrwxrwx root       root               17 ./usr/bin/install -> install.coreutils
 -rwxr-xr-x root       root            71868 ./usr/bin/install.coreutils  
@@ -4674,14 +4676,14 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/fr
 -rw-r--r-- root       root             8229 ./usr/lib/python2.7/site-packages/framework/subsystems/odeviced/pyglet/linux_const.py  
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd  
 -rw-r--r-- root       root              276 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/__init__.py  
--rw-r--r-- root       root             5730 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/action.py  
--rw-r--r-- root       root             4754 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/filter.py  
+-rw-r--r-- root       root             5970 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/action.py  
+-rw-r--r-- root       root             4900 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/filter.py  
 -rw-r--r-- root       root            21248 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/fso_actions.py  
--rw-r--r-- root       root            13169 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/fso_triggers.py  
+-rw-r--r-- root       root            13878 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/fso_triggers.py  
 -rw-r--r-- root       root             3831 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/leds_actions.py  
 -rw-r--r-- root       root             5933 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/oevents.py  
 -rw-r--r-- root       root             7125 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/parser.py  
--rw-r--r-- root       root             4199 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/rule.py  
+-rw-r--r-- root       root             4160 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/rule.py  
 -rw-r--r-- root       root             5040 ./usr/lib/python2.7/site-packages/framework/subsystems/oeventsd/trigger.py  
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/framework/subsystems/ogpsd  
 -rw-r--r-- root       root                0 ./usr/lib/python2.7/site-packages/framework/subsystems/ogpsd/__init__.py  
@@ -4714,9 +4716,9 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/fr
 -rw-r--r-- root       root             2618 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/__init__.py  
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract  
 -rw-r--r-- root       root                0 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/__init__.py  
--rw-r--r-- root       root            13496 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/calling.py  
+-rw-r--r-- root       root            14501 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/calling.py  
 -rw-r--r-- root       root             6184 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/channel.py  
--rw-r--r-- root       root            86088 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/mediator.py  
+-rw-r--r-- root       root            86629 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/mediator.py  
 -rw-r--r-- root       root            11483 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/modem.py  
 -rw-r--r-- root       root             1723 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/overlay.py  
 -rw-r--r-- root       root             7675 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/abstract/pdp.py  
@@ -4774,7 +4776,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/fr
 -rw-r--r-- root       root            13907 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/ti_calypso/channel.py  
 -rw-r--r-- root       root             7068 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/ti_calypso/mediator.py  
 -rw-r--r-- root       root             8366 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/ti_calypso/modem.py  
--rw-r--r-- root       root            14456 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/ti_calypso/unsolicited.py  
+-rw-r--r-- root       root            15774 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/modems/ti_calypso/unsolicited.py  
 -rw-r--r-- root       root            10853 ./usr/lib/python2.7/site-packages/framework/subsystems/ogsmd/server.py  
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/framework/subsystems/onetworkd  
 -rw-r--r-- root       root                0 ./usr/lib/python2.7/site-packages/framework/subsystems/onetworkd/__init__.py  
@@ -4785,7 +4787,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/fr
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned  
 -rw-r--r-- root       root               22 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/__init__.py  
 -rw-r--r-- root       root             5367 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/gsm.py  
--rw-r--r-- root       root             7984 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/headset.py  
+-rw-r--r-- root       root             8023 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/headset.py  
 -rw-r--r-- root       root             8699 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/ophoned.py  
 -rw-r--r-- root       root             5307 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/protocol.py  
 -rw-r--r-- root       root             1749 ./usr/lib/python2.7/site-packages/framework/subsystems/ophoned/test.py  
@@ -4795,7 +4797,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/fr
 -rw-r--r-- root       root              539 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/db/upgrade-2.1.sql  
 -rw-r--r-- root       root            25189 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/db_handler.py  
 -rw-r--r-- root       root             3179 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/db_upgrade.py  
--rw-r--r-- root       root             2987 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/domain_manager.py  
+-rw-r--r-- root       root             2980 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/domain_manager.py  
 -rw-r--r-- root       root             3209 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/helpers.py  
 -rw-r--r-- root       root             2579 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/opimd.py  
 -rw-r--r-- root       root            16039 ./usr/lib/python2.7/site-packages/framework/subsystems/opimd/pimd_calls.py  
@@ -16178,16 +16180,21 @@ drwxr-xr-x root       root            94208 ./var/lib/opkg/info
 -rw-r--r-- root       root              764 ./var/lib/opkg/info/foxtrotgps.control  
 -rw-r--r-- root       root              433 ./var/lib/opkg/info/foxtrotgps.list  
 -rw-r--r-- root       root              568 ./var/lib/opkg/info/frameworkd-config.conffiles  
--rw-r--r-- root       root              755 ./var/lib/opkg/info/frameworkd-config.control  
+-rw-r--r-- root       root              781 ./var/lib/opkg/info/frameworkd-config.control  
 -rw-r--r-- root       root             1116 ./var/lib/opkg/info/frameworkd-config.list  
--rw-r--r-- root       root             1080 ./var/lib/opkg/info/frameworkd.control  
+-rw-r--r-- root       root              715 ./var/lib/opkg/info/frameworkd-systemd.control  
+-rw-r--r-- root       root               39 ./var/lib/opkg/info/frameworkd-systemd.list  
+-rwxr-xr-x root       root              171 ./var/lib/opkg/info/frameworkd-systemd.postinst  
+-rwxr-xr-x root       root               47 ./var/lib/opkg/info/frameworkd-systemd.postrm  
+-rwxr-xr-x root       root               72 ./var/lib/opkg/info/frameworkd-systemd.prerm  
+-rw-r--r-- root       root             1106 ./var/lib/opkg/info/frameworkd.control  
 -rw-r--r-- root       root            17511 ./var/lib/opkg/info/frameworkd.list  
 -rwxr-xr-x root       root              108 ./var/lib/opkg/info/frameworkd.postinst  
 -rwxr-xr-x root       root               43 ./var/lib/opkg/info/frameworkd.postrm  
 -rwxr-xr-x root       root               68 ./var/lib/opkg/info/frameworkd.prerm  
 -rw-r--r-- root       root              561 ./var/lib/opkg/info/fso-apm.control  
 -rw-r--r-- root       root               13 ./var/lib/opkg/info/fso-apm.list  
--rw-r--r-- root       root              628 ./var/lib/opkg/info/fso-gpsd.control  
+-rw-r--r-- root       root              652 ./var/lib/opkg/info/fso-gpsd.control  
 -rw-r--r-- root       root               40 ./var/lib/opkg/info/fso-gpsd.list  
 -rwxr-xr-x root       root              106 ./var/lib/opkg/info/fso-gpsd.postinst  
 -rwxr-xr-x root       root               41 ./var/lib/opkg/info/fso-gpsd.postrm  
@@ -16940,7 +16947,7 @@ drwxr-xr-x root       root            94208 ./var/lib/opkg/info
 -rw-r--r-- root       root               21 ./var/lib/opkg/info/libphone-ui-config.conffiles  
 -rw-r--r-- root       root              497 ./var/lib/opkg/info/libphone-ui-config.control  
 -rw-r--r-- root       root               21 ./var/lib/opkg/info/libphone-ui-config.list  
--rw-r--r-- root       root             3133 ./var/lib/opkg/info/libphone-ui-shr.control  
+-rw-r--r-- root       root             2875 ./var/lib/opkg/info/libphone-ui-shr.control  
 -rw-r--r-- root       root              769 ./var/lib/opkg/info/libphone-ui-shr.list  
 -rw-r--r-- root       root              942 ./var/lib/opkg/info/libphone-ui0.control  
 -rw-r--r-- root       root               56 ./var/lib/opkg/info/libphone-ui0.list  
@@ -17522,7 +17529,7 @@ drwxr-xr-x root       root            94208 ./var/lib/opkg/info
 -rwxr-xr-x root       root              114 ./var/lib/opkg/info/shadow.prerm  
 -rw-r--r-- root       root              516 ./var/lib/opkg/info/shared-mime-info.control  
 -rw-r--r-- root       root            28147 ./var/lib/opkg/info/shared-mime-info.list  
--rw-r--r-- root       root             2144 ./var/lib/opkg/info/shr-e-gadgets.control  
+-rw-r--r-- root       root             2100 ./var/lib/opkg/info/shr-e-gadgets.control  
 -rw-r--r-- root       root             1271 ./var/lib/opkg/info/shr-e-gadgets.list  
 -rw-r--r-- root       root              570 ./var/lib/opkg/info/shr-settings-addons-illume.control  
 -rw-r--r-- root       root              594 ./var/lib/opkg/info/shr-settings-addons-illume.list  
@@ -17657,7 +17664,7 @@ drwxr-xr-x root       root            94208 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-shr-minimal-gtk.list  
 -rw-r--r-- root       root              620 ./var/lib/opkg/info/task-shr-minimal-x.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-shr-minimal-x.list  
--rw-r--r-- root       root              599 ./var/lib/opkg/info/task-shr-systemd.control  
+-rw-r--r-- root       root              646 ./var/lib/opkg/info/task-shr-systemd.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-shr-systemd.list  
 -rw-r--r-- root       root              572 ./var/lib/opkg/info/task-x11-illume.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-x11-illume.list  
@@ -17850,7 +17857,7 @@ drwxr-xr-x root       root            94208 ./var/lib/opkg/info
 -rw-r--r-- root       root              629 ./var/lib/opkg/info/xset.control  
 -rw-r--r-- root       root               14 ./var/lib/opkg/info/xset.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           251378 ./var/lib/opkg/status  
+-rw-r--r-- root       root           251668 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
