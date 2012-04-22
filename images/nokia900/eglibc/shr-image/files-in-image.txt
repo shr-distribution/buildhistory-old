@@ -876,12 +876,13 @@ drwxr-xr-x root       root              160 ./etc/systemd
 -rw-r--r-- root       root              435 ./etc/systemd/logind.conf  
 drwxr-xr-x root       root              160 ./etc/systemd/system  
 -rw-r--r-- root       root              636 ./etc/systemd/system.conf  
-drwxr-xr-x root       root              160 ./etc/systemd/system/basic.target.wants  
+drwxr-xr-x root       root              180 ./etc/systemd/system/basic.target.wants  
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/frameworkd.service -> /lib/systemd/system/frameworkd.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/fsoaudiod.service -> /lib/systemd/system/fsoaudiod.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsodeviced.service -> /lib/systemd/system/fsodeviced.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsosystemd.service -> /lib/systemd/system/fsosystemd.service
 lrwxrwxrwx root       root               35 ./etc/systemd/system/basic.target.wants/fsotdld.service -> /lib/systemd/system/fsotdld.service
+lrwxrwxrwx root       root               47 ./etc/systemd/system/basic.target.wants/nokia-n900-cmt-gpio.service -> /lib/systemd/system/nokia-n900-cmt-gpio.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/phonefsod.service -> /lib/systemd/system/phonefsod.service
 drwxr-xr-x root       root               80 ./etc/systemd/system/getty.target.wants  
 lrwxrwxrwx root       root               34 ./etc/systemd/system/getty.target.wants/getty@tty1.service -> /lib/systemd/system/getty@.service
@@ -1177,7 +1178,7 @@ drwxr-xr-x root       root              420 ./lib/security
 -rwxr-xr-x root       root            40100 ./lib/security/pam_unix.so  
 -rwxr-xr-x root       root             3892 ./lib/security/pam_warn.so  
 drwxr-xr-x root       root              640 ./lib/systemd  
-drwxr-xr-x root       root             3140 ./lib/systemd/system  
+drwxr-xr-x root       root             3160 ./lib/systemd/system  
 drwxr-xr-x root       root               60 ./lib/systemd/system-generators  
 -rwxr-xr-x root       root            30924 ./lib/systemd/system-generators/systemd-getty-generator  
 drwxr-xr-x root       root               40 ./lib/systemd/system-shutdown  
@@ -1258,6 +1259,7 @@ lrwxrwxrwx root       root               33 ./lib/systemd/system/multi-user.targ
 lrwxrwxrwx root       root               25 ./lib/systemd/system/multi-user.target.wants/systemd-logind.service -> ../systemd-logind.service
 lrwxrwxrwx root       root               32 ./lib/systemd/system/multi-user.target.wants/systemd-user-sessions.service -> ../systemd-user-sessions.service
 -rw-r--r-- root       root              348 ./lib/systemd/system/network.target  
+-rw-r--r-- root       root              144 ./lib/systemd/system/nokia-n900-cmt-gpio.service  
 -rw-r--r-- root       root              488 ./lib/systemd/system/nss-lookup.target  
 -rw-r--r-- root       root              222 ./lib/systemd/system/phonefsod.service  
 lrwxrwxrwx root       root                9 ./lib/systemd/system/populate-volatile.service -> /dev/null
@@ -1621,7 +1623,7 @@ lrwxrwxrwx root       root               11 ./sbin/vipw -> vipw.shadow
 drwxr-xr-x root       root               40 ./sys  
 drwxrwxrwt root       root               40 ./tmp  
 drwxr-xr-x root       root              220 ./usr  
-drwxr-xr-x root       root            12120 ./usr/bin  
+drwxr-xr-x root       root            12140 ./usr/bin  
 -rwxr-xr-x root       root          1892404 ./usr/bin/FBReader  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
 -rwxr-xr-x root       root          1581192 ./usr/bin/Xorg  
@@ -1932,6 +1934,7 @@ lrwxrwxrwx root       root               12 ./usr/bin/nl -> nl.coreutils
 -rwxr-xr-x root       root            94964 ./usr/bin/nmon  
 lrwxrwxrwx root       root               15 ./usr/bin/nohup -> nohup.coreutils
 -rwxr-xr-x root       root            23792 ./usr/bin/nohup.coreutils  
+-rwxr-xr-x root       root             1430 ./usr/bin/nokia-n900-cmt-gpio.sh  
 lrwxrwxrwx root       root               15 ./usr/bin/nproc -> nproc.coreutils
 -rwxr-xr-x root       root            22592 ./usr/bin/nproc.coreutils  
 lrwxrwxrwx root       root               17 ./usr/bin/nslookup -> ../../bin/busybox
@@ -2236,7 +2239,7 @@ drwxr-xr-x root       root               40 ./usr/games
 drwxr-xr-x root       root               60 ./usr/include  
 drwxr-xr-x root       root               60 ./usr/include/python2.7  
 -rw-r--r-- root       root            35908 ./usr/include/python2.7/pyconfig.h  
-drwxr-xr-x root       root            11420 ./usr/lib  
+drwxr-xr-x root       root            11440 ./usr/lib  
 drwxr-xr-x root       root               60 ./usr/lib/GConf  
 drwxr-xr-x root       root               80 ./usr/lib/GConf/2  
 -rwxr-xr-x root       root            43724 ./usr/lib/GConf/2/libgconfbackend-oldxml.so  
@@ -3573,6 +3576,8 @@ drwxr-xr-x root       root               60 ./usr/lib/pango/1.6.0
 drwxr-xr-x root       root               80 ./usr/lib/pango/1.6.0/modules  
 -rwxr-xr-x root       root             6400 ./usr/lib/pango/1.6.0/modules/pango-basic-fc.so  
 -rwxr-xr-x root       root            77412 ./usr/lib/pango/1.6.0/modules/pango-basic-x.so  
+drwxr-xr-x root       root               60 ./usr/lib/phonet-utils  
+-rwxr-xr-x root       root              630 ./usr/lib/phonet-utils/if-pre-up  
 drwxr-xr-x root       root               60 ./usr/lib/phoneui  
 drwxr-xr-x root       root               60 ./usr/lib/phoneui/modules  
 -rwxr-xr-x root       root           142072 ./usr/lib/phoneui/modules/shr.so  
@@ -5338,7 +5343,7 @@ lrwxrwxrwx root       root                7 ./usr/libexec/rmt -> rmt.tar
 -rwxr-xr-x root       root            55504 ./usr/libexec/sftp-server  
 drwxr-xr-x root       root               60 ./usr/libexec/systemd  
 drwxr-xr-x root       root               40 ./usr/libexec/systemd/user-generators  
-drwxr-xr-x root       root             3240 ./usr/sbin  
+drwxr-xr-x root       root             3300 ./usr/sbin  
 -rwxr-xr-x root       root             3596 ./usr/sbin/addpart  
 -rwxr-xr-x root       root            76468 ./usr/sbin/alsactl  
 -rwxr-xr-x root       root            16196 ./usr/sbin/apmd  
@@ -5443,6 +5448,9 @@ lrwxrwxrwx root       root               17 ./usr/sbin/ntpd -> ../../bin/busybox
 -rwxr-xr-x root       root           449584 ./usr/sbin/openvpn  
 -rwxr-xr-x root       root            45440 ./usr/sbin/partx  
 -rwxr-xr-x root       root             7172 ./usr/sbin/pcimodules  
+-rwxr-xr-x root       root             6020 ./usr/sbin/phonet  
+-rwxr-xr-x root       root             5052 ./usr/sbin/pnroute  
+-rwxr-xr-x root       root             6052 ./usr/sbin/pnstat  
 -rwxr-xr-x root       root               36 ./usr/sbin/ppp-dialin  
 -r-sr-xr-x root       root           249104 ./usr/sbin/pppd  
 -rwxr-xr-x root       root            25880 ./usr/sbin/pwck  
@@ -21657,7 +21665,7 @@ drwxr-xr-x root       root             4860 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               56 ./var/lib/opkg/alternatives/xargs  
 -rw-r--r-- root       root               52 ./var/lib/opkg/alternatives/yes  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/zcat  
-drwxr-xr-x root       root            39560 ./var/lib/opkg/info  
+drwxr-xr-x root       root            39700 ./var/lib/opkg/info  
 -rw-r--r-- root       root              726 ./var/lib/opkg/info/advancedcaching.control  
 -rw-r--r-- root       root             2405 ./var/lib/opkg/info/advancedcaching.list  
 -rw-r--r-- root       root              432 ./var/lib/opkg/info/alsa-conf-base.control  
@@ -23146,6 +23154,8 @@ drwxr-xr-x root       root            39560 ./var/lib/opkg/info
 -rwxr-xr-x root       root              107 ./var/lib/opkg/info/phonefsod.postinst  
 -rwxr-xr-x root       root               42 ./var/lib/opkg/info/phonefsod.postrm  
 -rwxr-xr-x root       root               67 ./var/lib/opkg/info/phonefsod.prerm  
+-rw-r--r-- root       root              540 ./var/lib/opkg/info/phonet-utils.control  
+-rw-r--r-- root       root              107 ./var/lib/opkg/info/phonet-utils.list  
 -rw-r--r-- root       root              591 ./var/lib/opkg/info/phoneui-apps-contacts.control  
 -rw-r--r-- root       root               75 ./var/lib/opkg/info/phoneui-apps-contacts.list  
 -rw-r--r-- root       root              589 ./var/lib/opkg/info/phoneui-apps-dialer.control  
@@ -23368,15 +23378,20 @@ drwxr-xr-x root       root            39560 ./var/lib/opkg/info
 -rw-r--r-- root       root              280 ./var/lib/opkg/info/sysstat.list  
 -rwxr-xr-x root       root              179 ./var/lib/opkg/info/sysstat.postinst  
 -rw-r--r-- root       root              369 ./var/lib/opkg/info/systemd-compat-units.control  
--rw-r--r-- root       root              465 ./var/lib/opkg/info/systemd-compat-units.list  
+-rw-r--r-- root       root              338 ./var/lib/opkg/info/systemd-compat-units.list  
 -rwxr-xr-x root       root              390 ./var/lib/opkg/info/systemd-compat-units.postinst  
+-rw-r--r-- root       root              420 ./var/lib/opkg/info/systemd-machine-units.control  
+-rw-r--r-- root       root              125 ./var/lib/opkg/info/systemd-machine-units.list  
+-rwxr-xr-x root       root              189 ./var/lib/opkg/info/systemd-machine-units.postinst  
+-rwxr-xr-x root       root               56 ./var/lib/opkg/info/systemd-machine-units.postrm  
+-rwxr-xr-x root       root               81 ./var/lib/opkg/info/systemd-machine-units.prerm  
 -rw-r--r-- root       root              373 ./var/lib/opkg/info/systemd-serialgetty.control  
 -rw-r--r-- root       root              108 ./var/lib/opkg/info/systemd-serialgetty.list  
 -rw-r--r-- root       root              417 ./var/lib/opkg/info/systemd-speed-hacks.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-speed-hacks.list  
 -rwxr-xr-x root       root              262 ./var/lib/opkg/info/systemd-speed-hacks.postinst  
 -rw-r--r-- root       root             1064 ./var/lib/opkg/info/systemd.control  
--rw-r--r-- root       root            10737 ./var/lib/opkg/info/systemd.list  
+-rw-r--r-- root       root            10819 ./var/lib/opkg/info/systemd.list  
 -rwxr-xr-x root       root              351 ./var/lib/opkg/info/systemd.postinst  
 -rwxr-xr-x root       root             3174 ./var/lib/opkg/info/systemd.preinst  
 -rwxr-xr-x root       root              261 ./var/lib/opkg/info/systemd.prerm  
@@ -23414,7 +23429,7 @@ drwxr-xr-x root       root            39560 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-cli-tools-debug.list  
 -rw-r--r-- root       root              551 ./var/lib/opkg/info/task-cli-tools.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-cli-tools.list  
--rw-r--r-- root       root              518 ./var/lib/opkg/info/task-core-boot.control  
+-rw-r--r-- root       root              541 ./var/lib/opkg/info/task-core-boot.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-core-boot.list  
 -rw-r--r-- root       root              430 ./var/lib/opkg/info/task-core-ssh-openssh.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/task-core-ssh-openssh.list  
@@ -23635,7 +23650,7 @@ drwxr-xr-x root       root            39560 ./var/lib/opkg/info
 -rw-r--r-- root       root              638 ./var/lib/opkg/info/xset.control  
 -rw-r--r-- root       root               14 ./var/lib/opkg/info/xset.list  
 drwxr-xr-x root       root               40 ./var/lib/opkg/lists  
--rw-r--r-- root       root           257510 ./var/lib/opkg/status  
+-rw-r--r-- root       root           257950 ./var/lib/opkg/status  
 drwx------ root       root               60 ./var/lib/polkit-1  
 drwxr-xr-x root       root              140 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root               40 ./var/lib/polkit-1/localauthority/10-vendor.d  
