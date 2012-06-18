@@ -4,7 +4,7 @@ lrwxrwxrwx root       root                7 ./bin/ash -> busybox
 lrwxrwxrwx root       root               27 ./bin/base64 -> ../usr/bin/base64.coreutils
 -rwxr-xr-x root       root           785524 ./bin/bash  
 -r-xr-xr-x root       root             7027 ./bin/bashbug  
--rwsr-xr-x root       root           528644 ./bin/busybox  
+-rwsr-xr-x root       root           531860 ./bin/busybox  
 lrwxrwxrwx root       root               13 ./bin/cat -> cat.coreutils
 -rwxr-xr-x root       root            40012 ./bin/cat.coreutils  
 lrwxrwxrwx root       root                7 ./bin/chattr -> busybox
@@ -276,7 +276,7 @@ drwxr-xr-x root       root              140 ./etc/bluetooth
 -rw-r--r-- root       root             2507 ./etc/bluetooth/main.conf  
 -rw-r--r-- root       root              120 ./etc/bluetooth/network.conf  
 -rw-r--r-- root       root              297 ./etc/bluetooth/rfcomm.conf  
--rw-r--r-- root       root             2113 ./etc/busybox.links  
+-rw-r--r-- root       root             2130 ./etc/busybox.links  
 drwxr-xr-x root       root               60 ./etc/ca-certificates  
 -rw-r--r-- root       root             6481 ./etc/ca-certificates.conf  
 drwxr-xr-x root       root               40 ./etc/ca-certificates/update.d  
@@ -886,7 +886,7 @@ drwxr-xr-x root       root              100 ./etc/sysconfig
 -rw-r--r-- root       root             6228 ./etc/sysconfig/sysstat.ioconf  
 -rw-r--r-- root       root             2049 ./etc/sysctl.conf  
 drwxr-xr-x root       root               40 ./etc/sysctl.d  
-lrwxrwxrwx root       root               14 ./etc/syslog-startup.conf -> ../bin/busybox
+lrwxrwxrwx root       root               27 ./etc/syslog-startup.conf -> syslog-startup.conf.busybox
 -rw-r--r-- root       root              651 ./etc/syslog-startup.conf.busybox  
 drwxr-xr-x root       root              160 ./etc/systemd  
 -rw-r--r-- root       root              620 ./etc/systemd/journald.conf  
@@ -21640,7 +21640,7 @@ drwxr-xr-x messagebus messagebus         40 ./var/lib/dbus
 -rw-r--r-- root       root                0 ./var/lib/logrotate.status  
 drwxr-xr-x root       root               40 ./var/lib/misc  
 drwxr-xr-x root       root              120 ./var/lib/opkg  
-drwxr-xr-x root       root             4860 ./var/lib/opkg/alternatives  
+drwxr-xr-x root       root             4880 ./var/lib/opkg/alternatives  
 -rw-r--r-- root       root               33 ./var/lib/opkg/alternatives/[[  
 -rw-r--r-- root       root               33 ./var/lib/opkg/alternatives/ar  
 -rw-r--r-- root       root               20 ./var/lib/opkg/alternatives/ash  
@@ -21797,6 +21797,7 @@ drwxr-xr-x root       root             4860 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               50 ./var/lib/opkg/alternatives/reboot  
 -rw-r--r-- root       root               59 ./var/lib/opkg/alternatives/renice  
 -rw-r--r-- root       root               32 ./var/lib/opkg/alternatives/reset  
+-rw-r--r-- root       root               38 ./var/lib/opkg/alternatives/rfkill  
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/rm  
 -rw-r--r-- root       root               42 ./var/lib/opkg/alternatives/rmdir  
 -rw-r--r-- root       root               44 ./var/lib/opkg/alternatives/rmmod  
@@ -21835,7 +21836,7 @@ drwxr-xr-x root       root             4860 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               40 ./var/lib/opkg/alternatives/sync  
 -rw-r--r-- root       root               55 ./var/lib/opkg/alternatives/sysctl  
 -rw-r--r-- root       root               40 ./var/lib/opkg/alternatives/syslog-init  
--rw-r--r-- root       root               43 ./var/lib/opkg/alternatives/syslog-startup-conf  
+-rw-r--r-- root       root               56 ./var/lib/opkg/alternatives/syslog-startup-conf  
 -rw-r--r-- root       root               32 ./var/lib/opkg/alternatives/syslogd  
 -rw-r--r-- root       root               31 ./var/lib/opkg/alternatives/tac  
 -rw-r--r-- root       root               54 ./var/lib/opkg/alternatives/tail  
@@ -21927,8 +21928,8 @@ drwxr-xr-x root       root            41540 ./var/lib/opkg/info
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
 -rw-r--r-- root       root             1532 ./var/lib/opkg/info/busybox-syslog.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/busybox-syslog.list  
--rwxr-xr-x root       root              278 ./var/lib/opkg/info/busybox-syslog.postinst  
--rwxr-xr-x root       root              166 ./var/lib/opkg/info/busybox-syslog.postrm  
+-rwxr-xr-x root       root              291 ./var/lib/opkg/info/busybox-syslog.postinst  
+-rwxr-xr-x root       root              179 ./var/lib/opkg/info/busybox-syslog.postrm  
 -rwxr-xr-x root       root              186 ./var/lib/opkg/info/busybox-syslog.prerm  
 -rw-r--r-- root       root             1532 ./var/lib/opkg/info/busybox-udhcpc.control  
 -rw-r--r-- root       root              130 ./var/lib/opkg/info/busybox-udhcpc.list  
@@ -21937,8 +21938,8 @@ drwxr-xr-x root       root            41540 ./var/lib/opkg/info
 -rwxr-xr-x root       root               72 ./var/lib/opkg/info/busybox-udhcpc.prerm  
 -rw-r--r-- root       root             1606 ./var/lib/opkg/info/busybox.control  
 -rw-r--r-- root       root              130 ./var/lib/opkg/info/busybox.list  
--rwxr-xr-x root       root            11260 ./var/lib/opkg/info/busybox.postinst  
--rwxr-xr-x root       root             8166 ./var/lib/opkg/info/busybox.postrm  
+-rwxr-xr-x root       root            11336 ./var/lib/opkg/info/busybox.postinst  
+-rwxr-xr-x root       root             8222 ./var/lib/opkg/info/busybox.postrm  
 -rwxr-xr-x root       root              762 ./var/lib/opkg/info/busybox.prerm  
 -rw-r--r-- root       root               26 ./var/lib/opkg/info/ca-certificates.conffiles  
 -rw-r--r-- root       root              490 ./var/lib/opkg/info/ca-certificates.control  
@@ -23404,7 +23405,7 @@ drwxr-xr-x root       root            41540 ./var/lib/opkg/info
 -rwxr-xr-x root       root               37 ./var/lib/opkg/info/openssh-sshd.postrm  
 -rwxr-xr-x root       root             3132 ./var/lib/opkg/info/openssh-sshd.preinst  
 -rwxr-xr-x root       root               62 ./var/lib/opkg/info/openssh-sshd.prerm  
--rw-r--r-- root       root              785 ./var/lib/opkg/info/openssh.control  
+-rw-r--r-- root       root              805 ./var/lib/opkg/info/openssh.control  
 -rw-r--r-- root       root               16 ./var/lib/opkg/info/openssh.list  
 -rw-r--r-- root       root              978 ./var/lib/opkg/info/openssl.control  
 -rw-r--r-- root       root               73 ./var/lib/opkg/info/openssl.list  
@@ -23817,15 +23818,15 @@ drwxr-xr-x root       root            41540 ./var/lib/opkg/info
 -rw-r--r-- root       root              238 ./var/lib/opkg/info/ttf-liberation-mono.list  
 -rwxr-xr-x root       root               49 ./var/lib/opkg/info/ttf-liberation-mono.postinst  
 -rwxr-xr-x root       root               49 ./var/lib/opkg/info/ttf-liberation-mono.postrm  
--rw-r--r-- root       root              627 ./var/lib/opkg/info/tzdata-africa.control  
+-rw-r--r-- root       root              386 ./var/lib/opkg/info/tzdata-africa.control  
 -rw-r--r-- root       root             1878 ./var/lib/opkg/info/tzdata-africa.list  
--rw-r--r-- root       root              631 ./var/lib/opkg/info/tzdata-americas.control  
+-rw-r--r-- root       root              390 ./var/lib/opkg/info/tzdata-americas.control  
 -rw-r--r-- root       root             7476 ./var/lib/opkg/info/tzdata-americas.list  
--rw-r--r-- root       root              623 ./var/lib/opkg/info/tzdata-asia.control  
+-rw-r--r-- root       root              382 ./var/lib/opkg/info/tzdata-asia.control  
 -rw-r--r-- root       root             3492 ./var/lib/opkg/info/tzdata-asia.list  
--rw-r--r-- root       root              633 ./var/lib/opkg/info/tzdata-australia.control  
+-rw-r--r-- root       root              392 ./var/lib/opkg/info/tzdata-australia.control  
 -rw-r--r-- root       root              715 ./var/lib/opkg/info/tzdata-australia.list  
--rw-r--r-- root       root              627 ./var/lib/opkg/info/tzdata-europe.control  
+-rw-r--r-- root       root              386 ./var/lib/opkg/info/tzdata-europe.control  
 -rw-r--r-- root       root             1991 ./var/lib/opkg/info/tzdata-europe.list  
 -rw-r--r-- root       root              596 ./var/lib/opkg/info/tzdata.control  
 -rw-r--r-- root       root             2710 ./var/lib/opkg/info/tzdata.list  
@@ -23959,7 +23960,7 @@ drwxr-xr-x root       root            41540 ./var/lib/opkg/info
 -rw-r--r-- root       root              574 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root               40 ./var/lib/opkg/lists  
--rw-r--r-- root       root           235564 ./var/lib/opkg/status  
+-rw-r--r-- root       root           234379 ./var/lib/opkg/status  
 drwx------ root       root               60 ./var/lib/polkit-1  
 drwxr-xr-x root       root              140 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root               40 ./var/lib/polkit-1/localauthority/10-vendor.d  
