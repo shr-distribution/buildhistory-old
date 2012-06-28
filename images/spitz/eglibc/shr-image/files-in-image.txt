@@ -4,7 +4,7 @@ lrwxrwxrwx root       root                7 ./bin/ash -> busybox
 lrwxrwxrwx root       root               27 ./bin/base64 -> ../usr/bin/base64.coreutils
 -rwxr-xr-x root       root           609384 ./bin/bash  
 -r-xr-xr-x root       root             6977 ./bin/bashbug  
--rwsr-xr-x root       root           413816 ./bin/busybox  
+-rwsr-xr-x root       root           413824 ./bin/busybox  
 lrwxrwxrwx root       root               13 ./bin/cat -> cat.coreutils
 -rwxr-xr-x root       root            30912 ./bin/cat.coreutils  
 lrwxrwxrwx root       root                7 ./bin/chattr -> busybox
@@ -522,7 +522,7 @@ drwxr-xr-x root       root              540 ./etc/init.d
 -rwxr-xr-x root       root             1116 ./etc/init.d/ppp  
 -rwxr-xr-x root       root              669 ./etc/init.d/shr-splash.sh  
 -rwxr-xr-x root       root             2135 ./etc/init.d/sshd  
-lrwxrwxrwx root       root               17 ./etc/init.d/syslog -> ../../bin/busybox
+lrwxrwxrwx root       root               14 ./etc/init.d/syslog -> syslog.busybox
 -rwxr-xr-x root       root             1711 ./etc/init.d/syslog.busybox  
 -rwxr-xr-x root       root             1350 ./etc/init.d/zaurusd  
 -rw-r--r-- root       root             1633 ./etc/inputrc  
@@ -2189,8 +2189,8 @@ lrwxrwxrwx root       root               24 ./usr/bin/xargs -> /usr/bin/xargs.fi
 -rwxr-xr-x root       root              960 ./usr/bin/xinput_calibrator_once.sh  
 -rwxr-xr-x root       root           132552 ./usr/bin/xkbcomp  
 -rwxr-xr-x root       root            14495 ./usr/bin/xkeystone  
--rwxr-xr-x root       root             3448 ./usr/bin/xmlcatalog  
--rwxr-xr-x root       root            43980 ./usr/bin/xmllint  
+-rwxr-xr-x root       root             3424 ./usr/bin/xmlcatalog  
+-rwxr-xr-x root       root            43972 ./usr/bin/xmllint  
 -rwxr-xr-x root       root            20056 ./usr/bin/xmodmap  
 -rwxr-xr-x root       root            37384 ./usr/bin/xrandr  
 -rwxr-xr-x root       root            21604 ./usr/bin/xset  
@@ -3432,7 +3432,7 @@ lrwxrwxrwx root       root               15 ./usr/lib/libxcb.so.1 -> libxcb.so.1
 lrwxrwxrwx root       root               19 ./usr/lib/libxkbfile.so.1 -> libxkbfile.so.1.0.2
 -rwxr-xr-x root       root            97748 ./usr/lib/libxkbfile.so.1.0.2  
 lrwxrwxrwx root       root               16 ./usr/lib/libxml2.so.2 -> libxml2.so.2.8.0
--rwxr-xr-x root       root           809880 ./usr/lib/libxml2.so.2.8.0  
+-rwxr-xr-x root       root           805712 ./usr/lib/libxml2.so.2.8.0  
 drwxr-xr-x root       root               40 ./usr/lib/libxslt-plugins  
 lrwxrwxrwx root       root               17 ./usr/lib/libxslt.so.1 -> libxslt.so.1.1.26
 -rwxr-xr-x root       root           159528 ./usr/lib/libxslt.so.1.1.26  
@@ -22077,7 +22077,7 @@ drwxr-xr-x root       root             4920 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/switch_root  
 -rw-r--r-- root       root               40 ./var/lib/opkg/alternatives/sync  
 -rw-r--r-- root       root               49 ./var/lib/opkg/alternatives/sysctl  
--rw-r--r-- root       root               40 ./var/lib/opkg/alternatives/syslog-init  
+-rw-r--r-- root       root               37 ./var/lib/opkg/alternatives/syslog-init  
 -rw-r--r-- root       root               56 ./var/lib/opkg/alternatives/syslog-startup-conf  
 -rw-r--r-- root       root               32 ./var/lib/opkg/alternatives/syslogd  
 -rw-r--r-- root       root               31 ./var/lib/opkg/alternatives/tac  
@@ -22170,8 +22170,8 @@ drwxr-xr-x root       root            41040 ./var/lib/opkg/info
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
 -rw-r--r-- root       root             1524 ./var/lib/opkg/info/busybox-syslog.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/busybox-syslog.list  
--rwxr-xr-x root       root              291 ./var/lib/opkg/info/busybox-syslog.postinst  
--rwxr-xr-x root       root              179 ./var/lib/opkg/info/busybox-syslog.postrm  
+-rwxr-xr-x root       root              288 ./var/lib/opkg/info/busybox-syslog.postinst  
+-rwxr-xr-x root       root              176 ./var/lib/opkg/info/busybox-syslog.postrm  
 -rwxr-xr-x root       root              186 ./var/lib/opkg/info/busybox-syslog.prerm  
 -rw-r--r-- root       root             1524 ./var/lib/opkg/info/busybox-udhcpc.control  
 -rw-r--r-- root       root              130 ./var/lib/opkg/info/busybox-udhcpc.list  
@@ -23429,7 +23429,7 @@ drwxr-xr-x root       root            41040 ./var/lib/opkg/info
 -rw-r--r-- root       root              610 ./var/lib/opkg/info/libxkbfile1.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/libxkbfile1.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxkbfile1.postinst  
--rw-r--r-- root       root              815 ./var/lib/opkg/info/libxml2.control  
+-rw-r--r-- root       root              789 ./var/lib/opkg/info/libxml2.control  
 -rw-r--r-- root       root               85 ./var/lib/opkg/info/libxml2.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxml2.postinst  
 -rw-r--r-- root       root              944 ./var/lib/opkg/info/libxmu6.control  
@@ -24177,7 +24177,7 @@ drwxr-xr-x root       root            41040 ./var/lib/opkg/info
 -rwxr-xr-x root       root               40 ./var/lib/opkg/info/zaurusd.postrm  
 -rwxr-xr-x root       root               65 ./var/lib/opkg/info/zaurusd.prerm  
 drwxr-xr-x root       root               40 ./var/lib/opkg/lists  
--rw-r--r-- root       root           226543 ./var/lib/opkg/status  
+-rw-r--r-- root       root           226517 ./var/lib/opkg/status  
 drwx------ root       root               60 ./var/lib/polkit-1  
 drwxr-xr-x root       root              140 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root               40 ./var/lib/polkit-1/localauthority/10-vendor.d  
