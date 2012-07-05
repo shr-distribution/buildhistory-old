@@ -109,7 +109,7 @@ lrwxrwxrwx root       root                7 ./bin/usleep -> busybox
 lrwxrwxrwx root       root               12 ./bin/vi -> /usr/bin/vim
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root               60 ./boot  
-lrwxrwxrwx root       root               28 ./boot/bzImage -> bzImage-3.4.3-yocto-standard
+lrwxrwxrwx root       root               28 ./boot/bzImage -> bzImage-3.4.4-yocto-standard
 drwxr-xr-x root       root             1440 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -270,9 +270,9 @@ drwxr-xr-x root       root              120 ./etc/bash_completion.d
 -rw-r--r-- root       root            11289 ./etc/bash_completion.d/systemd-bash-completion.sh  
 drwxr-xr-x root       root               40 ./etc/binfmt.d  
 drwxr-xr-x root       root              140 ./etc/bluetooth  
--rw-r--r-- root       root             1496 ./etc/bluetooth/audio.conf  
+-rw-r--r-- root       root             1502 ./etc/bluetooth/audio.conf  
 -rw-r--r-- root       root              262 ./etc/bluetooth/input.conf  
--rw-r--r-- root       root             2507 ./etc/bluetooth/main.conf  
+-rw-r--r-- root       root             2440 ./etc/bluetooth/main.conf  
 -rw-r--r-- root       root              120 ./etc/bluetooth/network.conf  
 -rw-r--r-- root       root              297 ./etc/bluetooth/rfcomm.conf  
 -rw-r--r-- root       root             2130 ./etc/busybox.links  
@@ -840,7 +840,7 @@ drwxr-xr-x root       root               40 ./etc/security/namespace.d
 -rwxr-xr-x root       root             1020 ./etc/security/namespace.init  
 -rw-r--r-- root       root             2980 ./etc/security/pam_env.conf  
 -rw-r--r-- root       root             2180 ./etc/security/time.conf  
--rw-r--r-- root       root            19281 ./etc/services  
+-rw-r--r-- root       root            19398 ./etc/services  
 -r-------- root       root              557 ./etc/shadow  
 -rw-r--r-- root       root              109 ./etc/shells  
 drwxr-xr-x root       root              100 ./etc/shr-settings  
@@ -1034,57 +1034,49 @@ lrwxrwxrwx root       root               16 ./lib/libwrap.so.0 -> libwrap.so.0.7
 -rwxr-xr-x root       root            34672 ./lib/libwrap.so.0.7.6  
 drwxr-xr-x root       root               40 ./lib/modprobe.d  
 drwxr-xr-x root       root               60 ./lib/modules  
-drwxr-xr-x root       root              220 ./lib/modules/3.4.3-yocto-standard  
-drwxr-xr-x root       root              140 ./lib/modules/3.4.3-yocto-standard/kernel  
-drwxr-xr-x root       root              120 ./lib/modules/3.4.3-yocto-standard/kernel/crypto  
--rw-r--r-- root       root            41816 ./lib/modules/3.4.3-yocto-standard/kernel/crypto/aes_generic.ko  
--rw-r--r-- root       root             4256 ./lib/modules/3.4.3-yocto-standard/kernel/crypto/arc4.ko  
--rw-r--r-- root       root             6072 ./lib/modules/3.4.3-yocto-standard/kernel/crypto/ecb.ko  
--rw-r--r-- root       root             5080 ./lib/modules/3.4.3-yocto-standard/kernel/crypto/michael_mic.ko  
-drwxr-xr-x root       root              100 ./lib/modules/3.4.3-yocto-standard/kernel/drivers  
-drwxr-xr-x root       root              100 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net  
-drwxr-xr-x root       root              100 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/ppp  
--rw-r--r-- root       root            16504 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/ppp/ppp_async.ko  
--rw-r--r-- root       root             9992 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/ppp/ppp_deflate.ko  
--rw-r--r-- root       root            49040 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/ppp/ppp_generic.ko  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/slip  
--rw-r--r-- root       root             9808 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/slip/slhc.ko  
--rw-r--r-- root       root            31240 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/net/tun.ko  
-drwxr-xr-x root       root              120 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/video  
--rw-r--r-- root       root             5704 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/video/cfbcopyarea.ko  
--rw-r--r-- root       root             7624 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/video/cfbfillrect.ko  
--rw-r--r-- root       root             5024 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/video/cfbimgblt.ko  
--rw-r--r-- root       root            43864 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/video/uvesafb.ko  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/watchdog  
--rw-r--r-- root       root             9344 ./lib/modules/3.4.3-yocto-standard/kernel/drivers/watchdog/softdog.ko  
-drwxr-xr-x root       root               80 ./lib/modules/3.4.3-yocto-standard/kernel/fs  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/fs/autofs4  
--rw-r--r-- root       root            48880 ./lib/modules/3.4.3-yocto-standard/kernel/fs/autofs4/autofs4.ko  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/fs/nls  
--rw-r--r-- root       root             4072 ./lib/modules/3.4.3-yocto-standard/kernel/fs/nls/nls_utf8.ko  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/lib  
--rw-r--r-- root       root             3568 ./lib/modules/3.4.3-yocto-standard/kernel/lib/crc-ccitt.ko  
-drwxr-xr-x root       root               80 ./lib/modules/3.4.3-yocto-standard/kernel/net  
-drwxr-xr-x root       root               60 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4  
-drwxr-xr-x root       root              180 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter  
--rw-r--r-- root       root            31208 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/ip_tables.ko  
--rw-r--r-- root       root             6016 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/ipt_MASQUERADE.ko  
--rw-r--r-- root       root             5896 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/iptable_filter.ko  
--rw-r--r-- root       root            11080 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/iptable_nat.ko  
--rw-r--r-- root       root            28008 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/nf_conntrack_ipv4.ko  
--rw-r--r-- root       root             4616 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/nf_defrag_ipv4.ko  
--rw-r--r-- root       root            30144 ./lib/modules/3.4.3-yocto-standard/kernel/net/ipv4/netfilter/nf_nat.ko  
-drwxr-xr-x root       root               80 ./lib/modules/3.4.3-yocto-standard/kernel/net/netfilter  
--rw-r--r-- root       root           111360 ./lib/modules/3.4.3-yocto-standard/kernel/net/netfilter/nf_conntrack.ko  
--rw-r--r-- root       root            39488 ./lib/modules/3.4.3-yocto-standard/kernel/net/netfilter/x_tables.ko  
--rw-r--r-- root       root              501 ./lib/modules/3.4.3-yocto-standard/modules.alias  
--rw-r--r-- root       root              853 ./lib/modules/3.4.3-yocto-standard/modules.alias.bin  
--rw-r--r-- root       root             1963 ./lib/modules/3.4.3-yocto-standard/modules.dep  
--rw-r--r-- root       root             2897 ./lib/modules/3.4.3-yocto-standard/modules.dep.bin  
--rw-r--r-- root       root              118 ./lib/modules/3.4.3-yocto-standard/modules.devname  
--rw-r--r-- root       root              131 ./lib/modules/3.4.3-yocto-standard/modules.softdep  
--rw-r--r-- root       root             7578 ./lib/modules/3.4.3-yocto-standard/modules.symbols  
--rw-r--r-- root       root             8970 ./lib/modules/3.4.3-yocto-standard/modules.symbols.bin  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard  
+drwxr-xr-x root       root              140 ./lib/modules/3.4.4-yocto-standard/kernel  
+drwxr-xr-x root       root              120 ./lib/modules/3.4.4-yocto-standard/kernel/crypto  
+-rw-r--r-- root       root            41816 ./lib/modules/3.4.4-yocto-standard/kernel/crypto/aes_generic.ko  
+-rw-r--r-- root       root             4256 ./lib/modules/3.4.4-yocto-standard/kernel/crypto/arc4.ko  
+-rw-r--r-- root       root             6072 ./lib/modules/3.4.4-yocto-standard/kernel/crypto/ecb.ko  
+-rw-r--r-- root       root             5080 ./lib/modules/3.4.4-yocto-standard/kernel/crypto/michael_mic.ko  
+drwxr-xr-x root       root              100 ./lib/modules/3.4.4-yocto-standard/kernel/drivers  
+drwxr-xr-x root       root              100 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net  
+drwxr-xr-x root       root              100 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/ppp  
+-rw-r--r-- root       root            16504 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/ppp/ppp_async.ko  
+-rw-r--r-- root       root             9992 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/ppp/ppp_deflate.ko  
+-rw-r--r-- root       root            49040 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/ppp/ppp_generic.ko  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/slip  
+-rw-r--r-- root       root             9808 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/slip/slhc.ko  
+-rw-r--r-- root       root            31240 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/net/tun.ko  
+drwxr-xr-x root       root              120 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/video  
+-rw-r--r-- root       root             5704 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/video/cfbcopyarea.ko  
+-rw-r--r-- root       root             7624 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/video/cfbfillrect.ko  
+-rw-r--r-- root       root             5024 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/video/cfbimgblt.ko  
+-rw-r--r-- root       root            43864 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/video/uvesafb.ko  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/watchdog  
+-rw-r--r-- root       root             9344 ./lib/modules/3.4.4-yocto-standard/kernel/drivers/watchdog/softdog.ko  
+drwxr-xr-x root       root               80 ./lib/modules/3.4.4-yocto-standard/kernel/fs  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/fs/autofs4  
+-rw-r--r-- root       root            48880 ./lib/modules/3.4.4-yocto-standard/kernel/fs/autofs4/autofs4.ko  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/fs/nls  
+-rw-r--r-- root       root             4072 ./lib/modules/3.4.4-yocto-standard/kernel/fs/nls/nls_utf8.ko  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/lib  
+-rw-r--r-- root       root             3568 ./lib/modules/3.4.4-yocto-standard/kernel/lib/crc-ccitt.ko  
+drwxr-xr-x root       root               80 ./lib/modules/3.4.4-yocto-standard/kernel/net  
+drwxr-xr-x root       root               60 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4  
+drwxr-xr-x root       root              180 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter  
+-rw-r--r-- root       root            31208 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/ip_tables.ko  
+-rw-r--r-- root       root             6016 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/ipt_MASQUERADE.ko  
+-rw-r--r-- root       root             5896 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/iptable_filter.ko  
+-rw-r--r-- root       root            11080 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/iptable_nat.ko  
+-rw-r--r-- root       root            28008 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/nf_conntrack_ipv4.ko  
+-rw-r--r-- root       root             4616 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/nf_defrag_ipv4.ko  
+-rw-r--r-- root       root            30144 ./lib/modules/3.4.4-yocto-standard/kernel/net/ipv4/netfilter/nf_nat.ko  
+drwxr-xr-x root       root               80 ./lib/modules/3.4.4-yocto-standard/kernel/net/netfilter  
+-rw-r--r-- root       root           111360 ./lib/modules/3.4.4-yocto-standard/kernel/net/netfilter/nf_conntrack.ko  
+-rw-r--r-- root       root            39488 ./lib/modules/3.4.4-yocto-standard/kernel/net/netfilter/x_tables.ko  
 drwxr-xr-x root       root              420 ./lib/security  
 -rwxr-xr-x root       root            14016 ./lib/security/pam_access.so  
 -rwxr-xr-x root       root             7704 ./lib/security/pam_cap.so  
@@ -1121,7 +1113,7 @@ lrwxrwxrwx root       root               24 ./lib/systemd/system/basic.target.wa
 lrwxrwxrwx root       root               31 ./lib/systemd/system/basic.target.wants/systemd-tmpfiles-clean.timer -> ../systemd-tmpfiles-clean.timer
 lrwxrwxrwx root       root               23 ./lib/systemd/system/basic.target.wants/udev-trigger.service -> ../udev-trigger.service
 lrwxrwxrwx root       root               15 ./lib/systemd/system/basic.target.wants/udev.service -> ../udev.service
--rw-r--r-- root       root              189 ./lib/systemd/system/bluetooth.service  
+-rw-r--r-- root       root              176 ./lib/systemd/system/bluetooth.service  
 -rw-r--r-- root       root              371 ./lib/systemd/system/bluetooth.target  
 lrwxrwxrwx root       root                9 ./lib/systemd/system/bootmisc.service -> /dev/null
 lrwxrwxrwx root       root                9 ./lib/systemd/system/busybox-udhcpc.service -> /dev/null
@@ -1342,7 +1334,7 @@ drwxr-xr-x root       root              340 ./lib/udev
 -rwxr-xr-x root       root            17368 ./lib/udev/collect  
 drwxr-xr-x root       root               40 ./lib/udev/devices  
 -rwxr-xr-x root       root             2613 ./lib/udev/findkeyboards  
--rwxr-xr-x root       root            11320 ./lib/udev/hid2hci  
+-rwxr-xr-x root       root            11312 ./lib/udev/hid2hci  
 -rwxr-xr-x root       root              621 ./lib/udev/keyboard-force-release.sh  
 -rwxr-xr-x root       root            45672 ./lib/udev/keymap  
 drwxr-xr-x root       root             1200 ./lib/udev/keymaps  
@@ -1409,7 +1401,7 @@ drwxr-xr-x root       root              120 ./lib/udev/keymaps/force-release
 -rw-r--r-- root       root              118 ./lib/udev/keymaps/toshiba-satellite_m30x  
 -rw-r--r-- root       root              495 ./lib/udev/keymaps/zepto-znote  
 -rwxr-xr-x root       root             5424 ./lib/udev/mtd_probe  
-drwxr-xr-x root       root              560 ./lib/udev/rules.d  
+drwxr-xr-x root       root              540 ./lib/udev/rules.d  
 -rw-r--r-- root       root             2732 ./lib/udev/rules.d/42-usb-hid-pm.rules  
 -rw-r--r-- root       root             3652 ./lib/udev/rules.d/50-udev-default.rules  
 -rw-r--r-- root       root              646 ./lib/udev/rules.d/60-cdrom_id.rules  
@@ -1434,7 +1426,6 @@ drwxr-xr-x root       root              560 ./lib/udev/rules.d
 -rw-r--r-- root       root            11643 ./lib/udev/rules.d/95-keymap.rules  
 -rw-r--r-- root       root              155 ./lib/udev/rules.d/95-udev-late.rules  
 -rw-r--r-- root       root             1356 ./lib/udev/rules.d/97-bluetooth-hid2hci.rules  
--rw-r--r-- root       root              259 ./lib/udev/rules.d/97-bluetooth.rules  
 -rw-r--r-- root       root             2991 ./lib/udev/rules.d/99-systemd.rules  
 -rwxr-xr-x root       root            32056 ./lib/udev/scsi_id  
 -rwxr-xr-x root       root           155584 ./lib/udev/udevd  
@@ -1572,7 +1563,7 @@ lrwxrwxrwx root       root               20 ./usr/bin/chsh -> /usr/bin/chsh.shad
 lrwxrwxrwx root       root               17 ./usr/bin/chvt -> /usr/bin/chvt.kbd
 -rwxr-xr-x root       root             6680 ./usr/bin/chvt.kbd  
 -rwxr-xr-x root       root            40296 ./usr/bin/cifsiostat  
--rwxr-xr-x root       root           103520 ./usr/bin/ciptool  
+-rwxr-xr-x root       root           103680 ./usr/bin/ciptool  
 lrwxrwxrwx root       root               15 ./usr/bin/cksum -> cksum.coreutils
 -rwxr-xr-x root       root            31560 ./usr/bin/cksum.coreutils  
 lrwxrwxrwx root       root               17 ./usr/bin/clear -> ../../bin/busybox
@@ -1704,7 +1695,7 @@ lrwxrwxrwx root       root               11 ./usr/bin/free -> free.procps
 lrwxrwxrwx root       root                7 ./usr/bin/fsoraw -> fso-raw
 lrwxrwxrwx root       root               12 ./usr/bin/fuser -> fuser.psmisc
 -rwxr-xr-x root       root            32184 ./usr/bin/fuser.psmisc  
--rwxr-xr-x root       root           164584 ./usr/bin/gatttool  
+-rwxr-xr-x root       root           165160 ./usr/bin/gatttool  
 -rwxr-xr-x root       root           416040 ./usr/bin/gawk  
 -rwxr-xr-x root       root           416040 ./usr/bin/gawk-4.0.1  
 -rwxr-xr-x root       root            50880 ./usr/bin/gconf-merge-tree  
@@ -1783,7 +1774,7 @@ lrwxrwxrwx root       root               14 ./usr/bin/killall -> killall.psmisc
 -rwxr-xr-x root       root            20280 ./usr/bin/killall.psmisc  
 -rwxr-xr-x root       root             3759 ./usr/bin/koi8rxterm  
 -rwxr-xr-x root       root            58928 ./usr/bin/l2ping  
--rwxr-xr-x root       root            74608 ./usr/bin/l2test  
+-rwxr-xr-x root       root            74672 ./usr/bin/l2test  
 -rwxr-xr-x root       root           323400 ./usr/bin/lame  
 lrwxrwxrwx root       root               15 ./usr/bin/last -> last.util-linux
 -rwxr-xr-x root       root            11432 ./usr/bin/last.util-linux  
@@ -1930,7 +1921,7 @@ lrwxrwxrwx root       root                9 ./usr/bin/python2 -> python2.7
 lrwxrwxrwx root       root               16 ./usr/bin/python2-config -> python2.7-config
 -rwxr-xr-x root       root             4856 ./usr/bin/python2.7  
 -rwxr-xr-x root       root             1618 ./usr/bin/python2.7-config  
--rwxr-xr-x root       root           105168 ./usr/bin/rctest  
+-rwxr-xr-x root       root           105328 ./usr/bin/rctest  
 lrwxrwxrwx root       root               18 ./usr/bin/readlink -> readlink.coreutils
 -rwxr-xr-x root       root            42200 ./usr/bin/readlink.coreutils  
 lrwxrwxrwx root       root               17 ./usr/bin/realpath -> ../../bin/busybox
@@ -2898,8 +2889,8 @@ lrwxrwxrwx root       root               17 ./usr/lib/libXfont.so.1 -> libXfont.
 -rwxr-xr-x root       root           245224 ./usr/lib/libXfont.so.1.4.1  
 lrwxrwxrwx root       root               22 ./usr/lib/libXfontcache.so.1 -> libXfontcache.so.1.0.0
 -rwxr-xr-x root       root             7008 ./usr/lib/libXfontcache.so.1.0.0  
-lrwxrwxrwx root       root               15 ./usr/lib/libXft.so.2 -> libXft.so.2.3.0
--rwxr-xr-x root       root            83680 ./usr/lib/libXft.so.2.3.0  
+lrwxrwxrwx root       root               15 ./usr/lib/libXft.so.2 -> libXft.so.2.3.1
+-rwxr-xr-x root       root            86016 ./usr/lib/libXft.so.2.3.1  
 lrwxrwxrwx root       root               14 ./usr/lib/libXi.so.6 -> libXi.so.6.1.0
 -rwxr-xr-x root       root            56456 ./usr/lib/libXi.so.6.1.0  
 lrwxrwxrwx root       root               20 ./usr/lib/libXinerama.so.1 -> libXinerama.so.1.0.0
@@ -2954,8 +2945,8 @@ lrwxrwxrwx root       root               21 ./usr/lib/libavformat.so.53 -> libav
 -rwxr-xr-x root       root          1002000 ./usr/lib/libavformat.so.53.3.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libavutil.so.51 -> libavutil.so.51.7.0
 -rwxr-xr-x root       root           110432 ./usr/lib/libavutil.so.51.7.0  
-lrwxrwxrwx root       root               22 ./usr/lib/libbluetooth.so.3 -> libbluetooth.so.3.12.0
--rwxr-xr-x root       root           111976 ./usr/lib/libbluetooth.so.3.12.0  
+lrwxrwxrwx root       root               22 ./usr/lib/libbluetooth.so.3 -> libbluetooth.so.3.13.0
+-rwxr-xr-x root       root           112232 ./usr/lib/libbluetooth.so.3.13.0  
 lrwxrwxrwx root       root               15 ./usr/lib/libbz2.so.0 -> libbz2.so.0.0.0
 -rwxr-xr-x root       root            64624 ./usr/lib/libbz2.so.0.0.0  
 lrwxrwxrwx root       root               21 ./usr/lib/libcairo.so.2 -> libcairo.so.2.11200.2
@@ -3375,8 +3366,8 @@ lrwxrwxrwx root       root               21 ./usr/lib/libxcb-shape.so.0 -> libxc
 -rwxr-xr-x root       root            11288 ./usr/lib/libxcb-shape.so.0.0.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libxcb-shm.so.0 -> libxcb-shm.so.0.0.0
 -rwxr-xr-x root       root             8096 ./usr/lib/libxcb-shm.so.0.0.0  
-lrwxrwxrwx root       root               20 ./usr/lib/libxcb-util.so.0 -> libxcb-util.so.0.0.0
--rwxr-xr-x root       root            24680 ./usr/lib/libxcb-util.so.0.0.0  
+lrwxrwxrwx root       root               20 ./usr/lib/libxcb-util.so.1 -> libxcb-util.so.1.0.0
+-rwxr-xr-x root       root            20576 ./usr/lib/libxcb-util.so.1.0.0  
 lrwxrwxrwx root       root               15 ./usr/lib/libxcb.so.1 -> libxcb.so.1.1.0
 -rwxr-xr-x root       root           123392 ./usr/lib/libxcb.so.1.1.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libxkbfile.so.1 -> libxkbfile.so.1.0.2
@@ -5383,7 +5374,7 @@ drwxr-xr-x root       root              120 ./usr/lib/xorg/modules/input
 -rwxr-xr-x root       root            49912 ./usr/lib/xorg/modules/input/evdev_drv.so  
 -rwxr-xr-x root       root            21040 ./usr/lib/xorg/modules/input/kbd_drv.so  
 -rwxr-xr-x root       root            46928 ./usr/lib/xorg/modules/input/mouse_drv.so  
--rwxr-xr-x root       root            13872 ./usr/lib/xorg/modules/input/vmmouse_drv.so  
+-rwxr-xr-x root       root            14000 ./usr/lib/xorg/modules/input/vmmouse_drv.so  
 -rwxr-xr-x root       root            91088 ./usr/lib/xorg/modules/libexa.so  
 -rwxr-xr-x root       root           140112 ./usr/lib/xorg/modules/libfb.so  
 -rwxr-xr-x root       root            17224 ./usr/lib/xorg/modules/libfbdevhw.so  
@@ -5535,7 +5526,7 @@ drwxr-xr-x root       root             3540 ./usr/sbin
 -rwxr-xr-x root       root            19896 ./usr/sbin/apmd  
 -rwxr-xr-x root       root            15744 ./usr/sbin/atd  
 -rwxr-xr-x root       root           156384 ./usr/sbin/bccmd  
--rwxr-xr-x root       root           733720 ./usr/sbin/bluetoothd  
+-rwxr-xr-x root       root           754376 ./usr/sbin/bluetoothd  
 -rwxr-xr-x root       root            23432 ./usr/sbin/chat  
 -rwxr-xr-x root       root            18192 ./usr/sbin/chcpu  
 -rwxr-xr-x root       root            41760 ./usr/sbin/chgpasswd  
@@ -5589,8 +5580,8 @@ lrwxrwxrwx root       root                7 ./usr/sbin/fsck.vfat -> dosfsck
 -rwxr-xr-x root       root            40608 ./usr/sbin/grpck  
 -rwxr-xr-x root       root            35680 ./usr/sbin/grpconv  
 -rwxr-xr-x root       root            35560 ./usr/sbin/grpunconv  
--rwxr-xr-x root       root            89536 ./usr/sbin/hciattach  
--rwxr-xr-x root       root           164864 ./usr/sbin/hciconfig  
+-rwxr-xr-x root       root            93152 ./usr/sbin/hciattach  
+-rwxr-xr-x root       root           161376 ./usr/sbin/hciconfig  
 -rwxr-xr-x root       root            24376 ./usr/sbin/hciemu  
 -rwxr-xr-x root       root             5570 ./usr/sbin/i2c-stub-from-dump  
 -rwxr-xr-x root       root            15096 ./usr/sbin/i2cdetect  
@@ -22108,8 +22099,8 @@ drwxr-xr-x root       root            39120 ./var/lib/opkg/info
 -rw-r--r-- root       root               23 ./var/lib/opkg/info/bash.list  
 -rwxr-xr-x root       root              210 ./var/lib/opkg/info/bash.postinst  
 -rwxr-xr-x root       root               52 ./var/lib/opkg/info/bash.postrm  
--rw-r--r-- root       root              679 ./var/lib/opkg/info/bluez4.control  
--rw-r--r-- root       root              693 ./var/lib/opkg/info/bluez4.list  
+-rw-r--r-- root       root              681 ./var/lib/opkg/info/bluez4.control  
+-rw-r--r-- root       root              656 ./var/lib/opkg/info/bluez4.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/bluez4.postinst  
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
 -rw-r--r-- root       root             1523 ./var/lib/opkg/info/busybox-syslog.control  
@@ -22573,10 +22564,10 @@ drwxr-xr-x root       root            39120 ./var/lib/opkg/info
 -rw-r--r-- root       root              460 ./var/lib/opkg/info/kbd.list  
 -rwxr-xr-x root       root              200 ./var/lib/opkg/info/kbd.postinst  
 -rwxr-xr-x root       root              185 ./var/lib/opkg/info/kbd.postrm  
--rw-r--r-- root       root              614 ./var/lib/opkg/info/kernel-3.4.3-yocto-standard.control  
--rw-r--r-- root       root                0 ./var/lib/opkg/info/kernel-3.4.3-yocto-standard.list  
--rwxr-xr-x root       root              106 ./var/lib/opkg/info/kernel-3.4.3-yocto-standard.postinst  
--rwxr-xr-x root       root               85 ./var/lib/opkg/info/kernel-3.4.3-yocto-standard.postrm  
+-rw-r--r-- root       root              614 ./var/lib/opkg/info/kernel-3.4.4-yocto-standard.control  
+-rw-r--r-- root       root                0 ./var/lib/opkg/info/kernel-3.4.4-yocto-standard.list  
+-rwxr-xr-x root       root              106 ./var/lib/opkg/info/kernel-3.4.4-yocto-standard.postinst  
+-rwxr-xr-x root       root               85 ./var/lib/opkg/info/kernel-3.4.4-yocto-standard.postrm  
 -rw-r--r-- root       root              711 ./var/lib/opkg/info/kernel-module-aes-generic.control  
 -rw-r--r-- root       root               63 ./var/lib/opkg/info/kernel-module-aes-generic.list  
 -rwxr-xr-x root       root               91 ./var/lib/opkg/info/kernel-module-aes-generic.postinst  
@@ -23246,9 +23237,9 @@ drwxr-xr-x root       root            39120 ./var/lib/opkg/info
 -rw-r--r-- root       root              623 ./var/lib/opkg/info/libxcb-shm0.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/libxcb-shm0.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxcb-shm0.postinst  
--rw-r--r-- root       root              864 ./var/lib/opkg/info/libxcb-util0.control  
--rw-r--r-- root       root               56 ./var/lib/opkg/info/libxcb-util0.list  
--rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxcb-util0.postinst  
+-rw-r--r-- root       root              864 ./var/lib/opkg/info/libxcb-util1.control  
+-rw-r--r-- root       root               56 ./var/lib/opkg/info/libxcb-util1.list  
+-rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxcb-util1.postinst  
 -rw-r--r-- root       root              599 ./var/lib/opkg/info/libxcb1.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libxcb1.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/libxcb1.postinst  
@@ -23413,7 +23404,7 @@ drwxr-xr-x root       root            39120 ./var/lib/opkg/info
 -rw-r--r-- root       root              733 ./var/lib/opkg/info/ncurses-terminfo.control  
 -rw-r--r-- root       root            82894 ./var/lib/opkg/info/ncurses-terminfo.list  
 -rw-r--r-- root       root               35 ./var/lib/opkg/info/netbase.conffiles  
--rw-r--r-- root       root              521 ./var/lib/opkg/info/netbase.control  
+-rw-r--r-- root       root              519 ./var/lib/opkg/info/netbase.control  
 -rw-r--r-- root       root              244 ./var/lib/opkg/info/netbase.list  
 -rwxr-xr-x root       root              125 ./var/lib/opkg/info/netbase.postinst  
 -rwxr-xr-x root       root               43 ./var/lib/opkg/info/netbase.postrm  
