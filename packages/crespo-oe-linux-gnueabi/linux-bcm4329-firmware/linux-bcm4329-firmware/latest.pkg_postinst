@@ -1,0 +1,13 @@
+  #!/bin/sh -e
+  if [ x"$D" = "x" ]; then
+    mkdir -p /media/android-rootfs
+    mkdir -p /lib/firmware
+    mount /dev/mmcblk0p1 /media/android-rootfs
+    FIRMWARE_FILES="fw_bcm4329.bin fw_bcm4329_apsta.bin nvram_net.txt"
+    for f in $FIRMWARE_FILES; do
+      cp /media/android-rootfs/vendor/firmware/$f /lib/firmware
+    done
+    umount /media/android-rootfs
+  else
+    exit 1
+  fi

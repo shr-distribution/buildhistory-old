@@ -1,0 +1,7 @@
+  #!/bin/sh -e
+  FIRMWARE_FILES="fw_bcm4329.bin fw_bcm4329_apsta.bin nvram_net.txt"
+  for f in $FIRMWARE_FILES; do
+    if [ -f /lib/firmware/$f ] ; then
+      rm /lib/firmware/$f
+    fi
+  done
