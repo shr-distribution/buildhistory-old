@@ -10,6 +10,6 @@ fi
 
 for i in    busybox-udhcpc   dnsmasq   hwclock   syslog   syslog.busybox   shr-splash   crond   keymap   fbsetup   populate-volatile   mountall   bootmisc   mountnfs   checkroot   modutils   fso-gpsd-sysv   gpsd-sysv  ; do
     if [ \( -e $i -o $i.sh \) -a ! -e $D/etc/systemd/system/$i.service ] ; then
-        echo -e "\n$i: " ; systemctl ${OPTS} mask $i.service
+        echo -en "\n$i: " ; systemctl ${OPTS} mask $i.service
     fi
 done ; echo
