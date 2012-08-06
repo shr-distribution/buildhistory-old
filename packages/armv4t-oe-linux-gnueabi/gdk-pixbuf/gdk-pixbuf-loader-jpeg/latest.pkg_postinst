@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "x$D" != "x" ]; then
+    exit 1
+fi
+
+GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
+
+test -x /usr/bin/gtk-update-icon-cache && gtk-update-icon-cache  -q /usr/share/icons/hicolor
+
