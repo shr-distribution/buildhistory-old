@@ -109,7 +109,7 @@ lrwxrwxrwx root       root               12 ./bin/vi -> /usr/bin/vim
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root               80 ./boot  
 lrwxrwxrwx root       root               13 ./boot/zImage -> zImage-3.0.38
--rw-r--r-- root       root          3158424 ./boot/zImage-3.0.38  
+-rw-r--r-- root       root          3242720 ./boot/zImage-3.0.38  
 drwxr-xr-x root       root             1440 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -586,7 +586,7 @@ drwxr-xr-x root       root               80 ./etc/network/if-pre-up.d
 -rwxr-xr-x root       root              809 ./etc/network/if-pre-up.d/nfsroot  
 -rwxr-xr-x root       root             1951 ./etc/network/if-pre-up.d/wpa-supplicant  
 drwxr-xr-x root       root               40 ./etc/network/if-up.d  
--rw-r--r-- root       root              615 ./etc/network/interfaces  
+-rw-r--r-- root       root              508 ./etc/network/interfaces  
 -rw-r--r-- root       root              465 ./etc/nsswitch.conf  
 -rw-r--r-- root       root              559 ./etc/ntp.conf  
 drwxr-xr-x root       root               40 ./etc/openvpn  
@@ -802,12 +802,13 @@ drwxr-xr-x root       root              160 ./etc/systemd
 -rw-r--r-- root       root              542 ./etc/systemd/logind.conf  
 drwxr-xr-x root       root              500 ./etc/systemd/system  
 -rw-r--r-- root       root             1012 ./etc/systemd/system.conf  
-drwxr-xr-x root       root              140 ./etc/systemd/system/basic.target.wants  
+drwxr-xr-x root       root              160 ./etc/systemd/system/basic.target.wants  
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/frameworkd.service -> /lib/systemd/system/frameworkd.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/fsoaudiod.service -> /lib/systemd/system/fsoaudiod.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsodeviced.service -> /lib/systemd/system/fsodeviced.service
 lrwxrwxrwx root       root               35 ./etc/systemd/system/basic.target.wants/fsotdld.service -> /lib/systemd/system/fsotdld.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/phonefsod.service -> /lib/systemd/system/phonefsod.service
+lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/rndissetup.service -> /lib/systemd/system/rndissetup.service
 lrwxrwxrwx root       root                9 ./etc/systemd/system/bootmisc.service -> /dev/null
 lrwxrwxrwx root       root                9 ./etc/systemd/system/busybox-udhcpc.service -> /dev/null
 lrwxrwxrwx root       root                9 ./etc/systemd/system/checkroot.service -> /dev/null
@@ -1033,7 +1034,7 @@ drwxr-xr-x root       root              420 ./lib/security
 -rwxr-xr-x root       root            39452 ./lib/security/pam_unix.so  
 -rwxr-xr-x root       root             4244 ./lib/security/pam_warn.so  
 drwxr-xr-x root       root              640 ./lib/systemd  
-drwxr-xr-x root       root             3060 ./lib/systemd/system  
+drwxr-xr-x root       root             3080 ./lib/systemd/system  
 drwxr-xr-x root       root              100 ./lib/systemd/system-generators  
 -rwxr-xr-x root       root            39196 ./lib/systemd/system-generators/systemd-fstab-generator  
 -rwxr-xr-x root       root            30944 ./lib/systemd/system-generators/systemd-getty-generator  
@@ -1116,6 +1117,7 @@ lrwxrwxrwx root       root               32 ./lib/systemd/system/multi-user.targ
 -rw-r--r-- root       root              406 ./lib/systemd/system/remote-fs.target  
 -rw-r--r-- root       root             1040 ./lib/systemd/system/rescue.service  
 -rw-r--r-- root       root              486 ./lib/systemd/system/rescue.target  
+-rw-r--r-- root       root              170 ./lib/systemd/system/rndissetup.service  
 -rw-r--r-- root       root              478 ./lib/systemd/system/rpcbind.target  
 -rw-r--r-- root       root              337 ./lib/systemd/system/run-postinsts.service  
 lrwxrwxrwx root       root               15 ./lib/systemd/system/runlevel0.target -> poweroff.target
@@ -1503,7 +1505,7 @@ lrwxrwxrwx root       root               11 ./sbin/vipw -> vipw.shadow
 drwxr-xr-x root       root               40 ./sys  
 drwxrwxrwt root       root               40 ./tmp  
 drwxr-xr-x root       root              220 ./usr  
-drwxr-xr-x root       root            13080 ./usr/bin  
+drwxr-xr-x root       root            13100 ./usr/bin  
 -rwxr-xr-x root       root          1417336 ./usr/bin/FBReader  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
 -rwxr-xr-x root       root          1536200 ./usr/bin/Xorg  
@@ -1935,6 +1937,7 @@ lrwxrwxrwx root       root               15 ./usr/bin/reset -> ../../bin/reset
 -rwxr-xr-x root       root             6100 ./usr/bin/rev  
 -rwxr-xr-x root       root            55532 ./usr/bin/rfcomm  
 lrwxrwxrwx root       root                4 ./usr/bin/rnano -> nano
+-rwxr-xr-x root       root              971 ./usr/bin/rndissetup.sh  
 -rwxr-xr-x root       root            71496 ./usr/bin/rpcgen  
 -rwxr-xr-x root       root           329088 ./usr/bin/rsync  
 -rwxr-xr-x root       root              167 ./usr/bin/run-calibrate.sh  
@@ -22508,7 +22511,7 @@ drwxr-xr-x root       root             4880 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               52 ./var/lib/opkg/alternatives/yes  
 -rw-r--r-- root       root               33 ./var/lib/opkg/alternatives/zImage  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/zcat  
-drwxr-xr-x root       root            40720 ./var/lib/opkg/info  
+drwxr-xr-x root       root            40780 ./var/lib/opkg/info  
 -rw-r--r-- root       root              786 ./var/lib/opkg/info/advancedcaching.control  
 -rw-r--r-- root       root            11233 ./var/lib/opkg/info/advancedcaching.list  
 -rw-r--r-- root       root              432 ./var/lib/opkg/info/alsa-conf-base.control  
@@ -23884,7 +23887,7 @@ drwxr-xr-x root       root            40720 ./var/lib/opkg/info
 -rw-r--r-- root       root              743 ./var/lib/opkg/info/ncurses-terminfo.control  
 -rw-r--r-- root       root            82894 ./var/lib/opkg/info/ncurses-terminfo.list  
 -rw-r--r-- root       root               35 ./var/lib/opkg/info/netbase.conffiles  
--rw-r--r-- root       root              528 ./var/lib/opkg/info/netbase.control  
+-rw-r--r-- root       root              517 ./var/lib/opkg/info/netbase.control  
 -rw-r--r-- root       root              244 ./var/lib/opkg/info/netbase.list  
 -rwxr-xr-x root       root              125 ./var/lib/opkg/info/netbase.postinst  
 -rwxr-xr-x root       root               43 ./var/lib/opkg/info/netbase.postrm  
@@ -24249,17 +24252,20 @@ drwxr-xr-x root       root            40720 ./var/lib/opkg/info
 -rw-r--r-- root       root              280 ./var/lib/opkg/info/sysstat.list  
 -rwxr-xr-x root       root              179 ./var/lib/opkg/info/sysstat.postinst  
 -rw-r--r-- root       root              369 ./var/lib/opkg/info/systemd-compat-units.control  
--rw-r--r-- root       root              465 ./var/lib/opkg/info/systemd-compat-units.list  
+-rw-r--r-- root       root              338 ./var/lib/opkg/info/systemd-compat-units.list  
 -rwxr-xr-x root       root              501 ./var/lib/opkg/info/systemd-compat-units.postinst  
--rw-r--r-- root       root              327 ./var/lib/opkg/info/systemd-machine-units.control  
--rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-machine-units.list  
+-rw-r--r-- root       root              386 ./var/lib/opkg/info/systemd-machine-units.control  
+-rw-r--r-- root       root              107 ./var/lib/opkg/info/systemd-machine-units.list  
+-rwxr-xr-x root       root              192 ./var/lib/opkg/info/systemd-machine-units.postinst  
+-rwxr-xr-x root       root               47 ./var/lib/opkg/info/systemd-machine-units.postrm  
+-rwxr-xr-x root       root               72 ./var/lib/opkg/info/systemd-machine-units.prerm  
 -rw-r--r-- root       root              369 ./var/lib/opkg/info/systemd-serialgetty.control  
 -rw-r--r-- root       root              110 ./var/lib/opkg/info/systemd-serialgetty.list  
 -rw-r--r-- root       root              332 ./var/lib/opkg/info/systemd-speed-hacks.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-speed-hacks.list  
 -rwxr-xr-x root       root              262 ./var/lib/opkg/info/systemd-speed-hacks.postinst  
 -rw-r--r-- root       root             1101 ./var/lib/opkg/info/systemd.control  
--rw-r--r-- root       root            11288 ./var/lib/opkg/info/systemd.list  
+-rw-r--r-- root       root            11370 ./var/lib/opkg/info/systemd.list  
 -rwxr-xr-x root       root              351 ./var/lib/opkg/info/systemd.postinst  
 -rwxr-xr-x root       root             3174 ./var/lib/opkg/info/systemd.preinst  
 -rwxr-xr-x root       root              261 ./var/lib/opkg/info/systemd.prerm  
@@ -24544,7 +24550,7 @@ drwxr-xr-x root       root            40720 ./var/lib/opkg/info
 -rw-r--r-- root       root              499 ./var/lib/opkg/info/xz.control  
 -rw-r--r-- root       root              362 ./var/lib/opkg/info/xz.list  
 drwxr-xr-x root       root               40 ./var/lib/opkg/lists  
--rw-r--r-- root       root           248476 ./var/lib/opkg/status  
+-rw-r--r-- root       root           248482 ./var/lib/opkg/status  
 drwx------ root       root               60 ./var/lib/polkit-1  
 drwxr-xr-x root       root              140 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root               40 ./var/lib/polkit-1/localauthority/10-vendor.d  
