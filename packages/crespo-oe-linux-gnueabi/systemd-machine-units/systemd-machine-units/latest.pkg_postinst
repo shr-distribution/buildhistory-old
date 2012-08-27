@@ -5,8 +5,8 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable rndissetup.service
+systemctl $OPTS enable rndissetup.service disablefbcon.service
 
 if [ -z "$D" -a enable = "enable" ]; then
-    systemctl start rndissetup.service
+    systemctl start rndissetup.service disablefbcon.service
 fi
