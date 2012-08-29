@@ -1,0 +1,11 @@
+DISTRO = shr
+DISTRO_VERSION = 20120829
+USER_CLASSES = 
+IMAGE_CLASSES = image_types
+IMAGE_FEATURES = debug-tweaks  package-management ssh-server-openssh
+IMAGE_LINGUAS = en-us en-gb
+IMAGE_INSTALL = task-core-boot task-base-extended task-shr-minimal-base task-shr-minimal-cli task-shr-minimal-fso task-shr-minimal-apps task-shr-minimal-audio task-shr-minimal-gtk task-shr-minimal-x task-shr-apps task-shr-games task-shr-gtk task-shr-cli task-shr-feed
+BAD_RECOMMENDATIONS = 
+ROOTFS_POSTPROCESS_COMMAND = license_create_manifest; buildhistory_get_image_installed ;   rootfs_update_timestamp ;   openssh_allow_empty_password;   rootfs_update_timestamp;
+IMAGE_POSTPROCESS_COMMAND =   buildhistory_get_imageinfo ; 
+IMAGESIZE = 820756
