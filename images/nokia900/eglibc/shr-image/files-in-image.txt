@@ -80,7 +80,7 @@ lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root             4096 ./boot  
 lrwxrwxrwx root       root               13 ./boot/uImage -> uImage-2.6.37
--rw-r--r-- root       root          1962308 ./boot/uImage-2.6.37  
+-rw-r--r-- root       root          1962456 ./boot/uImage-2.6.37  
 drwxr-xr-x root       root             4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -507,6 +507,8 @@ drwxr-xr-x root       root             4096 ./etc/init.d
 -rwxr-xr-x root       root             1116 ./etc/init.d/ppp  
 -rwxr-xr-x root       root              669 ./etc/init.d/shr-splash.sh  
 -rwxr-xr-x root       root             2135 ./etc/init.d/sshd  
+lrwxrwxrwx root       root               14 ./etc/init.d/syslog -> syslog.busybox
+-rwxr-xr-x root       root             1711 ./etc/init.d/syslog.busybox  
 -rw-r--r-- root       root             1633 ./etc/inputrc  
 -rw-r--r-- root       root               20 ./etc/issue  
 -rw-r--r-- root       root               17 ./etc/issue.net  
@@ -630,6 +632,7 @@ drwxr-xr-x root       root             4096 ./etc/rc0.d
 lrwxrwxrwx root       root               14 ./etc/rc0.d/K09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc0.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc0.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               16 ./etc/rc0.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               23 ./etc/rc0.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
 lrwxrwxrwx root       root               20 ./etc/rc0.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc0.d/K27fsotdld -> ../init.d/fsotdld
@@ -644,6 +647,7 @@ drwxr-xr-x root       root             4096 ./etc/rc1.d
 lrwxrwxrwx root       root               14 ./etc/rc1.d/K09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc1.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc1.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               16 ./etc/rc1.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               23 ./etc/rc1.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
 lrwxrwxrwx root       root               20 ./etc/rc1.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc1.d/K27fsotdld -> ../init.d/fsotdld
@@ -658,6 +662,7 @@ drwxr-xr-x root       root             4096 ./etc/rc2.d
 lrwxrwxrwx root       root               16 ./etc/rc2.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc2.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc2.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               16 ./etc/rc2.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc2.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc2.d/S27fsotdld -> ../init.d/fsotdld
 lrwxrwxrwx root       root               20 ./etc/rc2.d/S29frameworkd -> ../init.d/frameworkd
@@ -670,6 +675,7 @@ drwxr-xr-x root       root             4096 ./etc/rc3.d
 lrwxrwxrwx root       root               16 ./etc/rc3.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc3.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc3.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               16 ./etc/rc3.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc3.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc3.d/S27fsotdld -> ../init.d/fsotdld
 lrwxrwxrwx root       root               20 ./etc/rc3.d/S29frameworkd -> ../init.d/frameworkd
@@ -681,6 +687,7 @@ lrwxrwxrwx root       root               13 ./etc/rc3.d/S97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc4.d  
 lrwxrwxrwx root       root               14 ./etc/rc4.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc4.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               16 ./etc/rc4.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc4.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc4.d/S27fsotdld -> ../init.d/fsotdld
 lrwxrwxrwx root       root               20 ./etc/rc4.d/S29frameworkd -> ../init.d/frameworkd
@@ -693,6 +700,7 @@ drwxr-xr-x root       root             4096 ./etc/rc5.d
 lrwxrwxrwx root       root               16 ./etc/rc5.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc5.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc5.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               16 ./etc/rc5.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc5.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc5.d/S27fsotdld -> ../init.d/fsotdld
 lrwxrwxrwx root       root               20 ./etc/rc5.d/S29frameworkd -> ../init.d/frameworkd
@@ -705,6 +713,7 @@ drwxr-xr-x root       root             4096 ./etc/rc6.d
 lrwxrwxrwx root       root               14 ./etc/rc6.d/K09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc6.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc6.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               16 ./etc/rc6.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               23 ./etc/rc6.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
 lrwxrwxrwx root       root               20 ./etc/rc6.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc6.d/K27fsotdld -> ../init.d/fsotdld
@@ -757,6 +766,8 @@ drwxr-xr-x root       root             4096 ./etc/sysconfig
 -rw-r--r-- root       root             6228 ./etc/sysconfig/sysstat.ioconf  
 -rw-r--r-- root       root             2049 ./etc/sysctl.conf  
 drwxr-xr-x root       root             4096 ./etc/sysctl.d  
+lrwxrwxrwx root       root               27 ./etc/syslog-startup.conf -> syslog-startup.conf.busybox
+-rw-r--r-- root       root              651 ./etc/syslog-startup.conf.busybox  
 drwxr-xr-x root       root             4096 ./etc/systemd  
 -rw-r--r-- root       root              743 ./etc/systemd/journald.conf  
 -rw-r--r-- root       root              542 ./etc/systemd/logind.conf  
@@ -833,6 +844,7 @@ drwxr-xr-x root       root             4096 ./etc/tmpfiles.d
 drwxr-xr-x root       root             4096 ./etc/udev  
 -rw-r--r-- root       root               41 ./etc/udev/mount.blacklist  
 drwxr-xr-x root       root             4096 ./etc/udev/rules.d  
+-rw-r--r-- root       root             2420 ./etc/udev/rules.d/60-gpsd.rules  
 -rw-r--r-- root       root              748 ./etc/udev/rules.d/automount.rules  
 -rw-r--r-- root       root              757 ./etc/udev/rules.d/autonet.rules  
 -rw-r--r-- root       root              742 ./etc/udev/rules.d/local.rules  
@@ -1306,6 +1318,7 @@ drwxr-xr-x root       root             4096 ./lib/udev
 -rwxr-xr-x root       root            38960 ./lib/udev/cdrom_id  
 -rwxr-xr-x root       root            30808 ./lib/udev/collect  
 -rwxr-xr-x root       root             2613 ./lib/udev/findkeyboards  
+-rwxr-xr-x root       root             2083 ./lib/udev/gpsd.hotplug  
 -rwxr-xr-x root       root             8100 ./lib/udev/hid2hci  
 -rwxr-xr-x root       root              622 ./lib/udev/keyboard-force-release.sh  
 -rwxr-xr-x root       root            47112 ./lib/udev/keymap  
@@ -1429,14 +1442,14 @@ lrwxrwxrwx root       root               19 ./sbin/blockdev -> blockdev.util-lin
 -rwxr-xr-x root       root             5004 ./sbin/ctrlaltdel  
 lrwxrwxrwx root       root               11 ./sbin/depmod -> depmod.kmod
 lrwxrwxrwx root       root               11 ./sbin/depmod.kmod -> ../bin/kmod
--rwxr-xr-x root       root           199928 ./sbin/e2fsck  
+-rwxr-xr-x root       root           199920 ./sbin/e2fsck  
 lrwxrwxrwx root       root               16 ./sbin/fdisk -> fdisk.util-linux
 -rwxr-xr-x root       root            90752 ./sbin/fdisk.util-linux  
 lrwxrwxrwx root       root               15 ./sbin/fsck -> fsck.util-linux
--rwxr-xr-x root       root           199928 ./sbin/fsck.ext2  
--rwxr-xr-x root       root           199928 ./sbin/fsck.ext3  
--rwxr-xr-x root       root           199928 ./sbin/fsck.ext4  
--rwxr-xr-x root       root           199928 ./sbin/fsck.ext4dev  
+-rwxr-xr-x root       root           199920 ./sbin/fsck.ext2  
+-rwxr-xr-x root       root           199920 ./sbin/fsck.ext3  
+-rwxr-xr-x root       root           199920 ./sbin/fsck.ext4  
+-rwxr-xr-x root       root           199920 ./sbin/fsck.ext4dev  
 lrwxrwxrwx root       root               21 ./sbin/fsck.minix -> fsck.minix.util-linux
 -rwxr-xr-x root       root            24496 ./sbin/fsck.minix.util-linux  
 -rwxr-xr-x root       root            24236 ./sbin/fsck.util-linux  
@@ -1571,21 +1584,21 @@ lrwxrwxrwx root       root               17 ./usr/bin/du -> ../../bin/busybox
 -rwxr-xr-x root       root              394 ./usr/bin/dump-netlink  
 -rwxr-xr-x root       root            56956 ./usr/bin/dumpkeys  
 lrwxrwxrwx root       root               17 ./usr/bin/dumpleases -> ../../bin/busybox
--rwxr-xr-x root       root             7880 ./usr/bin/e-notify-send  
+-rwxr-xr-x root       root             7872 ./usr/bin/e-notify-send  
 -rwxr--r-- root       root             4976 ./usr/bin/ecalc  
 lrwxrwxrwx root       root               11 ./usr/bin/edit -> run-mailcap
--rwxr-xr-x root       root           127840 ./usr/bin/edje_cc  
+-rwxr-xr-x root       root           127904 ./usr/bin/edje_cc  
 -rwxr-xr-x root       root            16100 ./usr/bin/edje_decc  
--rwxr-xr-x root       root            13296 ./usr/bin/edje_external_inspector  
+-rwxr-xr-x root       root            13292 ./usr/bin/edje_external_inspector  
 -rwxr-xr-x root       root            35340 ./usr/bin/edje_inspector  
--rwxr-xr-x root       root            16188 ./usr/bin/edje_player  
+-rwxr-xr-x root       root            16104 ./usr/bin/edje_player  
 -rwxr-xr-x root       root             1177 ./usr/bin/edje_recc  
 -rwxr-xr-x root       root             6560 ./usr/bin/edje_watch  
 -rwxr-xr-x root       root            18788 ./usr/bin/eject  
 -rwxr-xr-x root       root           113724 ./usr/bin/embryo_cc  
 -rwxr-xr-x root       root            52876 ./usr/bin/enca  
 lrwxrwxrwx root       root                4 ./usr/bin/enconv -> enca
--rwxr-xr-x root       root          1001700 ./usr/bin/enlightenment  
+-rwxr-xr-x root       root          1010484 ./usr/bin/enlightenment  
 -rwxr-xr-x root       root             7184 ./usr/bin/enlightenment_filemanager  
 -rwxr-xr-x root       root             7716 ./usr/bin/enlightenment_imc  
 -rwxr-xr-x root       root            10620 ./usr/bin/enlightenment_open  
@@ -2058,7 +2071,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules/tests
 -rwxr-xr-x root       root             7640 ./usr/lib/e2initrd_helper  
 drwxr-xr-x root       root             4096 ./usr/lib/ecore  
 drwxr-xr-x root       root             4096 ./usr/lib/ecore/immodules  
--rwxr-xr-x root       root            21360 ./usr/lib/ecore/immodules/xim.so  
+-rwxr-xr-x root       root            21120 ./usr/lib/ecore/immodules/xim.so  
 drwxr-xr-x root       root             4096 ./usr/lib/edje  
 drwxr-xr-x root       root             4096 ./usr/lib/edje/modules  
 drwxr-xr-x root       root             4096 ./usr/lib/edje/modules/elm  
@@ -2077,16 +2090,16 @@ drwxr-xr-x root       root             4096 ./usr/lib/elementary
 drwxr-xr-x root       root             4096 ./usr/lib/elementary/modules  
 drwxr-xr-x root       root             4096 ./usr/lib/elementary/modules/datetime_input_ctxpopup  
 drwxr-xr-x root       root             4096 ./usr/lib/elementary/modules/datetime_input_ctxpopup/linux-gnueabi-arm-1.7.0  
--rwxr-xr-x root       root            10760 ./usr/lib/elementary/modules/datetime_input_ctxpopup/linux-gnueabi-arm-1.7.0/module.so  
+-rwxr-xr-x root       root            11208 ./usr/lib/elementary/modules/datetime_input_ctxpopup/linux-gnueabi-arm-1.7.0/module.so  
 drwxr-xr-x root       root             4096 ./usr/lib/emotion  
--rwxr-xr-x root       root            23192 ./usr/lib/emotion/em_generic.so  
--rwxr-xr-x root       root            57196 ./usr/lib/emotion/gstreamer.so  
+-rwxr-xr-x root       root            23932 ./usr/lib/emotion/em_generic.so  
+-rwxr-xr-x root       root            57200 ./usr/lib/emotion/gstreamer.so  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/access  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/access/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            10744 ./usr/lib/enlightenment/modules/access/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              423 ./usr/lib/enlightenment/modules/access/module.desktop  
+-rw-r--r-- root       root              520 ./usr/lib/enlightenment/modules/access/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/backlight  
 -rw-r--r-- root       root             8910 ./usr/lib/enlightenment/modules/backlight/e-module-backlight.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/backlight/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2116,12 +2129,12 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/cloc
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/comp  
 -rw-r--r-- root       root            13048 ./usr/lib/enlightenment/modules/comp/e-module-comp.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/comp/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            82452 ./usr/lib/enlightenment/modules/comp/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              553 ./usr/lib/enlightenment/modules/comp/module.desktop  
+-rwxr-xr-x root       root            85532 ./usr/lib/enlightenment/modules/comp/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              575 ./usr/lib/enlightenment/modules/comp/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf  
 -rw-r--r-- root       root            16107 ./usr/lib/enlightenment/modules/conf/e-module-conf.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            24824 ./usr/lib/enlightenment/modules/conf/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            23624 ./usr/lib/enlightenment/modules/conf/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root             1001 ./usr/lib/enlightenment/modules/conf/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_applications  
 -rw-r--r-- root       root            17660 ./usr/lib/enlightenment/modules/conf_applications/e-module-conf_applications.edj  
@@ -2136,12 +2149,12 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_display  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_display/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            44008 ./usr/lib/enlightenment/modules/conf_display/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              693 ./usr/lib/enlightenment/modules/conf_display/module.desktop  
+-rw-r--r-- root       root              719 ./usr/lib/enlightenment/modules/conf_display/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_edgebindings  
 -rw-r--r-- root       root            14887 ./usr/lib/enlightenment/modules/conf_edgebindings/e-module-conf_edgebindings.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_edgebindings/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            25832 ./usr/lib/enlightenment/modules/conf_edgebindings/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              953 ./usr/lib/enlightenment/modules/conf_edgebindings/module.desktop  
+-rwxr-xr-x root       root            36796 ./usr/lib/enlightenment/modules/conf_edgebindings/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              950 ./usr/lib/enlightenment/modules/conf_edgebindings/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_interaction  
 -rw-r--r-- root       root            14450 ./usr/lib/enlightenment/modules/conf_interaction/e-module-conf_interaction.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_interaction/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2153,7 +2166,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf
 -rw-r--r-- root       root              949 ./usr/lib/enlightenment/modules/conf_intl/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_keybindings  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_keybindings/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            50080 ./usr/lib/enlightenment/modules/conf_keybindings/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            48428 ./usr/lib/enlightenment/modules/conf_keybindings/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root              737 ./usr/lib/enlightenment/modules/conf_keybindings/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_menus  
 -rw-r--r-- root       root            17764 ./usr/lib/enlightenment/modules/conf_menus/e-module-conf_menus.edj  
@@ -2174,7 +2187,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf
 -rw-r--r-- root       root           192930 ./usr/lib/enlightenment/modules/conf_randr/e-module-conf_randr.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_randr/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            37128 ./usr/lib/enlightenment/modules/conf_randr/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1027 ./usr/lib/enlightenment/modules/conf_randr/module.desktop  
+-rw-r--r-- root       root             1078 ./usr/lib/enlightenment/modules/conf_randr/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_shelves  
 -rw-r--r-- root       root            15421 ./usr/lib/enlightenment/modules/conf_shelves/e-module-conf_shelves.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_shelves/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2192,12 +2205,12 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf
 -rw-r--r-- root       root            13038 ./usr/lib/enlightenment/modules/conf_window_manipulation/e-module-conf_winmanip.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_window_manipulation/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            27108 ./usr/lib/enlightenment/modules/conf_window_manipulation/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1481 ./usr/lib/enlightenment/modules/conf_window_manipulation/module.desktop  
+-rw-r--r-- root       root             1469 ./usr/lib/enlightenment/modules/conf_window_manipulation/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_window_remembers  
 -rw-r--r-- root       root            13163 ./usr/lib/enlightenment/modules/conf_window_remembers/e-module-conf_window_remembers.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/conf_window_remembers/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            12604 ./usr/lib/enlightenment/modules/conf_window_remembers/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              862 ./usr/lib/enlightenment/modules/conf_window_remembers/module.desktop  
+-rw-r--r-- root       root              863 ./usr/lib/enlightenment/modules/conf_window_remembers/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/connman  
 -rw-r--r-- root       root            19913 ./usr/lib/enlightenment/modules/connman/e-module-connman.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/connman/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2224,28 +2237,28 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ever
 -rw-r--r-- root       root            24666 ./usr/lib/enlightenment/modules/everything/e-module-everything-start.edj  
 -rw-r--r-- root       root            17660 ./usr/lib/enlightenment/modules/everything/e-module-everything.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/everything/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root           155532 ./usr/lib/enlightenment/modules/everything/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root           155692 ./usr/lib/enlightenment/modules/everything/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root             1292 ./usr/lib/enlightenment/modules/everything/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/fileman  
 -rw-r--r-- root       root            15937 ./usr/lib/enlightenment/modules/fileman/e-module-fileman.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/fileman/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            86748 ./usr/lib/enlightenment/modules/fileman/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            86160 ./usr/lib/enlightenment/modules/fileman/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root             1509 ./usr/lib/enlightenment/modules/fileman/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/fileman_opinfo  
 -rw-r--r-- root       root           100396 ./usr/lib/enlightenment/modules/fileman_opinfo/e-module-fileman_opinfo.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/fileman_opinfo/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            12996 ./usr/lib/enlightenment/modules/fileman_opinfo/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              948 ./usr/lib/enlightenment/modules/fileman_opinfo/module.desktop  
+-rw-r--r-- root       root              955 ./usr/lib/enlightenment/modules/fileman_opinfo/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/gadman  
 -rw-r--r-- root       root            22903 ./usr/lib/enlightenment/modules/gadman/e-module-gadman.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/gadman/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            40064 ./usr/lib/enlightenment/modules/gadman/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            40068 ./usr/lib/enlightenment/modules/gadman/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root              872 ./usr/lib/enlightenment/modules/gadman/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ibar  
 -rw-r--r-- root       root            13065 ./usr/lib/enlightenment/modules/ibar/e-module-ibar.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ibar/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            32800 ./usr/lib/enlightenment/modules/ibar/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              828 ./usr/lib/enlightenment/modules/ibar/module.desktop  
+-rw-r--r-- root       root              819 ./usr/lib/enlightenment/modules/ibar/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ibox  
 -rw-r--r-- root       root            13065 ./usr/lib/enlightenment/modules/ibox/e-module-ibox.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ibox/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2328,8 +2341,8 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/illu
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/mixer  
 -rw-r--r-- root       root            16865 ./usr/lib/enlightenment/modules/mixer/e-module-mixer.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/mixer/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            86304 ./usr/lib/enlightenment/modules/mixer/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              855 ./usr/lib/enlightenment/modules/mixer/module.desktop  
+-rwxr-xr-x root       root            86352 ./usr/lib/enlightenment/modules/mixer/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              858 ./usr/lib/enlightenment/modules/mixer/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/msgbus  
 -rw-r--r-- root       root            23422 ./usr/lib/enlightenment/modules/msgbus/e-module-msgbus.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/msgbus/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2339,7 +2352,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/noti
 -rw-r--r-- root       root            25932 ./usr/lib/enlightenment/modules/notification/e-module-notification.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/notification/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            37408 ./usr/lib/enlightenment/modules/notification/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1255 ./usr/lib/enlightenment/modules/notification/module.desktop  
+-rw-r--r-- root       root             1262 ./usr/lib/enlightenment/modules/notification/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ofono  
 -rw-r--r-- root       root            19913 ./usr/lib/enlightenment/modules/ofono/e-module-ofono.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ofono/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2348,12 +2361,17 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/ofon
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/pager  
 -rw-r--r-- root       root            12522 ./usr/lib/enlightenment/modules/pager/e-module-pager.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/pager/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            52484 ./usr/lib/enlightenment/modules/pager/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            50288 ./usr/lib/enlightenment/modules/pager/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root             1344 ./usr/lib/enlightenment/modules/pager/module.desktop  
+drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/quickaccess  
+-rw-r--r-- root       root            12056 ./usr/lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj  
+drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/quickaccess/linux-gnueabi-arm-ver-pre-svn-08  
+-rwxr-xr-x root       root            38208 ./usr/lib/enlightenment/modules/quickaccess/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              274 ./usr/lib/enlightenment/modules/quickaccess/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/shot  
 -rw-r--r-- root       root             9475 ./usr/lib/enlightenment/modules/shot/e-module-shot.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/shot/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            27564 ./usr/lib/enlightenment/modules/shot/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            27572 ./usr/lib/enlightenment/modules/shot/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root              500 ./usr/lib/enlightenment/modules/shot/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/shr-e-gadgets  
 -rw-r--r-- root       root            10597 ./usr/lib/enlightenment/modules/shr-e-gadgets/e-module-shr-e-gadgets.edj  
@@ -2364,22 +2382,22 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/star
 -rw-r--r-- root       root            24666 ./usr/lib/enlightenment/modules/start/e-module-start.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/start/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root             8076 ./usr/lib/enlightenment/modules/start/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1078 ./usr/lib/enlightenment/modules/start/module.desktop  
+-rw-r--r-- root       root             1068 ./usr/lib/enlightenment/modules/start/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/syscon  
 -rw-r--r-- root       root            39424 ./usr/lib/enlightenment/modules/syscon/e-module-syscon.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/syscon/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            27628 ./usr/lib/enlightenment/modules/syscon/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rwxr-xr-x root       root            27632 ./usr/lib/enlightenment/modules/syscon/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rw-r--r-- root       root             1566 ./usr/lib/enlightenment/modules/syscon/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/systray  
 -rw-r--r-- root       root            13065 ./usr/lib/enlightenment/modules/systray/e-module-systray.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/systray/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            19204 ./usr/lib/enlightenment/modules/systray/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1408 ./usr/lib/enlightenment/modules/systray/module.desktop  
+-rw-r--r-- root       root             1401 ./usr/lib/enlightenment/modules/systray/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/tasks  
 -rw-r--r-- root       root            12522 ./usr/lib/enlightenment/modules/tasks/e-module-tasks.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/tasks/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            19292 ./usr/lib/enlightenment/modules/tasks/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              350 ./usr/lib/enlightenment/modules/tasks/module.desktop  
+-rwxr-xr-x root       root            19440 ./usr/lib/enlightenment/modules/tasks/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              353 ./usr/lib/enlightenment/modules/tasks/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/temperature  
 -rw-r--r-- root       root            16980 ./usr/lib/enlightenment/modules/temperature/e-module-temperature.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/temperature/linux-gnueabi-arm-ver-pre-svn-08  
@@ -2394,17 +2412,17 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/tili
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/winlist  
 -rw-r--r-- root       root            12858 ./usr/lib/enlightenment/modules/winlist/e-module-winlist.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/winlist/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            37140 ./usr/lib/enlightenment/modules/winlist/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root             1457 ./usr/lib/enlightenment/modules/winlist/module.desktop  
+-rwxr-xr-x root       root            37580 ./usr/lib/enlightenment/modules/winlist/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root             1419 ./usr/lib/enlightenment/modules/winlist/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wizard  
 -rw-r--r-- root       root              708 ./usr/lib/enlightenment/modules/wizard/def-ibar.txt  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wizard/desktop  
--rw-r--r-- root       root              317 ./usr/lib/enlightenment/modules/wizard/desktop/home.desktop  
--rw-r--r-- root       root              255 ./usr/lib/enlightenment/modules/wizard/desktop/root.desktop  
--rw-r--r-- root       root              231 ./usr/lib/enlightenment/modules/wizard/desktop/tmp.desktop  
+-rw-r--r-- root       root              393 ./usr/lib/enlightenment/modules/wizard/desktop/home.desktop  
+-rw-r--r-- root       root              293 ./usr/lib/enlightenment/modules/wizard/desktop/root.desktop  
+-rw-r--r-- root       root              288 ./usr/lib/enlightenment/modules/wizard/desktop/tmp.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wizard/extra_desktops  
--rw-r--r-- root       root             1985 ./usr/lib/enlightenment/modules/wizard/extra_desktops/mplayer.desktop  
--rw-r--r-- root       root              196 ./usr/lib/enlightenment/modules/wizard/extra_desktops/xterm.desktop  
+-rw-r--r-- root       root             2105 ./usr/lib/enlightenment/modules/wizard/extra_desktops/mplayer.desktop  
+-rw-r--r-- root       root              282 ./usr/lib/enlightenment/modules/wizard/extra_desktops/xterm.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08  
 -rwxr-xr-x root       root            12424 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/module.so  
 -rwxr-xr-x root       root             5572 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_000.so  
@@ -2423,7 +2441,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wiza
 -rwxr-xr-x root       root             4840 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_120.so  
 -rwxr-xr-x root       root             5456 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_130.so  
 -rwxr-xr-x root       root             4840 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_140.so  
--rwxr-xr-x root       root            13216 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_150.so  
+-rwxr-xr-x root       root            13212 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_150.so  
 -rwxr-xr-x root       root             6500 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_160.so  
 -rwxr-xr-x root       root             6968 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_170.so  
 -rwxr-xr-x root       root             5112 ./usr/lib/enlightenment/modules/wizard/linux-gnueabi-arm-ver-pre-svn-08/page_200.so  
@@ -2431,15 +2449,15 @@ drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/wiza
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/xkbswitch  
 -rw-r--r-- root       root             9213 ./usr/lib/enlightenment/modules/xkbswitch/e-module-xkbswitch.edj  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/modules/xkbswitch/linux-gnueabi-arm-ver-pre-svn-08  
--rwxr-xr-x root       root            27636 ./usr/lib/enlightenment/modules/xkbswitch/linux-gnueabi-arm-ver-pre-svn-08/module.so  
--rw-r--r-- root       root              303 ./usr/lib/enlightenment/modules/xkbswitch/module.desktop  
+-rwxr-xr-x root       root            27644 ./usr/lib/enlightenment/modules/xkbswitch/linux-gnueabi-arm-ver-pre-svn-08/module.so  
+-rw-r--r-- root       root              385 ./usr/lib/enlightenment/modules/xkbswitch/module.desktop  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/preload  
 -rwxr-xr-x root       root            14720 ./usr/lib/enlightenment/preload/e_precache.so  
 drwxr-xr-x root       root             4096 ./usr/lib/enlightenment/utils  
 -rwxr-xr-x root       root             9136 ./usr/lib/enlightenment/utils/enlightenment_alert  
 -r-sr-xr-x root       root             6604 ./usr/lib/enlightenment/utils/enlightenment_backlight  
 -rwxr-xr-x root       root            46072 ./usr/lib/enlightenment/utils/enlightenment_fm  
--rwxr-xr-x root       root            20296 ./usr/lib/enlightenment/utils/enlightenment_fm_op  
+-rwxr-xr-x root       root            19884 ./usr/lib/enlightenment/utils/enlightenment_fm_op  
 -rwxr-xr-x root       root            13012 ./usr/lib/enlightenment/utils/enlightenment_init  
 -r-sr-xr-x root       root             7824 ./usr/lib/enlightenment/utils/enlightenment_sys  
 -rwxr-xr-x root       root            15784 ./usr/lib/enlightenment/utils/enlightenment_thumb  
@@ -2468,7 +2486,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/evas/modules/loaders/gif/l
 -rwxr-xr-x root       root            11348 ./usr/lib/evas/modules/loaders/gif/linux-gnueabi-arm-1.7.0/module.so  
 drwxr-xr-x root       root             4096 ./usr/lib/evas/modules/loaders/jpeg  
 drwxr-xr-x root       root             4096 ./usr/lib/evas/modules/loaders/jpeg/linux-gnueabi-arm-1.7.0  
--rwxr-xr-x root       root            12508 ./usr/lib/evas/modules/loaders/jpeg/linux-gnueabi-arm-1.7.0/module.so  
+-rwxr-xr-x root       root            12856 ./usr/lib/evas/modules/loaders/jpeg/linux-gnueabi-arm-1.7.0/module.so  
 drwxr-xr-x root       root             4096 ./usr/lib/evas/modules/loaders/png  
 drwxr-xr-x root       root             4096 ./usr/lib/evas/modules/loaders/png/linux-gnueabi-arm-1.7.0  
 -rwxr-xr-x root       root             8552 ./usr/lib/evas/modules/loaders/png/linux-gnueabi-arm-1.7.0/module.so  
@@ -2635,7 +2653,7 @@ lrwxrwxrwx root       root               17 ./usr/lib/libecore.so.1 -> libecore.
 lrwxrwxrwx root       root               21 ./usr/lib/libecore_con.so.1 -> libecore_con.so.1.7.0
 -rwxr-xr-x root       root           156532 ./usr/lib/libecore_con.so.1.7.0  
 lrwxrwxrwx root       root               22 ./usr/lib/libecore_evas.so.1 -> libecore_evas.so.1.7.0
--rwxr-xr-x root       root           131040 ./usr/lib/libecore_evas.so.1.7.0  
+-rwxr-xr-x root       root           131328 ./usr/lib/libecore_evas.so.1.7.0  
 lrwxrwxrwx root       root               20 ./usr/lib/libecore_fb.so.1 -> libecore_fb.so.1.7.0
 -rwxr-xr-x root       root            27492 ./usr/lib/libecore_fb.so.1.7.0  
 lrwxrwxrwx root       root               22 ./usr/lib/libecore_file.so.1 -> libecore_file.so.1.7.0
@@ -2649,13 +2667,13 @@ lrwxrwxrwx root       root               23 ./usr/lib/libecore_input.so.1 -> lib
 lrwxrwxrwx root       root               28 ./usr/lib/libecore_input_evas.so.1 -> libecore_input_evas.so.1.7.0
 -rwxr-xr-x root       root            10632 ./usr/lib/libecore_input_evas.so.1.7.0  
 lrwxrwxrwx root       root               21 ./usr/lib/libecore_ipc.so.1 -> libecore_ipc.so.1.7.0
--rwxr-xr-x root       root            20152 ./usr/lib/libecore_ipc.so.1.7.0  
+-rwxr-xr-x root       root            20116 ./usr/lib/libecore_ipc.so.1.7.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libecore_x.so.1 -> libecore_x.so.1.7.0
--rwxr-xr-x root       root           211904 ./usr/lib/libecore_x.so.1.7.0  
+-rwxr-xr-x root       root           211940 ./usr/lib/libecore_x.so.1.7.0  
 lrwxrwxrwx root       root               17 ./usr/lib/libedbus.so.1 -> libedbus.so.1.7.0
--rwxr-xr-x root       root            40836 ./usr/lib/libedbus.so.1.7.0  
+-rwxr-xr-x root       root            43592 ./usr/lib/libedbus.so.1.7.0  
 lrwxrwxrwx root       root               16 ./usr/lib/libedje.so.1 -> libedje.so.1.7.0
--rwxr-xr-x root       root           561524 ./usr/lib/libedje.so.1.7.0  
+-rwxr-xr-x root       root           562680 ./usr/lib/libedje.so.1.7.0  
 lrwxrwxrwx root       root               15 ./usr/lib/libeet.so.1 -> libeet.so.1.7.0
 -rwxr-xr-x root       root           105952 ./usr/lib/libeet.so.1.7.0  
 lrwxrwxrwx root       root               16 ./usr/lib/libeeze.so.1 -> libeeze.so.1.7.0
@@ -2669,11 +2687,11 @@ lrwxrwxrwx root       root               24 ./usr/lib/libefreet_trash.so.1 -> li
 lrwxrwxrwx root       root               16 ./usr/lib/libehal.so.1 -> libehal.so.1.7.0
 -rwxr-xr-x root       root            12796 ./usr/lib/libehal.so.1.7.0  
 lrwxrwxrwx root       root               16 ./usr/lib/libeina.so.1 -> libeina.so.1.7.0
--rwxr-xr-x root       root           330200 ./usr/lib/libeina.so.1.7.0  
+-rwxr-xr-x root       root           330192 ./usr/lib/libeina.so.1.7.0  
 lrwxrwxrwx root       root               15 ./usr/lib/libeio.so.1 -> libeio.so.1.7.0
--rwxr-xr-x root       root            58536 ./usr/lib/libeio.so.1.7.0  
+-rwxr-xr-x root       root            60212 ./usr/lib/libeio.so.1.7.0  
 lrwxrwxrwx root       root               22 ./usr/lib/libelementary.so.1 -> libelementary.so.1.7.0
--rwxr-xr-x root       root          1244084 ./usr/lib/libelementary.so.1.7.0  
+-rwxr-xr-x root       root          1265344 ./usr/lib/libelementary.so.1.7.0  
 lrwxrwxrwx root       root               18 ./usr/lib/libembryo.so.1 -> libembryo.so.1.7.0
 -rwxr-xr-x root       root            33104 ./usr/lib/libembryo.so.1.7.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libemotion.so.1 -> libemotion.so.1.7.0
@@ -2693,7 +2711,7 @@ lrwxrwxrwx root       root               25 ./usr/lib/libethumb_client.so.1 -> l
 lrwxrwxrwx root       root               17 ./usr/lib/libeukit.so.1 -> libeukit.so.1.7.0
 -rwxr-xr-x root       root            18516 ./usr/lib/libeukit.so.1.7.0  
 lrwxrwxrwx root       root               16 ./usr/lib/libevas.so.1 -> libevas.so.1.7.0
--rwxr-xr-x root       root           854664 ./usr/lib/libevas.so.1.7.0  
+-rwxr-xr-x root       root           855120 ./usr/lib/libevas.so.1.7.0  
 lrwxrwxrwx root       root               19 ./usr/lib/libewebkit.so.0 -> libewebkit.so.0.1.0
 -rwxr-xr-x root       root           700336 ./usr/lib/libewebkit.so.0.1.0  
 lrwxrwxrwx root       root               17 ./usr/lib/libexif.so.12 -> libexif.so.12.3.2
@@ -2743,7 +2761,7 @@ lrwxrwxrwx root       root               15 ./usr/lib/libgee.so.2 -> libgee.so.2
 lrwxrwxrwx root       root               15 ./usr/lib/libgif.so.4 -> libgif.so.4.1.6
 -rwxr-xr-x root       root            28068 ./usr/lib/libgif.so.4.1.6  
 lrwxrwxrwx root       root               22 ./usr/lib/libgio-2.0.so.0 -> libgio-2.0.so.0.3200.4
--rwxr-xr-x root       root           860656 ./usr/lib/libgio-2.0.so.0.3200.4  
+-rwxr-xr-x root       root          1133108 ./usr/lib/libgio-2.0.so.0.3200.4  
 lrwxrwxrwx root       root               16 ./usr/lib/libgisi.so.0 -> libgisi.so.0.0.0
 -rwxr-xr-x root       root            28136 ./usr/lib/libgisi.so.0.0.0  
 lrwxrwxrwx root       root               20 ./usr/lib/libgisicomm.so.0 -> libgisicomm.so.0.0.0
@@ -2751,15 +2769,15 @@ lrwxrwxrwx root       root               20 ./usr/lib/libgisicomm.so.0 -> libgis
 lrwxrwxrwx root       root               21 ./usr/lib/libglade-2.0.so.0 -> libglade-2.0.so.0.0.7
 -rwxr-xr-x root       root            86036 ./usr/lib/libglade-2.0.so.0.0.7  
 lrwxrwxrwx root       root               23 ./usr/lib/libglib-2.0.so.0 -> libglib-2.0.so.0.3200.4
--rwxr-xr-x root       root           905284 ./usr/lib/libglib-2.0.so.0.3200.4  
+-rwxr-xr-x root       root          1052764 ./usr/lib/libglib-2.0.so.0.3200.4  
 lrwxrwxrwx root       root               26 ./usr/lib/libgmodule-2.0.so.0 -> libgmodule-2.0.so.0.3200.4
--rwxr-xr-x root       root             9152 ./usr/lib/libgmodule-2.0.so.0.3200.4  
+-rwxr-xr-x root       root            10252 ./usr/lib/libgmodule-2.0.so.0.3200.4  
 lrwxrwxrwx root       root               25 ./usr/lib/libgnome-keyring.so.0 -> libgnome-keyring.so.0.1.1
 -rwxr-xr-x root       root            97668 ./usr/lib/libgnome-keyring.so.0.1.1  
 lrwxrwxrwx root       root               20 ./usr/lib/libgnutls.so.26 -> libgnutls.so.26.22.4
 -rwxr-xr-x root       root           672104 ./usr/lib/libgnutls.so.26.22.4  
 lrwxrwxrwx root       root               26 ./usr/lib/libgobject-2.0.so.0 -> libgobject-2.0.so.0.3200.4
--rwxr-xr-x root       root           200912 ./usr/lib/libgobject-2.0.so.0.3200.4  
+-rwxr-xr-x root       root           275364 ./usr/lib/libgobject-2.0.so.0.3200.4  
 lrwxrwxrwx root       root               21 ./usr/lib/libgpg-error.so.0 -> libgpg-error.so.0.8.0
 -rwxr-xr-x root       root            12284 ./usr/lib/libgpg-error.so.0.8.0  
 lrwxrwxrwx root       root               16 ./usr/lib/libgps.so.20 -> libgps.so.20.0.0
@@ -2803,7 +2821,7 @@ lrwxrwxrwx root       root               24 ./usr/lib/libgsttag-0.10.so.0 -> lib
 lrwxrwxrwx root       root               26 ./usr/lib/libgstvideo-0.10.so.0 -> libgstvideo-0.10.so.0.25.0
 -rwxr-xr-x root       root            73880 ./usr/lib/libgstvideo-0.10.so.0.25.0  
 lrwxrwxrwx root       root               26 ./usr/lib/libgthread-2.0.so.0 -> libgthread-2.0.so.0.3200.4
--rwxr-xr-x root       root             3616 ./usr/lib/libgthread-2.0.so.0.3200.4  
+-rwxr-xr-x root       root             3840 ./usr/lib/libgthread-2.0.so.0.3200.4  
 lrwxrwxrwx root       root               26 ./usr/lib/libgtk-x11-2.0.so.0 -> libgtk-x11-2.0.so.0.2400.8
 -rwxr-xr-x root       root          3764572 ./usr/lib/libgtk-x11-2.0.so.0.2400.8  
 lrwxrwxrwx root       root               17 ./usr/lib/libhistory.so.6 -> libhistory.so.6.2
@@ -5770,34 +5788,34 @@ drwxr-xr-x root       root             4096 ./usr/share/edje/include
 drwxr-xr-x root       root             4096 ./usr/share/elementary  
 drwxr-xr-x root       root             4096 ./usr/share/elementary/config  
 drwxr-xr-x root       root             4096 ./usr/share/elementary/config/default  
--rw-r--r-- root       root             4017 ./usr/share/elementary/config/default/base.cfg  
+-rw-r--r-- root       root             4309 ./usr/share/elementary/config/default/base.cfg  
 -rw-r--r-- root       root             9183 ./usr/share/elementary/config/default/icon.png  
--rw-r--r-- root       root             1087 ./usr/share/elementary/config/default/profile.desktop  
+-rw-r--r-- root       root             1091 ./usr/share/elementary/config/default/profile.desktop  
 drwxr-xr-x root       root             4096 ./usr/share/elementary/config/mobile  
--rw-r--r-- root       root             4019 ./usr/share/elementary/config/mobile/base.cfg  
+-rw-r--r-- root       root             4350 ./usr/share/elementary/config/mobile/base.cfg  
 -rw-r--r-- root       root             7555 ./usr/share/elementary/config/mobile/icon.png  
--rw-r--r-- root       root              616 ./usr/share/elementary/config/mobile/profile.desktop  
--rw-r--r-- root       root               52 ./usr/share/elementary/config/profile.cfg  
+-rw-r--r-- root       root              618 ./usr/share/elementary/config/mobile/profile.desktop  
+-rw-r--r-- root       root               51 ./usr/share/elementary/config/profile.cfg  
 drwxr-xr-x root       root             4096 ./usr/share/elementary/config/standard  
--rw-r--r-- root       root             3987 ./usr/share/elementary/config/standard/base.cfg  
+-rw-r--r-- root       root             4323 ./usr/share/elementary/config/standard/base.cfg  
 -rw-r--r-- root       root            12068 ./usr/share/elementary/config/standard/icon.png  
--rw-r--r-- root       root             1955 ./usr/share/elementary/config/standard/profile.desktop  
+-rw-r--r-- root       root             1952 ./usr/share/elementary/config/standard/profile.desktop  
 drwxr-xr-x root       root             4096 ./usr/share/elementary/themes  
 -rw-r--r-- root       root            78981 ./usr/share/elementary/themes/default-desktop.edj  
--rw-r--r-- root       root          1246994 ./usr/share/elementary/themes/default.edj  
+-rw-r--r-- root       root          1247758 ./usr/share/elementary/themes/default.edj  
 -rw-r--r-- root       root           207015 ./usr/share/elementary/themes/gry.edj  
 drwxr-xr-x root       root             4096 ./usr/share/embryo  
 drwxr-xr-x root       root             4096 ./usr/share/embryo/include  
 -rw-r--r-- root       root            10370 ./usr/share/embryo/include/default.inc  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment  
--rw-r--r-- root       root             1628 ./usr/share/enlightenment/AUTHORS  
+-rw-r--r-- root       root             1661 ./usr/share/enlightenment/AUTHORS  
 -rw-r--r-- root       root             1359 ./usr/share/enlightenment/COPYING  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/config  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/config/default  
 -rw-r--r-- root       root            13053 ./usr/share/enlightenment/data/config/default/e.cfg  
 -rw-r--r-- root       root             9183 ./usr/share/enlightenment/data/config/default/icon.png  
--rw-r--r-- root       root             1272 ./usr/share/enlightenment/data/config/default/profile.desktop  
+-rw-r--r-- root       root             1273 ./usr/share/enlightenment/data/config/default/profile.desktop  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/config/illume2-shr  
 -rw-r--r-- root       root            16414 ./usr/share/enlightenment/data/config/illume2-shr/e.cfg  
 -rw-r--r-- root       root             2474 ./usr/share/enlightenment/data/config/illume2-shr/e_remember_restart.cfg  
@@ -5815,10 +5833,10 @@ drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/confi
 -rw-r--r-- root       root               50 ./usr/share/enlightenment/data/config/profile.cfg  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/favorites  
 -rw-r--r-- root       root               54 ./usr/share/enlightenment/data/favorites/.order  
--rw-r--r-- root       root              283 ./usr/share/enlightenment/data/favorites/desktop.desktop  
--rw-r--r-- root       root              317 ./usr/share/enlightenment/data/favorites/home.desktop  
--rw-r--r-- root       root              255 ./usr/share/enlightenment/data/favorites/root.desktop  
--rw-r--r-- root       root              231 ./usr/share/enlightenment/data/favorites/tmp.desktop  
+-rw-r--r-- root       root              356 ./usr/share/enlightenment/data/favorites/desktop.desktop  
+-rw-r--r-- root       root              396 ./usr/share/enlightenment/data/favorites/home.desktop  
+-rw-r--r-- root       root              295 ./usr/share/enlightenment/data/favorites/root.desktop  
+-rw-r--r-- root       root              288 ./usr/share/enlightenment/data/favorites/tmp.desktop  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/flags  
 -rw-r--r-- root       root             2562 ./usr/share/enlightenment/data/flags/ad_flag.png  
 -rw-r--r-- root       root             2840 ./usr/share/enlightenment/data/flags/af_flag.png  
@@ -5939,7 +5957,7 @@ drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/input
 -rw-r--r-- root       root              280 ./usr/share/enlightenment/data/input_methods/scim.imc  
 -rw-r--r-- root       root              273 ./usr/share/enlightenment/data/input_methods/uim.imc  
 drwxr-xr-x root       root             4096 ./usr/share/enlightenment/data/themes  
--rw-r--r-- root       root          2442496 ./usr/share/enlightenment/data/themes/default.edj  
+-rw-r--r-- root       root          2442924 ./usr/share/enlightenment/data/themes/default.edj  
 -rw-r--r-- root       root           242482 ./usr/share/enlightenment/data/themes/gry.edj  
 drwxr-xr-x root       root             4096 ./usr/share/eve  
 -rw-r--r-- root       root           213692 ./usr/share/eve/default.edj  
@@ -10954,7 +10972,7 @@ drwxr-xr-x root       root             4096 ./usr/share/vte
 drwxr-xr-x root       root             4096 ./usr/share/vte/termcap-0.0  
 -rw-r--r-- root       root             1584 ./usr/share/vte/termcap-0.0/xterm  
 drwxr-xr-x root       root             4096 ./usr/share/xsessions  
--rw-r--r-- root       root              886 ./usr/share/xsessions/enlightenment.desktop  
+-rw-r--r-- root       root              882 ./usr/share/xsessions/enlightenment.desktop  
 drwxr-xr-x root       root             4096 ./usr/share/zoneinfo  
 drwxr-xr-x root       root             4096 ./usr/share/zoneinfo/Africa  
 -rw-r--r-- root       root              156 ./usr/share/zoneinfo/Africa/Abidjan  
@@ -11646,6 +11664,8 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/switch_root  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/sync  
 -rw-r--r-- root       root               49 ./var/lib/opkg/alternatives/sysctl  
+-rw-r--r-- root       root               37 ./var/lib/opkg/alternatives/syslog-init  
+-rw-r--r-- root       root               56 ./var/lib/opkg/alternatives/syslog-startup-conf  
 -rw-r--r-- root       root               32 ./var/lib/opkg/alternatives/syslogd  
 -rw-r--r-- root       root               35 ./var/lib/opkg/alternatives/tail  
 -rw-r--r-- root       root               20 ./var/lib/opkg/alternatives/tar  
@@ -11721,6 +11741,12 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              704 ./var/lib/opkg/info/bluez4.control  
 -rw-r--r-- root       root              640 ./var/lib/opkg/info/bluez4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/bluez4.postinst  
+-rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
+-rw-r--r-- root       root             1699 ./var/lib/opkg/info/busybox-syslog.control  
+-rw-r--r-- root       root               73 ./var/lib/opkg/info/busybox-syslog.list  
+-rwxr-xr-x root       root              288 ./var/lib/opkg/info/busybox-syslog.postinst  
+-rwxr-xr-x root       root              176 ./var/lib/opkg/info/busybox-syslog.postrm  
+-rwxr-xr-x root       root              186 ./var/lib/opkg/info/busybox-syslog.prerm  
 -rw-r--r-- root       root             1699 ./var/lib/opkg/info/busybox-udhcpc.control  
 -rw-r--r-- root       root              103 ./var/lib/opkg/info/busybox-udhcpc.list  
 -rw-r--r-- root       root             1773 ./var/lib/opkg/info/busybox.control  
@@ -11785,55 +11811,55 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root               87 ./var/lib/opkg/info/e-wm-theme-default.list  
 -rw-r--r-- root       root              564 ./var/lib/opkg/info/e-wm-theme-illume-gry.control  
 -rw-r--r-- root       root               45 ./var/lib/opkg/info/e-wm-theme-illume-gry.list  
--rw-r--r-- root       root             1012 ./var/lib/opkg/info/e-wm-utils.control  
+-rw-r--r-- root       root              928 ./var/lib/opkg/info/e-wm-utils.control  
 -rw-r--r-- root       root              371 ./var/lib/opkg/info/e-wm-utils.list  
--rw-r--r-- root       root             2523 ./var/lib/opkg/info/e-wm.control  
--rw-r--r-- root       root            22216 ./var/lib/opkg/info/e-wm.list  
+-rw-r--r-- root       root             2355 ./var/lib/opkg/info/e-wm.control  
+-rw-r--r-- root       root            22549 ./var/lib/opkg/info/e-wm.list  
 -rwxr-xr-x root       root              110 ./var/lib/opkg/info/e-wm.postinst  
 -rwxr-xr-x root       root               81 ./var/lib/opkg/info/e-wm.postrm  
 -rw-r--r-- root       root              824 ./var/lib/opkg/info/e2fsprogs-e2fsck.control  
 -rw-r--r-- root       root               80 ./var/lib/opkg/info/e2fsprogs-e2fsck.list  
 -rw-r--r-- root       root              518 ./var/lib/opkg/info/ecalc.control  
 -rw-r--r-- root       root               87 ./var/lib/opkg/info/ecalc.list  
--rw-r--r-- root       root              725 ./var/lib/opkg/info/ecore-con.control  
+-rw-r--r-- root       root              696 ./var/lib/opkg/info/ecore-con.control  
 -rw-r--r-- root       root               58 ./var/lib/opkg/info/ecore-con.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-con.postinst  
--rw-r--r-- root       root             1458 ./var/lib/opkg/info/ecore-evas.control  
+-rw-r--r-- root       root             1387 ./var/lib/opkg/info/ecore-evas.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/ecore-evas.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-evas.postinst  
--rw-r--r-- root       root              667 ./var/lib/opkg/info/ecore-fb.control  
+-rw-r--r-- root       root              632 ./var/lib/opkg/info/ecore-fb.control  
 -rw-r--r-- root       root               56 ./var/lib/opkg/info/ecore-fb.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-fb.postinst  
--rw-r--r-- root       root              754 ./var/lib/opkg/info/ecore-file.control  
+-rw-r--r-- root       root              719 ./var/lib/opkg/info/ecore-file.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/ecore-file.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-file.postinst  
--rw-r--r-- root       root              908 ./var/lib/opkg/info/ecore-imf-evas.control  
+-rw-r--r-- root       root              861 ./var/lib/opkg/info/ecore-imf-evas.control  
 -rw-r--r-- root       root               68 ./var/lib/opkg/info/ecore-imf-evas.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-imf-evas.postinst  
--rw-r--r-- root       root              977 ./var/lib/opkg/info/ecore-imf.control  
+-rw-r--r-- root       root              936 ./var/lib/opkg/info/ecore-imf.control  
 -rw-r--r-- root       root              132 ./var/lib/opkg/info/ecore-imf.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-imf.postinst  
--rw-r--r-- root       root              877 ./var/lib/opkg/info/ecore-input.control  
+-rw-r--r-- root       root              836 ./var/lib/opkg/info/ecore-input.control  
 -rw-r--r-- root       root              134 ./var/lib/opkg/info/ecore-input.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-input.postinst  
--rw-r--r-- root       root              753 ./var/lib/opkg/info/ecore-ipc.control  
+-rw-r--r-- root       root              718 ./var/lib/opkg/info/ecore-ipc.control  
 -rw-r--r-- root       root               58 ./var/lib/opkg/info/ecore-ipc.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-ipc.postinst  
--rw-r--r-- root       root              949 ./var/lib/opkg/info/ecore-x.control  
+-rw-r--r-- root       root              914 ./var/lib/opkg/info/ecore-x.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/ecore-x.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore-x.postinst  
--rw-r--r-- root       root              541 ./var/lib/opkg/info/ecore.control  
+-rw-r--r-- root       root              518 ./var/lib/opkg/info/ecore.control  
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/ecore.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ecore.postinst  
--rw-r--r-- root       root              877 ./var/lib/opkg/info/edbus-enotify.control  
+-rw-r--r-- root       root              830 ./var/lib/opkg/info/edbus-enotify.control  
 -rw-r--r-- root       root               77 ./var/lib/opkg/info/edbus-enotify.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/edbus-enotify.postinst  
--rw-r--r-- root       root              751 ./var/lib/opkg/info/edje-utils.control  
+-rw-r--r-- root       root              686 ./var/lib/opkg/info/edje-utils.control  
 -rw-r--r-- root       root              295 ./var/lib/opkg/info/edje-utils.list  
--rw-r--r-- root       root             1581 ./var/lib/opkg/info/edje.control  
+-rw-r--r-- root       root             1474 ./var/lib/opkg/info/edje.control  
 -rw-r--r-- root       root              108 ./var/lib/opkg/info/edje.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/edje.postinst  
--rw-r--r-- root       root              832 ./var/lib/opkg/info/eeze.control  
+-rw-r--r-- root       root              791 ./var/lib/opkg/info/eeze.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/eeze.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/eeze.postinst  
 -rw-r--r-- root       root              350 ./var/lib/opkg/info/eglibc-binary-localedata-en-gb.control  
@@ -11850,62 +11876,62 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root               44 ./var/lib/opkg/info/eglibc-locale-en-gb.list  
 -rw-r--r-- root       root             1222 ./var/lib/opkg/info/eglibc-utils.control  
 -rw-r--r-- root       root              267 ./var/lib/opkg/info/eglibc-utils.list  
--rw-r--r-- root       root              496 ./var/lib/opkg/info/eina.control  
+-rw-r--r-- root       root              479 ./var/lib/opkg/info/eina.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/eina.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/eina.postinst  
 -rw-r--r-- root       root              484 ./var/lib/opkg/info/eject.control  
 -rw-r--r-- root       root               38 ./var/lib/opkg/info/eject.list  
 -rwxr-xr-x root       root               84 ./var/lib/opkg/info/eject.postinst  
 -rwxr-xr-x root       root               63 ./var/lib/opkg/info/eject.postrm  
--rw-r--r-- root       root              436 ./var/lib/opkg/info/elementary-configs.control  
+-rw-r--r-- root       root              419 ./var/lib/opkg/info/elementary-configs.control  
 -rw-r--r-- root       root              643 ./var/lib/opkg/info/elementary-configs.list  
 -rw-r--r-- root       root              570 ./var/lib/opkg/info/elementary-theme-gry.control  
 -rw-r--r-- root       root               37 ./var/lib/opkg/info/elementary-theme-gry.list  
--rw-r--r-- root       root              435 ./var/lib/opkg/info/elementary-themes.control  
+-rw-r--r-- root       root              418 ./var/lib/opkg/info/elementary-themes.control  
 -rw-r--r-- root       root              120 ./var/lib/opkg/info/elementary-themes.list  
--rw-r--r-- root       root             2041 ./var/lib/opkg/info/elementary.control  
+-rw-r--r-- root       root             1886 ./var/lib/opkg/info/elementary.control  
 -rw-r--r-- root       root              524 ./var/lib/opkg/info/elementary.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/elementary.postinst  
--rw-r--r-- root       root             2016 ./var/lib/opkg/info/elfe.control  
+-rw-r--r-- root       root             1860 ./var/lib/opkg/info/elfe.control  
 -rw-r--r-- root       root              364 ./var/lib/opkg/info/elfe.list  
--rw-r--r-- root       root              490 ./var/lib/opkg/info/embryo-tests.control  
+-rw-r--r-- root       root              467 ./var/lib/opkg/info/embryo-tests.control  
 -rw-r--r-- root       root              103 ./var/lib/opkg/info/embryo-tests.list  
--rw-r--r-- root       root              461 ./var/lib/opkg/info/embryo.control  
+-rw-r--r-- root       root              444 ./var/lib/opkg/info/embryo.control  
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/embryo.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/embryo.postinst  
 -rw-r--r-- root       root              554 ./var/lib/opkg/info/enca.control  
 -rw-r--r-- root       root              284 ./var/lib/opkg/info/enca.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/enca.postinst  
--rw-r--r-- root       root             1093 ./var/lib/opkg/info/epdf.control  
+-rw-r--r-- root       root             1069 ./var/lib/opkg/info/epdf.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/epdf.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/epdf.postinst  
--rw-r--r-- root       root             2020 ./var/lib/opkg/info/ethumb.control  
+-rw-r--r-- root       root             1889 ./var/lib/opkg/info/ethumb.control  
 -rw-r--r-- root       root              331 ./var/lib/opkg/info/ethumb.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/ethumb.postinst  
--rw-r--r-- root       root              743 ./var/lib/opkg/info/evas-engine-fb.control  
+-rw-r--r-- root       root              708 ./var/lib/opkg/info/evas-engine-fb.control  
 -rw-r--r-- root       root              159 ./var/lib/opkg/info/evas-engine-fb.list  
--rw-r--r-- root       root              873 ./var/lib/opkg/info/evas-engine-software-16-x11.control  
+-rw-r--r-- root       root              838 ./var/lib/opkg/info/evas-engine-software-16-x11.control  
 -rw-r--r-- root       root              198 ./var/lib/opkg/info/evas-engine-software-16-x11.list  
--rw-r--r-- root       root              761 ./var/lib/opkg/info/evas-engine-software-16.control  
+-rw-r--r-- root       root              726 ./var/lib/opkg/info/evas-engine-software-16.control  
 -rw-r--r-- root       root              186 ./var/lib/opkg/info/evas-engine-software-16.list  
--rw-r--r-- root       root              867 ./var/lib/opkg/info/evas-engine-software-x11.control  
+-rw-r--r-- root       root              832 ./var/lib/opkg/info/evas-engine-software-x11.control  
 -rw-r--r-- root       root              220 ./var/lib/opkg/info/evas-engine-software-x11.list  
--rw-r--r-- root       root              565 ./var/lib/opkg/info/evas-generic-loader-svg.control  
+-rw-r--r-- root       root              548 ./var/lib/opkg/info/evas-generic-loader-svg.control  
 -rw-r--r-- root       root               63 ./var/lib/opkg/info/evas-generic-loader-svg.list  
--rw-r--r-- root       root              765 ./var/lib/opkg/info/evas-loader-gif.control  
+-rw-r--r-- root       root              730 ./var/lib/opkg/info/evas-loader-gif.control  
 -rw-r--r-- root       root              231 ./var/lib/opkg/info/evas-loader-gif.list  
--rw-r--r-- root       root              747 ./var/lib/opkg/info/evas-loader-jpeg.control  
+-rw-r--r-- root       root              712 ./var/lib/opkg/info/evas-loader-jpeg.control  
 -rw-r--r-- root       root              165 ./var/lib/opkg/info/evas-loader-jpeg.list  
--rw-r--r-- root       root              769 ./var/lib/opkg/info/evas-loader-png.control  
+-rw-r--r-- root       root              734 ./var/lib/opkg/info/evas-loader-png.control  
 -rw-r--r-- root       root              162 ./var/lib/opkg/info/evas-loader-png.list  
--rw-r--r-- root       root              746 ./var/lib/opkg/info/evas-saver-jpeg.control  
+-rw-r--r-- root       root              711 ./var/lib/opkg/info/evas-saver-jpeg.control  
 -rw-r--r-- root       root              162 ./var/lib/opkg/info/evas-saver-jpeg.list  
--rw-r--r-- root       root              768 ./var/lib/opkg/info/evas-saver-png.control  
+-rw-r--r-- root       root              733 ./var/lib/opkg/info/evas-saver-png.control  
 -rw-r--r-- root       root              189 ./var/lib/opkg/info/evas-saver-png.list  
--rw-r--r-- root       root             1031 ./var/lib/opkg/info/evas.control  
+-rw-r--r-- root       root             1002 ./var/lib/opkg/info/evas.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/evas.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/evas.postinst  
--rw-r--r-- root       root              836 ./var/lib/opkg/info/eve.control  
+-rw-r--r-- root       root              776 ./var/lib/opkg/info/eve.control  
 -rw-r--r-- root       root              119 ./var/lib/opkg/info/eve.list  
 -rw-r--r-- root       root              471 ./var/lib/opkg/info/evtest.control  
 -rw-r--r-- root       root              102 ./var/lib/opkg/info/evtest.list  
@@ -12043,7 +12069,9 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rwxr-xr-x root       root              178 ./var/lib/opkg/info/gpsd-systemd.postinst  
 -rwxr-xr-x root       root               40 ./var/lib/opkg/info/gpsd-systemd.postrm  
 -rwxr-xr-x root       root               65 ./var/lib/opkg/info/gpsd-systemd.prerm  
--rw-r--r-- root       root              893 ./var/lib/opkg/info/gpsd.control  
+-rw-r--r-- root       root              718 ./var/lib/opkg/info/gpsd-udev.control  
+-rw-r--r-- root       root               55 ./var/lib/opkg/info/gpsd-udev.list  
+-rw-r--r-- root       root              912 ./var/lib/opkg/info/gpsd.control  
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/gpsd.list  
 -rwxr-xr-x root       root              107 ./var/lib/opkg/info/gpsd.postinst  
 -rwxr-xr-x root       root               42 ./var/lib/opkg/info/gpsd.postrm  
@@ -12116,230 +12144,230 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              460 ./var/lib/opkg/info/kbd.list  
 -rwxr-xr-x root       root              298 ./var/lib/opkg/info/kbd.postinst  
 -rwxr-xr-x root       root              214 ./var/lib/opkg/info/kbd.postrm  
--rw-r--r-- root       root              579 ./var/lib/opkg/info/kernel-2.6.37.control  
+-rw-r--r-- root       root              559 ./var/lib/opkg/info/kernel-2.6.37.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/kernel-2.6.37.list  
 -rwxr-xr-x root       root               89 ./var/lib/opkg/info/kernel-2.6.37.postinst  
 -rwxr-xr-x root       root               69 ./var/lib/opkg/info/kernel-2.6.37.postrm  
--rw-r--r-- root       root              532 ./var/lib/opkg/info/kernel-image-2.6.37.control  
+-rw-r--r-- root       root              512 ./var/lib/opkg/info/kernel-image-2.6.37.control  
 -rw-r--r-- root       root               27 ./var/lib/opkg/info/kernel-image-2.6.37.list  
 -rwxr-xr-x root       root              226 ./var/lib/opkg/info/kernel-image-2.6.37.postinst  
--rw-r--r-- root       root              679 ./var/lib/opkg/info/kernel-module-ad5820.control  
+-rw-r--r-- root       root              659 ./var/lib/opkg/info/kernel-module-ad5820.control  
 -rw-r--r-- root       root               57 ./var/lib/opkg/info/kernel-module-ad5820.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-ad5820.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-ad5820.postrm  
--rw-r--r-- root       root              695 ./var/lib/opkg/info/kernel-module-adp1653.control  
+-rw-r--r-- root       root              675 ./var/lib/opkg/info/kernel-module-adp1653.control  
 -rw-r--r-- root       root              148 ./var/lib/opkg/info/kernel-module-adp1653.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-adp1653.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-adp1653.postrm  
--rw-r--r-- root       root              623 ./var/lib/opkg/info/kernel-module-aes-generic.control  
+-rw-r--r-- root       root              603 ./var/lib/opkg/info/kernel-module-aes-generic.control  
 -rw-r--r-- root       root              121 ./var/lib/opkg/info/kernel-module-aes-generic.list  
 -rwxr-xr-x root       root              135 ./var/lib/opkg/info/kernel-module-aes-generic.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-aes-generic.postrm  
--rw-r--r-- root       root              633 ./var/lib/opkg/info/kernel-module-bluetooth.control  
+-rw-r--r-- root       root              613 ./var/lib/opkg/info/kernel-module-bluetooth.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/kernel-module-bluetooth.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-bluetooth.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-bluetooth.postrm  
--rw-r--r-- root       root              668 ./var/lib/opkg/info/kernel-module-bnep.control  
+-rw-r--r-- root       root              648 ./var/lib/opkg/info/kernel-module-bnep.control  
 -rw-r--r-- root       root              143 ./var/lib/opkg/info/kernel-module-bnep.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-bnep.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-bnep.postrm  
--rw-r--r-- root       root              658 ./var/lib/opkg/info/kernel-module-bq27x00-battery.control  
+-rw-r--r-- root       root              638 ./var/lib/opkg/info/kernel-module-bq27x00-battery.control  
 -rw-r--r-- root       root              143 ./var/lib/opkg/info/kernel-module-bq27x00-battery.list  
 -rwxr-xr-x root       root              139 ./var/lib/opkg/info/kernel-module-bq27x00-battery.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-bq27x00-battery.postrm  
--rw-r--r-- root       root              638 ./var/lib/opkg/info/kernel-module-cfg80211.control  
+-rw-r--r-- root       root              618 ./var/lib/opkg/info/kernel-module-cfg80211.control  
 -rw-r--r-- root       root               93 ./var/lib/opkg/info/kernel-module-cfg80211.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-cfg80211.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-cfg80211.postrm  
--rw-r--r-- root       root              700 ./var/lib/opkg/info/kernel-module-cmt-speech.control  
+-rw-r--r-- root       root              680 ./var/lib/opkg/info/kernel-module-cmt-speech.control  
 -rw-r--r-- root       root              145 ./var/lib/opkg/info/kernel-module-cmt-speech.list  
 -rwxr-xr-x root       root              134 ./var/lib/opkg/info/kernel-module-cmt-speech.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-cmt-speech.postrm  
--rw-r--r-- root       root              595 ./var/lib/opkg/info/kernel-module-cmt.control  
+-rw-r--r-- root       root              575 ./var/lib/opkg/info/kernel-module-cmt.control  
 -rw-r--r-- root       root              137 ./var/lib/opkg/info/kernel-module-cmt.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-cmt.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-cmt.postrm  
--rw-r--r-- root       root              713 ./var/lib/opkg/info/kernel-module-et8ek8.control  
+-rw-r--r-- root       root              693 ./var/lib/opkg/info/kernel-module-et8ek8.control  
 -rw-r--r-- root       root               57 ./var/lib/opkg/info/kernel-module-et8ek8.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-et8ek8.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-et8ek8.postrm  
--rw-r--r-- root       root              574 ./var/lib/opkg/info/kernel-module-fat.control  
+-rw-r--r-- root       root              554 ./var/lib/opkg/info/kernel-module-fat.control  
 -rw-r--r-- root       root               41 ./var/lib/opkg/info/kernel-module-fat.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-fat.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-fat.postrm  
--rw-r--r-- root       root              599 ./var/lib/opkg/info/kernel-module-g-ether.control  
+-rw-r--r-- root       root              579 ./var/lib/opkg/info/kernel-module-g-ether.control  
 -rw-r--r-- root       root               57 ./var/lib/opkg/info/kernel-module-g-ether.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-g-ether.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-g-ether.postrm  
--rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-g-file-storage.control  
+-rw-r--r-- root       root              604 ./var/lib/opkg/info/kernel-module-g-file-storage.control  
 -rw-r--r-- root       root              187 ./var/lib/opkg/info/kernel-module-g-file-storage.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-g-file-storage.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-g-file-storage.postrm  
--rw-r--r-- root       root              644 ./var/lib/opkg/info/kernel-module-g-nokia.control  
+-rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-g-nokia.control  
 -rw-r--r-- root       root               90 ./var/lib/opkg/info/kernel-module-g-nokia.list  
 -rwxr-xr-x root       root              131 ./var/lib/opkg/info/kernel-module-g-nokia.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-g-nokia.postrm  
--rw-r--r-- root       root              607 ./var/lib/opkg/info/kernel-module-gadgetfs.control  
+-rw-r--r-- root       root              587 ./var/lib/opkg/info/kernel-module-gadgetfs.control  
 -rw-r--r-- root       root               58 ./var/lib/opkg/info/kernel-module-gadgetfs.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-gadgetfs.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-gadgetfs.postrm  
--rw-r--r-- root       root              662 ./var/lib/opkg/info/kernel-module-hci-h4p.control  
+-rw-r--r-- root       root              642 ./var/lib/opkg/info/kernel-module-hci-h4p.control  
 -rw-r--r-- root       root              197 ./var/lib/opkg/info/kernel-module-hci-h4p.list  
 -rwxr-xr-x root       root              131 ./var/lib/opkg/info/kernel-module-hci-h4p.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-hci-h4p.postrm  
--rw-r--r-- root       root              574 ./var/lib/opkg/info/kernel-module-hid.control  
+-rw-r--r-- root       root              554 ./var/lib/opkg/info/kernel-module-hid.control  
 -rw-r--r-- root       root               86 ./var/lib/opkg/info/kernel-module-hid.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-hid.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-hid.postrm  
--rw-r--r-- root       root              687 ./var/lib/opkg/info/kernel-module-hidp.control  
+-rw-r--r-- root       root              667 ./var/lib/opkg/info/kernel-module-hidp.control  
 -rw-r--r-- root       root              101 ./var/lib/opkg/info/kernel-module-hidp.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-hidp.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-hidp.postrm  
--rw-r--r-- root       root              606 ./var/lib/opkg/info/kernel-module-hsi-char.control  
+-rw-r--r-- root       root              586 ./var/lib/opkg/info/kernel-module-hsi-char.control  
 -rw-r--r-- root       root               93 ./var/lib/opkg/info/kernel-module-hsi-char.list  
 -rwxr-xr-x root       root              132 ./var/lib/opkg/info/kernel-module-hsi-char.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-hsi-char.postrm  
--rw-r--r-- root       root              613 ./var/lib/opkg/info/kernel-module-industrialio.control  
+-rw-r--r-- root       root              593 ./var/lib/opkg/info/kernel-module-industrialio.control  
 -rw-r--r-- root       root               63 ./var/lib/opkg/info/kernel-module-industrialio.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-industrialio.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-industrialio.postrm  
--rw-r--r-- root       root              644 ./var/lib/opkg/info/kernel-module-input-polldev.control  
+-rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-input-polldev.control  
 -rw-r--r-- root       root              100 ./var/lib/opkg/info/kernel-module-input-polldev.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-input-polldev.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-input-polldev.postrm  
--rw-r--r-- root       root              607 ./var/lib/opkg/info/kernel-module-ipv6.control  
+-rw-r--r-- root       root              587 ./var/lib/opkg/info/kernel-module-ipv6.control  
 -rw-r--r-- root       root              176 ./var/lib/opkg/info/kernel-module-ipv6.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-ipv6.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-ipv6.postrm  
--rw-r--r-- root       root              654 ./var/lib/opkg/info/kernel-module-isp1704-charger.control  
+-rw-r--r-- root       root              634 ./var/lib/opkg/info/kernel-module-isp1704-charger.control  
 -rw-r--r-- root       root              101 ./var/lib/opkg/info/kernel-module-isp1704-charger.list  
 -rwxr-xr-x root       root              139 ./var/lib/opkg/info/kernel-module-isp1704-charger.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-isp1704-charger.postrm  
--rw-r--r-- root       root              651 ./var/lib/opkg/info/kernel-module-l2cap.control  
+-rw-r--r-- root       root              631 ./var/lib/opkg/info/kernel-module-l2cap.control  
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/kernel-module-l2cap.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-l2cap.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-l2cap.postrm  
--rw-r--r-- root       root              609 ./var/lib/opkg/info/kernel-module-leds-lp5523.control  
+-rw-r--r-- root       root              589 ./var/lib/opkg/info/kernel-module-leds-lp5523.control  
 -rw-r--r-- root       root              133 ./var/lib/opkg/info/kernel-module-leds-lp5523.list  
 -rwxr-xr-x root       root              135 ./var/lib/opkg/info/kernel-module-leds-lp5523.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-leds-lp5523.postrm  
--rw-r--r-- root       root              673 ./var/lib/opkg/info/kernel-module-lis3lv02d-i2c.control  
+-rw-r--r-- root       root              653 ./var/lib/opkg/info/kernel-module-lis3lv02d-i2c.control  
 -rw-r--r-- root       root              139 ./var/lib/opkg/info/kernel-module-lis3lv02d-i2c.list  
 -rwxr-xr-x root       root              137 ./var/lib/opkg/info/kernel-module-lis3lv02d-i2c.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-lis3lv02d-i2c.postrm  
--rw-r--r-- root       root              671 ./var/lib/opkg/info/kernel-module-lis3lv02d.control  
+-rw-r--r-- root       root              651 ./var/lib/opkg/info/kernel-module-lis3lv02d.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/kernel-module-lis3lv02d.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-lis3lv02d.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-lis3lv02d.postrm  
--rw-r--r-- root       root              653 ./var/lib/opkg/info/kernel-module-mac80211.control  
+-rw-r--r-- root       root              633 ./var/lib/opkg/info/kernel-module-mac80211.control  
 -rw-r--r-- root       root               93 ./var/lib/opkg/info/kernel-module-mac80211.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-mac80211.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-mac80211.postrm  
--rw-r--r-- root       root              673 ./var/lib/opkg/info/kernel-module-mailbox-mach.control  
+-rw-r--r-- root       root              653 ./var/lib/opkg/info/kernel-module-mailbox-mach.control  
 -rw-r--r-- root       root              181 ./var/lib/opkg/info/kernel-module-mailbox-mach.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-mailbox-mach.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-mailbox-mach.postrm  
--rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-mailbox.control  
+-rw-r--r-- root       root              604 ./var/lib/opkg/info/kernel-module-mailbox.control  
 -rw-r--r-- root       root              104 ./var/lib/opkg/info/kernel-module-mailbox.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-mailbox.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-mailbox.postrm  
--rw-r--r-- root       root              622 ./var/lib/opkg/info/kernel-module-media.control  
+-rw-r--r-- root       root              602 ./var/lib/opkg/info/kernel-module-media.control  
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/kernel-module-media.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-media.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-media.postrm  
--rw-r--r-- root       root              604 ./var/lib/opkg/info/kernel-module-mii.control  
+-rw-r--r-- root       root              584 ./var/lib/opkg/info/kernel-module-mii.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/kernel-module-mii.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-mii.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-mii.postrm  
--rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-msdos.control  
+-rw-r--r-- root       root              604 ./var/lib/opkg/info/kernel-module-msdos.control  
 -rw-r--r-- root       root              109 ./var/lib/opkg/info/kernel-module-msdos.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-msdos.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-msdos.postrm  
--rw-r--r-- root       root              621 ./var/lib/opkg/info/kernel-module-omap-ssi.control  
+-rw-r--r-- root       root              601 ./var/lib/opkg/info/kernel-module-omap-ssi.control  
 -rw-r--r-- root       root              189 ./var/lib/opkg/info/kernel-module-omap-ssi.list  
 -rwxr-xr-x root       root              132 ./var/lib/opkg/info/kernel-module-omap-ssi.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-omap-ssi.postrm  
--rw-r--r-- root       root              679 ./var/lib/opkg/info/kernel-module-omap3-isp.control  
+-rw-r--r-- root       root              659 ./var/lib/opkg/info/kernel-module-omap3-isp.control  
 -rw-r--r-- root       root              151 ./var/lib/opkg/info/kernel-module-omap3-isp.list  
 -rwxr-xr-x root       root              133 ./var/lib/opkg/info/kernel-module-omap3-isp.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-omap3-isp.postrm  
--rw-r--r-- root       root              613 ./var/lib/opkg/info/kernel-module-phonet.control  
+-rw-r--r-- root       root              593 ./var/lib/opkg/info/kernel-module-phonet.control  
 -rw-r--r-- root       root               87 ./var/lib/opkg/info/kernel-module-phonet.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-phonet.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-phonet.postrm  
--rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-pn-pep.control  
+-rw-r--r-- root       root              604 ./var/lib/opkg/info/kernel-module-pn-pep.control  
 -rw-r--r-- root       root               80 ./var/lib/opkg/info/kernel-module-pn-pep.list  
 -rwxr-xr-x root       root              130 ./var/lib/opkg/info/kernel-module-pn-pep.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-pn-pep.postrm  
--rw-r--r-- root       root              630 ./var/lib/opkg/info/kernel-module-power-supply.control  
+-rw-r--r-- root       root              610 ./var/lib/opkg/info/kernel-module-power-supply.control  
 -rw-r--r-- root       root               57 ./var/lib/opkg/info/kernel-module-power-supply.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-power-supply.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-power-supply.postrm  
--rw-r--r-- root       root              584 ./var/lib/opkg/info/kernel-module-pvrsrvkm.control  
+-rw-r--r-- root       root              564 ./var/lib/opkg/info/kernel-module-pvrsrvkm.control  
 -rw-r--r-- root       root              173 ./var/lib/opkg/info/kernel-module-pvrsrvkm.list  
 -rwxr-xr-x root       root              132 ./var/lib/opkg/info/kernel-module-pvrsrvkm.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-pvrsrvkm.postrm  
--rw-r--r-- root       root              675 ./var/lib/opkg/info/kernel-module-rfcomm.control  
+-rw-r--r-- root       root              655 ./var/lib/opkg/info/kernel-module-rfcomm.control  
 -rw-r--r-- root       root              107 ./var/lib/opkg/info/kernel-module-rfcomm.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-rfcomm.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-rfcomm.postrm  
--rw-r--r-- root       root              599 ./var/lib/opkg/info/kernel-module-rfkill.control  
+-rw-r--r-- root       root              579 ./var/lib/opkg/info/kernel-module-rfkill.control  
 -rw-r--r-- root       root               87 ./var/lib/opkg/info/kernel-module-rfkill.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-rfkill.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-rfkill.postrm  
--rw-r--r-- root       root              582 ./var/lib/opkg/info/kernel-module-rtc-twl.control  
+-rw-r--r-- root       root              562 ./var/lib/opkg/info/kernel-module-rtc-twl.control  
 -rw-r--r-- root       root              123 ./var/lib/opkg/info/kernel-module-rtc-twl.list  
 -rwxr-xr-x root       root              131 ./var/lib/opkg/info/kernel-module-rtc-twl.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-rtc-twl.postrm  
--rw-r--r-- root       root              644 ./var/lib/opkg/info/kernel-module-sco.control  
+-rw-r--r-- root       root              624 ./var/lib/opkg/info/kernel-module-sco.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/kernel-module-sco.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-sco.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-sco.postrm  
--rw-r--r-- root       root              599 ./var/lib/opkg/info/kernel-module-smc91x.control  
+-rw-r--r-- root       root              579 ./var/lib/opkg/info/kernel-module-smc91x.control  
 -rw-r--r-- root       root              121 ./var/lib/opkg/info/kernel-module-smc91x.list  
 -rwxr-xr-x root       root              130 ./var/lib/opkg/info/kernel-module-smc91x.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-smc91x.postrm  
--rw-r--r-- root       root              732 ./var/lib/opkg/info/kernel-module-smia-sensor.control  
+-rw-r--r-- root       root              712 ./var/lib/opkg/info/kernel-module-smia-sensor.control  
 -rw-r--r-- root       root               62 ./var/lib/opkg/info/kernel-module-smia-sensor.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-smia-sensor.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-smia-sensor.postrm  
--rw-r--r-- root       root              637 ./var/lib/opkg/info/kernel-module-smiaregs.control  
+-rw-r--r-- root       root              617 ./var/lib/opkg/info/kernel-module-smiaregs.control  
 -rw-r--r-- root       root               59 ./var/lib/opkg/info/kernel-module-smiaregs.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-smiaregs.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-smiaregs.postrm  
--rw-r--r-- root       root              691 ./var/lib/opkg/info/kernel-module-ssi-protocol.control  
+-rw-r--r-- root       root              671 ./var/lib/opkg/info/kernel-module-ssi-protocol.control  
 -rw-r--r-- root       root               63 ./var/lib/opkg/info/kernel-module-ssi-protocol.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-ssi-protocol.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-ssi-protocol.postrm  
--rw-r--r-- root       root              639 ./var/lib/opkg/info/kernel-module-tsl2563.control  
+-rw-r--r-- root       root              619 ./var/lib/opkg/info/kernel-module-tsl2563.control  
 -rw-r--r-- root       root              243 ./var/lib/opkg/info/kernel-module-tsl2563.list  
 -rwxr-xr-x root       root              131 ./var/lib/opkg/info/kernel-module-tsl2563.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-tsl2563.postrm  
--rw-r--r-- root       root              603 ./var/lib/opkg/info/kernel-module-ubifs.control  
+-rw-r--r-- root       root              583 ./var/lib/opkg/info/kernel-module-ubifs.control  
 -rw-r--r-- root       root               82 ./var/lib/opkg/info/kernel-module-ubifs.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-ubifs.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-ubifs.postrm  
--rw-r--r-- root       root              682 ./var/lib/opkg/info/kernel-module-v4l2-common.control  
+-rw-r--r-- root       root              662 ./var/lib/opkg/info/kernel-module-v4l2-common.control  
 -rw-r--r-- root       root               62 ./var/lib/opkg/info/kernel-module-v4l2-common.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-v4l2-common.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-v4l2-common.postrm  
--rw-r--r-- root       root              620 ./var/lib/opkg/info/kernel-module-vfat.control  
+-rw-r--r-- root       root              600 ./var/lib/opkg/info/kernel-module-vfat.control  
 -rw-r--r-- root       root               42 ./var/lib/opkg/info/kernel-module-vfat.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-vfat.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-vfat.postrm  
--rw-r--r-- root       root              650 ./var/lib/opkg/info/kernel-module-videodev.control  
+-rw-r--r-- root       root              630 ./var/lib/opkg/info/kernel-module-videodev.control  
 -rw-r--r-- root       root               59 ./var/lib/opkg/info/kernel-module-videodev.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-videodev.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-videodev.postrm  
--rw-r--r-- root       root              680 ./var/lib/opkg/info/kernel-module-wl1251-spi.control  
+-rw-r--r-- root       root              660 ./var/lib/opkg/info/kernel-module-wl1251-spi.control  
 -rw-r--r-- root       root              210 ./var/lib/opkg/info/kernel-module-wl1251-spi.list  
 -rwxr-xr-x root       root              134 ./var/lib/opkg/info/kernel-module-wl1251-spi.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-wl1251-spi.postrm  
--rw-r--r-- root       root              685 ./var/lib/opkg/info/kernel-module-wl1251.control  
+-rw-r--r-- root       root              665 ./var/lib/opkg/info/kernel-module-wl1251.control  
 -rw-r--r-- root       root               65 ./var/lib/opkg/info/kernel-module-wl1251.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-wl1251.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-wl1251.postrm  
--rw-r--r-- root       root              542 ./var/lib/opkg/info/kernel.control  
+-rw-r--r-- root       root              522 ./var/lib/opkg/info/kernel.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/kernel.list  
 -rw-r--r-- root       root              412 ./var/lib/opkg/info/keymaps-systemd.control  
 -rw-r--r-- root       root               36 ./var/lib/opkg/info/keymaps-systemd.list  
@@ -12434,45 +12462,45 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              653 ./var/lib/opkg/info/libe2p2.control  
 -rw-r--r-- root       root               36 ./var/lib/opkg/info/libe2p2.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libe2p2.postinst  
--rw-r--r-- root       root              568 ./var/lib/opkg/info/libebluez1.control  
+-rw-r--r-- root       root              533 ./var/lib/opkg/info/libebluez1.control  
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/libebluez1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libebluez1.postinst  
--rw-r--r-- root       root              574 ./var/lib/opkg/info/libeconnman0-7x1.control  
+-rw-r--r-- root       root              539 ./var/lib/opkg/info/libeconnman0-7x1.control  
 -rw-r--r-- root       root               64 ./var/lib/opkg/info/libeconnman0-7x1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libeconnman0-7x1.postinst  
--rw-r--r-- root       root              539 ./var/lib/opkg/info/libedbus1.control  
+-rw-r--r-- root       root              510 ./var/lib/opkg/info/libedbus1.control  
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/libedbus1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libedbus1.postinst  
--rw-r--r-- root       root              616 ./var/lib/opkg/info/libeet1.control  
+-rw-r--r-- root       root              593 ./var/lib/opkg/info/libeet1.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libeet1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libeet1.postinst  
--rw-r--r-- root       root              814 ./var/lib/opkg/info/libefreet-mime1.control  
+-rw-r--r-- root       root              761 ./var/lib/opkg/info/libefreet-mime1.control  
 -rw-r--r-- root       root               62 ./var/lib/opkg/info/libefreet-mime1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libefreet-mime1.postinst  
--rw-r--r-- root       root              815 ./var/lib/opkg/info/libefreet-trash1.control  
+-rw-r--r-- root       root              762 ./var/lib/opkg/info/libefreet-trash1.control  
 -rw-r--r-- root       root               64 ./var/lib/opkg/info/libefreet-trash1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libefreet-trash1.postinst  
--rw-r--r-- root       root              780 ./var/lib/opkg/info/libefreet1.control  
+-rw-r--r-- root       root              733 ./var/lib/opkg/info/libefreet1.control  
 -rw-r--r-- root       root              154 ./var/lib/opkg/info/libefreet1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libefreet1.postinst  
--rw-r--r-- root       root              566 ./var/lib/opkg/info/libehal1.control  
+-rw-r--r-- root       root              531 ./var/lib/opkg/info/libehal1.control  
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/libehal1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libehal1.postinst  
--rw-r--r-- root       root              682 ./var/lib/opkg/info/libeio1.control  
+-rw-r--r-- root       root              647 ./var/lib/opkg/info/libeio1.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libeio1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libeio1.postinst  
--rw-r--r-- root       root             1851 ./var/lib/opkg/info/libemotion-backend-gstreamer.control  
+-rw-r--r-- root       root             1750 ./var/lib/opkg/info/libemotion-backend-gstreamer.control  
 -rw-r--r-- root       root               79 ./var/lib/opkg/info/libemotion-backend-gstreamer.list  
--rw-r--r-- root       root             1772 ./var/lib/opkg/info/libemotion1.control  
+-rw-r--r-- root       root             1653 ./var/lib/opkg/info/libemotion1.control  
 -rw-r--r-- root       root              242 ./var/lib/opkg/info/libemotion1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libemotion1.postinst  
--rw-r--r-- root       root              568 ./var/lib/opkg/info/libeofono1.control  
+-rw-r--r-- root       root              533 ./var/lib/opkg/info/libeofono1.control  
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/libeofono1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libeofono1.postinst  
 -rw-r--r-- root       root              606 ./var/lib/opkg/info/liberation-fonts.control  
 -rw-r--r-- root       root              755 ./var/lib/opkg/info/liberation-fonts.list  
 -rwxr-xr-x root       root               57 ./var/lib/opkg/info/liberation-fonts.postinst  
--rw-r--r-- root       root              567 ./var/lib/opkg/info/libeukit1.control  
+-rw-r--r-- root       root              532 ./var/lib/opkg/info/libeukit1.control  
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/libeukit1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libeukit1.postinst  
 -rw-r--r-- root       root             1458 ./var/lib/opkg/info/libewebkit0.control  
@@ -12978,7 +13006,7 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              536 ./var/lib/opkg/info/mobile-broadband-provider-info.control  
 -rw-r--r-- root       root              171 ./var/lib/opkg/info/mobile-broadband-provider-info.list  
 -rw-r--r-- root       root              381 ./var/lib/opkg/info/modutils-initscripts.control  
--rw-r--r-- root       root               37 ./var/lib/opkg/info/modutils-initscripts.list  
+-rw-r--r-- root       root               24 ./var/lib/opkg/info/modutils-initscripts.list  
 -rwxr-xr-x root       root              110 ./var/lib/opkg/info/modutils-initscripts.postinst  
 -rwxr-xr-x root       root               44 ./var/lib/opkg/info/modutils-initscripts.postrm  
 -rwxr-xr-x root       root               69 ./var/lib/opkg/info/modutils-initscripts.prerm  
@@ -13304,7 +13332,7 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root               42 ./var/lib/opkg/info/strace.list  
 -rw-r--r-- root       root              592 ./var/lib/opkg/info/sysfsutils.control  
 -rw-r--r-- root       root               97 ./var/lib/opkg/info/sysfsutils.list  
--rw-r--r-- root       root              574 ./var/lib/opkg/info/sysstat.control  
+-rw-r--r-- root       root              576 ./var/lib/opkg/info/sysstat.control  
 -rw-r--r-- root       root              280 ./var/lib/opkg/info/sysstat.list  
 -rwxr-xr-x root       root              179 ./var/lib/opkg/info/sysstat.postinst  
 -rw-r--r-- root       root              369 ./var/lib/opkg/info/systemd-compat-units.control  
@@ -13411,17 +13439,17 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              238 ./var/lib/opkg/info/ttf-liberation-mono.list  
 -rwxr-xr-x root       root               49 ./var/lib/opkg/info/ttf-liberation-mono.postinst  
 -rwxr-xr-x root       root               49 ./var/lib/opkg/info/ttf-liberation-mono.postrm  
--rw-r--r-- root       root              386 ./var/lib/opkg/info/tzdata-africa.control  
+-rw-r--r-- root       root              374 ./var/lib/opkg/info/tzdata-africa.control  
 -rw-r--r-- root       root             1878 ./var/lib/opkg/info/tzdata-africa.list  
--rw-r--r-- root       root              390 ./var/lib/opkg/info/tzdata-americas.control  
+-rw-r--r-- root       root              378 ./var/lib/opkg/info/tzdata-americas.control  
 -rw-r--r-- root       root             7476 ./var/lib/opkg/info/tzdata-americas.list  
--rw-r--r-- root       root              382 ./var/lib/opkg/info/tzdata-asia.control  
+-rw-r--r-- root       root              370 ./var/lib/opkg/info/tzdata-asia.control  
 -rw-r--r-- root       root             3492 ./var/lib/opkg/info/tzdata-asia.list  
--rw-r--r-- root       root              392 ./var/lib/opkg/info/tzdata-australia.control  
+-rw-r--r-- root       root              380 ./var/lib/opkg/info/tzdata-australia.control  
 -rw-r--r-- root       root              715 ./var/lib/opkg/info/tzdata-australia.list  
--rw-r--r-- root       root              386 ./var/lib/opkg/info/tzdata-europe.control  
+-rw-r--r-- root       root              374 ./var/lib/opkg/info/tzdata-europe.control  
 -rw-r--r-- root       root             1991 ./var/lib/opkg/info/tzdata-europe.list  
--rw-r--r-- root       root              596 ./var/lib/opkg/info/tzdata.control  
+-rw-r--r-- root       root              584 ./var/lib/opkg/info/tzdata.control  
 -rw-r--r-- root       root             2710 ./var/lib/opkg/info/tzdata.list  
 -rwxr-xr-x root       root             1130 ./var/lib/opkg/info/tzdata.postinst  
 -rw-r--r-- root       root               26 ./var/lib/opkg/info/udev-extraconf.conffiles  
@@ -13558,7 +13586,7 @@ drwxr-xr-x root       root            77824 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           218701 ./var/lib/opkg/status  
+-rw-r--r-- root       root           216728 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
