@@ -1,6 +1,12 @@
-	# can't do this offline
-	if [ "x$D" != "x" ]; then
-		exit 1
-	fi
+#!/bin/sh
+OPTS=""
 
-	systemctl enable avahi-daemon.service
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+systemctl $OPTS enable avahi-daemon.service
+
+if [ -z "$D" -a enable = "enable" ]; then
+    systemctl start avahi-daemon.service
+fi
