@@ -1,8 +1,0 @@
-if [ ! -e "$D/lib/modules/3.4.9-yocto-standard" ]; then
-	mkdir -p $D/lib/modules/3.4.9-yocto-standard
-fi
-if [ -n "$D" ]; then
-	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/qemuarm/usr/src/kernel/System.map-3.4.9-yocto-standard 3.4.9-yocto-standard
-else
-	depmod -a 3.4.9-yocto-standard
-fi
