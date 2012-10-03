@@ -72,7 +72,7 @@ lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root             4096 ./boot  
 lrwxrwxrwx root       root               13 ./boot/uImage -> uImage-2.6.37
--rw-r--r-- root       root          1962176 ./boot/uImage-2.6.37  
+-rw-r--r-- root       root          1962324 ./boot/uImage-2.6.37  
 drwxr-xr-x root       root             4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -526,6 +526,7 @@ lrwxrwxrwx root       root               14 ./etc/rc0.d/K09sshd -> ../init.d/ssh
 lrwxrwxrwx root       root               30 ./etc/rc0.d/K10aurora-systemmanager -> ../init.d/aurora-systemmanager
 lrwxrwxrwx root       root               14 ./etc/rc0.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc0.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               20 ./etc/rc0.d/K20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc0.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc0.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc0.d/K27fsotdld -> ../init.d/fsotdld
@@ -536,6 +537,7 @@ lrwxrwxrwx root       root               14 ./etc/rc1.d/K09sshd -> ../init.d/ssh
 lrwxrwxrwx root       root               30 ./etc/rc1.d/K10aurora-systemmanager -> ../init.d/aurora-systemmanager
 lrwxrwxrwx root       root               14 ./etc/rc1.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc1.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               20 ./etc/rc1.d/K20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc1.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc1.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc1.d/K27fsotdld -> ../init.d/fsotdld
@@ -545,6 +547,7 @@ drwxr-xr-x root       root             4096 ./etc/rc2.d
 lrwxrwxrwx root       root               16 ./etc/rc2.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc2.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc2.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               20 ./etc/rc2.d/S20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc2.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc2.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc2.d/S27fsotdld -> ../init.d/fsotdld
@@ -554,6 +557,7 @@ drwxr-xr-x root       root             4096 ./etc/rc3.d
 lrwxrwxrwx root       root               16 ./etc/rc3.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc3.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc3.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               20 ./etc/rc3.d/S20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc3.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc3.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc3.d/S27fsotdld -> ../init.d/fsotdld
@@ -562,6 +566,7 @@ lrwxrwxrwx root       root               30 ./etc/rc3.d/S85aurora-systemmanager 
 drwxr-xr-x root       root             4096 ./etc/rc4.d  
 lrwxrwxrwx root       root               14 ./etc/rc4.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc4.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               20 ./etc/rc4.d/S20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc4.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc4.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc4.d/S27fsotdld -> ../init.d/fsotdld
@@ -571,6 +576,7 @@ drwxr-xr-x root       root             4096 ./etc/rc5.d
 lrwxrwxrwx root       root               16 ./etc/rc5.d/S02dbus-1 -> ../init.d/dbus-1
 lrwxrwxrwx root       root               14 ./etc/rc5.d/S09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               14 ./etc/rc5.d/S20apmd -> ../init.d/apmd
+lrwxrwxrwx root       root               20 ./etc/rc5.d/S20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc5.d/S20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc5.d/S27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc5.d/S27fsotdld -> ../init.d/fsotdld
@@ -581,6 +587,7 @@ lrwxrwxrwx root       root               14 ./etc/rc6.d/K09sshd -> ../init.d/ssh
 lrwxrwxrwx root       root               30 ./etc/rc6.d/K10aurora-systemmanager -> ../init.d/aurora-systemmanager
 lrwxrwxrwx root       root               14 ./etc/rc6.d/K20apmd -> ../init.d/apmd
 lrwxrwxrwx root       root               16 ./etc/rc6.d/K20dbus-1 -> ../init.d/dbus-1
+lrwxrwxrwx root       root               20 ./etc/rc6.d/K20hwclock.sh -> ../init.d/hwclock.sh
 lrwxrwxrwx root       root               16 ./etc/rc6.d/K20syslog -> ../init.d/syslog
 lrwxrwxrwx root       root               20 ./etc/rc6.d/K27fsodeviced -> ../init.d/fsodeviced
 lrwxrwxrwx root       root               17 ./etc/rc6.d/K27fsotdld -> ../init.d/fsotdld
@@ -1413,7 +1420,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/od -> ../../bin/busybox
 lrwxrwxrwx root       root               10 ./usr/bin/openvt -> openvt.kbd
 -rwxr-xr-x root       root            10272 ./usr/bin/openvt.kbd  
 lrwxrwxrwx root       root                7 ./usr/bin/opkg -> opkg-cl
--rwxr-xr-x root       root            12468 ./usr/bin/opkg-cl  
+-rwxr-xr-x root       root            12444 ./usr/bin/opkg-cl  
 -rwxr-xr-x root       root             1671 ./usr/bin/opkg-key  
 lrwxrwxrwx root       root               13 ./usr/bin/passwd -> passwd.shadow
 -rwsr-xr-x root       root            28200 ./usr/bin/passwd.shadow  
@@ -3732,13 +3739,13 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/xargs  
 -rw-r--r-- root       root               34 ./var/lib/opkg/alternatives/yes  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/zcat  
-drwxr-xr-x root       root            49152 ./var/lib/opkg/info  
+drwxr-xr-x root       root            53248 ./var/lib/opkg/info  
 -rw-r--r-- root       root              432 ./var/lib/opkg/info/alsa-conf-base.control  
 -rw-r--r-- root       root              217 ./var/lib/opkg/info/alsa-conf-base.list  
 -rw-r--r-- root       root              480 ./var/lib/opkg/info/alsa-states.control  
 -rw-r--r-- root       root               27 ./var/lib/opkg/info/alsa-states.list  
 -rw-r--r-- root       root              652 ./var/lib/opkg/info/alsa-utils-alsactl.control  
--rw-r--r-- root       root              614 ./var/lib/opkg/info/alsa-utils-alsactl.list  
+-rw-r--r-- root       root              456 ./var/lib/opkg/info/alsa-utils-alsactl.list  
 -rw-r--r-- root       root              714 ./var/lib/opkg/info/alsa-utils-alsamixer.control  
 -rw-r--r-- root       root               19 ./var/lib/opkg/info/alsa-utils-alsamixer.list  
 -rw-r--r-- root       root              612 ./var/lib/opkg/info/alsa-utils-amixer.control  
@@ -3767,13 +3774,13 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/base-passwd.list  
 -rwxr-xr-x root       root             1307 ./var/lib/opkg/info/base-passwd.preinst  
 -rw-r--r-- root       root              691 ./var/lib/opkg/info/bluez4.control  
--rw-r--r-- root       root              640 ./var/lib/opkg/info/bluez4.list  
+-rw-r--r-- root       root              705 ./var/lib/opkg/info/bluez4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/bluez4.postinst  
 -rw-r--r-- root       root             1700 ./var/lib/opkg/info/busybox-hwclock.control  
 -rw-r--r-- root       root               23 ./var/lib/opkg/info/busybox-hwclock.list  
--rwxr-xr-x root       root              113 ./var/lib/opkg/info/busybox-hwclock.postinst  
--rwxr-xr-x root       root               51 ./var/lib/opkg/info/busybox-hwclock.postrm  
--rwxr-xr-x root       root               76 ./var/lib/opkg/info/busybox-hwclock.prerm  
+-rwxr-xr-x root       root              105 ./var/lib/opkg/info/busybox-hwclock.postinst  
+-rwxr-xr-x root       root               43 ./var/lib/opkg/info/busybox-hwclock.postrm  
+-rwxr-xr-x root       root               68 ./var/lib/opkg/info/busybox-hwclock.prerm  
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
 -rw-r--r-- root       root             1699 ./var/lib/opkg/info/busybox-syslog.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/busybox-syslog.list  
@@ -3789,7 +3796,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rwxr-xr-x root       root              762 ./var/lib/opkg/info/busybox.prerm  
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/dbus-1.conffiles  
 -rw-r--r-- root       root              891 ./var/lib/opkg/info/dbus-1.control  
--rw-r--r-- root       root              336 ./var/lib/opkg/info/dbus-1.list  
+-rw-r--r-- root       root              346 ./var/lib/opkg/info/dbus-1.list  
 -rwxr-xr-x root       root              227 ./var/lib/opkg/info/dbus-1.postinst  
 -rwxr-xr-x root       root               39 ./var/lib/opkg/info/dbus-1.postrm  
 -rwxr-xr-x root       root             3229 ./var/lib/opkg/info/dbus-1.preinst  
@@ -3835,7 +3842,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              392 ./var/lib/opkg/info/fsodatad.list  
 -rw-r--r-- root       root              226 ./var/lib/opkg/info/fsodeviced-config.conffiles  
 -rw-r--r-- root       root              542 ./var/lib/opkg/info/fsodeviced-config.control  
--rw-r--r-- root       root             4659 ./var/lib/opkg/info/fsodeviced-config.list  
+-rw-r--r-- root       root             4464 ./var/lib/opkg/info/fsodeviced-config.list  
 -rwxr-xr-x root       root              202 ./var/lib/opkg/info/fsodeviced-config.preinst  
 -rw-r--r-- root       root             1001 ./var/lib/opkg/info/fsodeviced-module-accelerometer-lis302.control  
 -rw-r--r-- root       root               62 ./var/lib/opkg/info/fsodeviced-module-accelerometer-lis302.list  
@@ -3850,7 +3857,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rwxr-xr-x root       root               68 ./var/lib/opkg/info/fsodeviced.prerm  
 -rw-r--r-- root       root              207 ./var/lib/opkg/info/fsogsmd-config.conffiles  
 -rw-r--r-- root       root              506 ./var/lib/opkg/info/fsogsmd-config.control  
--rw-r--r-- root       root              573 ./var/lib/opkg/info/fsogsmd-config.list  
+-rw-r--r-- root       root              768 ./var/lib/opkg/info/fsogsmd-config.list  
 -rw-r--r-- root       root             1081 ./var/lib/opkg/info/fsogsmd-module-modem-nokia-isi.control  
 -rw-r--r-- root       root               54 ./var/lib/opkg/info/fsogsmd-module-modem-nokia-isi.list  
 -rw-r--r-- root       root              452 ./var/lib/opkg/info/fsogsmd-modules.control  
@@ -3885,7 +3892,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-ad5820.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-ad5820.postrm  
 -rw-r--r-- root       root              675 ./var/lib/opkg/info/kernel-module-adp1653.control  
--rw-r--r-- root       root              148 ./var/lib/opkg/info/kernel-module-adp1653.list  
+-rw-r--r-- root       root               58 ./var/lib/opkg/info/kernel-module-adp1653.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-adp1653.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-adp1653.postrm  
 -rw-r--r-- root       root              603 ./var/lib/opkg/info/kernel-module-aes-generic.control  
@@ -3917,7 +3924,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-cmt.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-cmt.postrm  
 -rw-r--r-- root       root              693 ./var/lib/opkg/info/kernel-module-et8ek8.control  
--rw-r--r-- root       root               57 ./var/lib/opkg/info/kernel-module-et8ek8.list  
+-rw-r--r-- root       root              147 ./var/lib/opkg/info/kernel-module-et8ek8.list  
 -rwxr-xr-x root       root               77 ./var/lib/opkg/info/kernel-module-et8ek8.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-et8ek8.postrm  
 -rw-r--r-- root       root              554 ./var/lib/opkg/info/kernel-module-fat.control  
@@ -4261,7 +4268,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              488 ./var/lib/opkg/info/libnl-route-3-200.control  
 -rw-r--r-- root       root               64 ./var/lib/opkg/info/libnl-route-3-200.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-route-3-200.postinst  
--rw-r--r-- root       root             1012 ./var/lib/opkg/info/libopkg1.control  
+-rw-r--r-- root       root             1046 ./var/lib/opkg/info/libopkg1.control  
 -rw-r--r-- root       root               63 ./var/lib/opkg/info/libopkg1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libopkg1.postinst  
 -rw-r--r-- root       root              647 ./var/lib/opkg/info/libpam-runtime.control  
@@ -4481,7 +4488,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root               20 ./var/lib/opkg/info/opkg-config-base.conffiles  
 -rw-r--r-- root       root              317 ./var/lib/opkg/info/opkg-config-base.control  
 -rw-r--r-- root       root               20 ./var/lib/opkg/info/opkg-config-base.list  
--rw-r--r-- root       root             1096 ./var/lib/opkg/info/opkg.control  
+-rw-r--r-- root       root             1130 ./var/lib/opkg/info/opkg.control  
 -rw-r--r-- root       root              188 ./var/lib/opkg/info/opkg.list  
 -rwxr-xr-x root       root              343 ./var/lib/opkg/info/opkg.postinst  
 -rwxr-xr-x root       root               54 ./var/lib/opkg/info/opkg.postrm  
@@ -4588,7 +4595,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-speed-hacks.list  
 -rwxr-xr-x root       root              262 ./var/lib/opkg/info/systemd-speed-hacks.postinst  
 -rw-r--r-- root       root             1050 ./var/lib/opkg/info/systemd.control  
--rw-r--r-- root       root            11141 ./var/lib/opkg/info/systemd.list  
+-rw-r--r-- root       root            11224 ./var/lib/opkg/info/systemd.list  
 -rwxr-xr-x root       root              351 ./var/lib/opkg/info/systemd.postinst  
 -rwxr-xr-x root       root             3174 ./var/lib/opkg/info/systemd.preinst  
 -rwxr-xr-x root       root              261 ./var/lib/opkg/info/systemd.prerm  
@@ -4626,7 +4633,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root               17 ./var/lib/opkg/info/udev-utils.list  
 -rw-r--r-- root       root              681 ./var/lib/opkg/info/udev.control  
 -rw-r--r-- root       root             3619 ./var/lib/opkg/info/udev.list  
--rw-r--r-- root       root             1050 ./var/lib/opkg/info/update-alternatives-cworth.control  
+-rw-r--r-- root       root             1084 ./var/lib/opkg/info/update-alternatives-cworth.control  
 -rw-r--r-- root       root               29 ./var/lib/opkg/info/update-alternatives-cworth.list  
 -rw-r--r-- root       root              391 ./var/lib/opkg/info/update-modules.control  
 -rw-r--r-- root       root               25 ./var/lib/opkg/info/update-modules.list  
@@ -4668,7 +4675,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              954 ./var/lib/opkg/info/xf86-input-evdev.control  
 -rw-r--r-- root       root               41 ./var/lib/opkg/info/xf86-input-evdev.list  
 -rw-r--r-- root       root              652 ./var/lib/opkg/info/xf86-input-keyboard.control  
--rw-r--r-- root       root               68 ./var/lib/opkg/info/xf86-input-keyboard.list  
+-rw-r--r-- root       root              106 ./var/lib/opkg/info/xf86-input-keyboard.list  
 -rw-r--r-- root       root              465 ./var/lib/opkg/info/xf86-video-fbdev.control  
 -rw-r--r-- root       root               43 ./var/lib/opkg/info/xf86-video-fbdev.list  
 -rw-r--r-- root       root              731 ./var/lib/opkg/info/xf86-video-omapfb.control  
@@ -4702,13 +4709,13 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              355 ./var/lib/opkg/info/xserver-xf86-config.control  
 -rw-r--r-- root       root               29 ./var/lib/opkg/info/xserver-xf86-config.list  
 -rw-r--r-- root       root              872 ./var/lib/opkg/info/xserver-xorg.control  
--rw-r--r-- root       root              377 ./var/lib/opkg/info/xserver-xorg.list  
+-rw-r--r-- root       root              339 ./var/lib/opkg/info/xserver-xorg.list  
 -rw-r--r-- root       root              640 ./var/lib/opkg/info/xset.control  
 -rw-r--r-- root       root               14 ./var/lib/opkg/info/xset.list  
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root            88488 ./var/lib/opkg/status  
+-rw-r--r-- root       root            88489 ./var/lib/opkg/status  
 drwxr-xr-x root       root             4096 ./var/lib/systemd  
 drwxr-sr-x root       root             4096 ./var/local  
 drwxr-xr-x root       root             4096 ./var/lock  
