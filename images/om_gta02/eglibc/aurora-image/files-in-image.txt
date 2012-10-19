@@ -1,5 +1,5 @@
 drwxr-xr-x root       root             4096 .  
-drwxr-xr-x root       root             4096 ./bin  
+drwxr-xr-x root       nogroup          4096 ./bin  
 lrwxrwxrwx root       root                7 ./bin/ash -> busybox
 -rwsr-xr-x root       root           421080 ./bin/busybox  
 lrwxrwxrwx root       root                7 ./bin/cat -> busybox
@@ -70,12 +70,12 @@ lrwxrwxrwx root       root                7 ./bin/uname -> busybox
 lrwxrwxrwx root       root                7 ./bin/usleep -> busybox
 lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
-drwxr-xr-x root       root             4096 ./boot  
+drwxr-xr-x root       nogroup          4096 ./boot  
 -rw-r--r-- root       root               24 ./boot/append-GTA02  
 lrwxrwxrwx root       root               15 ./boot/uImage -> uImage-2.6.39.4
 -rw-r--r-- root       root          1471160 ./boot/uImage-2.6.39.4  
 lrwxrwxrwx root       root                6 ./boot/uImage-GTA02.bin -> uImage
-drwxr-xr-x root       root             4096 ./dev  
+drwxr-xr-x root       nogroup          4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
 crw------- root       root                0 ./dev/fb0  
@@ -222,7 +222,7 @@ drwxr-xr-x root       root             4096 ./etc/dbus-1/system.d
 drwxr-xr-x root       root             4096 ./etc/default  
 -rw-r--r-- root       root              216 ./etc/default/apmd  
 -rw-r--r-- root       root               15 ./etc/default/busybox-syslog  
--rw-r--r-- root       root                0 ./etc/default/usbd  
+-rw-r--r-- root       nogroup             0 ./etc/default/usbd  
 -rw-r--r-- root       root              117 ./etc/default/useradd  
 drwxr-xr-x root       root             4096 ./etc/default/volatiles  
 -rw-r--r-- root       root               44 ./etc/default/volatiles/97_fontconfig  
@@ -233,7 +233,7 @@ drwxr-xr-x root       root             4096 ./etc/default/volatiles
 drwxr-xr-x root       root             4096 ./etc/depmod.d  
 -rw-r--r-- root       root               97 ./etc/environment  
 -rw-r--r-- root       root               89 ./etc/fb.modes  
--rw-r--r-- root       root               38 ./etc/filesystems  
+-rw-r--r-- root       nogroup            38 ./etc/filesystems  
 drwxr-xr-x root       root             4096 ./etc/fonts  
 drwxr-xr-x root       root             4096 ./etc/fonts/conf.avail  
 -rw-r--r-- root       root              220 ./etc/fonts/conf.avail/10-autohint.conf  
@@ -415,13 +415,13 @@ drwxr-xr-x root       root             4096 ./etc/freesmartphone/conf/phonesim
 -rw-r--r-- root       root             1223 ./etc/freesmartphone/conf/phonesim/fsogsmd.conf  
 lrwxrwxrwx root       root               18 ./etc/freesmartphone/conf/raphael -> ./htc_qualcomm_msm
 lrwxrwxrwx root       root               20 ./etc/freesmartphone/conf/trout -> ./htc_qualcomm_dream
--rw-r--r-- root       root              561 ./etc/fstab  
+-rw-r--r-- root       nogroup           561 ./etc/fstab  
 -rw-r--r-- root       root              502 ./etc/group  
 -rw------- root       root              502 ./etc/group-  
 -r-------- root       root              418 ./etc/gshadow  
--rw-r--r-- root       root               26 ./etc/host.conf  
--rw-r--r-- root       root                9 ./etc/hostname  
--rw-r--r-- root       root               44 ./etc/hosts  
+-rw-r--r-- root       nogroup            26 ./etc/host.conf  
+-rw-r--r-- root       nogroup             9 ./etc/hostname  
+-rw-r--r-- root       nogroup            44 ./etc/hosts  
 drwxr-xr-x root       root             4096 ./etc/init.d  
 -rwxr-xr-x root       root              891 ./etc/init.d/apmd  
 -rwxr-xr-x root       root             1059 ./etc/init.d/aurora-systemmanager  
@@ -431,14 +431,14 @@ drwxr-xr-x root       root             4096 ./etc/init.d
 -rwxr-xr-x root       root              989 ./etc/init.d/fsotdld  
 -rwxr-xr-x root       root             2445 ./etc/init.d/hwclock.sh  
 -rwxr-xr-x root       root              878 ./etc/init.d/modutils.sh  
--rwxr-xr-x root       root             1909 ./etc/init.d/networking  
+-rwxr-xr-x root       nogroup          1909 ./etc/init.d/networking  
 -rwxr-xr-x root       root             1116 ./etc/init.d/ppp  
 -rwxr-xr-x root       root             2143 ./etc/init.d/sshd  
 lrwxrwxrwx root       root               14 ./etc/init.d/syslog -> syslog.busybox
 -rwxr-xr-x root       root             1711 ./etc/init.d/syslog.busybox  
--rw-r--r-- root       root             1633 ./etc/inputrc  
--rw-r--r-- root       root               19 ./etc/issue  
--rw-r--r-- root       root               17 ./etc/issue.net  
+-rw-r--r-- root       nogroup          1633 ./etc/inputrc  
+-rw-r--r-- root       nogroup            19 ./etc/issue  
+-rw-r--r-- root       nogroup            17 ./etc/issue.net  
 -rw-r--r-- root       root             8903 ./etc/ld.so.cache  
 -rw-r--r-- root       root                0 ./etc/ld.so.conf  
 drwxr-xr-x root       root             4096 ./etc/libnl  
@@ -460,18 +460,18 @@ drwxr-xr-x root       root             4096 ./etc/modules-load.d
 -rw-r--r-- root       root               12 ./etc/modules-load.d/ppp_generic.conf  
 -rw-r--r-- root       root                7 ./etc/modules-load.d/rfcomm.conf  
 -rw-r--r-- root       root               92 ./etc/modules-load.d/snd-soc-neo1973-wm8753.conf  
--rw-r--r-- root       root              184 ./etc/motd  
+-rw-r--r-- root       nogroup           184 ./etc/motd  
 lrwxrwxrwx root       root               12 ./etc/mtab -> /proc/mounts
 drwxr-xr-x root       root             4096 ./etc/network  
 drwxr-xr-x root       root             4096 ./etc/network/if-down.d  
 drwxr-xr-x root       root             4096 ./etc/network/if-post-down.d  
 lrwxrwxrwx root       root               29 ./etc/network/if-post-down.d/wpa-supplicant -> ../if-pre-up.d/wpa-supplicant
 drwxr-xr-x root       root             4096 ./etc/network/if-pre-up.d  
--rwxr-xr-x root       root              809 ./etc/network/if-pre-up.d/nfsroot  
+-rwxr-xr-x root       nogroup           809 ./etc/network/if-pre-up.d/nfsroot  
 -rwxr-xr-x root       root             1951 ./etc/network/if-pre-up.d/wpa-supplicant  
-drwxr-xr-x root       root             4096 ./etc/network/if-up.d  
--rw-r--r-- root       root              508 ./etc/network/interfaces  
--rw-r--r-- root       root              465 ./etc/nsswitch.conf  
+drwxr-xr-x root       nogroup          4096 ./etc/network/if-up.d  
+-rw-r--r-- root       nogroup           508 ./etc/network/interfaces  
+-rw-r--r-- root       nogroup           465 ./etc/nsswitch.conf  
 drwxr-xr-x root       root             4096 ./etc/opkg  
 -rw-r--r-- root       root               72 ./etc/opkg/all-feed.conf  
 -rw-r--r-- root       root               95 ./etc/opkg/arch.conf  
@@ -517,8 +517,8 @@ drwxr-xr-x root       root             4096 ./etc/ppp/ip-up.d
 -rw------- root       root               77 ./etc/ppp/pap-secrets  
 drwxr-xr-x root       root             4096 ./etc/ppp/peers  
 -rw-r--r-- root       root              117 ./etc/ppp/peers/host  
--rw-r--r-- root       root             1023 ./etc/profile  
--rw-r--r-- root       root             2933 ./etc/protocols  
+-rw-r--r-- root       nogroup          1023 ./etc/profile  
+-rw-r--r-- root       nogroup          2933 ./etc/protocols  
 drwxr-xr-x root       root             4096 ./etc/rc0.d  
 lrwxrwxrwx root       root               14 ./etc/rc0.d/K09sshd -> ../init.d/sshd
 lrwxrwxrwx root       root               30 ./etc/rc0.d/K10aurora-systemmanager -> ../init.d/aurora-systemmanager
@@ -595,7 +595,7 @@ drwxr-xr-x root       root             4096 ./etc/rcS.d
 lrwxrwxrwx root       root               21 ./etc/rcS.d/S39modutils.sh -> ../init.d/modutils.sh
 lrwxrwxrwx root       root               20 ./etc/rcS.d/S40networking -> ../init.d/networking
 -rwxr-xr-x root       root               64 ./etc/rcS.d/S98run-postinsts  
--rw-r--r-- root       root              887 ./etc/rpc  
+-rw-r--r-- root       nogroup           887 ./etc/rpc  
 -r-------- root       root             1598 ./etc/securetty  
 drwxr-xr-x root       root             4096 ./etc/security  
 -rw-r--r-- root       root             4620 ./etc/security/access.conf  
@@ -607,13 +607,13 @@ drwxr-xr-x root       root             4096 ./etc/security/namespace.d
 -rwxr-xr-x root       root             1019 ./etc/security/namespace.init  
 -rw-r--r-- root       root             2972 ./etc/security/pam_env.conf  
 -rw-r--r-- root       root             2179 ./etc/security/time.conf  
--rw-r--r-- root       root            19398 ./etc/services  
+-rw-r--r-- root       nogroup         19398 ./etc/services  
 -r-------- root       root              557 ./etc/shadow  
--rw-r--r-- root       root              109 ./etc/shells  
--rw-r--r-- root       root               87 ./etc/shr-version  
-drwxr-xr-x root       root             4096 ./etc/skel  
--rwxr-xr-x root       root              410 ./etc/skel/.bashrc  
--rwxr-xr-x root       root              152 ./etc/skel/.profile  
+-rw-r--r-- root       nogroup           109 ./etc/shells  
+-rw-r--r-- root       root               89 ./etc/shr-version  
+drwxr-xr-x root       nogroup          4096 ./etc/skel  
+-rwxr-xr-x root       nogroup           410 ./etc/skel/.bashrc  
+-rwxr-xr-x root       nogroup           152 ./etc/skel/.profile  
 drwxr-xr-x root       root             4096 ./etc/ssh  
 -rw-r--r-- root       root           136218 ./etc/ssh/moduli  
 -rw-r--r-- root       root             1494 ./etc/ssh/ssh_config  
@@ -700,8 +700,8 @@ drwxr-xr-x root       root             4096 ./etc/xdg/autostart
 -rw-r--r-- root       root              176 ./etc/xdg/autostart/xinput-calibrator-autostart.desktop  
 drwxr-xr-x root       root             4096 ./etc/xdg/systemd  
 lrwxrwxrwx root       root               17 ./etc/xdg/systemd/user -> /etc/systemd/user
-drwxr-sr-x root       root             4096 ./home  
-drwxr-xr-x root       root             4096 ./home/root  
+drwxr-sr-x root       nogroup          4096 ./home  
+drwxr-xr-x root       nogroup          4096 ./home/root  
 drwxr-xr-x root       root             4096 ./lib  
 drwxr-xr-x root       root             4096 ./lib/depmod.d  
 -rw-r--r-- root       root               71 ./lib/depmod.d/search.conf  
@@ -858,6 +858,9 @@ drwxr-xr-x root       root             4096 ./lib/modules/2.6.39.4/kernel/net/ne
 -rw-r--r-- root       root            21444 ./lib/modules/2.6.39.4/kernel/net/netfilter/x_tables.ko  
 drwxr-xr-x root       root             4096 ./lib/modules/2.6.39.4/kernel/sound  
 drwxr-xr-x root       root             4096 ./lib/modules/2.6.39.4/kernel/sound/core  
+drwxr-xr-x root       root             4096 ./lib/modules/2.6.39.4/kernel/sound/core/oss  
+-rw-r--r-- root       root            19984 ./lib/modules/2.6.39.4/kernel/sound/core/oss/snd-mixer-oss.ko  
+-rw-r--r-- root       root            43272 ./lib/modules/2.6.39.4/kernel/sound/core/oss/snd-pcm-oss.ko  
 -rw-r--r-- root       root             8548 ./lib/modules/2.6.39.4/kernel/sound/core/snd-page-alloc.ko  
 -rw-r--r-- root       root            76092 ./lib/modules/2.6.39.4/kernel/sound/core/snd-pcm.ko  
 -rw-r--r-- root       root            25272 ./lib/modules/2.6.39.4/kernel/sound/core/snd-timer.ko  
@@ -872,15 +875,15 @@ drwxr-xr-x root       root             4096 ./lib/modules/2.6.39.4/kernel/sound/
 -rw-r--r-- root       root             8132 ./lib/modules/2.6.39.4/kernel/sound/soc/samsung/snd-soc-s3c24xx.ko  
 -rw-r--r-- root       root            85344 ./lib/modules/2.6.39.4/kernel/sound/soc/snd-soc-core.ko  
 -rw-r--r-- root       root            10628 ./lib/modules/2.6.39.4/kernel/sound/soundcore.ko  
--rw-r--r-- root       root            22045 ./lib/modules/2.6.39.4/modules.alias  
--rw-r--r-- root       root            28524 ./lib/modules/2.6.39.4/modules.alias.bin  
+-rw-r--r-- root       root            22156 ./lib/modules/2.6.39.4/modules.alias  
+-rw-r--r-- root       root            28665 ./lib/modules/2.6.39.4/modules.alias.bin  
 -rw-r--r-- root       root                0 ./lib/modules/2.6.39.4/modules.builtin.bin  
--rw-r--r-- root       root             4913 ./lib/modules/2.6.39.4/modules.dep  
--rw-r--r-- root       root             7076 ./lib/modules/2.6.39.4/modules.dep.bin  
+-rw-r--r-- root       root             5228 ./lib/modules/2.6.39.4/modules.dep  
+-rw-r--r-- root       root             7438 ./lib/modules/2.6.39.4/modules.dep.bin  
 -rw-r--r-- root       root              148 ./lib/modules/2.6.39.4/modules.devname  
 -rw-r--r-- root       root              131 ./lib/modules/2.6.39.4/modules.softdep  
--rw-r--r-- root       root            33891 ./lib/modules/2.6.39.4/modules.symbols  
--rw-r--r-- root       root            42308 ./lib/modules/2.6.39.4/modules.symbols.bin  
+-rw-r--r-- root       root            33943 ./lib/modules/2.6.39.4/modules.symbols  
+-rw-r--r-- root       root            42366 ./lib/modules/2.6.39.4/modules.symbols.bin  
 drwxr-xr-x root       root             4096 ./lib/security  
 -rwxr-xr-x root       root             5160 ./lib/security/pam_cap.so  
 -rwxr-xr-x root       root             2860 ./lib/security/pam_deny.so  
@@ -1217,22 +1220,22 @@ drwxr-xr-x root       root             4096 ./lib/udev/rules.d
 -rw-r--r-- root       root             3272 ./lib/udev/rules.d/99-systemd.rules  
 -rwxr-xr-x root       root            38780 ./lib/udev/scsi_id  
 -rwxr-xr-x root       root             5424 ./lib/udev/v4l_id  
-drwxr-xr-x root       root             4096 ./media  
-drwxr-xr-x root       root             4096 ./media/card  
-drwxr-xr-x root       root             4096 ./media/cf  
-drwxr-xr-x root       root             4096 ./media/hdd  
-drwxr-xr-x root       root             4096 ./media/mmc1  
-drwxr-xr-x root       root             4096 ./media/net  
-drwxr-xr-x root       root             4096 ./media/ram  
-drwxr-xr-x root       root             4096 ./media/realroot  
-drwxr-xr-x root       root             4096 ./media/union  
-drwxr-xr-x root       root             4096 ./mnt  
+drwxr-xr-x root       nogroup          4096 ./media  
+drwxr-xr-x root       nogroup          4096 ./media/card  
+drwxr-xr-x root       nogroup          4096 ./media/cf  
+drwxr-xr-x root       nogroup          4096 ./media/hdd  
+drwxr-xr-x root       nogroup          4096 ./media/mmc1  
+drwxr-xr-x root       nogroup          4096 ./media/net  
+drwxr-xr-x root       nogroup          4096 ./media/ram  
+drwxr-xr-x root       nogroup          4096 ./media/realroot  
+drwxr-xr-x root       nogroup          4096 ./media/union  
+drwxr-xr-x root       nogroup          4096 ./mnt  
 lrwxrwxrwx root       root               11 ./mnt/card -> /media/card
 lrwxrwxrwx root       root                9 ./mnt/cf -> /media/cf
 lrwxrwxrwx root       root               10 ./mnt/net -> /media/net
 lrwxrwxrwx root       root               10 ./mnt/ram -> /media/ram
-drwxr-xr-x root       root             4096 ./proc  
-drwxr-xr-x root       root             4096 ./run  
+drwxr-xr-x root       nogroup          4096 ./proc  
+drwxr-xr-x root       nogroup          4096 ./run  
 drwxr-xr-x root       root             4096 ./sbin  
 -rwxr-xr-x root       root            21296 ./sbin/agetty  
 -rwxr-xr-x root       root            20336 ./sbin/badblocks  
@@ -1313,12 +1316,12 @@ lrwxrwxrwx root       root               11 ./sbin/vigr -> vigr.shadow
 lrwxrwxrwx root       root               11 ./sbin/vigr.shadow -> vipw.shadow
 lrwxrwxrwx root       root               11 ./sbin/vipw -> vipw.shadow
 -rwxr-xr-x root       root            28080 ./sbin/vipw.shadow  
-drwxr-xr-x root       root             4096 ./sys  
-drwxrwxrwt root       root             4096 ./tmp  
+drwxr-xr-x root       nogroup          4096 ./sys  
+drwxrwxrwt root       nogroup          4096 ./tmp  
 drwxr-xr-x root       root             4096 ./usr  
 drwxr-xr-x root       root             4096 ./usr/bin  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
--rwxr-xr-x root       root          1175456 ./usr/bin/Xorg  
+-rwxr-xr-x root       root          1175464 ./usr/bin/Xorg  
 lrwxrwxrwx root       root               17 ./usr/bin/[ -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            47656 ./usr/bin/alsamixer  
@@ -1327,7 +1330,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            12832 ./usr/bin/apm  
 lrwxrwxrwx root       root               17 ./usr/bin/ar -> ../../bin/busybox
 lrwxrwxrwx root       root                5 ./usr/bin/arecord -> aplay
--rwxr-xr-x root       root            77920 ./usr/bin/aurora-daemon  
+-rwxr-xr-x root       root            77728 ./usr/bin/aurora-daemon  
 lrwxrwxrwx root       root               17 ./usr/bin/awk -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/basename -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/bunzip2 -> ../../bin/busybox
@@ -1512,8 +1515,8 @@ lrwxrwxrwx root       root               17 ./usr/bin/xargs -> ../../bin/busybox
 -rwxr-xr-x root       root            22436 ./usr/bin/xset  
 -rwxr-xr-x root       root           256160 ./usr/bin/xterm  
 lrwxrwxrwx root       root               17 ./usr/bin/yes -> ../../bin/busybox
-drwxr-xr-x root       root             4096 ./usr/games  
-drwxr-xr-x root       root             4096 ./usr/include  
+drwxr-xr-x root       nogroup          4096 ./usr/games  
+drwxr-xr-x root       nogroup          4096 ./usr/include  
 drwxr-xr-x root       root            12288 ./usr/lib  
 drwxr-xr-x root       root             4096 ./usr/lib/X11  
 -rw-r--r-- root       root             1723 ./usr/lib/X11/Xcms.txt  
@@ -1526,6 +1529,9 @@ drwxr-xr-x root       root             4096 ./usr/lib/X11/app-defaults
 -rw-r--r-- root       root             5826 ./usr/lib/X11/app-defaults/XTerm-color  
 drwxr-xr-x root       root             4096 ./usr/lib/X11/xinit  
 -rw-r--r-- root       root              755 ./usr/lib/X11/xinit/xinitrc  
+drwxr-xr-x root       root             4096 ./usr/lib/alsa-lib  
+-rwxr-xr-x root       root            76756 ./usr/lib/alsa-lib/libasound_module_ctl_bluetooth.so  
+-rwxr-xr-x root       root           138548 ./usr/lib/alsa-lib/libasound_module_pcm_bluetooth.so  
 drwxr-xr-x root       root             4096 ./usr/lib/binfmt.d  
 drwxr-xr-x root       root             4096 ./usr/lib/cornucopia  
 drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules  
@@ -1624,34 +1630,34 @@ lrwxrwxrwx root       root               15 ./usr/lib/libICE.so.6 -> libICE.so.6
 -rwxr-xr-x root       root            60404 ./usr/lib/libICE.so.6.3.0  
 lrwxrwxrwx root       root               18 ./usr/lib/libQtCore.so.4 -> libQtCore.so.4.8.1
 lrwxrwxrwx root       root               18 ./usr/lib/libQtCore.so.4.8 -> libQtCore.so.4.8.1
--rwxr-xr-x root       root          2805056 ./usr/lib/libQtCore.so.4.8.1  
+-rwxr-xr-x root       nogroup       2798760 ./usr/lib/libQtCore.so.4.8.1  
 lrwxrwxrwx root       root               18 ./usr/lib/libQtDBus.so.4 -> libQtDBus.so.4.8.1
 lrwxrwxrwx root       root               18 ./usr/lib/libQtDBus.so.4.8 -> libQtDBus.so.4.8.1
--rwxr-xr-x root       root           523476 ./usr/lib/libQtDBus.so.4.8.1  
+-rwxr-xr-x root       nogroup        523476 ./usr/lib/libQtDBus.so.4.8.1  
 lrwxrwxrwx root       root               25 ./usr/lib/libQtDeclarative.so.4 -> libQtDeclarative.so.4.8.1
 lrwxrwxrwx root       root               25 ./usr/lib/libQtDeclarative.so.4.8 -> libQtDeclarative.so.4.8.1
--rwxr-xr-x root       root          3735364 ./usr/lib/libQtDeclarative.so.4.8.1  
+-rwxr-xr-x root       nogroup       3735364 ./usr/lib/libQtDeclarative.so.4.8.1  
 lrwxrwxrwx root       root               17 ./usr/lib/libQtGui.so.4 -> libQtGui.so.4.8.1
 lrwxrwxrwx root       root               17 ./usr/lib/libQtGui.so.4.8 -> libQtGui.so.4.8.1
--rwxr-xr-x root       root          9941640 ./usr/lib/libQtGui.so.4.8.1  
+-rwxr-xr-x root       nogroup       9862328 ./usr/lib/libQtGui.so.4.8.1  
 lrwxrwxrwx root       root               21 ./usr/lib/libQtNetwork.so.4 -> libQtNetwork.so.4.8.1
 lrwxrwxrwx root       root               21 ./usr/lib/libQtNetwork.so.4.8 -> libQtNetwork.so.4.8.1
--rwxr-xr-x root       root          1334644 ./usr/lib/libQtNetwork.so.4.8.1  
+-rwxr-xr-x root       nogroup       1334644 ./usr/lib/libQtNetwork.so.4.8.1  
 lrwxrwxrwx root       root               20 ./usr/lib/libQtScript.so.4 -> libQtScript.so.4.8.1
 lrwxrwxrwx root       root               20 ./usr/lib/libQtScript.so.4.8 -> libQtScript.so.4.8.1
--rwxr-xr-x root       root          2441372 ./usr/lib/libQtScript.so.4.8.1  
+-rwxr-xr-x root       nogroup       2441372 ./usr/lib/libQtScript.so.4.8.1  
 lrwxrwxrwx root       root               17 ./usr/lib/libQtSql.so.4 -> libQtSql.so.4.8.1
 lrwxrwxrwx root       root               17 ./usr/lib/libQtSql.so.4.8 -> libQtSql.so.4.8.1
--rwxr-xr-x root       root           238096 ./usr/lib/libQtSql.so.4.8.1  
+-rwxr-xr-x root       nogroup        238096 ./usr/lib/libQtSql.so.4.8.1  
 lrwxrwxrwx root       root               17 ./usr/lib/libQtSvg.so.4 -> libQtSvg.so.4.8.1
 lrwxrwxrwx root       root               17 ./usr/lib/libQtSvg.so.4.8 -> libQtSvg.so.4.8.1
--rwxr-xr-x root       root           330420 ./usr/lib/libQtSvg.so.4.8.1  
+-rwxr-xr-x root       nogroup        330420 ./usr/lib/libQtSvg.so.4.8.1  
 lrwxrwxrwx root       root               17 ./usr/lib/libQtXml.so.4 -> libQtXml.so.4.8.1
 lrwxrwxrwx root       root               17 ./usr/lib/libQtXml.so.4.8 -> libQtXml.so.4.8.1
--rwxr-xr-x root       root           263524 ./usr/lib/libQtXml.so.4.8.1  
+-rwxr-xr-x root       nogroup        263524 ./usr/lib/libQtXml.so.4.8.1  
 lrwxrwxrwx root       root               25 ./usr/lib/libQtXmlPatterns.so.4 -> libQtXmlPatterns.so.4.8.1
 lrwxrwxrwx root       root               25 ./usr/lib/libQtXmlPatterns.so.4.8 -> libQtXmlPatterns.so.4.8.1
--rwxr-xr-x root       root          4545904 ./usr/lib/libQtXmlPatterns.so.4.8.1  
+-rwxr-xr-x root       nogroup       4545904 ./usr/lib/libQtXmlPatterns.so.4.8.1  
 lrwxrwxrwx root       root               14 ./usr/lib/libSM.so.6 -> libSM.so.6.0.1
 -rwxr-xr-x root       root            20956 ./usr/lib/libSM.so.6.0.1  
 lrwxrwxrwx root       root               19 ./usr/lib/libX11-xcb.so.1 -> libX11-xcb.so.1.0.0
@@ -1921,9 +1927,9 @@ drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports/Aurora/Compone
 drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports/QConf  
 -rwxr-xr-x root       root            11952 ./usr/lib/qt4/imports/QConf/libdconf-qml.so  
 -rw-r--r-- root       root               17 ./usr/lib/qt4/imports/QConf/qmldir  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/plugins  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/plugins/imageformats  
--rwxr-xr-x root       root            19308 ./usr/lib/qt4/plugins/imageformats/libqsvg.so  
+drwxr-xr-x root       nogroup          4096 ./usr/lib/qt4/plugins  
+drwxr-xr-x root       nogroup          4096 ./usr/lib/qt4/plugins/imageformats  
+-rwxr-xr-x root       nogroup         19308 ./usr/lib/qt4/plugins/imageformats/libqsvg.so  
 drwxr-xr-x root       root             4096 ./usr/lib/sysctl.d  
 drwxr-xr-x root       root             4096 ./usr/lib/systemd  
 drwxr-xr-x root       root             4096 ./usr/lib/systemd/ntp-units.d  
@@ -2782,6 +2788,7 @@ drwxr-xr-x root       root             4096 ./usr/share/X11/xorg.conf.d
 -rw-r--r-- root       root             1099 ./usr/share/X11/xorg.conf.d/10-evdev.conf  
 drwxr-xr-x root       root             4096 ./usr/share/alsa  
 -rw-r--r-- root       root             9184 ./usr/share/alsa/alsa.conf  
+-rw-r--r-- root       root              523 ./usr/share/alsa/bluetooth.conf  
 drwxr-xr-x root       root             4096 ./usr/share/alsa/cards  
 -rw-r--r-- root       root             1405 ./usr/share/alsa/cards/aliases.conf  
 drwxr-xr-x root       root             4096 ./usr/share/alsa/init  
@@ -2902,7 +2909,7 @@ drwxr-xr-x root       root             4096 ./usr/share/dbus-1/system-services
 -rw-r--r-- root       root               87 ./usr/share/dbus-1/system-services/org.freesmartphone.onetworkd.service  
 -rw-r--r-- root       root               83 ./usr/share/dbus-1/system-services/org.freesmartphone.otdld.service  
 -rw-r--r-- root       root               83 ./usr/share/dbus-1/system-services/org.freesmartphone.ousaged.service  
-drwxr-xr-x root       root             4096 ./usr/share/dict  
+drwxr-xr-x root       nogroup          4096 ./usr/share/dict  
 drwxr-xr-x root       root             4096 ./usr/share/fonts  
 drwxr-xr-x root       root             4096 ./usr/share/fonts/truetype  
 -rw-r--r-- root       root           550408 ./usr/share/fonts/truetype/DejaVuSans-Bold.ttf  
@@ -3015,7 +3022,7 @@ lrwxrwxrwx root       root                6 ./usr/share/icons/xcursor-transparen
 lrwxrwxrwx root       root                6 ./usr/share/icons/xcursor-transparent/cursors/v_double_arrow -> transp
 lrwxrwxrwx root       root                6 ./usr/share/icons/xcursor-transparent/cursors/watch -> transp
 lrwxrwxrwx root       root                6 ./usr/share/icons/xcursor-transparent/cursors/xterm -> transp
-drwxr-xr-x root       root             4096 ./usr/share/info  
+drwxr-xr-x root       nogroup          4096 ./usr/share/info  
 drwxr-xr-x root       root             4096 ./usr/share/locale  
 drwxr-xr-x root       root             4096 ./usr/share/locale/en_GB  
 drwxr-xr-x root       root             4096 ./usr/share/locale/en_GB/LC_MESSAGES  
@@ -3023,8 +3030,8 @@ drwxr-xr-x root       root             4096 ./usr/share/locale/en_GB/LC_MESSAGES
 -rw-r--r-- root       nogroup          1474 ./usr/share/locale/en_GB/LC_MESSAGES/libc.mo  
 -rw-r--r-- root       root             1366 ./usr/share/locale/en_GB/LC_MESSAGES/libgnome-keyring.mo  
 -rw-r--r-- root       root            23250 ./usr/share/locale/en_GB/LC_MESSAGES/xkeyboard-config.mo  
-drwxr-xr-x root       root             4096 ./usr/share/man  
-drwxr-xr-x root       root             4096 ./usr/share/misc  
+drwxr-xr-x root       nogroup          4096 ./usr/share/man  
+drwxr-xr-x root       nogroup          4096 ./usr/share/misc  
 drwxr-xr-x root       root             4096 ./usr/share/mobile-broadband-provider-info  
 -rw-r--r-- root       root             3665 ./usr/share/mobile-broadband-provider-info/serviceproviders.2.dtd  
 -rw-r--r-- root       root           170820 ./usr/share/mobile-broadband-provider-info/serviceproviders.xml  
@@ -3584,17 +3591,17 @@ drwxr-xr-x root       root             4096 ./usr/share/zoneinfo/US
 -rw-r--r-- root       root              118 ./usr/share/zoneinfo/Zulu  
 -rw-r--r-- root       root             4326 ./usr/share/zoneinfo/iso3166.tab  
 -rw-r--r-- root       root            19913 ./usr/share/zoneinfo/zone.tab  
-drwxr-sr-x root       root             4096 ./usr/src  
+drwxr-sr-x root       nogroup          4096 ./usr/src  
 drwxr-xr-x root       root             4096 ./var  
-drwxr-xr-x root       root             4096 ./var/backups  
-drwxr-xr-x root       root             4096 ./var/cache  
+drwxr-xr-x root       nogroup          4096 ./var/backups  
+drwxr-xr-x root       nogroup          4096 ./var/cache  
 drwx------ root       root             4096 ./var/cache/ldconfig  
 -rw------- root       root             8974 ./var/cache/ldconfig/aux-cache  
 drwxr-xr-x root       root             4096 ./var/lib  
 drwxr-xr-x root       root             4096 ./var/lib/alsa  
 -rw-r--r-- root       root               28 ./var/lib/alsa/asound.state  
 drwxr-xr-x messagebus messagebus       4096 ./var/lib/dbus  
-drwxr-xr-x root       root             4096 ./var/lib/misc  
+drwxr-xr-x root       nogroup          4096 ./var/lib/misc  
 drwxr-xr-x root       root             4096 ./var/lib/opkg  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives  
 -rw-r--r-- root       root               33 ./var/lib/opkg/alternatives/[[  
@@ -3780,7 +3787,7 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/xargs  
 -rw-r--r-- root       root               34 ./var/lib/opkg/alternatives/yes  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/zcat  
-drwxr-xr-x root       root            49152 ./var/lib/opkg/info  
+drwxr-xr-x root       root            57344 ./var/lib/opkg/info  
 -rw-r--r-- root       root              423 ./var/lib/opkg/info/alsa-conf-base.control  
 -rw-r--r-- root       root              217 ./var/lib/opkg/info/alsa-conf-base.list  
 -rw-r--r-- root       root              471 ./var/lib/opkg/info/alsa-states.control  
@@ -4088,10 +4095,18 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/kernel-module-slhc.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-slhc.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-slhc.postrm  
+-rw-r--r-- root       root              658 ./var/lib/opkg/info/kernel-module-snd-mixer-oss.control  
+-rw-r--r-- root       root               61 ./var/lib/opkg/info/kernel-module-snd-mixer-oss.list  
+-rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-snd-mixer-oss.postinst  
+-rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-snd-mixer-oss.postrm  
 -rw-r--r-- root       root              620 ./var/lib/opkg/info/kernel-module-snd-page-alloc.control  
--rw-r--r-- root       root               99 ./var/lib/opkg/info/kernel-module-snd-page-alloc.list  
+-rw-r--r-- root       root               58 ./var/lib/opkg/info/kernel-module-snd-page-alloc.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-snd-page-alloc.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-snd-page-alloc.postrm  
+-rw-r--r-- root       root              759 ./var/lib/opkg/info/kernel-module-snd-pcm-oss.control  
+-rw-r--r-- root       root              181 ./var/lib/opkg/info/kernel-module-snd-pcm-oss.list  
+-rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-snd-pcm-oss.postinst  
+-rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-snd-pcm-oss.postrm  
 -rw-r--r-- root       root              699 ./var/lib/opkg/info/kernel-module-snd-pcm.control  
 -rw-r--r-- root       root               51 ./var/lib/opkg/info/kernel-module-snd-pcm.list  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-snd-pcm.postinst  
@@ -4105,7 +4120,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/kernel-module-snd-soc-dfbmcs320.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-snd-soc-dfbmcs320.postrm  
 -rw-r--r-- root       root              826 ./var/lib/opkg/info/kernel-module-snd-soc-neo1973-wm8753.control  
--rw-r--r-- root       root              245 ./var/lib/opkg/info/kernel-module-snd-soc-neo1973-wm8753.list  
+-rw-r--r-- root       root              209 ./var/lib/opkg/info/kernel-module-snd-soc-neo1973-wm8753.list  
 -rwxr-xr-x root       root              217 ./var/lib/opkg/info/kernel-module-snd-soc-neo1973-wm8753.postinst  
 -rwxr-xr-x root       root               34 ./var/lib/opkg/info/kernel-module-snd-soc-neo1973-wm8753.postrm  
 -rw-r--r-- root       root              772 ./var/lib/opkg/info/kernel-module-snd-soc-s3c24xx-i2s.control  
@@ -4174,6 +4189,8 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              734 ./var/lib/opkg/info/libapm1.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libapm1.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libapm1.postinst  
+-rw-r--r-- root       root              597 ./var/lib/opkg/info/libasound-module-bluez.control  
+-rw-r--r-- root       root              154 ./var/lib/opkg/info/libasound-module-bluez.list  
 -rw-r--r-- root       root              480 ./var/lib/opkg/info/libasound2.control  
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/libasound2.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libasound2.postinst  
@@ -4362,7 +4379,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root             1725 ./var/lib/opkg/info/libqtdeclarative4.control  
 -rw-r--r-- root       root               99 ./var/lib/opkg/info/libqtdeclarative4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libqtdeclarative4.postinst  
--rw-r--r-- root       root             1842 ./var/lib/opkg/info/libqtgui4.control  
+-rw-r--r-- root       root             1803 ./var/lib/opkg/info/libqtgui4.control  
 -rw-r--r-- root       root               75 ./var/lib/opkg/info/libqtgui4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libqtgui4.postinst  
 -rw-r--r-- root       root             1614 ./var/lib/opkg/info/libqtnetwork4.control  
@@ -4562,9 +4579,11 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              188 ./var/lib/opkg/info/opkg.list  
 -rwxr-xr-x root       root              343 ./var/lib/opkg/info/opkg.postinst  
 -rwxr-xr-x root       root               54 ./var/lib/opkg/info/opkg.postrm  
+-rw-r--r-- root       root              554 ./var/lib/opkg/info/packagegroup-base-alsa.control  
+-rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-alsa.list  
 -rw-r--r-- root       root              438 ./var/lib/opkg/info/packagegroup-base-apm.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-apm.list  
--rw-r--r-- root       root              670 ./var/lib/opkg/info/packagegroup-base-bluetooth.control  
+-rw-r--r-- root       root              694 ./var/lib/opkg/info/packagegroup-base-bluetooth.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-bluetooth.list  
 -rw-r--r-- root       root              494 ./var/lib/opkg/info/packagegroup-base-ext2.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-ext2.list  
@@ -4584,7 +4603,7 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-vfat.list  
 -rw-r--r-- root       root              799 ./var/lib/opkg/info/packagegroup-base-wifi.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-wifi.list  
--rw-r--r-- root       root              935 ./var/lib/opkg/info/packagegroup-base.control  
+-rw-r--r-- root       root              959 ./var/lib/opkg/info/packagegroup-base.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base.list  
 -rw-r--r-- root       root              666 ./var/lib/opkg/info/packagegroup-core-boot.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-core-boot.list  
@@ -4803,22 +4822,22 @@ drwxr-xr-x root       root            49152 ./var/lib/opkg/info
 -rw-r--r-- root       root              566 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root            89903 ./var/lib/opkg/status  
+-rw-r--r-- root       root            91105 ./var/lib/opkg/status  
 drwxr-xr-x root       root             4096 ./var/lib/systemd  
-drwxr-sr-x root       root             4096 ./var/local  
-drwxr-xr-x root       root             4096 ./var/lock  
-drwxr-xr-x root       root             4096 ./var/lock/subsys  
-drwxr-xr-x root       root             4096 ./var/log  
+drwxr-sr-x root       nogroup          4096 ./var/local  
+drwxr-xr-x root       nogroup          4096 ./var/lock  
+drwxr-xr-x root       nogroup          4096 ./var/lock/subsys  
+drwxr-xr-x root       nogroup          4096 ./var/log  
 drwxr-xr-x root       root             4096 ./var/log/journal  
-drwxr-xr-x root       root             4096 ./var/run  
+drwxr-xr-x root       nogroup          4096 ./var/run  
 drwxr-xr-x messagebus messagebus       4096 ./var/run/dbus  
-drwxr-xr-x root       root             4096 ./var/spool  
+drwxr-xr-x root       nogroup          4096 ./var/spool  
 drwxr-xr-x root       root             4096 ./var/spool/mail  
-drwxr-xr-x root       root             4096 ./var/tmp  
-drwxr-xr-x root       root             4096 ./var/volatile  
-drwxr-xr-x root       root             4096 ./var/volatile/cache  
-drwxrwxrwt root       root             4096 ./var/volatile/lock  
-drwxr-xr-x root       root             4096 ./var/volatile/lock/subsys  
-drwxr-xr-x root       root             4096 ./var/volatile/log  
-drwxr-xr-x root       root             4096 ./var/volatile/run  
-drwxrwxrwt root       root             4096 ./var/volatile/tmp  
+drwxr-xr-x root       nogroup          4096 ./var/tmp  
+drwxr-xr-x root       nogroup          4096 ./var/volatile  
+drwxr-xr-x root       nogroup          4096 ./var/volatile/cache  
+drwxrwxrwt root       nogroup          4096 ./var/volatile/lock  
+drwxr-xr-x root       nogroup          4096 ./var/volatile/lock/subsys  
+drwxr-xr-x root       nogroup          4096 ./var/volatile/log  
+drwxr-xr-x root       nogroup          4096 ./var/volatile/run  
+drwxrwxrwt root       nogroup          4096 ./var/volatile/tmp  
