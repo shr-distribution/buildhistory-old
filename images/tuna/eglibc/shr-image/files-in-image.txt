@@ -79,7 +79,7 @@ lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root             4096 ./boot  
 lrwxrwxrwx root       root               13 ./boot/zImage -> zImage-3.0.46
--rw-r--r-- root       root          3268372 ./boot/zImage-3.0.46  
+-rw-r--r-- root       root          3268248 ./boot/zImage-3.0.46  
 drwxr-xr-x root       root             4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -843,8 +843,9 @@ drwxr-xr-x root       root             4096 ./etc/udev/rules.d
 -rw-r--r-- root       root              742 ./etc/udev/rules.d/localextra.rules  
 -rw-r--r-- root       root              728 ./etc/udev/rules.d/modprobe.rules  
 -rw-r--r-- root       root              855 ./etc/udev/rules.d/touchscreen.rules  
+-rw-r--r-- root       root              134 ./etc/udev/rules.d/tuna-pulseaudio.rules  
 drwxr-xr-x root       root             4096 ./etc/udev/scripts  
--rwxr-xr-x root       root             1595 ./etc/udev/scripts/mount.sh  
+-rwxr-xr-x root       root             1763 ./etc/udev/scripts/mount.sh  
 -rwxr-xr-x root       root             1402 ./etc/udev/scripts/network.sh  
 -rw-r--r-- root       root               44 ./etc/udev/udev.conf  
 drwxr-xr-x root       root             4096 ./etc/udhcpc.d  
@@ -1437,7 +1438,7 @@ drwxrwxrwt root       root             4096 ./tmp
 drwxr-xr-x root       root             4096 ./usr  
 drwxr-xr-x root       root            16384 ./usr/bin  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
--rwxr-xr-x root       root          1536208 ./usr/bin/Xorg  
+-rwxr-xr-x root       root          1536224 ./usr/bin/Xorg  
 lrwxrwxrwx root       root               17 ./usr/bin/[ -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            48524 ./usr/bin/alsamixer  
@@ -8116,7 +8117,15 @@ drwxr-xr-x root       root             4096 ./usr/share/screen/utf8encodings
 -rw-r--r-- root       root               52 ./usr/share/screen/utf8encodings/cd  
 -rw-r--r-- root       root              212 ./usr/share/screen/utf8encodings/d6  
 drwxr-xr-x root       root             4096 ./usr/share/shr-splash  
+lrwxrwxrwx root       root               28 ./usr/share/shr-splash/theme -> themes/shr-splash-theme-logo
 drwxr-xr-x root       root             4096 ./usr/share/shr-splash/themes  
+drwxr-xr-x root       root             4096 ./usr/share/shr-splash/themes/shr-splash-theme-logo  
+-rw-r--r-- root       root               95 ./usr/share/shr-splash/themes/shr-splash-theme-logo/author  
+-rw-r--r-- root       root           356776 ./usr/share/shr-splash/themes/shr-splash-theme-logo/boot.fbz  
+-rw-r--r-- root       root                9 ./usr/share/shr-splash/themes/shr-splash-theme-logo/name  
+-rw-r--r-- root       root           251105 ./usr/share/shr-splash/themes/shr-splash-theme-logo/preview.png  
+-rw-r--r-- root       root           357060 ./usr/share/shr-splash/themes/shr-splash-theme-logo/shutdown.fbz  
+-rw-r--r-- root       root           921654 ./usr/share/shr-splash/themes/shr-splash-theme-logo/xsplash-vga.ppm  
 drwxr-xr-x root       root             4096 ./usr/share/shr-wizard  
 -rwxr-xr-x root       root             4344 ./usr/share/shr-wizard/shr-wizard.py  
 drwxr-xr-x root       root             4096 ./usr/share/shr_elm_softkey  
@@ -11570,6 +11579,7 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               35 ./var/lib/opkg/alternatives/setconsole  
 -rw-r--r-- root       root               38 ./var/lib/opkg/alternatives/setsid  
 -rw-r--r-- root       root               19 ./var/lib/opkg/alternatives/sh  
+-rw-r--r-- root       root               60 ./var/lib/opkg/alternatives/shr-splash-theme  
 -rw-r--r-- root       root               34 ./var/lib/opkg/alternatives/shutdown  
 -rw-r--r-- root       root               22 ./var/lib/opkg/alternatives/sleep  
 -rw-r--r-- root       root               35 ./var/lib/opkg/alternatives/sort  
@@ -11657,20 +11667,20 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root              691 ./var/lib/opkg/info/bluez4.control  
 -rw-r--r-- root       root              640 ./var/lib/opkg/info/bluez4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/bluez4.postinst  
--rw-r--r-- root       root             1693 ./var/lib/opkg/info/busybox-hwclock.control  
+-rw-r--r-- root       root             1719 ./var/lib/opkg/info/busybox-hwclock.control  
 -rw-r--r-- root       root               23 ./var/lib/opkg/info/busybox-hwclock.list  
 -rwxr-xr-x root       root              105 ./var/lib/opkg/info/busybox-hwclock.postinst  
 -rwxr-xr-x root       root               43 ./var/lib/opkg/info/busybox-hwclock.postrm  
 -rwxr-xr-x root       root               68 ./var/lib/opkg/info/busybox-hwclock.prerm  
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
--rw-r--r-- root       root             1692 ./var/lib/opkg/info/busybox-syslog.control  
+-rw-r--r-- root       root             1718 ./var/lib/opkg/info/busybox-syslog.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/busybox-syslog.list  
 -rwxr-xr-x root       root              288 ./var/lib/opkg/info/busybox-syslog.postinst  
 -rwxr-xr-x root       root              176 ./var/lib/opkg/info/busybox-syslog.postrm  
 -rwxr-xr-x root       root              186 ./var/lib/opkg/info/busybox-syslog.prerm  
--rw-r--r-- root       root             1692 ./var/lib/opkg/info/busybox-udhcpc.control  
+-rw-r--r-- root       root             1718 ./var/lib/opkg/info/busybox-udhcpc.control  
 -rw-r--r-- root       root               91 ./var/lib/opkg/info/busybox-udhcpc.list  
--rw-r--r-- root       root             1766 ./var/lib/opkg/info/busybox.control  
+-rw-r--r-- root       root             1792 ./var/lib/opkg/info/busybox.control  
 -rw-r--r-- root       root               68 ./var/lib/opkg/info/busybox.list  
 -rwxr-xr-x root       root            11409 ./var/lib/opkg/info/busybox.postinst  
 -rwxr-xr-x root       root             8277 ./var/lib/opkg/info/busybox.postrm  
@@ -12830,7 +12840,7 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-cli-tools-debug.list  
 -rw-r--r-- root       root              573 ./var/lib/opkg/info/packagegroup-cli-tools.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-cli-tools.list  
--rw-r--r-- root       root              671 ./var/lib/opkg/info/packagegroup-core-boot.control  
+-rw-r--r-- root       root              669 ./var/lib/opkg/info/packagegroup-core-boot.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-core-boot.list  
 -rw-r--r-- root       root              438 ./var/lib/opkg/info/packagegroup-core-ssh-openssh.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-core-ssh-openssh.list  
@@ -13098,6 +13108,10 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root               29 ./var/lib/opkg/info/shr-settings.conffiles  
 -rw-r--r-- root       root              812 ./var/lib/opkg/info/shr-settings.control  
 -rw-r--r-- root       root             6657 ./var/lib/opkg/info/shr-settings.list  
+-rw-r--r-- root       root              524 ./var/lib/opkg/info/shr-splash-theme-logo.control  
+-rw-r--r-- root       root              420 ./var/lib/opkg/info/shr-splash-theme-logo.list  
+-rwxr-xr-x root       root              118 ./var/lib/opkg/info/shr-splash-theme-logo.postinst  
+-rwxr-xr-x root       root               87 ./var/lib/opkg/info/shr-splash-theme-logo.postrm  
 -rw-r--r-- root       root              509 ./var/lib/opkg/info/shr-splash.control  
 -rw-r--r-- root       root               79 ./var/lib/opkg/info/shr-splash.list  
 -rwxr-xr-x root       root              248 ./var/lib/opkg/info/shr-splash.postinst  
@@ -13175,8 +13189,8 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root             2725 ./var/lib/opkg/info/tzdata.list  
 -rwxr-xr-x root       root             1130 ./var/lib/opkg/info/tzdata.postinst  
 -rw-r--r-- root       root               26 ./var/lib/opkg/info/udev-extraconf.conffiles  
--rw-r--r-- root       root              592 ./var/lib/opkg/info/udev-extraconf.control  
--rw-r--r-- root       root              202 ./var/lib/opkg/info/udev-extraconf.list  
+-rw-r--r-- root       root              622 ./var/lib/opkg/info/udev-extraconf.control  
+-rw-r--r-- root       root              242 ./var/lib/opkg/info/udev-extraconf.list  
 -rw-r--r-- root       root              547 ./var/lib/opkg/info/udev-systemd.control  
 -rw-r--r-- root       root              508 ./var/lib/opkg/info/udev-systemd.list  
 -rw-r--r-- root       root              637 ./var/lib/opkg/info/udev-utils.control  
@@ -13306,7 +13320,7 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           193831 ./var/lib/opkg/status  
+-rw-r--r-- root       root           194042 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
