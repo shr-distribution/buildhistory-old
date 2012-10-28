@@ -72,7 +72,7 @@ lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root             4096 ./boot  
 lrwxrwxrwx root       root               13 ./boot/uImage -> uImage-2.6.37
--rw-r--r-- root       root          1962496 ./boot/uImage-2.6.37  
+-rw-r--r-- root       root          1962268 ./boot/uImage-2.6.37  
 drwxr-xr-x root       root             4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -427,7 +427,7 @@ drwxr-xr-x root       root             4096 ./etc/init.d
 -rwxr-xr-x root       root             1002 ./etc/init.d/fsodeviced  
 -rwxr-xr-x root       root              989 ./etc/init.d/fsotdld  
 -rwxr-xr-x root       root             2445 ./etc/init.d/hwclock.sh  
--rwxr-xr-x root       nogroup           348 ./etc/init.d/keymap.sh  
+-rwxr-xr-x root       root              348 ./etc/init.d/keymap.sh  
 -rwxr-xr-x root       root              878 ./etc/init.d/modutils.sh  
 -rwxr-xr-x root       root             1909 ./etc/init.d/networking  
 -rwxr-xr-x root       root             1116 ./etc/init.d/ppp  
@@ -437,8 +437,8 @@ lrwxrwxrwx root       root               14 ./etc/init.d/syslog -> syslog.busybo
 -rw-r--r-- root       root             1633 ./etc/inputrc  
 -rw-r--r-- root       root               19 ./etc/issue  
 -rw-r--r-- root       root               17 ./etc/issue.net  
--rw-r--r-- root       nogroup          1529 ./etc/keymap-2.6.map  
--rw-r--r-- root       root             8746 ./etc/ld.so.cache  
+-rw-r--r-- root       root             1529 ./etc/keymap-2.6.map  
+-rw-r--r-- root       root             8673 ./etc/ld.so.cache  
 -rw-r--r-- root       root                0 ./etc/ld.so.conf  
 drwxr-xr-x root       root             4096 ./etc/libnl  
 -rw-r--r-- root       root             1130 ./etc/libnl/classid  
@@ -614,7 +614,7 @@ drwxr-xr-x root       root             4096 ./etc/security/namespace.d
 -rw-r--r-- root       root            19398 ./etc/services  
 -r-------- root       root              557 ./etc/shadow  
 -rw-r--r-- root       root              109 ./etc/shells  
--rw-r--r-- root       root               94 ./etc/shr-version  
+-rw-r--r-- root       nogroup            94 ./etc/shr-version  
 drwxr-xr-x root       root             4096 ./etc/skel  
 -rwxr-xr-x root       root              410 ./etc/skel/.bashrc  
 -rwxr-xr-x root       root              152 ./etc/skel/.profile  
@@ -625,11 +625,11 @@ drwxr-xr-x root       root             4096 ./etc/ssh
 drwxr-xr-x root       root             4096 ./etc/sysctl.d  
 lrwxrwxrwx root       root               27 ./etc/syslog-startup.conf -> syslog-startup.conf.busybox
 -rw-r--r-- root       root              651 ./etc/syslog-startup.conf.busybox  
-drwxr-xr-x root       nogroup          4096 ./etc/systemd  
+drwxr-xr-x root       root             4096 ./etc/systemd  
 -rw-r--r-- root       root              749 ./etc/systemd/journald.conf  
 -rw-r--r-- root       root              705 ./etc/systemd/logind.conf  
 drwxr-xr-x root       root             4096 ./etc/systemd/ntp-units.d  
-drwxr-xr-x root       nogroup          4096 ./etc/systemd/system  
+drwxr-xr-x root       root             4096 ./etc/systemd/system  
 -rw-r--r-- root       root             1036 ./etc/systemd/system.conf  
 drwxr-xr-x root       root             4096 ./etc/systemd/system/basic.target.wants  
 lrwxrwxrwx root       root               47 ./etc/systemd/system/basic.target.wants/nokia-n900-cmt-gpio.service -> /lib/systemd/system/nokia-n900-cmt-gpio.service
@@ -640,7 +640,7 @@ lrwxrwxrwx root       root                9 ./etc/systemd/system/crond.service -
 lrwxrwxrwx root       root                9 ./etc/systemd/system/dnsmasq.service -> /dev/null
 lrwxrwxrwx root       root                9 ./etc/systemd/system/fbsetup.service -> /dev/null
 lrwxrwxrwx root       root                9 ./etc/systemd/system/fso-gpsd-sysv.service -> /dev/null
-drwxr-xr-x root       nogroup          4096 ./etc/systemd/system/getty.target.wants  
+drwxr-xr-x root       root             4096 ./etc/systemd/system/getty.target.wants  
 lrwxrwxrwx root       root               35 ./etc/systemd/system/getty.target.wants/getty@tty1.service -> //lib/systemd/system/getty@.service
 lrwxrwxrwx root       root               41 ./etc/systemd/system/getty.target.wants/serial-getty@ttyS0.service -> /lib/systemd/system/serial-getty@.service
 lrwxrwxrwx root       root                9 ./etc/systemd/system/gpsd-sysv.service -> /dev/null
@@ -680,17 +680,17 @@ lrwxrwxrwx root       root               11 ./etc/terminfo/x/xterm -> xterm-colo
 -rw-r--r-- root       root               10 ./etc/timezone  
 drwxr-xr-x root       root             4096 ./etc/tmpfiles.d  
 -rw-r--r-- root       root              142 ./etc/tmpfiles.d/var-run.conf  
-drwxr-xr-x root       nogroup          4096 ./etc/udev  
--rw-r--r-- root       nogroup            41 ./etc/udev/mount.blacklist  
-drwxr-xr-x root       nogroup          4096 ./etc/udev/rules.d  
--rw-r--r-- root       nogroup           748 ./etc/udev/rules.d/automount.rules  
--rw-r--r-- root       nogroup           757 ./etc/udev/rules.d/autonet.rules  
--rw-r--r-- root       nogroup           742 ./etc/udev/rules.d/localextra.rules  
+drwxr-xr-x root       root             4096 ./etc/udev  
+-rw-r--r-- root       root               41 ./etc/udev/mount.blacklist  
+drwxr-xr-x root       root             4096 ./etc/udev/rules.d  
+-rw-r--r-- root       root              748 ./etc/udev/rules.d/automount.rules  
+-rw-r--r-- root       root              757 ./etc/udev/rules.d/autonet.rules  
+-rw-r--r-- root       root              742 ./etc/udev/rules.d/localextra.rules  
 -rw-r--r-- root       root              728 ./etc/udev/rules.d/modprobe.rules  
 -rw-r--r-- root       root              855 ./etc/udev/rules.d/touchscreen.rules  
-drwxr-xr-x root       nogroup          4096 ./etc/udev/scripts  
--rwxr-xr-x root       nogroup          1595 ./etc/udev/scripts/mount.sh  
--rwxr-xr-x root       nogroup          1402 ./etc/udev/scripts/network.sh  
+drwxr-xr-x root       root             4096 ./etc/udev/scripts  
+-rwxr-xr-x root       root             1763 ./etc/udev/scripts/mount.sh  
+-rwxr-xr-x root       root             1402 ./etc/udev/scripts/network.sh  
 -rw-r--r-- root       root               44 ./etc/udev/udev.conf  
 drwxr-xr-x root       root             4096 ./etc/udhcpc.d  
 -rwxr-xr-x root       root             2548 ./etc/udhcpc.d/50default  
@@ -765,8 +765,6 @@ lrwxrwxrwx root       root               26 ./lib/libsystemd-daemon.so.0 -> libs
 -rwxr-xr-x root       root             9752 ./lib/libsystemd-daemon.so.0.0.5  
 lrwxrwxrwx root       root               27 ./lib/libsystemd-journal.so.0 -> libsystemd-journal.so.0.6.0
 -rwxr-xr-x root       root            91852 ./lib/libsystemd-journal.so.0.6.0  
-lrwxrwxrwx root       root               25 ./lib/libsystemd-login.so.0 -> libsystemd-login.so.0.3.9
--rwxr-xr-x root       root            38540 ./lib/libsystemd-login.so.0.3.9  
 lrwxrwxrwx root       root               15 ./lib/libtinfo.so.5 -> libtinfo.so.5.9
 -rwxr-xr-x root       root           117304 ./lib/libtinfo.so.5.9  
 lrwxrwxrwx root       root               16 ./lib/libudev.so.1 -> libudev.so.1.1.6
@@ -1003,7 +1001,7 @@ lrwxrwxrwx root       root               17 ./lib/systemd/system/runlevel5.targe
 drwxr-xr-x root       root             4096 ./lib/systemd/system/runlevel5.target.wants  
 lrwxrwxrwx root       root               39 ./lib/systemd/system/runlevel5.target.wants/systemd-update-utmp-runlevel.service -> ../systemd-update-utmp-runlevel.service
 lrwxrwxrwx root       root               13 ./lib/systemd/system/runlevel6.target -> reboot.target
--rwxr-xr-x root       nogroup           918 ./lib/systemd/system/serial-getty@.service  
+-rwxr-xr-x root       root              918 ./lib/systemd/system/serial-getty@.service  
 -rw-r--r-- root       root              402 ./lib/systemd/system/shutdown.target  
 drwxr-xr-x root       root             4096 ./lib/systemd/system/shutdown.target.wants  
 lrwxrwxrwx root       root               21 ./lib/systemd/system/shutdown.target.wants/alsa-store.service -> ../alsa-store.service
@@ -1308,7 +1306,7 @@ drwxrwxrwt root       root             4096 ./tmp
 drwxr-xr-x root       root             4096 ./usr  
 drwxr-xr-x root       root             4096 ./usr/bin  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
--rwxr-xr-x root       root          1536224 ./usr/bin/Xorg  
+-rwxr-xr-x root       root          1536208 ./usr/bin/Xorg  
 lrwxrwxrwx root       root               17 ./usr/bin/[ -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            48524 ./usr/bin/alsamixer  
@@ -1335,7 +1333,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/cmp -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/cut -> ../../bin/busybox
 -rwxr-xr-x root       root             9224 ./usr/bin/cvt  
 -rwxr-xr-x root       root             7256 ./usr/bin/dbus-cleanup-sockets  
--rwxr-xr-x root       root           273952 ./usr/bin/dbus-daemon  
+-rwxr-xr-x root       root           273940 ./usr/bin/dbus-daemon  
 -rwxr-xr-x root       root            19724 ./usr/bin/dbus-launch  
 -rwxr-xr-x root       root            11132 ./usr/bin/dbus-monitor  
 -rwxr-xr-x root       root            13560 ./usr/bin/dbus-send  
@@ -1627,7 +1625,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules/tests
 -rwxr-xr-x root       root              927 ./usr/lib/cornucopia/modules/tests/pluginc.la  
 -rwxr-xr-x root       root             4664 ./usr/lib/cornucopia/modules/tests/pluginc.so  
 drwxr-xr-x root       root             4096 ./usr/lib/dbus  
--rwsr-xr-x root       messagebus     191952 ./usr/lib/dbus/dbus-daemon-launch-helper  
+-rwsr-xr-x root       messagebus     191940 ./usr/lib/dbus/dbus-daemon-launch-helper  
 drwxr-xr-x root       root             4096 ./usr/lib/dconf  
 -rwxr-xr-x root       root            23020 ./usr/lib/dconf/dconf-service  
 -rwxr-xr-x root       root             7640 ./usr/lib/e2initrd_helper  
@@ -3557,10 +3555,10 @@ drwxr-xr-x root       root             4096 ./var
 drwxr-xr-x root       root             4096 ./var/backups  
 drwxr-xr-x root       root             4096 ./var/cache  
 drwx------ root       root             4096 ./var/cache/ldconfig  
--rw------- root       root             8803 ./var/cache/ldconfig/aux-cache  
+-rw------- root       root             8733 ./var/cache/ldconfig/aux-cache  
 drwxr-xr-x root       root             4096 ./var/lib  
 drwxr-xr-x root       root             4096 ./var/lib/alsa  
--rw-r--r-- root       nogroup            28 ./var/lib/alsa/asound.state  
+-rw-r--r-- root       root               28 ./var/lib/alsa/asound.state  
 drwxr-xr-x messagebus messagebus       4096 ./var/lib/dbus  
 drwxr-xr-x root       root             4096 ./var/lib/misc  
 drwxr-xr-x root       root             4096 ./var/lib/opkg  
@@ -3748,7 +3746,7 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               36 ./var/lib/opkg/alternatives/xargs  
 -rw-r--r-- root       root               34 ./var/lib/opkg/alternatives/yes  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/zcat  
-drwxr-xr-x root       root            45056 ./var/lib/opkg/info  
+drwxr-xr-x root       root            40960 ./var/lib/opkg/info  
 -rw-r--r-- root       root              432 ./var/lib/opkg/info/alsa-conf-base.control  
 -rw-r--r-- root       root              217 ./var/lib/opkg/info/alsa-conf-base.list  
 -rw-r--r-- root       root              480 ./var/lib/opkg/info/alsa-states.control  
@@ -3785,26 +3783,26 @@ drwxr-xr-x root       root            45056 ./var/lib/opkg/info
 -rw-r--r-- root       root              691 ./var/lib/opkg/info/bluez4.control  
 -rw-r--r-- root       root              705 ./var/lib/opkg/info/bluez4.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/bluez4.postinst  
--rw-r--r-- root       root             1693 ./var/lib/opkg/info/busybox-hwclock.control  
+-rw-r--r-- root       root             1719 ./var/lib/opkg/info/busybox-hwclock.control  
 -rw-r--r-- root       root               23 ./var/lib/opkg/info/busybox-hwclock.list  
 -rwxr-xr-x root       root              105 ./var/lib/opkg/info/busybox-hwclock.postinst  
 -rwxr-xr-x root       root               43 ./var/lib/opkg/info/busybox-hwclock.postrm  
 -rwxr-xr-x root       root               68 ./var/lib/opkg/info/busybox-hwclock.prerm  
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/busybox-syslog.conffiles  
--rw-r--r-- root       root             1692 ./var/lib/opkg/info/busybox-syslog.control  
+-rw-r--r-- root       root             1718 ./var/lib/opkg/info/busybox-syslog.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/busybox-syslog.list  
 -rwxr-xr-x root       root              288 ./var/lib/opkg/info/busybox-syslog.postinst  
 -rwxr-xr-x root       root              176 ./var/lib/opkg/info/busybox-syslog.postrm  
 -rwxr-xr-x root       root              186 ./var/lib/opkg/info/busybox-syslog.prerm  
--rw-r--r-- root       root             1692 ./var/lib/opkg/info/busybox-udhcpc.control  
+-rw-r--r-- root       root             1718 ./var/lib/opkg/info/busybox-udhcpc.control  
 -rw-r--r-- root       root               91 ./var/lib/opkg/info/busybox-udhcpc.list  
--rw-r--r-- root       root             1766 ./var/lib/opkg/info/busybox.control  
+-rw-r--r-- root       root             1792 ./var/lib/opkg/info/busybox.control  
 -rw-r--r-- root       root               68 ./var/lib/opkg/info/busybox.list  
 -rwxr-xr-x root       root            11409 ./var/lib/opkg/info/busybox.postinst  
 -rwxr-xr-x root       root             8277 ./var/lib/opkg/info/busybox.postrm  
 -rwxr-xr-x root       root              762 ./var/lib/opkg/info/busybox.prerm  
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/dbus-1.conffiles  
--rw-r--r-- root       root              920 ./var/lib/opkg/info/dbus-1.control  
+-rw-r--r-- root       root              891 ./var/lib/opkg/info/dbus-1.control  
 -rw-r--r-- root       root              362 ./var/lib/opkg/info/dbus-1.list  
 -rwxr-xr-x root       root              227 ./var/lib/opkg/info/dbus-1.postinst  
 -rwxr-xr-x root       root               39 ./var/lib/opkg/info/dbus-1.postrm  
@@ -4362,9 +4360,6 @@ drwxr-xr-x root       root            45056 ./var/lib/opkg/info
 -rw-r--r-- root       root              684 ./var/lib/opkg/info/libsystemd-journal0.control  
 -rw-r--r-- root       root               62 ./var/lib/opkg/info/libsystemd-journal0.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libsystemd-journal0.postinst  
--rw-r--r-- root       root              586 ./var/lib/opkg/info/libsystemd-login0.control  
--rw-r--r-- root       root               58 ./var/lib/opkg/info/libsystemd-login0.list  
--rwxr-xr-x root       root               90 ./var/lib/opkg/info/libsystemd-login0.postinst  
 -rw-r--r-- root       root              503 ./var/lib/opkg/info/libtinfo5.control  
 -rw-r--r-- root       root               40 ./var/lib/opkg/info/libtinfo5.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libtinfo5.postinst  
@@ -4526,7 +4521,7 @@ drwxr-xr-x root       root            45056 ./var/lib/opkg/info
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base-vfat.list  
 -rw-r--r-- root       root              887 ./var/lib/opkg/info/packagegroup-base.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-base.list  
--rw-r--r-- root       root              675 ./var/lib/opkg/info/packagegroup-core-boot.control  
+-rw-r--r-- root       root              673 ./var/lib/opkg/info/packagegroup-core-boot.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-core-boot.list  
 -rw-r--r-- root       root              438 ./var/lib/opkg/info/packagegroup-core-ssh-openssh.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/packagegroup-core-ssh-openssh.list  
@@ -4641,7 +4636,7 @@ drwxr-xr-x root       root            45056 ./var/lib/opkg/info
 -rw-r--r-- root       root             2725 ./var/lib/opkg/info/tzdata.list  
 -rwxr-xr-x root       root             1130 ./var/lib/opkg/info/tzdata.postinst  
 -rw-r--r-- root       root               26 ./var/lib/opkg/info/udev-extraconf.conffiles  
--rw-r--r-- root       root              592 ./var/lib/opkg/info/udev-extraconf.control  
+-rw-r--r-- root       root              597 ./var/lib/opkg/info/udev-extraconf.control  
 -rw-r--r-- root       root              202 ./var/lib/opkg/info/udev-extraconf.list  
 -rw-r--r-- root       root              547 ./var/lib/opkg/info/udev-systemd.control  
 -rw-r--r-- root       root              508 ./var/lib/opkg/info/udev-systemd.list  
@@ -4731,7 +4726,7 @@ drwxr-xr-x root       root            45056 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root            86713 ./var/lib/opkg/status  
+-rw-r--r-- root       root            86490 ./var/lib/opkg/status  
 drwxr-xr-x root       root             4096 ./var/lib/systemd  
 drwxr-sr-x root       root             4096 ./var/local  
 drwxr-xr-x root       root             4096 ./var/lock  
