@@ -79,7 +79,7 @@ lrwxrwxrwx root       root                7 ./bin/vi -> busybox
 lrwxrwxrwx root       root                7 ./bin/zcat -> busybox
 drwxr-xr-x root       root             4096 ./boot  
 lrwxrwxrwx root       root               13 ./boot/uImage -> uImage-2.6.37
--rw-r--r-- root       root          1962268 ./boot/uImage-2.6.37  
+-rw-r--r-- root       root          1962668 ./boot/uImage-2.6.37  
 drwxr-xr-x root       root             4096 ./dev  
 crw-rw---- root       plugdev             0 ./dev/apm_bios  
 crw-rw--w- root       tty                 0 ./dev/console  
@@ -144,7 +144,7 @@ crw-r----- root       root                0 ./dev/ttyS0
 crw-r----- root       root                0 ./dev/ttySA0  
 crw-r--r-- root       root                0 ./dev/urandom  
 crw-r--r-- root       root                0 ./dev/zero  
-drwxr-xr-x root       root             4096 ./etc  
+drwxr-xr-x root       nogroup          4096 ./etc  
 drwxr-xr-x root       root             4096 ./etc/X11  
 -rw-r--r-- root       root              118 ./etc/X11/Xdefaults  
 -rwxr-xr-x root       root              521 ./etc/X11/Xinit  
@@ -264,7 +264,7 @@ drwxr-xr-x root       root             4096 ./etc/enlightenment
 -rw-r--r-- root       root               97 ./etc/environment  
 -rw-r--r-- root       root               89 ./etc/fb.modes  
 -rw-r--r-- root       root               38 ./etc/filesystems  
-drwxr-xr-x root       root             4096 ./etc/fonts  
+drwxr-xr-x root       nogroup          4096 ./etc/fonts  
 drwxr-xr-x root       root             4096 ./etc/fonts/conf.avail  
 -rw-r--r-- root       root              220 ./etc/fonts/conf.avail/10-autohint.conf  
 -rw-r--r-- root       root              226 ./etc/fonts/conf.avail/10-no-sub-pixel.conf  
@@ -295,11 +295,11 @@ drwxr-xr-x root       root             4096 ./etc/fonts/conf.avail
 -rw-r--r-- root       root              263 ./etc/fonts/conf.avail/70-yes-bitmaps.conf  
 -rw-r--r-- root       root              388 ./etc/fonts/conf.avail/80-delicious.conf  
 -rw-r--r-- root       root             1691 ./etc/fonts/conf.avail/90-synthetic.conf  
-drwxr-xr-x root       root             4096 ./etc/fonts/conf.d  
+drwxr-xr-x root       nogroup          4096 ./etc/fonts/conf.d  
 lrwxrwxrwx root       root               39 ./etc/fonts/conf.d/20-fix-globaladvance.conf -> ../conf.avail/20-fix-globaladvance.conf
 lrwxrwxrwx root       root               39 ./etc/fonts/conf.d/20-unhint-small-vera.conf -> ../conf.avail/20-unhint-small-vera.conf
--rw-r--r-- root       root              388 ./etc/fonts/conf.d/30-dejavu-aliases.conf  
--rw-r--r-- root       nogroup           419 ./etc/fonts/conf.d/30-liberation-aliases.conf  
+-rw-r--r-- root       nogroup           388 ./etc/fonts/conf.d/30-dejavu-aliases.conf  
+-rw-r--r-- root       root              419 ./etc/fonts/conf.d/30-liberation-aliases.conf  
 lrwxrwxrwx root       root               36 ./etc/fonts/conf.d/30-metric-aliases.conf -> ../conf.avail/30-metric-aliases.conf
 lrwxrwxrwx root       root               33 ./etc/fonts/conf.d/30-urw-aliases.conf -> ../conf.avail/30-urw-aliases.conf
 lrwxrwxrwx root       root               30 ./etc/fonts/conf.d/40-nonlatin.conf -> ../conf.avail/40-nonlatin.conf
@@ -502,7 +502,7 @@ drwxr-xr-x root       root             4096 ./etc/init.d
 -rwxr-xr-x root       root             1002 ./etc/init.d/fsodeviced  
 -rwxr-xr-x root       root              989 ./etc/init.d/fsotdld  
 -rwxr-xr-x root       root             3203 ./etc/init.d/gpsd-sysv  
--rwxr-xr-x root       root             2445 ./etc/init.d/hwclock.sh  
+-rwxr-xr-x root       root             2514 ./etc/init.d/hwclock.sh  
 -rwxr-xr-x root       root              348 ./etc/init.d/keymap.sh  
 -rwxr-xr-x root       root              878 ./etc/init.d/modutils.sh  
 -rwxr-xr-x root       root             1909 ./etc/init.d/networking  
@@ -845,18 +845,18 @@ lrwxrwxrwx root       root               11 ./etc/terminfo/x/xterm -> xterm-colo
 drwxr-xr-x root       root             4096 ./etc/tmpfiles.d  
 -rw-r--r-- root       root              142 ./etc/tmpfiles.d/var-run.conf  
 -rw-r--r-- root       root              645 ./etc/ts.conf  
-drwxr-xr-x root       root             4096 ./etc/udev  
--rw-r--r-- root       root               41 ./etc/udev/mount.blacklist  
-drwxr-xr-x root       root             4096 ./etc/udev/rules.d  
+drwxr-xr-x root       nogroup          4096 ./etc/udev  
+-rw-r--r-- root       nogroup            41 ./etc/udev/mount.blacklist  
+drwxr-xr-x root       nogroup          4096 ./etc/udev/rules.d  
 -rw-r--r-- root       root             2420 ./etc/udev/rules.d/60-gpsd.rules  
--rw-r--r-- root       root              748 ./etc/udev/rules.d/automount.rules  
--rw-r--r-- root       root              757 ./etc/udev/rules.d/autonet.rules  
--rw-r--r-- root       root              742 ./etc/udev/rules.d/localextra.rules  
+-rw-r--r-- root       nogroup           748 ./etc/udev/rules.d/automount.rules  
+-rw-r--r-- root       nogroup           757 ./etc/udev/rules.d/autonet.rules  
+-rw-r--r-- root       nogroup           742 ./etc/udev/rules.d/localextra.rules  
 -rw-r--r-- root       root              728 ./etc/udev/rules.d/modprobe.rules  
 -rw-r--r-- root       root              855 ./etc/udev/rules.d/touchscreen.rules  
-drwxr-xr-x root       root             4096 ./etc/udev/scripts  
--rwxr-xr-x root       root             1763 ./etc/udev/scripts/mount.sh  
--rwxr-xr-x root       root             1402 ./etc/udev/scripts/network.sh  
+drwxr-xr-x root       nogroup          4096 ./etc/udev/scripts  
+-rwxr-xr-x root       nogroup          1763 ./etc/udev/scripts/mount.sh  
+-rwxr-xr-x root       nogroup          1402 ./etc/udev/scripts/network.sh  
 -rw-r--r-- root       root               44 ./etc/udev/udev.conf  
 drwxr-xr-x root       root             4096 ./etc/udhcpc.d  
 -rwxr-xr-x root       root             2548 ./etc/udhcpc.d/50default  
@@ -1525,7 +1525,7 @@ drwxrwxrwt root       root             4096 ./tmp
 drwxr-xr-x root       root             4096 ./usr  
 drwxr-xr-x root       root            16384 ./usr/bin  
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
--rwxr-xr-x root       root          1536208 ./usr/bin/Xorg  
+-rwxr-xr-x root       root          1536224 ./usr/bin/Xorg  
 lrwxrwxrwx root       root               17 ./usr/bin/[ -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            48524 ./usr/bin/alsamixer  
@@ -1576,7 +1576,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/cut -> ../../bin/busybox
 -rwxr-xr-x root       root             9224 ./usr/bin/cvt  
 -rwxr-xr-x root       root            18436 ./usr/bin/cytune  
 -rwxr-xr-x root       root             7256 ./usr/bin/dbus-cleanup-sockets  
--rwxr-xr-x root       root           273940 ./usr/bin/dbus-daemon  
+-rwxr-xr-x root       root           273952 ./usr/bin/dbus-daemon  
 -rwxr-xr-x root       root             9028 ./usr/bin/dbus-daemon-proxy  
 -rwxr-xr-x root       root            19724 ./usr/bin/dbus-launch  
 -rwxr-xr-x root       root            11132 ./usr/bin/dbus-monitor  
@@ -1979,7 +1979,7 @@ drwxr-xr-x root       root             4096 ./usr/etc/mplayer
 drwxr-xr-x root       root             4096 ./usr/games  
 drwxr-xr-x root       root             4096 ./usr/include  
 drwxr-xr-x root       root             4096 ./usr/include/python2.7  
--rw-r--r-- root       root            35997 ./usr/include/python2.7/pyconfig.h  
+-rw-r--r-- root       root            35994 ./usr/include/python2.7/pyconfig.h  
 drwxr-xr-x root       root            20480 ./usr/lib  
 drwxr-xr-x root       root             4096 ./usr/lib/GConf  
 drwxr-xr-x root       root             4096 ./usr/lib/GConf/2  
@@ -2089,7 +2089,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules/tests
 -rwxr-xr-x root       root              927 ./usr/lib/cornucopia/modules/tests/pluginc.la  
 -rwxr-xr-x root       root             4664 ./usr/lib/cornucopia/modules/tests/pluginc.so  
 drwxr-xr-x root       root             4096 ./usr/lib/dbus  
--rwsr-xr-x root       messagebus     191940 ./usr/lib/dbus/dbus-daemon-launch-helper  
+-rwsr-xr-x root       messagebus     191952 ./usr/lib/dbus/dbus-daemon-launch-helper  
 -rwxr-xr-x root       root             7640 ./usr/lib/e2initrd_helper  
 drwxr-xr-x root       root             4096 ./usr/lib/ecore  
 drwxr-xr-x root       root             4096 ./usr/lib/ecore/immodules  
@@ -3581,7 +3581,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/lib-dynload
 -rwxr-xr-x root       root            24896 ./usr/lib/python2.7/lib-dynload/_multibytecodec.so  
 -rwxr-xr-x root       root            19804 ./usr/lib/python2.7/lib-dynload/_multiprocessing.so  
 -rwxr-xr-x root       root             9656 ./usr/lib/python2.7/lib-dynload/_random.so  
--rwxr-xr-x root       root            58348 ./usr/lib/python2.7/lib-dynload/_socket.so  
+-rwxr-xr-x root       root            58356 ./usr/lib/python2.7/lib-dynload/_socket.so  
 -rwxr-xr-x root       root            61668 ./usr/lib/python2.7/lib-dynload/_sqlite3.so  
 -rwxr-xr-x root       root            29128 ./usr/lib/python2.7/lib-dynload/_ssl.so  
 -rwxr-xr-x root       root            26992 ./usr/lib/python2.7/lib-dynload/_struct.so  
@@ -4939,7 +4939,7 @@ lrwxrwxrwx root       root               17 ./usr/sbin/udhcpd -> ../../bin/busyb
 -rwxr-xr-x root       root            23984 ./usr/sbin/unix_update  
 -rwxr-xr-x root       root             4053 ./usr/sbin/update-ca-certificates  
 -rwxr-xr-x root       root             6270 ./usr/sbin/update-mime  
--rwxr-xr-x root       nogroup          4619 ./usr/sbin/update-modules  
+-rwxr-xr-x root       root             4619 ./usr/sbin/update-modules  
 -rwxr-xr-x root       root             1749 ./usr/sbin/update-pciids  
 -rwxr-xr-x root       root             4409 ./usr/sbin/update-rc.d  
 -rwxr-xr-x root       root            69032 ./usr/sbin/useradd  
@@ -5791,9 +5791,9 @@ drwxr-xr-x root       root             4096 ./usr/share/dbus-1/system-services
 -rw-r--r-- root       root              101 ./usr/share/dbus-1/system-services/org.gnome.GConf.Defaults.service  
 -rw-r--r-- root       root               70 ./usr/share/dbus-1/system-services/org.shr.phoneui.service  
 drwxr-xr-x root       root             4096 ./usr/share/dict  
-drwxr-xr-x root       nogroup          4096 ./usr/share/doc  
-drwxr-xr-x root       nogroup          4096 ./usr/share/doc/liberation-fonts  
--rw-r--r-- root       nogroup          4009 ./usr/share/doc/liberation-fonts/License.txt  
+drwxr-xr-x root       root             4096 ./usr/share/doc  
+drwxr-xr-x root       root             4096 ./usr/share/doc/liberation-fonts  
+-rw-r--r-- root       root             4009 ./usr/share/doc/liberation-fonts/License.txt  
 drwxr-xr-x root       root             4096 ./usr/share/edje  
 drwxr-xr-x root       root             4096 ./usr/share/edje/include  
 -rw-r--r-- root       root             7076 ./usr/share/edje/include/edje.inc  
@@ -5984,34 +5984,34 @@ drwxr-xr-x root       root             4096 ./usr/share/ffalarms
 -rw-r--r-- root       root            37290 ./usr/share/ffalarms/ffalarms.edj  
 drwxr-xr-x root       root             4096 ./usr/share/ffphonelog  
 -rw-r--r-- root       root            20899 ./usr/share/ffphonelog/ffphonelog.edj  
-drwxr-xr-x root       root             4096 ./usr/share/fonts  
-drwxr-xr-x root       root             4096 ./usr/share/fonts/truetype  
--rw-r--r-- root       root           550408 ./usr/share/fonts/truetype/DejaVuSans-Bold.ttf  
--rw-r--r-- root       root           500600 ./usr/share/fonts/truetype/DejaVuSans-BoldOblique.ttf  
--rw-r--r-- root       root           310028 ./usr/share/fonts/truetype/DejaVuSans-ExtraLight.ttf  
--rw-r--r-- root       root           501420 ./usr/share/fonts/truetype/DejaVuSans-Oblique.ttf  
--rw-r--r-- root       root           591360 ./usr/share/fonts/truetype/DejaVuSans.ttf  
--rw-r--r-- root       root           289820 ./usr/share/fonts/truetype/DejaVuSansMono-Bold.ttf  
--rw-r--r-- root       root           211208 ./usr/share/fonts/truetype/DejaVuSansMono-BoldOblique.ttf  
--rw-r--r-- root       root           217272 ./usr/share/fonts/truetype/DejaVuSansMono-Oblique.ttf  
--rw-r--r-- root       root           309064 ./usr/share/fonts/truetype/DejaVuSansMono.ttf  
--rw-r--r-- root       root            61276 ./usr/share/fonts/truetype/LiberationMono-Bold.ttf  
--rw-r--r-- root       root            65268 ./usr/share/fonts/truetype/LiberationMono-BoldItalic.ttf  
--rw-r--r-- root       root            65168 ./usr/share/fonts/truetype/LiberationMono-Italic.ttf  
--rw-r--r-- root       root            61144 ./usr/share/fonts/truetype/LiberationMono-Regular.ttf  
-drwxr-xr-x root       nogroup          4096 ./usr/share/fonts/ttf  
--rw-r--r-- root       nogroup        104980 ./usr/share/fonts/ttf/LiberationMono-Bold.ttf  
--rw-r--r-- root       nogroup        117192 ./usr/share/fonts/ttf/LiberationMono-BoldItalic.ttf  
--rw-r--r-- root       nogroup        123228 ./usr/share/fonts/ttf/LiberationMono-Italic.ttf  
--rw-r--r-- root       nogroup        107920 ./usr/share/fonts/ttf/LiberationMono-Regular.ttf  
--rw-r--r-- root       nogroup        133000 ./usr/share/fonts/ttf/LiberationSans-Bold.ttf  
--rw-r--r-- root       nogroup        128828 ./usr/share/fonts/ttf/LiberationSans-BoldItalic.ttf  
--rw-r--r-- root       nogroup        155304 ./usr/share/fonts/ttf/LiberationSans-Italic.ttf  
--rw-r--r-- root       nogroup        133088 ./usr/share/fonts/ttf/LiberationSans-Regular.ttf  
--rw-r--r-- root       nogroup        141132 ./usr/share/fonts/ttf/LiberationSerif-Bold.ttf  
--rw-r--r-- root       nogroup        144184 ./usr/share/fonts/ttf/LiberationSerif-BoldItalic.ttf  
--rw-r--r-- root       nogroup        138328 ./usr/share/fonts/ttf/LiberationSerif-Italic.ttf  
--rw-r--r-- root       nogroup        146036 ./usr/share/fonts/ttf/LiberationSerif-Regular.ttf  
+drwxr-xr-x root       nogroup          4096 ./usr/share/fonts  
+drwxr-xr-x root       nogroup          4096 ./usr/share/fonts/truetype  
+-rw-r--r-- root       nogroup        550408 ./usr/share/fonts/truetype/DejaVuSans-Bold.ttf  
+-rw-r--r-- root       nogroup        500600 ./usr/share/fonts/truetype/DejaVuSans-BoldOblique.ttf  
+-rw-r--r-- root       nogroup        310028 ./usr/share/fonts/truetype/DejaVuSans-ExtraLight.ttf  
+-rw-r--r-- root       nogroup        501420 ./usr/share/fonts/truetype/DejaVuSans-Oblique.ttf  
+-rw-r--r-- root       nogroup        591360 ./usr/share/fonts/truetype/DejaVuSans.ttf  
+-rw-r--r-- root       nogroup        289820 ./usr/share/fonts/truetype/DejaVuSansMono-Bold.ttf  
+-rw-r--r-- root       nogroup        211208 ./usr/share/fonts/truetype/DejaVuSansMono-BoldOblique.ttf  
+-rw-r--r-- root       nogroup        217272 ./usr/share/fonts/truetype/DejaVuSansMono-Oblique.ttf  
+-rw-r--r-- root       nogroup        309064 ./usr/share/fonts/truetype/DejaVuSansMono.ttf  
+-rw-r--r-- root       nogroup         61276 ./usr/share/fonts/truetype/LiberationMono-Bold.ttf  
+-rw-r--r-- root       nogroup         65268 ./usr/share/fonts/truetype/LiberationMono-BoldItalic.ttf  
+-rw-r--r-- root       nogroup         65168 ./usr/share/fonts/truetype/LiberationMono-Italic.ttf  
+-rw-r--r-- root       nogroup         61144 ./usr/share/fonts/truetype/LiberationMono-Regular.ttf  
+drwxr-xr-x root       root             4096 ./usr/share/fonts/ttf  
+-rw-r--r-- root       root           104980 ./usr/share/fonts/ttf/LiberationMono-Bold.ttf  
+-rw-r--r-- root       root           117192 ./usr/share/fonts/ttf/LiberationMono-BoldItalic.ttf  
+-rw-r--r-- root       root           123228 ./usr/share/fonts/ttf/LiberationMono-Italic.ttf  
+-rw-r--r-- root       root           107920 ./usr/share/fonts/ttf/LiberationMono-Regular.ttf  
+-rw-r--r-- root       root           133000 ./usr/share/fonts/ttf/LiberationSans-Bold.ttf  
+-rw-r--r-- root       root           128828 ./usr/share/fonts/ttf/LiberationSans-BoldItalic.ttf  
+-rw-r--r-- root       root           155304 ./usr/share/fonts/ttf/LiberationSans-Italic.ttf  
+-rw-r--r-- root       root           133088 ./usr/share/fonts/ttf/LiberationSans-Regular.ttf  
+-rw-r--r-- root       root           141132 ./usr/share/fonts/ttf/LiberationSerif-Bold.ttf  
+-rw-r--r-- root       root           144184 ./usr/share/fonts/ttf/LiberationSerif-BoldItalic.ttf  
+-rw-r--r-- root       root           138328 ./usr/share/fonts/ttf/LiberationSerif-Italic.ttf  
+-rw-r--r-- root       root           146036 ./usr/share/fonts/ttf/LiberationSerif-Regular.ttf  
 drwxr-xr-x root       root             4096 ./usr/share/foxtrotgps  
 -rw-r--r-- root       root           285684 ./usr/share/foxtrotgps/foxtrotgps.glade  
 drwxr-xr-x root       root             4096 ./usr/share/freesmartphone  
@@ -11782,7 +11782,7 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root              481 ./var/lib/opkg/info/curl.control  
 -rw-r--r-- root       root               14 ./var/lib/opkg/info/curl.list  
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/dbus-1.conffiles  
--rw-r--r-- root       root              891 ./var/lib/opkg/info/dbus-1.control  
+-rw-r--r-- root       root              920 ./var/lib/opkg/info/dbus-1.control  
 -rw-r--r-- root       root              498 ./var/lib/opkg/info/dbus-1.list  
 -rwxr-xr-x root       root              227 ./var/lib/opkg/info/dbus-1.postinst  
 -rwxr-xr-x root       root               39 ./var/lib/opkg/info/dbus-1.postrm  
@@ -13597,7 +13597,7 @@ drwxr-xr-x root       root            73728 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           208954 ./var/lib/opkg/status  
+-rw-r--r-- root       root           208983 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
