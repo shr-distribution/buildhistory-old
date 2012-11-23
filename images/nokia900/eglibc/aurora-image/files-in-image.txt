@@ -1,7 +1,7 @@
 drwxr-xr-x root       root             4096 .  
 drwxr-xr-x root       root             4096 ./bin  
 lrwxrwxrwx root       root                7 ./bin/ash -> busybox
--rwsr-xr-x root       root           535980 ./bin/busybox  
+-rwsr-xr-x root       root           540076 ./bin/busybox  
 lrwxrwxrwx root       root                7 ./bin/cat -> busybox
 lrwxrwxrwx root       root                7 ./bin/chattr -> busybox
 lrwxrwxrwx root       root                7 ./bin/chgrp -> busybox
@@ -24,13 +24,13 @@ lrwxrwxrwx root       root                7 ./bin/gunzip -> busybox
 lrwxrwxrwx root       root                7 ./bin/gzip -> busybox
 lrwxrwxrwx root       root                7 ./bin/hostname -> busybox
 lrwxrwxrwx root       root                7 ./bin/ip -> busybox
--rwxr-xr-x root       root           133504 ./bin/journalctl  
+-rwxr-xr-x root       root           141664 ./bin/journalctl  
 lrwxrwxrwx root       root                7 ./bin/kill -> busybox
 -rwxr-xr-x root       root            68736 ./bin/kmod  
 lrwxrwxrwx root       root                7 ./bin/ln -> busybox
 lrwxrwxrwx root       root               12 ./bin/login -> login.shadow
 -rwxr-xr-x root       root            31496 ./bin/login.shadow  
--rwxr-xr-x root       root            76096 ./bin/loginctl  
+-rwxr-xr-x root       root            76056 ./bin/loginctl  
 lrwxrwxrwx root       root                7 ./bin/ls -> busybox
 lrwxrwxrwx root       root               10 ./bin/lsmod -> lsmod.kmod
 lrwxrwxrwx root       root               11 ./bin/lsmod.kmod -> ../bin/kmod
@@ -52,14 +52,15 @@ lrwxrwxrwx root       root                7 ./bin/rmdir -> busybox
 lrwxrwxrwx root       root                7 ./bin/sed -> busybox
 lrwxrwxrwx root       root                7 ./bin/sh -> busybox
 lrwxrwxrwx root       root                7 ./bin/sleep -> busybox
+lrwxrwxrwx root       root                7 ./bin/stat -> busybox
 lrwxrwxrwx root       root                7 ./bin/stty -> busybox
 lrwxrwxrwx root       root                7 ./bin/sync -> busybox
--rwxr-xr-x root       root           228000 ./bin/systemctl  
--rwxr-xr-x root       root            38892 ./bin/systemd-ask-password  
--rwxr-xr-x root       root            34772 ./bin/systemd-inhibit  
--rwxr-xr-x root       root            30612 ./bin/systemd-machine-id-setup  
+-rwxr-xr-x root       root           227956 ./bin/systemctl  
+-rwxr-xr-x root       root            38888 ./bin/systemd-ask-password  
+-rwxr-xr-x root       root            38924 ./bin/systemd-inhibit  
+-rwxr-xr-x root       root            30608 ./bin/systemd-machine-id-setup  
 -rwxr-xr-x root       root            30568 ./bin/systemd-notify  
--rwxr-xr-x root       root            51304 ./bin/systemd-tmpfiles  
+-rwxr-xr-x root       root            55416 ./bin/systemd-tmpfiles  
 -rwxr-xr-x root       root            55348 ./bin/systemd-tty-ask-password-agent  
 lrwxrwxrwx root       root                7 ./bin/tar -> busybox
 lrwxrwxrwx root       root                7 ./bin/touch -> busybox
@@ -186,10 +187,10 @@ drwxr-xr-x root       root             4096 ./etc/apm/resume.d
 drwxr-xr-x root       root             4096 ./etc/apm/scripts.d  
 drwxr-xr-x root       root             4096 ./etc/apm/suspend.d  
 -rw-r--r-- root       root              881 ./etc/asound.conf  
--rw-r--r-- root       root              735 ./etc/aurora-systemmanager.conf  
+-rw-r--r-- root       nogroup           735 ./etc/aurora-systemmanager.conf  
 drwxr-xr-x root       root             4096 ./etc/bash_completion.d  
--rwxr-xr-x root       root              915 ./etc/bash_completion.d/dconf-bash-completion.sh  
--rw-r--r-- root       root            11470 ./etc/bash_completion.d/systemd-bash-completion.sh  
+-rwxr-xr-x root       nogroup           915 ./etc/bash_completion.d/dconf-bash-completion.sh  
+-rw-r--r-- root       root            18861 ./etc/bash_completion.d/systemd-bash-completion.sh  
 drwxr-xr-x root       root             4096 ./etc/binfmt.d  
 drwxr-xr-x root       root             4096 ./etc/bluetooth  
 -rw-r--r-- root       root             1502 ./etc/bluetooth/audio.conf  
@@ -197,7 +198,7 @@ drwxr-xr-x root       root             4096 ./etc/bluetooth
 -rw-r--r-- root       root             2440 ./etc/bluetooth/main.conf  
 -rw-r--r-- root       root              120 ./etc/bluetooth/network.conf  
 -rw-r--r-- root       root              297 ./etc/bluetooth/rfcomm.conf  
--rw-r--r-- root       root             2145 ./etc/busybox.links  
+-rw-r--r-- root       root             2155 ./etc/busybox.links  
 drwxr-xr-x root       root             4096 ./etc/dbus-1  
 -rw-r--r-- root       root             2771 ./etc/dbus-1/session.conf  
 drwxr-xr-x root       root             4096 ./etc/dbus-1/session.d  
@@ -419,8 +420,9 @@ lrwxrwxrwx root       root               20 ./etc/freesmartphone/conf/trout -> .
 -rw-r--r-- root       root                9 ./etc/hostname  
 -rw-r--r-- root       root               44 ./etc/hosts  
 drwxr-xr-x root       root             4096 ./etc/init.d  
+-rw-r--r-- root       root             1150 ./etc/init.d/README  
 -rwxr-xr-x root       root              891 ./etc/init.d/apmd  
--rwxr-xr-x root       root             1059 ./etc/init.d/aurora-systemmanager  
+-rwxr-xr-x root       nogroup          1059 ./etc/init.d/aurora-systemmanager  
 -rwxr-xr-x root       root             2774 ./etc/init.d/dbus-1  
 -rwxr-xr-x root       root              992 ./etc/init.d/fsoaudiod  
 -rwxr-xr-x root       root             1002 ./etc/init.d/fsodeviced  
@@ -437,7 +439,7 @@ lrwxrwxrwx root       root               14 ./etc/init.d/syslog -> syslog.busybo
 -rw-r--r-- root       root               19 ./etc/issue  
 -rw-r--r-- root       root               17 ./etc/issue.net  
 -rw-r--r-- root       root             1529 ./etc/keymap-2.6.map  
--rw-r--r-- root       root             8667 ./etc/ld.so.cache  
+-rw-r--r-- root       root             8744 ./etc/ld.so.cache  
 -rw-r--r-- root       root                0 ./etc/ld.so.conf  
 drwxr-xr-x root       root             4096 ./etc/libnl  
 -rw-r--r-- root       root             1130 ./etc/libnl/classid  
@@ -625,11 +627,11 @@ drwxr-xr-x root       root             4096 ./etc/sysctl.d
 lrwxrwxrwx root       root               27 ./etc/syslog-startup.conf -> syslog-startup.conf.busybox
 -rw-r--r-- root       root              651 ./etc/syslog-startup.conf.busybox  
 drwxr-xr-x root       root             4096 ./etc/systemd  
--rw-r--r-- root       root              736 ./etc/systemd/journald.conf  
--rw-r--r-- root       root              542 ./etc/systemd/logind.conf  
+-rw-r--r-- root       root              749 ./etc/systemd/journald.conf  
+-rw-r--r-- root       root              705 ./etc/systemd/logind.conf  
 drwxr-xr-x root       root             4096 ./etc/systemd/ntp-units.d  
 drwxr-xr-x root       root             4096 ./etc/systemd/system  
--rw-r--r-- root       root             1012 ./etc/systemd/system.conf  
+-rw-r--r-- root       root             1036 ./etc/systemd/system.conf  
 drwxr-xr-x root       root             4096 ./etc/systemd/system/basic.target.wants  
 lrwxrwxrwx root       root               47 ./etc/systemd/system/basic.target.wants/nokia-n900-cmt-gpio.service -> /lib/systemd/system/nokia-n900-cmt-gpio.service
 lrwxrwxrwx root       root                9 ./etc/systemd/system/bootmisc.service -> /dev/null
@@ -760,12 +762,14 @@ lrwxrwxrwx root       root               17 ./lib/libresolv.so.2 -> libresolv-2.
 lrwxrwxrwx root       root               13 ./lib/librt.so.1 -> librt-2.16.so
 lrwxrwxrwx root       root               17 ./lib/libsysfs.so.2 -> libsysfs.so.2.0.1
 -rwxr-xr-x root       root            26880 ./lib/libsysfs.so.2.0.1  
-lrwxrwxrwx root       root               26 ./lib/libsystemd-daemon.so.0 -> libsystemd-daemon.so.0.0.4
--rwxr-xr-x root       root             9896 ./lib/libsystemd-daemon.so.0.0.4  
+lrwxrwxrwx root       root               26 ./lib/libsystemd-daemon.so.0 -> libsystemd-daemon.so.0.0.5
+-rwxr-xr-x root       root             9896 ./lib/libsystemd-daemon.so.0.0.5  
+lrwxrwxrwx root       root               27 ./lib/libsystemd-journal.so.0 -> libsystemd-journal.so.0.6.0
+-rwxr-xr-x root       root            92296 ./lib/libsystemd-journal.so.0.6.0  
 lrwxrwxrwx root       root               15 ./lib/libtinfo.so.5 -> libtinfo.so.5.9
 -rwxr-xr-x root       root           117308 ./lib/libtinfo.so.5.9  
-lrwxrwxrwx root       root               16 ./lib/libudev.so.1 -> libudev.so.1.1.0
--rwxr-xr-x root       root            59460 ./lib/libudev.so.1.1.0  
+lrwxrwxrwx root       root               16 ./lib/libudev.so.1 -> libudev.so.1.1.6
+-rwxr-xr-x root       root            59448 ./lib/libudev.so.1.1.6  
 lrwxrwxrwx root       root               19 ./lib/libusb-0.1.so.4 -> libusb-0.1.so.4.4.4
 -rwxr-xr-x root       root            13564 ./lib/libusb-0.1.so.4.4.4  
 lrwxrwxrwx root       root               19 ./lib/libusb-1.0.so.0 -> libusb-1.0.so.0.0.0
@@ -901,15 +905,15 @@ drwxr-xr-x root       root             4096 ./lib/security
 -rwxr-xr-x root       root             3868 ./lib/security/pam_rootok.so  
 -rwxr-xr-x root       root             6044 ./lib/security/pam_securetty.so  
 -rwxr-xr-x root       root             4336 ./lib/security/pam_shells.so  
--rwxr-xr-x root       root            42960 ./lib/security/pam_systemd.so  
+-rwxr-xr-x root       root            42952 ./lib/security/pam_systemd.so  
 -rwxr-xr-x root       root            39452 ./lib/security/pam_unix.so  
 -rwxr-xr-x root       root             4244 ./lib/security/pam_warn.so  
 drwxr-xr-x root       root             4096 ./lib/systemd  
 drwxr-xr-x root       root            12288 ./lib/systemd/system  
 drwxr-xr-x root       root             4096 ./lib/systemd/system-generators  
--rwxr-xr-x root       root            38848 ./lib/systemd/system-generators/systemd-fstab-generator  
--rwxr-xr-x root       root            30624 ./lib/systemd/system-generators/systemd-getty-generator  
--rwxr-xr-x root       root            26464 ./lib/systemd/system-generators/systemd-system-update-generator  
+-rwxr-xr-x root       root            38900 ./lib/systemd/system-generators/systemd-fstab-generator  
+-rwxr-xr-x root       root            30616 ./lib/systemd/system-generators/systemd-getty-generator  
+-rwxr-xr-x root       root            26460 ./lib/systemd/system-generators/systemd-system-update-generator  
 drwxr-xr-x root       root             4096 ./lib/systemd/system-shutdown  
 drwxr-xr-x root       root             4096 ./lib/systemd/system-sleep  
 -rw-r--r-- root       root              267 ./lib/systemd/system/alsa-restore.service  
@@ -939,7 +943,7 @@ lrwxrwxrwx root       root               14 ./lib/systemd/system/dbus.target.wan
 lrwxrwxrwx root       root               16 ./lib/systemd/system/default.target -> graphical.target
 -rw-r--r-- root       root              558 ./lib/systemd/system/dev-hugepages.mount  
 -rw-r--r-- root       root              512 ./lib/systemd/system/dev-mqueue.mount  
--rw-r--r-- root       root              938 ./lib/systemd/system/emergency.service  
+-rw-r--r-- root       root             1021 ./lib/systemd/system/emergency.service  
 -rw-r--r-- root       root              431 ./lib/systemd/system/emergency.target  
 -rw-r--r-- root       root              440 ./lib/systemd/system/final.target  
 -rw-r--r-- root       root              362 ./lib/systemd/system/getty.target  
@@ -973,11 +977,11 @@ lrwxrwxrwx root       root               32 ./lib/systemd/system/multi-user.targ
 -rw-r--r-- root       root              377 ./lib/systemd/system/printer.target  
 -rw-r--r-- root       root              615 ./lib/systemd/system/proc-sys-fs-binfmt_misc.automount  
 -rw-r--r-- root       root              525 ./lib/systemd/system/proc-sys-fs-binfmt_misc.mount  
--rw-r--r-- root       root              635 ./lib/systemd/system/quotaon.service  
+-rw-r--r-- root       root              643 ./lib/systemd/system/quotaon.service  
 -rw-r--r-- root       root              493 ./lib/systemd/system/reboot.target  
 -rw-r--r-- root       root              413 ./lib/systemd/system/remote-fs-pre.target  
 -rw-r--r-- root       root              406 ./lib/systemd/system/remote-fs.target  
--rw-r--r-- root       root             1040 ./lib/systemd/system/rescue.service  
+-rw-r--r-- root       root             1043 ./lib/systemd/system/rescue.service  
 -rw-r--r-- root       root              486 ./lib/systemd/system/rescue.target  
 -rw-r--r-- root       root              478 ./lib/systemd/system/rpcbind.target  
 -rw-r--r-- root       root              347 ./lib/systemd/system/run-postinsts.service  
@@ -1031,6 +1035,7 @@ lrwxrwxrwx root       root               24 ./lib/systemd/system/sysinit.target.
 lrwxrwxrwx root       root               26 ./lib/systemd/system/sysinit.target.wants/sys-kernel-config.mount -> ../sys-kernel-config.mount
 lrwxrwxrwx root       root               36 ./lib/systemd/system/sysinit.target.wants/systemd-ask-password-console.path -> ../systemd-ask-password-console.path
 lrwxrwxrwx root       root               25 ./lib/systemd/system/sysinit.target.wants/systemd-binfmt.service -> ../systemd-binfmt.service
+lrwxrwxrwx root       root               32 ./lib/systemd/system/sysinit.target.wants/systemd-journal-flush.service -> ../systemd-journal-flush.service
 lrwxrwxrwx root       root               27 ./lib/systemd/system/sysinit.target.wants/systemd-journald.service -> ../systemd-journald.service
 lrwxrwxrwx root       root               31 ./lib/systemd/system/sysinit.target.wants/systemd-modules-load.service -> ../systemd-modules-load.service
 lrwxrwxrwx root       root               35 ./lib/systemd/system/sysinit.target.wants/systemd-random-seed-load.service -> ../systemd-random-seed-load.service
@@ -1053,14 +1058,14 @@ lrwxrwxrwx root       root               24 ./lib/systemd/system/sysinit.target.
 -rw-r--r-- root       root              481 ./lib/systemd/system/systemd-initctl.service  
 -rw-r--r-- root       root              489 ./lib/systemd/system/systemd-initctl.socket  
 -rw-r--r-- root       root              698 ./lib/systemd/system/systemd-journal-flush.service  
--rw-r--r-- root       root              951 ./lib/systemd/system/systemd-journald.service  
+-rw-r--r-- root       root              937 ./lib/systemd/system/systemd-journald.service  
 -rw-r--r-- root       root              851 ./lib/systemd/system/systemd-journald.socket  
 -rw-r--r-- root       root              557 ./lib/systemd/system/systemd-kexec.service  
 -rw-r--r-- root       root              588 ./lib/systemd/system/systemd-localed.service  
 -rw-r--r-- root       root              857 ./lib/systemd/system/systemd-logind.service  
 -rw-r--r-- root       root             1026 ./lib/systemd/system/systemd-modules-load.service  
 -rw-r--r-- root       root              553 ./lib/systemd/system/systemd-poweroff.service  
--rw-r--r-- root       root              682 ./lib/systemd/system/systemd-quotacheck.service  
+-rw-r--r-- root       root              686 ./lib/systemd/system/systemd-quotacheck.service  
 -rw-r--r-- root       root              667 ./lib/systemd/system/systemd-random-seed-load.service  
 -rw-r--r-- root       root              618 ./lib/systemd/system/systemd-random-seed-save.service  
 -rw-r--r-- root       root              842 ./lib/systemd/system/systemd-readahead-collect.service  
@@ -1074,11 +1079,11 @@ lrwxrwxrwx root       root               24 ./lib/systemd/system/sysinit.target.
 -rw-r--r-- root       root              528 ./lib/systemd/system/systemd-shutdownd.socket  
 -rw-r--r-- root       root              498 ./lib/systemd/system/systemd-suspend.service  
 -rw-r--r-- root       root              935 ./lib/systemd/system/systemd-sysctl.service  
--rw-r--r-- root       root              589 ./lib/systemd/system/systemd-timedated.service  
+-rw-r--r-- root       root              590 ./lib/systemd/system/systemd-timedated.service  
 -rw-r--r-- root       root              825 ./lib/systemd/system/systemd-tmpfiles-clean.service  
 -rw-r--r-- root       root              426 ./lib/systemd/system/systemd-tmpfiles-clean.timer  
 -rw-r--r-- root       root              839 ./lib/systemd/system/systemd-tmpfiles-setup.service  
--rw-r--r-- root       root             1149 ./lib/systemd/system/systemd-udev-settle.service  
+-rw-r--r-- root       root             1096 ./lib/systemd/system/systemd-udev-settle.service  
 -rw-r--r-- root       root              701 ./lib/systemd/system/systemd-udev-trigger.service  
 -rw-r--r-- root       root              556 ./lib/systemd/system/systemd-udevd-control.socket  
 -rw-r--r-- root       root              553 ./lib/systemd/system/systemd-udevd-kernel.socket  
@@ -1091,44 +1096,44 @@ lrwxrwxrwx root       root               24 ./lib/systemd/system/sysinit.target.
 -rw-r--r-- root       root              417 ./lib/systemd/system/umount.target  
 -rw-r--r-- root       root              602 ./lib/systemd/system/user@.service  
 -rw-r--r-- root       root              212 ./lib/systemd/system/xserver-nodm.service  
--rwxr-xr-x root       root           794852 ./lib/systemd/systemd  
+-rwxr-xr-x root       root           807168 ./lib/systemd/systemd  
 -rwxr-xr-x root       root            22276 ./lib/systemd/systemd-ac-power  
 -rwxr-xr-x root       root            34784 ./lib/systemd/systemd-binfmt  
--rwxr-xr-x root       root            30564 ./lib/systemd/systemd-cgroups-agent  
--rwxr-xr-x root       root            43072 ./lib/systemd/systemd-fsck  
+-rwxr-xr-x root       root            30560 ./lib/systemd/systemd-cgroups-agent  
+-rwxr-xr-x root       root            38976 ./lib/systemd/systemd-fsck  
 -rwxr-xr-x root       root            55608 ./lib/systemd/systemd-hostnamed  
 -rwxr-xr-x root       root            38852 ./lib/systemd/systemd-initctl  
--rwxr-xr-x root       root           154024 ./lib/systemd/systemd-journald  
--rwxr-xr-x root       root            67772 ./lib/systemd/systemd-localed  
--rwxr-xr-x root       root           178764 ./lib/systemd/systemd-logind  
--rwxr-xr-x root       root            38948 ./lib/systemd/systemd-modules-load  
--rwxr-xr-x root       root            26444 ./lib/systemd/systemd-multi-seat-x  
--rwxr-xr-x root       root            30652 ./lib/systemd/systemd-quotacheck  
+-rwxr-xr-x root       root           158132 ./lib/systemd/systemd-journald  
+-rwxr-xr-x root       root            67780 ./lib/systemd/systemd-localed  
+-rwxr-xr-x root       root           186968 ./lib/systemd/systemd-logind  
+-rwxr-xr-x root       root            38988 ./lib/systemd/systemd-modules-load  
+-rwxr-xr-x root       root            26392 ./lib/systemd/systemd-multi-seat-x  
+-rwxr-xr-x root       root            30648 ./lib/systemd/systemd-quotacheck  
 -rwxr-xr-x root       root            30580 ./lib/systemd/systemd-random-seed  
--rwxr-xr-x root       root            51312 ./lib/systemd/systemd-readahead  
+-rwxr-xr-x root       root            51320 ./lib/systemd/systemd-readahead  
 -rwxr-xr-x root       root            34732 ./lib/systemd/systemd-remount-fs  
--rwxr-xr-x root       root            26424 ./lib/systemd/systemd-reply-password  
--rwxr-xr-x root       root            59600 ./lib/systemd/systemd-shutdown  
+-rwxr-xr-x root       root            26420 ./lib/systemd/systemd-reply-password  
+-rwxr-xr-x root       root            59596 ./lib/systemd/systemd-shutdown  
 -rwxr-xr-x root       root            38904 ./lib/systemd/systemd-shutdownd  
--rwxr-xr-x root       root            30660 ./lib/systemd/systemd-sleep  
+-rwxr-xr-x root       root            34764 ./lib/systemd/systemd-sleep  
 -rwxr-xr-x root       root            38888 ./lib/systemd/systemd-sysctl  
--rwxr-xr-x root       root            67916 ./lib/systemd/systemd-timedated  
--rwxr-xr-x root       root            22228 ./lib/systemd/systemd-timestamp  
--rwxr-xr-x root       root           170612 ./lib/systemd/systemd-udevd  
--rwxr-xr-x root       root            38852 ./lib/systemd/systemd-update-utmp  
--rwxr-xr-x root       root            38928 ./lib/systemd/systemd-user-sessions  
+-rwxr-xr-x root       root            67920 ./lib/systemd/systemd-timedated  
+-rwxr-xr-x root       root            22216 ./lib/systemd/systemd-timestamp  
+-rwxr-xr-x root       root           170668 ./lib/systemd/systemd-udevd  
+-rwxr-xr-x root       root            38856 ./lib/systemd/systemd-update-utmp  
+-rwxr-xr-x root       root            38932 ./lib/systemd/systemd-user-sessions  
 drwxr-xr-x root       root             4096 ./lib/udev  
--rwxr-xr-x root       root            26448 ./lib/udev/accelerometer  
--rwxr-xr-x root       root            34620 ./lib/udev/ata_id  
--rwxr-xr-x root       root            38696 ./lib/udev/cdrom_id  
--rwxr-xr-x root       root            30556 ./lib/udev/collect  
+-rwxr-xr-x root       root            26444 ./lib/udev/accelerometer  
+-rwxr-xr-x root       root            34616 ./lib/udev/ata_id  
+-rwxr-xr-x root       root            38692 ./lib/udev/cdrom_id  
+-rwxr-xr-x root       root            30552 ./lib/udev/collect  
 -rwxr-xr-x root       root             2613 ./lib/udev/findkeyboards  
 -rwxr-xr-x root       root             8100 ./lib/udev/hid2hci  
 -rwxr-xr-x root       root              622 ./lib/udev/keyboard-force-release.sh  
--rwxr-xr-x root       root            46860 ./lib/udev/keymap  
+-rwxr-xr-x root       root            46848 ./lib/udev/keymap  
 drwxr-xr-x root       root             4096 ./lib/udev/keymaps  
 -rw-r--r-- root       root              649 ./lib/udev/keymaps/acer  
--rw-r--r-- root       root              163 ./lib/udev/keymaps/acer-aspire_5720  
+-rw-r--r-- root       root              187 ./lib/udev/keymaps/acer-aspire_5720  
 -rw-r--r-- root       root               78 ./lib/udev/keymaps/acer-aspire_5920g  
 -rw-r--r-- root       root               86 ./lib/udev/keymaps/acer-aspire_6920  
 -rw-r--r-- root       root              157 ./lib/udev/keymaps/acer-aspire_8930  
@@ -1196,15 +1201,16 @@ drwxr-xr-x root       root             4096 ./lib/udev/keymaps/force-release
 -rwxr-xr-x root       root             5716 ./lib/udev/mtd_probe  
 drwxr-xr-x root       root             4096 ./lib/udev/rules.d  
 -rw-r--r-- root       root             2975 ./lib/udev/rules.d/42-usb-hid-pm.rules  
--rw-r--r-- root       root             3098 ./lib/udev/rules.d/50-udev-default.rules  
+-rw-r--r-- root       root             3111 ./lib/udev/rules.d/50-udev-default.rules  
 -rw-r--r-- root       root              646 ./lib/udev/rules.d/60-cdrom_id.rules  
 -rw-r--r-- root       root              616 ./lib/udev/rules.d/60-persistent-alsa.rules  
--rw-r--r-- root       root             2400 ./lib/udev/rules.d/60-persistent-input.rules  
+-rw-r--r-- root       root             2464 ./lib/udev/rules.d/60-persistent-input.rules  
 -rw-r--r-- root       root              947 ./lib/udev/rules.d/60-persistent-serial.rules  
 -rw-r--r-- root       root             1420 ./lib/udev/rules.d/60-persistent-storage-tape.rules  
 -rw-r--r-- root       root             5622 ./lib/udev/rules.d/60-persistent-storage.rules  
 -rw-r--r-- root       root              769 ./lib/udev/rules.d/60-persistent-v4l.rules  
 -rw-r--r-- root       root              166 ./lib/udev/rules.d/61-accelerometer.rules  
+-rw-r--r-- root       root              418 ./lib/udev/rules.d/64-btrfs.rules  
 -rw-r--r-- root       root              523 ./lib/udev/rules.d/70-power-switch.rules  
 -rw-r--r-- root       root             2519 ./lib/udev/rules.d/70-uaccess.rules  
 -rw-r--r-- root       root             2333 ./lib/udev/rules.d/71-seat.rules  
@@ -1220,7 +1226,7 @@ drwxr-xr-x root       root             4096 ./lib/udev/rules.d
 -rw-r--r-- root       root            12242 ./lib/udev/rules.d/95-keymap.rules  
 -rw-r--r-- root       root              155 ./lib/udev/rules.d/95-udev-late.rules  
 -rw-r--r-- root       root             1356 ./lib/udev/rules.d/97-bluetooth-hid2hci.rules  
--rw-r--r-- root       root             3272 ./lib/udev/rules.d/99-systemd.rules  
+-rw-r--r-- root       root             3326 ./lib/udev/rules.d/99-systemd.rules  
 -rwxr-xr-x root       root            43384 ./lib/udev/scsi_id  
 -rwxr-xr-x root       root             5704 ./lib/udev/v4l_id  
 drwxr-xr-x root       root             4096 ./media  
@@ -1310,7 +1316,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/[[ -> ../../bin/busybox
 -rwxr-xr-x root       root            13180 ./usr/bin/apm  
 lrwxrwxrwx root       root               17 ./usr/bin/ar -> ../../bin/busybox
 lrwxrwxrwx root       root                5 ./usr/bin/arecord -> aplay
--rwxr-xr-x root       root            86620 ./usr/bin/aurora-daemon  
+-rwxr-xr-x root       nogroup         86620 ./usr/bin/aurora-daemon  
 lrwxrwxrwx root       root               17 ./usr/bin/awk -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/basename -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/bunzip2 -> ../../bin/busybox
@@ -1334,7 +1340,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/cut -> ../../bin/busybox
 -rwxr-xr-x root       root            13560 ./usr/bin/dbus-send  
 -rwxr-xr-x root       root             5200 ./usr/bin/dbus-uuidgen  
 lrwxrwxrwx root       root               17 ./usr/bin/dc -> ../../bin/busybox
--rwxr-xr-x root       root            24724 ./usr/bin/dconf  
+-rwxr-xr-x root       nogroup         24724 ./usr/bin/dconf  
 lrwxrwxrwx root       root               13 ./usr/bin/deallocvt -> deallocvt.kbd
 -rwxr-xr-x root       root             5464 ./usr/bin/deallocvt.kbd  
 -rwxr-xr-x root       root            14520 ./usr/bin/dfutool  
@@ -1385,6 +1391,7 @@ lrwxrwxrwx root       root               13 ./usr/bin/groups -> groups.shadow
 -rwxr-xr-x root       root            73196 ./usr/bin/hcitool  
 lrwxrwxrwx root       root               17 ./usr/bin/head -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/hexdump -> ../../bin/busybox
+-rwxr-xr-x root       root            47256 ./usr/bin/hostnamectl  
 lrwxrwxrwx root       root               17 ./usr/bin/id -> ../../bin/busybox
 lrwxrwxrwx root       root               23 ./usr/bin/iptables-xml -> /usr/sbin/xtables-multi
 -rwxr-xr-x root       root             6072 ./usr/bin/kbd_mode  
@@ -1397,6 +1404,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/killall -> ../../bin/busyb
 lrwxrwxrwx root       root               17 ./usr/bin/less -> ../../bin/busybox
 -rwxr-xr-x root       root            83608 ./usr/bin/loadkeys  
 -rwxr-xr-x root       root            16924 ./usr/bin/loadunimap  
+-rwxr-xr-x root       root            51344 ./usr/bin/localectl  
 lrwxrwxrwx root       root               17 ./usr/bin/logger -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/logname -> ../../bin/busybox
 -rwxr-xr-x root       root            11848 ./usr/bin/mapscrn  
@@ -1457,11 +1465,12 @@ lrwxrwxrwx root       root               11 ./usr/bin/ssh -> ssh.openssh
 lrwxrwxrwx root       root               17 ./usr/bin/strings -> ../../bin/busybox
 -rwsr-xr-x root       root            25300 ./usr/bin/su  
 -rwxr-xr-x root       root            30560 ./usr/bin/systemd-cat  
--rwxr-xr-x root       root            39000 ./usr/bin/systemd-cgls  
--rwxr-xr-x root       root            47192 ./usr/bin/systemd-cgtop  
--rwxr-xr-x root       root            38972 ./usr/bin/systemd-delta  
--rwxr-xr-x root       root            30664 ./usr/bin/systemd-detect-virt  
--rwxr-xr-x root       root            67876 ./usr/bin/systemd-nspawn  
+-rwxr-xr-x root       root            43056 ./usr/bin/systemd-cgls  
+-rwxr-xr-x root       root            47148 ./usr/bin/systemd-cgtop  
+-rwxr-xr-x root       root            38928 ./usr/bin/systemd-coredumpctl  
+-rwxr-xr-x root       root            38924 ./usr/bin/systemd-delta  
+-rwxr-xr-x root       root            30660 ./usr/bin/systemd-detect-virt  
+-rwxr-xr-x root       root            71980 ./usr/bin/systemd-nspawn  
 -rwxr-xr-x root       root            30560 ./usr/bin/systemd-stdio-bridge  
 -rwxr-xr-x root       root            16160 ./usr/bin/systool  
 lrwxrwxrwx root       root               17 ./usr/bin/tail -> ../../bin/busybox
@@ -1470,11 +1479,12 @@ lrwxrwxrwx root       root               17 ./usr/bin/telnet -> ../../bin/busybo
 lrwxrwxrwx root       root               17 ./usr/bin/test -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/tftp -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/time -> ../../bin/busybox
+-rwxr-xr-x root       root            51320 ./usr/bin/timedatectl  
 lrwxrwxrwx root       root               17 ./usr/bin/top -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/tr -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/traceroute -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/tty -> ../../bin/busybox
--rwxr-xr-x root       root           162328 ./usr/bin/udevadm  
+-rwxr-xr-x root       root           162376 ./usr/bin/udevadm  
 -rwxr-xr-x root       root             2425 ./usr/bin/unicode_start  
 -rwxr-xr-x root       root              363 ./usr/bin/unicode_stop  
 lrwxrwxrwx root       root               17 ./usr/bin/uniq -> ../../bin/busybox
@@ -1616,9 +1626,9 @@ drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules/tests
 -rwxr-xr-x root       root              927 ./usr/lib/cornucopia/modules/tests/pluginc.la  
 -rwxr-xr-x root       root             4668 ./usr/lib/cornucopia/modules/tests/pluginc.so  
 -rwxr-xr-x root       root             7640 ./usr/lib/e2initrd_helper  
-drwxr-xr-x root       root             4096 ./usr/lib/gio  
-drwxr-xr-x root       root             4096 ./usr/lib/gio/modules  
--rwxr-xr-x root       root            23240 ./usr/lib/gio/modules/libdconfsettings.so  
+drwx------ root       nogroup          4096 ./usr/lib/gio  
+drwx------ root       nogroup          4096 ./usr/lib/gio/modules  
+-rwxr-xr-x root       nogroup         23240 ./usr/lib/gio/modules/libdconfsettings.so  
 lrwxrwxrwx root       root               15 ./usr/lib/libICE.so.6 -> libICE.so.6.3.0
 -rwxr-xr-x root       root            74232 ./usr/lib/libICE.so.6.3.0  
 lrwxrwxrwx root       root               18 ./usr/lib/libQtCore.so.4 -> libQtCore.so.4.8.1
@@ -1712,11 +1722,11 @@ lrwxrwxrwx root       root               25 ./usr/lib/libcmtspeechdata.so.0 -> l
 lrwxrwxrwx root       root               18 ./usr/lib/libdbus-1.so.3 -> libdbus-1.so.3.7.0
 -rwxr-xr-x root       root           181184 ./usr/lib/libdbus-1.so.3.7.0  
 lrwxrwxrwx root       root               24 ./usr/lib/libdconf-dbus-1.so.0 -> libdconf-dbus-1.so.0.0.0
--rwxr-xr-x root       root            22984 ./usr/lib/libdconf-dbus-1.so.0.0.0  
+-rwxr-xr-x root       nogroup         22984 ./usr/lib/libdconf-dbus-1.so.0.0.0  
 lrwxrwxrwx root       root               20 ./usr/lib/libdconf-qt.so.0 -> libdconf-qt.so.0.0.0
--rwxr-xr-x root       root            48060 ./usr/lib/libdconf-qt.so.0.0.0  
+-rwxr-xr-x root       nogroup         48060 ./usr/lib/libdconf-qt.so.0.0.0  
 lrwxrwxrwx root       root               17 ./usr/lib/libdconf.so.0 -> libdconf.so.0.0.0
--rwxr-xr-x root       root            30240 ./usr/lib/libdconf.so.0.0.0  
+-rwxr-xr-x root       nogroup         30240 ./usr/lib/libdconf.so.0.0.0  
 lrwxrwxrwx root       root               15 ./usr/lib/libdmx.so.1 -> libdmx.so.1.0.0
 -rwxr-xr-x root       root            11824 ./usr/lib/libdmx.so.1.0.0  
 lrwxrwxrwx root       root               17 ./usr/lib/libexpat.so.1 -> libexpat.so.1.6.0
@@ -1736,7 +1746,7 @@ lrwxrwxrwx root       root               20 ./usr/lib/libfreetype.so.6 -> libfre
 lrwxrwxrwx root       root               20 ./usr/lib/libfso-glib.so.2 -> libfso-glib.so.2.0.0
 -rwxr-xr-x root       root           999580 ./usr/lib/libfso-glib.so.2.0.0  
 lrwxrwxrwx root       root               18 ./usr/lib/libfso-qt.so.0 -> libfso-qt.so.0.0.0
--rwxr-xr-x root       root           466916 ./usr/lib/libfso-qt.so.0.0.0  
+-rwxr-xr-x root       nogroup        466916 ./usr/lib/libfso-qt.so.0.0.0  
 lrwxrwxrwx root       root               21 ./usr/lib/libfsobasics.so.3 -> libfsobasics.so.3.0.0
 -rwxr-xr-x root       root           178888 ./usr/lib/libfsobasics.so.3.0.0  
 lrwxrwxrwx root       root               24 ./usr/lib/libfsoframework.so.3 -> libfsoframework.so.3.0.0
@@ -1872,50 +1882,50 @@ drwxr-xr-x root       root             4096 ./usr/lib/locale/en_US/LC_MESSAGES
 drwxr-xr-x root       root             4096 ./usr/lib/modules-load.d  
 drwxr-xr-x root       root             4096 ./usr/lib/phonet-utils  
 -rwxr-xr-x root       root              630 ./usr/lib/phonet-utils/if-pre-up  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports/Aurora  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports/Aurora/Components  
--rw-r--r-- root       root             2052 ./usr/lib/qt4/imports/Aurora/Components/AbstractButton.qml  
--rw-r--r-- root       root             1981 ./usr/lib/qt4/imports/Aurora/Components/BaseHub.qml  
--rw-r--r-- root       root             1513 ./usr/lib/qt4/imports/Aurora/Components/Button.qml  
--rw-r--r-- root       root             1934 ./usr/lib/qt4/imports/Aurora/Components/CellularNetworkStatusIndicator.qml  
--rw-r--r-- root       root             2314 ./usr/lib/qt4/imports/Aurora/Components/CharacterKey.qml  
--rw-r--r-- root       root             4551 ./usr/lib/qt4/imports/Aurora/Components/DefaultKeyboardLayout.qml  
--rw-r--r-- root       root             1426 ./usr/lib/qt4/imports/Aurora/Components/DefaultVirtualKeyboard.qml  
--rw-r--r-- root       root            11040 ./usr/lib/qt4/imports/Aurora/Components/Dialog.qml  
--rw-r--r-- root       root             2808 ./usr/lib/qt4/imports/Aurora/Components/DialogStyle.qml  
--rw-r--r-- root       root             6366 ./usr/lib/qt4/imports/Aurora/Components/Fader.qml  
--rw-r--r-- root       root             2465 ./usr/lib/qt4/imports/Aurora/Components/FunctionKey.qml  
--rw-r--r-- root       root             2038 ./usr/lib/qt4/imports/Aurora/Components/Header.qml  
--rw-r--r-- root       root             1546 ./usr/lib/qt4/imports/Aurora/Components/KeyPopper.qml  
--rw-r--r-- root       root             4192 ./usr/lib/qt4/imports/Aurora/Components/NumberKeyboardLayout.qml  
--rw-r--r-- root       root             3492 ./usr/lib/qt4/imports/Aurora/Components/Page.qml  
--rw-r--r-- root       root             7536 ./usr/lib/qt4/imports/Aurora/Components/PageStack.js  
--rw-r--r-- root       root            13053 ./usr/lib/qt4/imports/Aurora/Components/PageStack.qml  
--rw-r--r-- root       root             5262 ./usr/lib/qt4/imports/Aurora/Components/PageStackWindow.qml  
--rw-r--r-- root       root             4197 ./usr/lib/qt4/imports/Aurora/Components/Popup.qml  
--rw-r--r-- root       root             1781 ./usr/lib/qt4/imports/Aurora/Components/PowerStatusIndicator.qml  
--rw-r--r-- root       root             2466 ./usr/lib/qt4/imports/Aurora/Components/SoftwareInputPanel.qml  
--rw-r--r-- root       root             1753 ./usr/lib/qt4/imports/Aurora/Components/StatusBar.qml  
--rw-r--r-- root       root             5786 ./usr/lib/qt4/imports/Aurora/Components/Switch.qml  
--rw-r--r-- root       root             2727 ./usr/lib/qt4/imports/Aurora/Components/SwitchStyle.qml  
--rw-r--r-- root       root             3147 ./usr/lib/qt4/imports/Aurora/Components/TabGroup.qml  
--rw-r--r-- root       root             2627 ./usr/lib/qt4/imports/Aurora/Components/TextField.qml  
--rw-r--r-- root       root            10650 ./usr/lib/qt4/imports/Aurora/Components/ToolBar.qml  
--rw-r--r-- root       root             5941 ./usr/lib/qt4/imports/Aurora/Components/ToolBarLayout.js  
--rw-r--r-- root       root             2528 ./usr/lib/qt4/imports/Aurora/Components/ToolBarLayout.qml  
--rw-r--r-- root       root             2241 ./usr/lib/qt4/imports/Aurora/Components/ToolBarStyle.qml  
--rw-r--r-- root       root             2626 ./usr/lib/qt4/imports/Aurora/Components/ToolIcon.qml  
--rw-r--r-- root       root             2131 ./usr/lib/qt4/imports/Aurora/Components/VisualItemList.qml  
--rw-r--r-- root       root             3144 ./usr/lib/qt4/imports/Aurora/Components/Window.qml  
--rw-r--r-- root       root             1704 ./usr/lib/qt4/imports/Aurora/Components/aurora-components.qmltypes  
--rwxr-xr-x root       root             1673 ./usr/lib/qt4/imports/Aurora/Components/libaurora-components.la  
--rwxr-xr-x root       root            74996 ./usr/lib/qt4/imports/Aurora/Components/libaurora-components.so  
--rw-r--r-- root       root              720 ./usr/lib/qt4/imports/Aurora/Components/qmldir  
-drwxr-xr-x root       root             4096 ./usr/lib/qt4/imports/QConf  
--rwxr-xr-x root       root            12280 ./usr/lib/qt4/imports/QConf/libdconf-qml.so  
--rw-r--r-- root       root               17 ./usr/lib/qt4/imports/QConf/qmldir  
+drwx------ root       nogroup          4096 ./usr/lib/qt4  
+drwx------ root       nogroup          4096 ./usr/lib/qt4/imports  
+drwx------ root       nogroup          4096 ./usr/lib/qt4/imports/Aurora  
+drwx------ root       nogroup          4096 ./usr/lib/qt4/imports/Aurora/Components  
+-rw-r--r-- root       nogroup          2052 ./usr/lib/qt4/imports/Aurora/Components/AbstractButton.qml  
+-rw-r--r-- root       nogroup          1981 ./usr/lib/qt4/imports/Aurora/Components/BaseHub.qml  
+-rw-r--r-- root       nogroup          1513 ./usr/lib/qt4/imports/Aurora/Components/Button.qml  
+-rw-r--r-- root       nogroup          1934 ./usr/lib/qt4/imports/Aurora/Components/CellularNetworkStatusIndicator.qml  
+-rw-r--r-- root       nogroup          2314 ./usr/lib/qt4/imports/Aurora/Components/CharacterKey.qml  
+-rw-r--r-- root       nogroup          4551 ./usr/lib/qt4/imports/Aurora/Components/DefaultKeyboardLayout.qml  
+-rw-r--r-- root       nogroup          1426 ./usr/lib/qt4/imports/Aurora/Components/DefaultVirtualKeyboard.qml  
+-rw-r--r-- root       nogroup         11040 ./usr/lib/qt4/imports/Aurora/Components/Dialog.qml  
+-rw-r--r-- root       nogroup          2808 ./usr/lib/qt4/imports/Aurora/Components/DialogStyle.qml  
+-rw-r--r-- root       nogroup          6366 ./usr/lib/qt4/imports/Aurora/Components/Fader.qml  
+-rw-r--r-- root       nogroup          2465 ./usr/lib/qt4/imports/Aurora/Components/FunctionKey.qml  
+-rw-r--r-- root       nogroup          2038 ./usr/lib/qt4/imports/Aurora/Components/Header.qml  
+-rw-r--r-- root       nogroup          1546 ./usr/lib/qt4/imports/Aurora/Components/KeyPopper.qml  
+-rw-r--r-- root       nogroup          4192 ./usr/lib/qt4/imports/Aurora/Components/NumberKeyboardLayout.qml  
+-rw-r--r-- root       nogroup          3492 ./usr/lib/qt4/imports/Aurora/Components/Page.qml  
+-rw-r--r-- root       nogroup          7536 ./usr/lib/qt4/imports/Aurora/Components/PageStack.js  
+-rw-r--r-- root       nogroup         13053 ./usr/lib/qt4/imports/Aurora/Components/PageStack.qml  
+-rw-r--r-- root       nogroup          5262 ./usr/lib/qt4/imports/Aurora/Components/PageStackWindow.qml  
+-rw-r--r-- root       nogroup          4197 ./usr/lib/qt4/imports/Aurora/Components/Popup.qml  
+-rw-r--r-- root       nogroup          1781 ./usr/lib/qt4/imports/Aurora/Components/PowerStatusIndicator.qml  
+-rw-r--r-- root       nogroup          2466 ./usr/lib/qt4/imports/Aurora/Components/SoftwareInputPanel.qml  
+-rw-r--r-- root       nogroup          1753 ./usr/lib/qt4/imports/Aurora/Components/StatusBar.qml  
+-rw-r--r-- root       nogroup          5786 ./usr/lib/qt4/imports/Aurora/Components/Switch.qml  
+-rw-r--r-- root       nogroup          2727 ./usr/lib/qt4/imports/Aurora/Components/SwitchStyle.qml  
+-rw-r--r-- root       nogroup          3147 ./usr/lib/qt4/imports/Aurora/Components/TabGroup.qml  
+-rw-r--r-- root       nogroup          2627 ./usr/lib/qt4/imports/Aurora/Components/TextField.qml  
+-rw-r--r-- root       nogroup         10650 ./usr/lib/qt4/imports/Aurora/Components/ToolBar.qml  
+-rw-r--r-- root       nogroup          5941 ./usr/lib/qt4/imports/Aurora/Components/ToolBarLayout.js  
+-rw-r--r-- root       nogroup          2528 ./usr/lib/qt4/imports/Aurora/Components/ToolBarLayout.qml  
+-rw-r--r-- root       nogroup          2241 ./usr/lib/qt4/imports/Aurora/Components/ToolBarStyle.qml  
+-rw-r--r-- root       nogroup          2626 ./usr/lib/qt4/imports/Aurora/Components/ToolIcon.qml  
+-rw-r--r-- root       nogroup          2131 ./usr/lib/qt4/imports/Aurora/Components/VisualItemList.qml  
+-rw-r--r-- root       nogroup          3144 ./usr/lib/qt4/imports/Aurora/Components/Window.qml  
+-rw-r--r-- root       nogroup          1704 ./usr/lib/qt4/imports/Aurora/Components/aurora-components.qmltypes  
+-rwxr-xr-x root       nogroup          1673 ./usr/lib/qt4/imports/Aurora/Components/libaurora-components.la  
+-rwxr-xr-x root       nogroup         74996 ./usr/lib/qt4/imports/Aurora/Components/libaurora-components.so  
+-rw-r--r-- root       nogroup           720 ./usr/lib/qt4/imports/Aurora/Components/qmldir  
+drwx------ root       nogroup          4096 ./usr/lib/qt4/imports/QConf  
+-rwxr-xr-x root       nogroup         12280 ./usr/lib/qt4/imports/QConf/libdconf-qml.so  
+-rw-r--r-- root       nogroup            17 ./usr/lib/qt4/imports/QConf/qmldir  
 drwxr-xr-x root       root             4096 ./usr/lib/qt4/plugins  
 drwxr-xr-x root       root             4096 ./usr/lib/qt4/plugins/imageformats  
 -rwxr-xr-x root       root            19124 ./usr/lib/qt4/plugins/imageformats/libqsvg.so  
@@ -1931,7 +1941,7 @@ lrwxrwxrwx root       root               35 ./usr/lib/systemd/user/printer.targe
 lrwxrwxrwx root       root               36 ./usr/lib/systemd/user/shutdown.target -> //lib/systemd/system/shutdown.target
 lrwxrwxrwx root       root               35 ./usr/lib/systemd/user/sockets.target -> //lib/systemd/system/sockets.target
 lrwxrwxrwx root       root               33 ./usr/lib/systemd/user/sound.target -> //lib/systemd/system/sound.target
--rw-r--r-- root       root              504 ./usr/lib/systemd/user/systemd-exit.service  
+-rw-r--r-- root       root              497 ./usr/lib/systemd/user/systemd-exit.service  
 drwxr-xr-x root       root             4096 ./usr/lib/tmpfiles.d  
 -rw-r--r-- root       root              924 ./usr/lib/tmpfiles.d/legacy.conf  
 -rw-r--r-- root       root              781 ./usr/lib/tmpfiles.d/systemd.conf  
@@ -2054,12 +2064,12 @@ drwxr-xr-x root       root             4096 ./usr/lib/xtables
 -rwxr-xr-x root       root             5296 ./usr/lib/xtables/libxt_udp.so  
 drwxr-xr-x root       root             4096 ./usr/libexec  
 -rwsr-xr-x root       messagebus     191940 ./usr/libexec/dbus-daemon-launch-helper  
--rwxr-xr-x root       root            23024 ./usr/libexec/dconf-service  
+-rwxr-xr-x root       nogroup         23024 ./usr/libexec/dconf-service  
 -rwsr-xr-x root       root             9660 ./usr/libexec/pt_chown  
 drwxr-xr-x root       root             4096 ./usr/sbin  
 -rwxr-xr-x root       root            76524 ./usr/sbin/alsactl  
 -rwxr-xr-x root       root            16640 ./usr/sbin/apmd  
--rwxr-xr-x root       root            30024 ./usr/sbin/aurora-systemmanager  
+-rwxr-xr-x root       nogroup         30024 ./usr/sbin/aurora-systemmanager  
 -rwxr-xr-x root       root           115900 ./usr/sbin/bccmd  
 -rwxr-xr-x root       root           536788 ./usr/sbin/bluetoothd  
 -rwxr-xr-x root       root            18484 ./usr/sbin/chat  
@@ -2758,95 +2768,95 @@ drwxr-xr-x root       root             4096 ./usr/share/alsa/pcm
 drwxr-xr-x root       root             4096 ./usr/share/apmd  
 -rw-r--r-- root       root              830 ./usr/share/apmd/apmd_proxy.conf  
 drwxr-xr-x root       root             4096 ./usr/share/applications  
--rw-r--r-- root       root              350 ./usr/share/applications/dconf-editor.desktop  
+-rw-r--r-- root       nogroup           350 ./usr/share/applications/dconf-editor.desktop  
 -rw-r--r-- root       root              300 ./usr/share/applications/xinput_calibrator.desktop  
-drwxr-xr-x root       root             4096 ./usr/share/aurora  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/launcher  
--rw-r--r-- root       root               89 ./usr/share/aurora/applications/launcher/launcher.info  
--rw-r--r-- root       root             2320 ./usr/share/aurora/applications/launcher/main.qml  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/phone  
--rw-r--r-- root       root             1893 ./usr/share/aurora/applications/phone/AuthCodeInvalidPage.qml  
--rw-r--r-- root       root             1280 ./usr/share/aurora/applications/phone/DialPage.qml  
--rw-r--r-- root       root             7885 ./usr/share/aurora/applications/phone/Dialpad.qml  
--rw-r--r-- root       root             1091 ./usr/share/aurora/applications/phone/Hub.qml  
--rw-r--r-- root       root             4417 ./usr/share/aurora/applications/phone/InCallPage.qml  
--rw-r--r-- root       root             1336 ./usr/share/aurora/applications/phone/PhoneMainPage.qml  
--rw-r--r-- root       root             2849 ./usr/share/aurora/applications/phone/PinRequestPage.qml  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/phone/images  
--rw-r--r-- root       root             1219 ./usr/share/aurora/applications/phone/images/dial-action-delete.png  
--rw-r--r-- root       root             1389 ./usr/share/aurora/applications/phone/images/ic_dialpad_holo_dark.png  
--rw-r--r-- root       root             1482 ./usr/share/aurora/applications/phone/images/ic_see_contacts_holo_dark.png  
--rw-r--r-- root       root             5043 ./usr/share/aurora/applications/phone/main.qml  
--rw-r--r-- root       root               93 ./usr/share/aurora/applications/phone/phone.info  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/settings  
--rw-r--r-- root       root             1961 ./usr/share/aurora/applications/settings/BaseConfigElement.qml  
--rw-r--r-- root       root             1117 ./usr/share/aurora/applications/settings/BooleanConfigElement.qml  
--rw-r--r-- root       root             1364 ./usr/share/aurora/applications/settings/CategoryConfigElement.qml  
--rw-r--r-- root       root             1663 ./usr/share/aurora/applications/settings/ConnectivityPage.qml  
--rw-r--r-- root       root             2447 ./usr/share/aurora/applications/settings/GprsAccessPointPage.qml  
--rw-r--r-- root       root             2144 ./usr/share/aurora/applications/settings/GprsPage.qml  
--rw-r--r-- root       root             1097 ./usr/share/aurora/applications/settings/Hub.qml  
--rw-r--r-- root       root             1583 ./usr/share/aurora/applications/settings/MainPage.qml  
--rw-r--r-- root       root             2365 ./usr/share/aurora/applications/settings/TextConfigElement.qml  
--rwxr-xr-x root       root             1450 ./usr/share/aurora/applications/settings/libaurora-app-settings.la  
--rwxr-xr-x root       root             9916 ./usr/share/aurora/applications/settings/libaurora-app-settings.so  
--rw-r--r-- root       root              977 ./usr/share/aurora/applications/settings/main.qml  
--rw-r--r-- root       root               27 ./usr/share/aurora/applications/settings/qmldir  
--rw-r--r-- root       root              177 ./usr/share/aurora/applications/settings/settings.info  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/tasks  
--rw-r--r-- root       root             2292 ./usr/share/aurora/applications/tasks/main.qml  
--rw-r--r-- root       root              106 ./usr/share/aurora/applications/tasks/tasks.info  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/applications/testbed  
--rw-r--r-- root       root             1095 ./usr/share/aurora/applications/testbed/Hub.qml  
--rw-r--r-- root       root             1181 ./usr/share/aurora/applications/testbed/TextFieldPage.qml  
--rw-r--r-- root       root              987 ./usr/share/aurora/applications/testbed/main.qml  
--rw-r--r-- root       root              103 ./usr/share/aurora/applications/testbed/testbed.info  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/resources  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/resources/icons  
--rw-r--r-- root       root             1695 ./usr/share/aurora/resources/icons/battery-000-charging.svg  
--rw-r--r-- root       root             1494 ./usr/share/aurora/resources/icons/battery-000.svg  
--rw-r--r-- root       root             2058 ./usr/share/aurora/resources/icons/battery-020-charging.svg  
--rw-r--r-- root       root             1766 ./usr/share/aurora/resources/icons/battery-020.svg  
--rw-r--r-- root       root             2062 ./usr/share/aurora/resources/icons/battery-040-charging.svg  
--rw-r--r-- root       root             1767 ./usr/share/aurora/resources/icons/battery-040.svg  
--rw-r--r-- root       root             2062 ./usr/share/aurora/resources/icons/battery-060-charging.svg  
--rw-r--r-- root       root             1765 ./usr/share/aurora/resources/icons/battery-060.svg  
--rw-r--r-- root       root             2062 ./usr/share/aurora/resources/icons/battery-080-charging.svg  
--rw-r--r-- root       root             1765 ./usr/share/aurora/resources/icons/battery-080.svg  
--rw-r--r-- root       root             2039 ./usr/share/aurora/resources/icons/battery-100-charging.svg  
--rw-r--r-- root       root             1765 ./usr/share/aurora/resources/icons/battery-100.svg  
--rw-r--r-- root       root             1766 ./usr/share/aurora/resources/icons/battery-caution.svg  
--rw-r--r-- root       root             1955 ./usr/share/aurora/resources/icons/battery-charged.svg  
--rw-r--r-- root       root             1767 ./usr/share/aurora/resources/icons/battery-low.svg  
--rw-r--r-- root       root             2491 ./usr/share/aurora/resources/icons/gsm-3g-full.svg  
--rw-r--r-- root       root             2688 ./usr/share/aurora/resources/icons/gsm-3g-high.svg  
--rw-r--r-- root       root             2836 ./usr/share/aurora/resources/icons/gsm-3g-low.svg  
--rw-r--r-- root       root             2762 ./usr/share/aurora/resources/icons/gsm-3g-medium.svg  
--rw-r--r-- root       root             2550 ./usr/share/aurora/resources/icons/gsm-3g-none.svg  
--rw-r--r-- root       root              842 ./usr/share/aurora/resources/icons/ic_sysbar_back.png  
--rw-r--r-- root       root             1064 ./usr/share/aurora/resources/icons/ic_sysbar_home.png  
--rw-r--r-- root       root             2600 ./usr/share/aurora/resources/icons/nm-signal-00.svg  
--rw-r--r-- root       root             2428 ./usr/share/aurora/resources/icons/nm-signal-100.svg  
--rw-r--r-- root       root             2557 ./usr/share/aurora/resources/icons/nm-signal-25.svg  
--rw-r--r-- root       root             2514 ./usr/share/aurora/resources/icons/nm-signal-50.svg  
--rw-r--r-- root       root             2471 ./usr/share/aurora/resources/icons/nm-signal-75.svg  
--rw-r--r-- root       root             3432 ./usr/share/aurora/resources/icons/sym_keyboard_delete.png  
--rw-r--r-- root       root             3380 ./usr/share/aurora/resources/icons/sym_keyboard_return.png  
--rw-r--r-- root       root             3217 ./usr/share/aurora/resources/icons/sym_keyboard_shift.png  
-drwxr-xr-x root       root             4096 ./usr/share/aurora/resources/widgets  
--rw-r--r-- root       root             1344 ./usr/share/aurora/resources/widgets/switch-off.png  
--rw-r--r-- root       root             1309 ./usr/share/aurora/resources/widgets/switch-on.png  
--rw-r--r-- root       root              480 ./usr/share/aurora/resources/widgets/switch-shadow.png  
--rw-r--r-- root       root              405 ./usr/share/aurora/resources/widgets/switch-thumb-disabled.png  
--rw-r--r-- root       root              638 ./usr/share/aurora/resources/widgets/switch-thumb-pressed.png  
--rw-r--r-- root       root              398 ./usr/share/aurora/resources/widgets/switch-thumb.png  
+drwx------ root       nogroup          4096 ./usr/share/aurora  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/launcher  
+-rw-r--r-- root       nogroup            89 ./usr/share/aurora/applications/launcher/launcher.info  
+-rw-r--r-- root       nogroup          2320 ./usr/share/aurora/applications/launcher/main.qml  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/phone  
+-rw-r--r-- root       nogroup          1893 ./usr/share/aurora/applications/phone/AuthCodeInvalidPage.qml  
+-rw-r--r-- root       nogroup          1280 ./usr/share/aurora/applications/phone/DialPage.qml  
+-rw-r--r-- root       nogroup          7885 ./usr/share/aurora/applications/phone/Dialpad.qml  
+-rw-r--r-- root       nogroup          1091 ./usr/share/aurora/applications/phone/Hub.qml  
+-rw-r--r-- root       nogroup          4417 ./usr/share/aurora/applications/phone/InCallPage.qml  
+-rw-r--r-- root       nogroup          1336 ./usr/share/aurora/applications/phone/PhoneMainPage.qml  
+-rw-r--r-- root       nogroup          2849 ./usr/share/aurora/applications/phone/PinRequestPage.qml  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/phone/images  
+-rw-r--r-- root       nogroup          1219 ./usr/share/aurora/applications/phone/images/dial-action-delete.png  
+-rw-r--r-- root       nogroup          1389 ./usr/share/aurora/applications/phone/images/ic_dialpad_holo_dark.png  
+-rw-r--r-- root       nogroup          1482 ./usr/share/aurora/applications/phone/images/ic_see_contacts_holo_dark.png  
+-rw-r--r-- root       nogroup          5043 ./usr/share/aurora/applications/phone/main.qml  
+-rw-r--r-- root       nogroup            93 ./usr/share/aurora/applications/phone/phone.info  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/settings  
+-rw-r--r-- root       nogroup          1961 ./usr/share/aurora/applications/settings/BaseConfigElement.qml  
+-rw-r--r-- root       nogroup          1117 ./usr/share/aurora/applications/settings/BooleanConfigElement.qml  
+-rw-r--r-- root       nogroup          1364 ./usr/share/aurora/applications/settings/CategoryConfigElement.qml  
+-rw-r--r-- root       nogroup          1663 ./usr/share/aurora/applications/settings/ConnectivityPage.qml  
+-rw-r--r-- root       nogroup          2447 ./usr/share/aurora/applications/settings/GprsAccessPointPage.qml  
+-rw-r--r-- root       nogroup          2144 ./usr/share/aurora/applications/settings/GprsPage.qml  
+-rw-r--r-- root       nogroup          1097 ./usr/share/aurora/applications/settings/Hub.qml  
+-rw-r--r-- root       nogroup          1583 ./usr/share/aurora/applications/settings/MainPage.qml  
+-rw-r--r-- root       nogroup          2365 ./usr/share/aurora/applications/settings/TextConfigElement.qml  
+-rwxr-xr-x root       nogroup          1450 ./usr/share/aurora/applications/settings/libaurora-app-settings.la  
+-rwxr-xr-x root       nogroup          9916 ./usr/share/aurora/applications/settings/libaurora-app-settings.so  
+-rw-r--r-- root       nogroup           977 ./usr/share/aurora/applications/settings/main.qml  
+-rw-r--r-- root       nogroup            27 ./usr/share/aurora/applications/settings/qmldir  
+-rw-r--r-- root       nogroup           177 ./usr/share/aurora/applications/settings/settings.info  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/tasks  
+-rw-r--r-- root       nogroup          2292 ./usr/share/aurora/applications/tasks/main.qml  
+-rw-r--r-- root       nogroup           106 ./usr/share/aurora/applications/tasks/tasks.info  
+drwx------ root       nogroup          4096 ./usr/share/aurora/applications/testbed  
+-rw-r--r-- root       nogroup          1095 ./usr/share/aurora/applications/testbed/Hub.qml  
+-rw-r--r-- root       nogroup          1181 ./usr/share/aurora/applications/testbed/TextFieldPage.qml  
+-rw-r--r-- root       nogroup           987 ./usr/share/aurora/applications/testbed/main.qml  
+-rw-r--r-- root       nogroup           103 ./usr/share/aurora/applications/testbed/testbed.info  
+drwx------ root       nogroup          4096 ./usr/share/aurora/resources  
+drwx------ root       nogroup          4096 ./usr/share/aurora/resources/icons  
+-rw-r--r-- root       nogroup          1695 ./usr/share/aurora/resources/icons/battery-000-charging.svg  
+-rw-r--r-- root       nogroup          1494 ./usr/share/aurora/resources/icons/battery-000.svg  
+-rw-r--r-- root       nogroup          2058 ./usr/share/aurora/resources/icons/battery-020-charging.svg  
+-rw-r--r-- root       nogroup          1766 ./usr/share/aurora/resources/icons/battery-020.svg  
+-rw-r--r-- root       nogroup          2062 ./usr/share/aurora/resources/icons/battery-040-charging.svg  
+-rw-r--r-- root       nogroup          1767 ./usr/share/aurora/resources/icons/battery-040.svg  
+-rw-r--r-- root       nogroup          2062 ./usr/share/aurora/resources/icons/battery-060-charging.svg  
+-rw-r--r-- root       nogroup          1765 ./usr/share/aurora/resources/icons/battery-060.svg  
+-rw-r--r-- root       nogroup          2062 ./usr/share/aurora/resources/icons/battery-080-charging.svg  
+-rw-r--r-- root       nogroup          1765 ./usr/share/aurora/resources/icons/battery-080.svg  
+-rw-r--r-- root       nogroup          2039 ./usr/share/aurora/resources/icons/battery-100-charging.svg  
+-rw-r--r-- root       nogroup          1765 ./usr/share/aurora/resources/icons/battery-100.svg  
+-rw-r--r-- root       nogroup          1766 ./usr/share/aurora/resources/icons/battery-caution.svg  
+-rw-r--r-- root       nogroup          1955 ./usr/share/aurora/resources/icons/battery-charged.svg  
+-rw-r--r-- root       nogroup          1767 ./usr/share/aurora/resources/icons/battery-low.svg  
+-rw-r--r-- root       nogroup          2491 ./usr/share/aurora/resources/icons/gsm-3g-full.svg  
+-rw-r--r-- root       nogroup          2688 ./usr/share/aurora/resources/icons/gsm-3g-high.svg  
+-rw-r--r-- root       nogroup          2836 ./usr/share/aurora/resources/icons/gsm-3g-low.svg  
+-rw-r--r-- root       nogroup          2762 ./usr/share/aurora/resources/icons/gsm-3g-medium.svg  
+-rw-r--r-- root       nogroup          2550 ./usr/share/aurora/resources/icons/gsm-3g-none.svg  
+-rw-r--r-- root       nogroup           842 ./usr/share/aurora/resources/icons/ic_sysbar_back.png  
+-rw-r--r-- root       nogroup          1064 ./usr/share/aurora/resources/icons/ic_sysbar_home.png  
+-rw-r--r-- root       nogroup          2600 ./usr/share/aurora/resources/icons/nm-signal-00.svg  
+-rw-r--r-- root       nogroup          2428 ./usr/share/aurora/resources/icons/nm-signal-100.svg  
+-rw-r--r-- root       nogroup          2557 ./usr/share/aurora/resources/icons/nm-signal-25.svg  
+-rw-r--r-- root       nogroup          2514 ./usr/share/aurora/resources/icons/nm-signal-50.svg  
+-rw-r--r-- root       nogroup          2471 ./usr/share/aurora/resources/icons/nm-signal-75.svg  
+-rw-r--r-- root       nogroup          3432 ./usr/share/aurora/resources/icons/sym_keyboard_delete.png  
+-rw-r--r-- root       nogroup          3380 ./usr/share/aurora/resources/icons/sym_keyboard_return.png  
+-rw-r--r-- root       nogroup          3217 ./usr/share/aurora/resources/icons/sym_keyboard_shift.png  
+drwx------ root       nogroup          4096 ./usr/share/aurora/resources/widgets  
+-rw-r--r-- root       nogroup          1344 ./usr/share/aurora/resources/widgets/switch-off.png  
+-rw-r--r-- root       nogroup          1309 ./usr/share/aurora/resources/widgets/switch-on.png  
+-rw-r--r-- root       nogroup           480 ./usr/share/aurora/resources/widgets/switch-shadow.png  
+-rw-r--r-- root       nogroup           405 ./usr/share/aurora/resources/widgets/switch-thumb-disabled.png  
+-rw-r--r-- root       nogroup           638 ./usr/share/aurora/resources/widgets/switch-thumb-pressed.png  
+-rw-r--r-- root       nogroup           398 ./usr/share/aurora/resources/widgets/switch-thumb.png  
 drwxr-xr-x root       root             4096 ./usr/share/dbus-1  
 drwxr-xr-x root       root             4096 ./usr/share/dbus-1/services  
--rw-r--r-- root       root               68 ./usr/share/dbus-1/services/ca.desrt.dconf.service  
+-rw-r--r-- root       nogroup            68 ./usr/share/dbus-1/services/ca.desrt.dconf.service  
 lrwxrwxrwx root       root               51 ./usr/share/dbus-1/services/org.freedesktop.systemd1.service -> ../system-services/org.freedesktop.systemd1.service
 drwxr-xr-x root       root             4096 ./usr/share/dbus-1/system-services  
--rw-r--r-- root       root               68 ./usr/share/dbus-1/system-services/ca.desrt.dconf.service  
+-rw-r--r-- root       nogroup            68 ./usr/share/dbus-1/system-services/ca.desrt.dconf.service  
 -rw-r--r-- root       root               95 ./usr/share/dbus-1/system-services/org.bluez.service  
 -rw-r--r-- root       root              419 ./usr/share/dbus-1/system-services/org.freedesktop.hostname1.service  
 -rw-r--r-- root       root              415 ./usr/share/dbus-1/system-services/org.freedesktop.locale1.service  
@@ -2878,15 +2888,15 @@ drwxr-xr-x root       root             4096 ./usr/share/fsodatad
 drwxr-xr-x root       root             4096 ./usr/share/fsogsmd  
 -rw-r--r-- root       root             3722 ./usr/share/fsogsmd/iso3361+dialcode.txt  
 -rw-r--r-- root       root            18896 ./usr/share/fsogsmd/zone.tab  
-drwxr-xr-x root       root             4096 ./usr/share/glib-2.0  
+drwx------ root       nogroup          4096 ./usr/share/glib-2.0  
 drwxr-xr-x root       root             4096 ./usr/share/glib-2.0/gettext  
 -rwxr-xr-x root       root             3538 ./usr/share/glib-2.0/gettext/mkinstalldirs  
 drwxr-xr-x root       root             4096 ./usr/share/glib-2.0/gettext/po  
 -rw-r--r-- root       root             8454 ./usr/share/glib-2.0/gettext/po/Makefile.in.in  
-drwxr-xr-x root       root             4096 ./usr/share/glib-2.0/schemas  
--rw-r--r-- root       root              747 ./usr/share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml  
+drwx------ root       nogroup          4096 ./usr/share/glib-2.0/schemas  
+-rw-r--r-- root       nogroup           747 ./usr/share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml  
 -rw-r--r-- root       root             2820 ./usr/share/glib-2.0/schemas/gschema.dtd  
--rw-r--r-- root       root             1089 ./usr/share/glib-2.0/schemas/org.aurora.gschema.xml  
+-rw-r--r-- root       nogroup          1089 ./usr/share/glib-2.0/schemas/org.aurora.gschema.xml  
 drwxr-xr-x root       root             4096 ./usr/share/icons  
 drwxr-xr-x root       root             4096 ./usr/share/icons/xcursor-transparent  
 drwxr-xr-x root       root             4096 ./usr/share/icons/xcursor-transparent/cursors  
@@ -3002,7 +3012,7 @@ drwxr-xr-x root       root             4096 ./usr/share/polkit-1
 drwxr-xr-x root       root             4096 ./usr/share/polkit-1/actions  
 -rw-r--r-- root       root             2616 ./usr/share/polkit-1/actions/org.freedesktop.hostname1.policy  
 -rw-r--r-- root       root             1766 ./usr/share/polkit-1/actions/org.freedesktop.locale1.policy  
--rw-r--r-- root       root             9978 ./usr/share/polkit-1/actions/org.freedesktop.login1.policy  
+-rw-r--r-- root       root            13687 ./usr/share/polkit-1/actions/org.freedesktop.login1.policy  
 -rw-r--r-- root       root             1596 ./usr/share/polkit-1/actions/org.freedesktop.systemd1.policy  
 -rw-r--r-- root       root             3359 ./usr/share/polkit-1/actions/org.freedesktop.timedate1.policy  
 drwxr-xr-x root       root             4096 ./usr/share/readline  
@@ -3546,7 +3556,7 @@ drwxr-xr-x root       root             4096 ./var
 drwxr-xr-x root       root             4096 ./var/backups  
 drwxr-xr-x root       root             4096 ./var/cache  
 drwx------ root       root             4096 ./var/cache/ldconfig  
--rw------- root       root             8728 ./var/cache/ldconfig/aux-cache  
+-rw------- root       root             8800 ./var/cache/ldconfig/aux-cache  
 drwxr-xr-x root       root             4096 ./var/lib  
 drwxr-xr-x root       root             4096 ./var/lib/alsa  
 -rw-r--r-- root       root               28 ./var/lib/alsa/asound.state  
@@ -3691,6 +3701,7 @@ drwxr-xr-x root       root             4096 ./var/lib/opkg/alternatives
 -rw-r--r-- root       root               35 ./var/lib/opkg/alternatives/sort  
 -rw-r--r-- root       root               28 ./var/lib/opkg/alternatives/ssh  
 -rw-r--r-- root       root               42 ./var/lib/opkg/alternatives/start-stop-daemon  
+-rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/stat  
 -rw-r--r-- root       root               38 ./var/lib/opkg/alternatives/strings  
 -rw-r--r-- root       root               21 ./var/lib/opkg/alternatives/stty  
 -rw-r--r-- root       root               55 ./var/lib/opkg/alternatives/swapoff  
@@ -3789,8 +3800,8 @@ drwxr-xr-x root       root            40960 ./var/lib/opkg/info
 -rw-r--r-- root       root               91 ./var/lib/opkg/info/busybox-udhcpc.list  
 -rw-r--r-- root       root             1766 ./var/lib/opkg/info/busybox.control  
 -rw-r--r-- root       root               68 ./var/lib/opkg/info/busybox.list  
--rwxr-xr-x root       root            11409 ./var/lib/opkg/info/busybox.postinst  
--rwxr-xr-x root       root             8277 ./var/lib/opkg/info/busybox.postrm  
+-rwxr-xr-x root       root            11466 ./var/lib/opkg/info/busybox.postinst  
+-rwxr-xr-x root       root             8321 ./var/lib/opkg/info/busybox.postrm  
 -rwxr-xr-x root       root              762 ./var/lib/opkg/info/busybox.prerm  
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/dbus-1.conffiles  
 -rw-r--r-- root       root              891 ./var/lib/opkg/info/dbus-1.control  
@@ -4348,6 +4359,9 @@ drwxr-xr-x root       root            40960 ./var/lib/opkg/info
 -rw-r--r-- root       root              568 ./var/lib/opkg/info/libsystemd-daemon0.control  
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/libsystemd-daemon0.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libsystemd-daemon0.postinst  
+-rw-r--r-- root       root              684 ./var/lib/opkg/info/libsystemd-journal0.control  
+-rw-r--r-- root       root               62 ./var/lib/opkg/info/libsystemd-journal0.list  
+-rwxr-xr-x root       root               90 ./var/lib/opkg/info/libsystemd-journal0.postinst  
 -rw-r--r-- root       root              503 ./var/lib/opkg/info/libtinfo5.control  
 -rw-r--r-- root       root               40 ./var/lib/opkg/info/libtinfo5.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libtinfo5.postinst  
@@ -4596,8 +4610,9 @@ drwxr-xr-x root       root            40960 ./var/lib/opkg/info
 -rw-r--r-- root       root              332 ./var/lib/opkg/info/systemd-speed-hacks.control  
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-speed-hacks.list  
 -rwxr-xr-x root       root              262 ./var/lib/opkg/info/systemd-speed-hacks.postinst  
--rw-r--r-- root       root             1050 ./var/lib/opkg/info/systemd.control  
--rw-r--r-- root       root            11224 ./var/lib/opkg/info/systemd.list  
+-rw-r--r-- root       root              100 ./var/lib/opkg/info/systemd.conffiles  
+-rw-r--r-- root       root             1103 ./var/lib/opkg/info/systemd.control  
+-rw-r--r-- root       root            11420 ./var/lib/opkg/info/systemd.list  
 -rwxr-xr-x root       root              351 ./var/lib/opkg/info/systemd.postinst  
 -rwxr-xr-x root       root             3174 ./var/lib/opkg/info/systemd.preinst  
 -rwxr-xr-x root       root              261 ./var/lib/opkg/info/systemd.prerm  
@@ -4634,7 +4649,7 @@ drwxr-xr-x root       root            40960 ./var/lib/opkg/info
 -rw-r--r-- root       root              637 ./var/lib/opkg/info/udev-utils.control  
 -rw-r--r-- root       root               17 ./var/lib/opkg/info/udev-utils.list  
 -rw-r--r-- root       root              681 ./var/lib/opkg/info/udev.control  
--rw-r--r-- root       root             3619 ./var/lib/opkg/info/udev.list  
+-rw-r--r-- root       root             3652 ./var/lib/opkg/info/udev.list  
 -rw-r--r-- root       root             1084 ./var/lib/opkg/info/update-alternatives-cworth.control  
 -rw-r--r-- root       root               29 ./var/lib/opkg/info/update-alternatives-cworth.list  
 -rw-r--r-- root       root              391 ./var/lib/opkg/info/update-modules.control  
@@ -4717,12 +4732,13 @@ drwxr-xr-x root       root            40960 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root            89128 ./var/lib/opkg/status  
+-rw-r--r-- root       root            89731 ./var/lib/opkg/status  
 drwxr-xr-x root       root             4096 ./var/lib/systemd  
 drwxr-sr-x root       root             4096 ./var/local  
 drwxr-xr-x root       root             4096 ./var/lock  
 drwxr-xr-x root       root             4096 ./var/lock/subsys  
 drwxr-xr-x root       root             4096 ./var/log  
+-rw-r--r-- root       root             1040 ./var/log/README  
 drwxr-xr-x root       root             4096 ./var/log/journal  
 drwxr-xr-x root       root             4096 ./var/run  
 drwxr-xr-x messagebus messagebus       4096 ./var/run/dbus  
