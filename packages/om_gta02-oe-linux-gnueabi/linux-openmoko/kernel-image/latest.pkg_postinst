@@ -1,10 +1,10 @@
 if [ ! -e "$D/lib/modules/2.6.39.4" ]; then
-    mkdir -p $D/lib/modules/2.6.39.4
+	mkdir -p $D/lib/modules/2.6.39.4
 fi
 if [ -n "$D" ]; then
-    depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/om-gta02/usr/src/kernel/System.map-2.6.39.4 2.6.39.4
+	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/om-gta02/usr/src/kernel/System.map-2.6.39.4 2.6.39.4
 else
-    depmod -a 2.6.39.4
+	depmod -a 2.6.39.4
 fi
 
 # Get the lastest root file system value of boot args
