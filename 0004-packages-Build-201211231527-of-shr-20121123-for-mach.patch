@@ -1,0 +1,515 @@
+From c4962bfc0c7610179565ca25f68432250a1fde8e Mon Sep 17 00:00:00 2001
+From: Martin Jansa <Martin.Jansa@gmail.com>
+Date: Fri, 23 Nov 2012 15:30:29 +0100
+Subject: [PATCH 04/10] packages: Build 201211231527 of shr 20121123 for
+ machine om-gta04 on jama
+
+---
+ metadata-revs                                        | 20 ++++++++++----------
+ .../fsodeviced/fsodeviced-config/latest              |  6 +++---
+ .../fsodeviced/fsodeviced-dbg/latest                 |  8 ++++----
+ .../fsodeviced/fsodeviced-dev/latest                 |  4 ++--
+ .../fsodeviced/fsodeviced-doc/latest                 |  2 +-
+ .../fsodeviced/fsodeviced-locale/latest              |  2 +-
+ .../fsodeviced-module-accelerometer-kxsd9-dbg/latest |  4 ++--
+ .../fsodeviced-module-accelerometer-kxsd9-dev/latest |  2 +-
+ .../fsodeviced-module-accelerometer-kxsd9/latest     |  4 ++--
+ .../latest                                           |  4 ++--
+ .../latest                                           |  2 +-
+ .../fsodeviced-module-accelerometer-lis302/latest    |  4 ++--
+ .../fsodeviced-module-backlight-omappanel-dbg/latest |  4 ++--
+ .../fsodeviced-module-backlight-omappanel-dev/latest |  2 +-
+ .../fsodeviced-module-backlight-omappanel/latest     |  4 ++--
+ .../fsodeviced-module-n900-quirks-dbg/latest         |  4 ++--
+ .../fsodeviced-module-n900-quirks-dev/latest         |  2 +-
+ .../fsodeviced/fsodeviced-module-n900-quirks/latest  |  4 ++--
+ .../latest                                           |  4 ++--
+ .../latest                                           |  2 +-
+ .../fsodeviced-module-openmoko-powercontrol/latest   |  4 ++--
+ .../fsodeviced-module-router-qdsp5-dbg/latest        |  2 +-
+ .../fsodeviced-module-router-qdsp5-dev/latest        |  2 +-
+ .../fsodeviced/fsodeviced-module-router-qdsp5/latest |  2 +-
+ .../fsodeviced-module-vibrator-omapvibe-dbg/latest   |  4 ++--
+ .../fsodeviced-module-vibrator-omapvibe-dev/latest   |  2 +-
+ .../fsodeviced-module-vibrator-omapvibe/latest       |  4 ++--
+ .../latest                                           |  4 ++--
+ .../latest                                           |  2 +-
+ .../latest                                           |  4 ++--
+ .../fsodeviced/fsodeviced-staticdev/latest           |  4 ++--
+ .../fsodeviced/fsodeviced-systemd/latest             |  2 +-
+ .../fsodeviced/fsodeviced/latest                     |  4 ++--
+ .../fsodeviced/latest                                |  2 +-
+ 34 files changed, 65 insertions(+), 65 deletions(-)
+
+diff --git a/metadata-revs b/metadata-revs
+index 9deff4f..ac6b92a 100644
+--- a/metadata-revs
++++ b/metadata-revs
+@@ -1,8 +1,8 @@
+ meta-jama         = master:7ecd04df5f040e79c140e87802e48cdf89978ade
+-meta-shr          = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-aurora       = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-fso          = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-android      = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
++meta-shr          = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-aurora       = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-fso          = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-android      = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
+ meta-oe           = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+ meta-efl          = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+ meta-gnome        = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+@@ -11,12 +11,12 @@ meta-multimedia   = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+ meta-networking   = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+ meta-initramfs    = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+ meta-systemd      = jansa/test:8a7c8c3401c6370bed62aab8f9cfc0bcd5e3b021
+-meta-osmocombb    = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-nokia        = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-htc          = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-palm         = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-openmoko     = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
+-meta-samsung      = jansa/test:229cd8103ccd8bdfa311b71cf8d0b2efd25770a8
++meta-osmocombb    = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-nokia        = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-htc          = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-palm         = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-openmoko     = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
++meta-samsung      = jansa/test:7ba68281b20ca70f95d2ca4a38b6030cc9826ee2
+ meta-browser      = jansa/test:b8f4a7e489907bbaf99d4059192ddf93ef1e54bc
+ meta-handheld     = jansa/spitz:cb3a1aba74900438bc304675262e1f749d34a657
+ meta-webos-shr    = master:d8dfa37c945a33a8bb5644f897e700ad0b593468
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-config/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-config/latest
+index 7aac904..c0b5715 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-config/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-config/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = fsodeviced-modules
+ RRECOMMENDS = 
+-PKGSIZE = 121407
++PKGSIZE = 134023
+ FILES = /etc/freesmartphone/
+-FILELIST = /etc/freesmartphone/conf/GTA04/alsa-3.4/gsmhandset /etc/freesmartphone/conf/GTA04/alsa-3.4/headset /etc/freesmartphone/conf/GTA04/alsa-3.4/stereoout /etc/freesmartphone/conf/GTA04/alsa.conf /etc/freesmartphone/conf/GTA04/fsodeviced.conf /etc/freesmartphone/conf/default/fsodeviced.conf /etc/freesmartphone/conf/herring/alsa-default/gsmheadset /etc/freesmartphone/conf/herring/alsa-default/gsmspeaker /etc/freesmartphone/conf/herring/alsa-default/headset /etc/freesmartphone/conf/herring/alsa-default/stereoout /etc/freesmartphone/conf/herring/alsa.conf /etc/freesmartphone/conf/herring/fsodeviced.conf /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmhandset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmheadset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmspeaker /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/headset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/stereoout /etc/freesmartphone/conf/htc_qualcomm_dream/alsa.conf /etc/freesmartphone/conf/htc_qualcomm_dream/fsodeviced.conf /etc/freesmartphone/conf/htc_qualcomm_msm/fsodeviced.conf /etc/freesmartphone/conf/htcleo/fsodeviced.conf /etc/freesmartphone/conf/motorola_ezx/fsodeviced.conf /etc/freesmartphone/conf/nexusone/fsodeviced.conf /etc/freesmartphone/conf/nokia_n900/alsa-default/headset /etc/freesmartphone/conf/nokia_n900/alsa-default/stereoout /etc/freesmartphone/conf/nokia_n900/alsa.conf /etc/freesmartphone/conf/nokia_n900/fsodeviced.conf /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa.conf /etc/freesmartphone/conf/openmoko_gta/fsodeviced.conf
++FILELIST = /etc/freesmartphone/conf/GTA04/alsa-3.4/gsmhandset /etc/freesmartphone/conf/GTA04/alsa-3.4/gsmheadset /etc/freesmartphone/conf/GTA04/alsa-3.4/headset /etc/freesmartphone/conf/GTA04/alsa-3.4/stereoout /etc/freesmartphone/conf/GTA04/alsa.conf /etc/freesmartphone/conf/GTA04/fsodeviced.conf /etc/freesmartphone/conf/GTA04/hwrouting/alsa-default/gsmhandset /etc/freesmartphone/conf/GTA04/hwrouting/alsa-default/gsmspeaker /etc/freesmartphone/conf/GTA04/hwrouting/alsa-default/headset /etc/freesmartphone/conf/GTA04/hwrouting/alsa-default/stereoout /etc/freesmartphone/conf/GTA04/hwrouting/alsa.conf /etc/freesmartphone/conf/default/fsodeviced.conf /etc/freesmartphone/conf/herring/alsa-default/gsmheadset /etc/freesmartphone/conf/herring/alsa-default/gsmspeaker /etc/freesmartphone/conf/herring/alsa-default/headset /etc/freesmartphone/conf/herring/alsa-default/stereoout /etc/freesmartphone/conf/herring/alsa.conf /etc/freesmartphone/conf/herring/fsodeviced.conf /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmhandset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmheadset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/gsmspeaker /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/headset /etc/freesmartphone/conf/htc_qualcomm_dream/alsa-default/stereoout /etc/freesmartphone/conf/htc_qualcomm_dream/alsa.conf /etc/freesmartphone/conf/htc_qualcomm_dream/fsodeviced.conf /etc/freesmartphone/conf/htc_qualcomm_msm/fsodeviced.conf /etc/freesmartphone/conf/htcleo/fsodeviced.conf /etc/freesmartphone/conf/motorola_ezx/fsodeviced.conf /etc/freesmartphone/conf/nexusone/fsodeviced.conf /etc/freesmartphone/conf/nokia_n900/alsa-default/headset /etc/freesmartphone/conf/nokia_n900/alsa-default/stereoout /etc/freesmartphone/conf/nokia_n900/alsa.conf /etc/freesmartphone/conf/nokia_n900/fsodeviced.conf /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.29/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.31/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.34/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/capturehandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmbluetooth /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmhandset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmheadset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/gsmspeaker /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/headset /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/stereoout /etc/freesmartphone/conf/openmoko_gta/alsa-2.6.39/voiphandset /etc/freesmartphone/conf/openmoko_gta/alsa.conf /etc/freesmartphone/conf/openmoko_gta/fsodeviced.conf
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dbg/latest
+index d952808..94cfe1d 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+-RRECOMMENDS = eglibc-dbg fsodeviced (= 2:0.11.999+0.12.0-rc2-r4.0) glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 3006521
++RRECOMMENDS = eglibc-dbg fsodeviced (= 2:0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0) glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
++PKGSIZE = 3055955
+ FILES = /usr/bin/.debug /usr/sbin/.debug /usr/lib/fsodeviced/.debug /usr/lib/.debug /bin/.debug /sbin/.debug /lib/.debug /usr/lib/fsodeviced/.debug /usr/lib/matchbox-panel/.debug /usr/src/debug /usr/lib/cornucopia/modules/*/.debug /usr/lib/cornucopia/modules/*/.debug
+-FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/accelerometer.so /usr/lib/cornucopia/modules/fsodevice/.debug/audio.so /usr/lib/cornucopia/modules/fsodevice/.debug/dummy_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/gpio_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/gta04_quirks.so /usr/lib/cornucopia/modules/fsodevice/.debug/herring_quirks.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_cpufreq.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_display.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_firmwareloader.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_leds.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_powersupply.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_rfkill.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_rtc.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_idle.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_info.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/libfsodevice.so /usr/lib/cornucopia/modules/fsodevice/.debug/player_alsa.so /usr/lib/cornucopia/modules/fsodevice/.debug/powercontrol_ifconfig.so /usr/lib/cornucopia/modules/fsodevice/.debug/router_alsa.so /usr/lib/cornucopia/modules/fsodevice/.debug/thinkpad_powercontrol.so /usr/lib/cornucopia/modules/fsodevice/.debug/vibrator_ledclass.so /usr/sbin/.debug/fsodeviced /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/3rdparty/i2c.h /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/bin/main.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/accelerometer.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/alsa.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/audioplayer.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/audiorouter.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/fsodevice.h /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/input.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/powercontrol.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/lib/resource.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/accelerometer/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/accelerometer_kxsd9/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/accelerometer_lis302/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/audio/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/backlight_omappanel/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/dummy_input/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/gpio_input/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/gta04_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/gta04_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/herring_quirks/alsa.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/herring_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/herring_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/herring_quirks/resumehandler.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_cpufreq/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_display/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_firmwareloader/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_leds/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_powersupply/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_rfkill/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel26_rtc/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel_idle/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel_info/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/kernel_input/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/n900_quirks/ambientlight.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/n900_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/n900_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/n900_quirks/powersupply.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/n900_quirks/proximity.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/openmoko_powercontrol/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/player_alsa/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/powercontrol_ifconfig/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/router_alsa/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/thinkpad_powercontrol/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/vibrator_ledclass/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/vibrator_omapvibe/plugin.c /usr/src/debug/fsodeviced/2_0.11.999+0.12.0-rc2-r4.0/fsodeviced-0.12.0-rc2/src/plugins/vibrator_timedoutputclass/plugin.c
++FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/accelerometer.so /usr/lib/cornucopia/modules/fsodevice/.debug/audio.so /usr/lib/cornucopia/modules/fsodevice/.debug/dummy_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/gpio_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/gta04_quirks.so /usr/lib/cornucopia/modules/fsodevice/.debug/herring_quirks.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_cpufreq.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_display.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_firmwareloader.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_leds.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_powersupply.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_rfkill.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel26_rtc.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_idle.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_info.so /usr/lib/cornucopia/modules/fsodevice/.debug/kernel_input.so /usr/lib/cornucopia/modules/fsodevice/.debug/libfsodevice.so /usr/lib/cornucopia/modules/fsodevice/.debug/player_alsa.so /usr/lib/cornucopia/modules/fsodevice/.debug/powercontrol_ifconfig.so /usr/lib/cornucopia/modules/fsodevice/.debug/router_alsa.so /usr/lib/cornucopia/modules/fsodevice/.debug/thinkpad_powercontrol.so /usr/lib/cornucopia/modules/fsodevice/.debug/vibrator_ledclass.so /usr/sbin/.debug/fsodeviced /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/3rdparty/i2c.h /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/bin/main.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/accelerometer.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/alsa.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/audioplayer.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/audiorouter.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/fsodevice.h /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/input.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/powercontrol.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/lib/resource.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/accelerometer/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/accelerometer_kxsd9/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/accelerometer_lis302/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/audio/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/backlight_omappanel/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/dummy_input/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/gpio_input/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/gta04_quirks/info.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/gta04_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/gta04_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/herring_quirks/alsa.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/herring_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/herring_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/herring_quirks/resumehandler.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_cpufreq/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_display/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_firmwareloader/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_leds/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_powersupply/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_rfkill/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel26_rtc/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel_idle/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel_info/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/kernel_input/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/n900_quirks/ambientlight.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/n900_quirks/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/n900_quirks/powercontrol.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/n900_quirks/powersupply.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/n900_quirks/proximity.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/openmoko_powercontrol/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/player_alsa/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/powercontrol_ifconfig/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/router_alsa/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/thinkpad_powercontrol/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/vibrator_ledclass/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/vibrator_omapvibe/plugin.c /usr/src/debug/fsodeviced/2_0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0/git/fsodeviced/src/plugins/vibrator_timedoutputclass/plugin.c
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dev/latest
+index 0329351..595186c 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-dev/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = fsodeviced (= 2:0.11.999+0.12.0-rc2-r4.0)
++RDEPENDS = fsodeviced (= 2:0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0)
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev update-rc.d-dev zlib-dev
+ PKGSIZE = 38460
+ FILES = /usr/include /lib/lib*.so /usr/lib/lib*.so /usr/lib/*.la /usr/lib/*.o /usr/lib/pkgconfig /usr/share/pkgconfig /usr/share/aclocal /lib/*.o /usr/lib/fsodeviced/*.la /lib/*.la /usr/share/vala/vapi/*.vapi /usr/share/vala/vapi/*.deps /usr/share/gir-1.0 /usr/lib/cornucopia/modules/*/lib*.la /usr/lib/cornucopia/modules/*/*.la
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-doc/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-doc/latest
+index d1aefb8..e3516fb 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-doc/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-doc/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = 
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-locale/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-locale/latest
+index 835b98a..01719b9 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-locale/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-locale/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = 
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dbg/latest
+index 141b0a9..f081fe9 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 35697
++PKGSIZE = 35725
+ FILES = /usr/lib/cornucopia/modules/*/.debug/accelerometer_kxsd9*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/accelerometer_kxsd9.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dev/latest
+index 5040fec..54d8a93 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9/latest
+index d170012..a86ad22 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-kxsd9/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 10512
+ FILES = /usr/lib/cornucopia/modules/*/accelerometer_kxsd9.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dbg/latest
+index 6414c72..9b470f2 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 35691
++PKGSIZE = 35719
+ FILES = /usr/lib/cornucopia/modules/*/.debug/accelerometer_lis302*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/accelerometer_lis302.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dev/latest
+index 1a0a498..3bc527e 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302/latest
+index 9998bba..23c1509 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-accelerometer-lis302/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 10504
+ FILES = /usr/lib/cornucopia/modules/*/accelerometer_lis302.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dbg/latest
+index 49a7242..d24f258 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 63576
++PKGSIZE = 63604
+ FILES = /usr/lib/cornucopia/modules/*/.debug/backlight_omappanel*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/backlight_omappanel.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dev/latest
+index 715ff1f..5f486f0 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel/latest
+index b27a578..2a647e9 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-backlight-omappanel/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 18896
+ FILES = /usr/lib/cornucopia/modules/*/backlight_omappanel.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dbg/latest
+index f7ad6d8..6768ec1 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 146742
++PKGSIZE = 146770
+ FILES = /usr/lib/cornucopia/modules/*/.debug/n900_quirks*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/n900_quirks.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dev/latest
+index 3d5c191..b01ef95 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks/latest
+index 8e2b8bc..c7c98cc 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-n900-quirks/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 35664
+ FILES = /usr/lib/cornucopia/modules/*/n900_quirks.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dbg/latest
+index 1caa8be..4c7b7d9 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 38092
++PKGSIZE = 38120
+ FILES = /usr/lib/cornucopia/modules/*/.debug/openmoko_powercontrol*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/openmoko_powercontrol.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dev/latest
+index 1052bf4..5882579 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol/latest
+index de1b964..53de27e 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-openmoko-powercontrol/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 12060
+ FILES = /usr/lib/cornucopia/modules/*/openmoko_powercontrol.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dbg/latest
+index 9100b3f..6407d08 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dbg/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dev/latest
+index 9dc422e..dcb67f8 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev glib-2.0-dev libfso-glib-dev libfsoframework-dev libgee-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5/latest
+index 06a3d4b..15357c3 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-router-qdsp5/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = 
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dbg/latest
+index 0948117..bad8968 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 41694
++PKGSIZE = 41722
+ FILES = /usr/lib/cornucopia/modules/*/.debug/vibrator_omapvibe*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/vibrator_omapvibe.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dev/latest
+index c2fc79b..bf55ffa 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe/latest
+index edd8162..c3e3f0a 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-omapvibe/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 14688
+ FILES = /usr/lib/cornucopia/modules/*/vibrator_omapvibe.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dbg/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dbg/latest
+index 43b65d1..a45eac5 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dbg/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dbg/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = eglibc-dbg fsodeviced-dbg glib-2.0-dbg libasound-dbg libffi-dbg libfso-glib-dbg libfsobasics-dbg libfsoframework-dbg libfsoresource-dbg libfsosystem-dbg libfsotransport-dbg libgee-dbg libnl-dbg libnl-route-dbg zlib-dbg
+-PKGSIZE = 43793
++PKGSIZE = 43821
+ FILES = /usr/lib/cornucopia/modules/*/.debug/vibrator_timedoutputclass*
+ FILELIST = /usr/lib/cornucopia/modules/fsodevice/.debug/vibrator_timedoutputclass.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dev/latest
+index 83a7f10..39528da 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass-dev/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = 
+ RRECOMMENDS = alsa-lib-dev android-rpc-dev eglibc-dev fsodeviced-dev glib-2.0-dev libasound-dev libffi-dev libfso-glib-dev libfsobasics-dev libfsoframework-dev libfsoresource-dev libfsosystem-dev libfsotransport-dev libgee-dev libnl-dev libnl-route-dev zlib-dev
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass/latest
+index f0fe198..2a70780 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-module-vibrator-timedoutputclass/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.11.999+0.12.0-rc2) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
++RDEPENDS = eglibc (>= 2.16) fsodeviced (>= 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) zlib (>= 1.2.7)
+ RRECOMMENDS = 
+ PKGSIZE = 14732
+ FILES = /usr/lib/cornucopia/modules/*/vibrator_timedoutputclass.so
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-staticdev/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-staticdev/latest
+index f39ea30..318a36c 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-staticdev/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-staticdev/latest
+@@ -1,7 +1,7 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+-RDEPENDS = fsodeviced-dev (= 2:0.11.999+0.12.0-rc2-r4.0)
++RDEPENDS = fsodeviced-dev (= 2:0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb-r4.0)
+ RRECOMMENDS = 
+ PKGSIZE = 0
+ FILES = /usr/lib/*.a /lib/*.a /usr/lib/fsodeviced/*.a
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-systemd/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-systemd/latest
+index f564efe..e314520 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-systemd/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced-systemd/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = fsodeviced systemd
+ RRECOMMENDS = 
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced/latest
+index 24f9147..8035693 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/fsodeviced/latest
+@@ -1,8 +1,8 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ RDEPENDS = eglibc (>= 2.16) glib-2.0 (>= 2.34.1) libasound (>= 1.0.25) libffi (>= 3.0.11) libfso-glib (>= 2012.07.27.2) libfsobasics (>= 0.11.999+0.12.0-rc2) libfsoframework (>= 0.11.999+0.12.0-rc2) libfsoresource (>= 0.11.999+0.12.0-rc2) libfsosystem (>= 0.11.999+0.12.0-rc2) libfsotransport (>= 0.11.999+0.12.0-rc2) libgee (>= 0.6.4) libnl (>= 3.2.9) libnl-route (>= 3.2.9) update-rc.d zlib (>= 1.2.7)
+ RRECOMMENDS = fsodeviced-config
+-PKGSIZE = 429928
++PKGSIZE = 437196
+ FILES = /usr/bin/* /usr/sbin/* /usr/lib/fsodeviced/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /lib/udev/rules.d /usr/lib/udev/rules.d /usr/share/fsodeviced /usr/lib/fsodeviced/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers /etc /usr/share\fsodeviced /usr/share/dbus-1 /usr/lib/cornucopia/modules/*/lib*.so /usr/lib/cornucopia/modules/*/*.so
+ FILELIST = /etc/dbus-1/system.d/fsodeviced.conf /etc/init.d/fsodeviced /usr/lib/cornucopia/modules/fsodevice/accelerometer.so /usr/lib/cornucopia/modules/fsodevice/audio.so /usr/lib/cornucopia/modules/fsodevice/dummy_input.so /usr/lib/cornucopia/modules/fsodevice/gpio_input.so /usr/lib/cornucopia/modules/fsodevice/gta04_quirks.so /usr/lib/cornucopia/modules/fsodevice/herring_quirks.so /usr/lib/cornucopia/modules/fsodevice/kernel26_cpufreq.so /usr/lib/cornucopia/modules/fsodevice/kernel26_display.so /usr/lib/cornucopia/modules/fsodevice/kernel26_firmwareloader.so /usr/lib/cornucopia/modules/fsodevice/kernel26_leds.so /usr/lib/cornucopia/modules/fsodevice/kernel26_powersupply.so /usr/lib/cornucopia/modules/fsodevice/kernel26_rfkill.so /usr/lib/cornucopia/modules/fsodevice/kernel26_rtc.so /usr/lib/cornucopia/modules/fsodevice/kernel_idle.so /usr/lib/cornucopia/modules/fsodevice/kernel_info.so /usr/lib/cornucopia/modules/fsodevice/kernel_input.so /usr/lib/cornucopia/modules/fsodevice/libfsodevice.so /usr/lib/cornucopia/modules/fsodevice/player_alsa.so /usr/lib/cornucopia/modules/fsodevice/powercontrol_ifconfig.so /usr/lib/cornucopia/modules/fsodevice/router_alsa.so /usr/lib/cornucopia/modules/fsodevice/thinkpad_powercontrol.so /usr/lib/cornucopia/modules/fsodevice/vibrator_ledclass.so /usr/sbin/fsodeviced /usr/share/dbus-1/system-services/org.freesmartphone.odeviced.service
+diff --git a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/latest b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/latest
+index e072c7d..8d00ffe 100644
+--- a/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/latest
++++ b/packages/armv7a-vfp-neon-oe-linux-gnueabi/fsodeviced/latest
+@@ -1,5 +1,5 @@
+ PE = 2
+-PV = 0.11.999+0.12.0-rc2
++PV = 0.12.99+gitr51+d2a2239a936c799d43d73ad480c306f9c2f2decb
+ PR = r4.0
+ DEPENDS = alsa-lib android-rpc autoconf-native automake-native glib-2.0 gnu-config-native libfso-glib libfsoframework libgee libtool-cross libtool-native pkgconfig-native systemd-systemctl-native update-rc.d-native vala-native vala-native virtual/arm-oe-linux-gnueabi-compilerlibs virtual/arm-oe-linux-gnueabi-gcc virtual/libc
+ PACKAGES = fsodeviced-systemd fsodeviced-module-vibrator-timedoutputclass fsodeviced-module-vibrator-timedoutputclass-dev fsodeviced-module-vibrator-timedoutputclass-dbg fsodeviced-module-router-qdsp5 fsodeviced-module-router-qdsp5-dev fsodeviced-module-router-qdsp5-dbg fsodeviced-module-n900-quirks fsodeviced-module-n900-quirks-dev fsodeviced-module-n900-quirks-dbg fsodeviced-module-openmoko-powercontrol fsodeviced-module-openmoko-powercontrol-dev fsodeviced-module-openmoko-powercontrol-dbg fsodeviced-module-accelerometer-lis302 fsodeviced-module-accelerometer-lis302-dev fsodeviced-module-accelerometer-lis302-dbg fsodeviced-module-vibrator-omapvibe fsodeviced-module-vibrator-omapvibe-dev fsodeviced-module-vibrator-omapvibe-dbg fsodeviced-module-backlight-omappanel fsodeviced-module-backlight-omappanel-dev fsodeviced-module-backlight-omappanel-dbg fsodeviced-module-accelerometer-kxsd9 fsodeviced-module-accelerometer-kxsd9-dev fsodeviced-module-accelerometer-kxsd9-dbg fsodeviced-config fsodeviced-dbg fsodeviced-staticdev fsodeviced-dev fsodeviced-doc fsodeviced-locale fsodeviced
+-- 
+1.8.0
+
