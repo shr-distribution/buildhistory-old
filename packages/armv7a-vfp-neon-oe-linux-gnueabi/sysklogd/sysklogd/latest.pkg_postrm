@@ -1,0 +1,14 @@
+	if test "x$D" != "x"; then
+	OPT="-r $D"
+	else
+	OPT=""
+	fi
+	if test "$1" = "remove" -o "$1" = "purge"; then
+	if ! test -e "/etc/init.d/syslog"; then
+	    update-rc.d $OPT syslog remove
+	fi
+	fi
+	update-alternatives --remove  syslogd syslogd.sysklogd
+	update-alternatives --remove  klogd klogd.sysklogd
+	update-alternatives --remove  syslog-init syslog.sysklogd
+	update-alternatives --remove  syslog-conf syslog.conf.sysklogd

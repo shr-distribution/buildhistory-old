@@ -1,0 +1,11 @@
+	# all this is needed to avoid sysmlink errors,
+	# because update-rc.d runs before pkg_postinst
+	ETC=$D/etc
+
+	if [ -e $ETC/init.d/syslog -a ! -L $ETC/init.d/syslog ]; then
+		echo "WARNING:" "non symlink /etc/init.d/syslog exist -> backup to /etc/init.d/syslog.old"
+		mv $ETC/init.d/syslog $ETC/init.d/syslog.old
+	fi
+	if [ ! -e $ETC/init.d/syslog ]; then
+		ln -s dummy $ETC/init.d/syslog
+	fi

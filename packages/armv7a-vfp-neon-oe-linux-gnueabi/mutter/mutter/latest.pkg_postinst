@@ -1,0 +1,25 @@
+#!/bin/sh -e
+if [ "x$D" != "x" ]; then
+    exit 1
+fi
+
+. /etc/init.d/functions
+
+gconftool-2 --config-source=xml::$D/etc/gconf/gconf.xml.defaults --direct --type list --list-type string --set /apps/mutter/general/clutter_plugins '[default]'
+
+gconftool-2 --config-source=xml::$D/etc/gconf/gconf.xml.defaults --direct --type bool --set /apps/mutter/general/compositing_manager true
+	update-alternatives --install /usr/bin/x-window-manager x-window-manager mutter 11
+if [ "x$D" != "x" ]; then
+	exit 1
+fi
+SCHEMA_LOCATION=/etc/gconf/schemas
+for SCHEMA in mutter.schemas; do
+	if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then
+		HOME=/root GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` \
+			gconftool-2 \
+			--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null
+	fi
+done
+if [ x"$D" = "x" ]; then
+	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
+fi
