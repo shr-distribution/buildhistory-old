@@ -1,0 +1,5 @@
+if test "x$D" != "x"; then
+	exit 1
+fi
+systemctl disable slim.service
+sed -i /slim/d $D/etc/X11/default-display-manager || true
