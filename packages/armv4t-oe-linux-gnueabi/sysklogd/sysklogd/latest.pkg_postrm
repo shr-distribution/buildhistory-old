@@ -1,0 +1,6 @@
+#!/bin/sh
+	update-alternatives --remove  syslogd syslogd.sysklogd
+	update-alternatives --remove  klogd klogd.sysklogd
+	update-alternatives --remove  syslog-init syslog.sysklogd
+	update-alternatives --remove  syslog-conf syslog.conf.sysklogd
+update-rc.d $D syslog remove
