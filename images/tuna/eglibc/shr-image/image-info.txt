@@ -1,11 +1,11 @@
 DISTRO = shr
-DISTRO_VERSION = 20121204
+DISTRO_VERSION = 20121211
 USER_CLASSES = 
 IMAGE_CLASSES = image_types
 IMAGE_FEATURES = debug-tweaks  package-management ssh-server-openssh
 IMAGE_LINGUAS = en-us en-gb cs-cz
 IMAGE_INSTALL = packagegroup-core-boot packagegroup-base-extended packagegroup-shr-minimal-base packagegroup-shr-minimal-cli packagegroup-shr-minimal-fso packagegroup-shr-minimal-apps packagegroup-shr-minimal-audio packagegroup-shr-minimal-gtk packagegroup-shr-minimal-x packagegroup-shr-apps packagegroup-shr-games packagegroup-shr-gtk packagegroup-shr-cli
 BAD_RECOMMENDATIONS = 
-ROOTFS_POSTPROCESS_COMMAND = license_create_manifest; buildhistory_get_image_installed ;   rootfs_update_timestamp ;   openssh_allow_empty_password;   rootfs_update_timestamp;
+ROOTFS_POSTPROCESS_COMMAND = run_intercept_scriptlets; license_create_manifest; buildhistory_get_image_installed ;   rootfs_update_timestamp ;   openssh_allow_empty_password;   rootfs_update_timestamp;
 IMAGE_POSTPROCESS_COMMAND =   buildhistory_get_imageinfo ; 
-IMAGESIZE = 312936
+IMAGESIZE = 312908
