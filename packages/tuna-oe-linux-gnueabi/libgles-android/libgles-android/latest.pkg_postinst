@@ -1,39 +1,4 @@
-  #!/bin/sh -e
-  BLKDEV="/dev/mmcblk0p10"
-  if [ x"$D" = "x" ]; then
-    mkdir -p /tmp/android-rootfs
-    mount ${BLKDEV} /tmp/android-rootfs
-
-    mkdir -p /system/lib/hw
-    mkdir -p /system/lib/egl
-    mkdir -p /system/bin
-    mkdir -p /system/vendor/lib/egl
-
-    cp /usr/lib/android-binaries/libc.so /system/lib
-
-    for f in libcorkscrew.so libcrypto.so libcutils.so libgccdemangle.so libhardware.so liblog.so libm.so libstdc++.so libstlport.so libui.so libutils.so libz.so libEGL.so libGLESv2.so libGLES_trace.so libGLESv1_CM.so; do
-      cp /tmp/android-rootfs/lib/$f /system/lib/
-    done
-
-    cp /tmp/android-rootfs/build.prop /system
-    cp /tmp/android-rootfs/bin/linker /system/bin/
-    cp -r /tmp/android-rootfs/lib/egl/* /system/lib/egl/
-    cp /tmp/android-rootfs/vendor/bin/pvrsrvctl /system/bin
-    cp /tmp/android-rootfs/vendor/lib/hw/gralloc.omap4.so /system/lib/hw/
-
-    for f in libEGL_POWERVR_SGX540_120.so libGLESv1_CM_POWERVR_SGX540_120.so libGLESv2_POWERVR_SGX540_120.so; do
-      cp /tmp/android-rootfs/vendor/lib/egl/$f /system/vendor/lib/egl/
-      cp /tmp/android-rootfs/vendor/lib/egl/$f /system/lib/egl/
-    done
-
-    for f in libglslcompiler.so libIMGegl.so libpvr2d.so libpvrANDROID_WSEGL.so libPVRScopeServices.so libsrv_init.so libsrv_um.so libusc.so; do
-        cp /tmp/android-rootfs/vendor/lib/$f /system/lib/
-    done
-
-    umount /tmp/android-rootfs
-  else
-    exit 1
-  fi
+#!/bin/sh
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
 fi
