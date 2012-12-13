@@ -1,0 +1,27 @@
+#!/bin/sh
+if [ "x$D" != "x" ]; then
+# Update the target's pixbuf loader's cache. Since the native binary will
+# throw an error if the shared objects do not belong to the same ELF class,
+# we trick the gdk-pixbuf-query-loaders into scanning the native shared
+# objects and then we remove the NATIVE_ROOT prefix from the paths in
+# loaders.cache.
+gdk-pixbuf-query-loaders $(find $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders \
+        -name *.so | sed -e "s:$D:$NATIVE_ROOT:g") > \
+        $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache || exit 1
+
+sed -i -e "s:$NATIVE_ROOT:/:g" $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+exit 0
+fi
+
+# Update the pixbuf loaders in case they haven't been registered yet
+GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
+
+if [ -x /usr/bin/gtk-update-icon-cache ] && [ -d /usr/share/icons ]; then
+    for icondir in /usr/share/icons/*; do
+        if [ -d ${icondir} ]; then
+            gtk-update-icon-cache -t -q ${icondir}
+        fi
+    done
+fi
+

@@ -1,0 +1,8 @@
+if test "x$D" != "x"; then
+	exit 1
+fi
+systemctl enable slim.service
+
+# Register SLiM as default DM
+mkdir -p /etc/X11/
+echo "/usr/bin/slim" > /etc/X11/default-display-manager

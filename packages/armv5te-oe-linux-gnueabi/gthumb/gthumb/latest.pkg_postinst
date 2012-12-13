@@ -1,0 +1,39 @@
+#!/bin/sh
+if [ "x$D" != "x" ]; then
+    if [ ! -f $INTERCEPT_DIR/update_icon_cache ]; then
+        cat << "EOF" > $INTERCEPT_DIR/update_icon_cache
+#!/bin/sh
+
+# update native pixbuf loaders
+gdk-pixbuf-query-loaders --update-cache
+
+for icondir in $D/usr/share/icons/*/ ; do
+	gtk-update-icon-cache -fqt  $icondir
+done
+EOF
+    fi
+    exit 0
+fi
+
+# Update the pixbuf loaders in case they haven't been registered yet
+GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
+
+for icondir in /usr/share/icons/* ; do
+    if [ -d $icondir ] ; then
+        gtk-update-icon-cache -fqt  $icondir
+    fi
+done
+if [ "x$D" != "x" ]; then
+	export GCONF_BACKEND_DIR=/OE/jansa-test/shr-core/tmp-eglibc/sysroots/x86_64-linux/usr/lib/GConf/2
+	export GCONF_CONFIG_SOURCE="xml::$D/etc/gconf/gconf.xml.defaults"
+else
+	export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
+fi
+
+SCHEMA_LOCATION=$D/etc/gconf/schemas
+for SCHEMA in gthumb_webalbums.schemas gthumb-image-viewer.schemas gthumb_resize_options.schemas gthumb_rename_series.schemas gthumb-importer.schemas gthumb_image_print.schemas gthumb_convert_format.schemas gthumb-comments.schemas gthumb_crop_options.schemas gthumb.schemas gthumb_photo_importer.schemas gthumb_resize_images.schemas gthumb-slideshow.schemas gthumb-pixbuf-savers.schemas gthumb-gstreamer.schemas; do
+	if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then
+		HOME=$D/root gconftool-2 \
+			--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null
+	fi
+done
