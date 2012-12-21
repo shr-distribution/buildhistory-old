@@ -1,0 +1,15 @@
+	for f in bgpd babeld isisd ospfd ripngd zebra ripd ospf6d; do touch /etc/quagga/$f.conf; done
+	chown quagga:quaggavty /etc/quagga
+	chown quagga:quagga /etc/quagga/*.conf
+	chmod 750 /etc/quagga
+	chown 640 /etc/quagga/*.conf
+	/etc/init.d/populate-volatile.sh update
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT quagga defaults 15 85
+if [ x"$D" = "x" ]; then
+	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
+fi
