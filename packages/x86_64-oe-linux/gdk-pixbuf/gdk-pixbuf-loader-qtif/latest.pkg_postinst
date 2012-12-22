@@ -1,8 +1,34 @@
 #!/bin/sh
 if [ "x$D" != "x" ]; then
-    exit 1
+# Update the target's pixbuf loader's cache. Since the native binary will
+# throw an error if the shared objects do not belong to the same ELF class,
+# we trick the gdk-pixbuf-query-loaders into scanning the native shared
+# objects and then we remove the NATIVE_ROOT prefix from the paths in
+# loaders.cache.
+gdk-pixbuf-query-loaders $(ls -d -1 $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.so |\
+        sed -e "s:$D:$NATIVE_ROOT:g") > \
+        $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
+        2>$D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.err
+
+# gdk-pixbuf-query-loaders always returns 0, so we need to check if loaders.err
+# has anything in it
+if [ -s $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.err ]; then
+	echo "gdk-pixbuf postinstall scriptlet failed:"
+	cat $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.err
+	rm $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.err
+	# we've got errors, postpone postinstall for first boot
+	exit 1
 fi
 
+sed -i -e "s:$NATIVE_ROOT:/:g" $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+# remove the empty loaders.err
+rm $D//usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.err
+
+exit 0
+fi
+
+# Update the pixbuf loaders in case they haven't been registered yet
 GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
 
 if [ -x /usr/bin/gtk-update-icon-cache ] && [ -d /usr/share/icons ]; then
