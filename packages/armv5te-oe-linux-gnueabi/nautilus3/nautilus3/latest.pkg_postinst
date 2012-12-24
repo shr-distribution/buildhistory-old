@@ -1,0 +1,44 @@
+if [ -n "$D" ]; then
+    exit 1
+fi
+
+glib-compile-schemas /usr/share/glib-2.0/schemas
+if [ "x$D" != "x" ]; then
+    if [ ! -f $INTERCEPT_DIR/update_icon_cache ]; then
+        cat << "EOF" > $INTERCEPT_DIR/update_icon_cache
+#!/bin/sh
+
+# update native pixbuf loaders
+gdk-pixbuf-query-loaders --update-cache
+
+for icondir in $D/usr/share/icons/*/ ; do
+    if [ -d $icondir ] ; then
+        gtk-update-icon-cache -fqt  $icondir
+    fi
+done
+EOF
+    fi
+    exit 0
+fi
+
+# Update the pixbuf loaders in case they haven't been registered yet
+GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
+
+for icondir in /usr/share/icons/* ; do
+    if [ -d $icondir ] ; then
+        gtk-update-icon-cache -fqt  $icondir
+    fi
+done
+if [ "$1" = configure ]; then
+	UPDATEMIMEDB=`which update-mime-database`
+	if [ -x "$UPDATEMIMEDB" ] ; then
+		echo "Updating MIME database... this may take a while."
+		$UPDATEMIMEDB $D/usr/share/mime
+	else
+		echo "Missing update-mime-database, update of mime database failed!"
+		exit 1
+	fi
+fi
+if [ x"$D" = "x" ]; then
+	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
+fi
