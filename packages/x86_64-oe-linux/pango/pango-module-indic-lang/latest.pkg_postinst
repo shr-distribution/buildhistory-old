@@ -1,9 +1,27 @@
 #!/bin/sh
-if [ "x$D" != "x" ]; then
-  exit 1
-fi
-
 if ! [ -e $D/etc/pango ] ; then
 	mkdir -p $D/etc/pango
 fi
+
+if [ "x$D" != "x" ]; then
+pango-querymodules $(ls -d -1 $D/usr/lib/pango/1.8.0/modules/*.so|\
+    sed -e "s:$D:$NATIVE_ROOT:g") >\
+    $D/etc/pango/pango.modules \
+    2>$D/etc/pango/pango.err
+
+# pango-querymodules always returns 0, so we need to check if pango.err has
+# anything in it
+if [ -s $D/etc/pango/pango.err ]; then
+    rm $D/etc/pango/pango.err
+    exit 1
+fi
+
+sed -i -e "s:$NATIVE_ROOT::g" $D/etc/pango/pango.modules
+
+# remove the empty pango.err
+rm $D/etc/pango/pango.err
+
+exit 0
+fi
+
 /usr/bin/pango-querymodules > /etc/pango/pango.modules
