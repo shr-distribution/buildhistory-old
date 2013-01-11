@@ -147,7 +147,7 @@ crw-r----- root       root                0 ./dev/ttyS0
 crw-r----- root       root                0 ./dev/ttySA0  
 crw-r--r-- root       root                0 ./dev/urandom  
 crw-r--r-- root       root                0 ./dev/zero  
-drwxr-xr-x 1000       crontab          4096 ./etc  
+drwxr-xr-x root       root             4096 ./etc  
 drwxr-xr-x root       root             4096 ./etc/X11  
 -rw-r--r-- root       root              118 ./etc/X11/Xdefaults  
 -rwxr-xr-x root       root              521 ./etc/X11/Xinit  
@@ -759,7 +759,7 @@ drwxr-xr-x root       root             4096 ./etc/shr-settings
 -rw-r--r-- root       root              431 ./etc/shr-settings/backup.blacklist  
 -rw-r--r-- root       root              636 ./etc/shr-settings/backup.conf  
 -rw-r--r-- root       root              492 ./etc/shr-settings/backup.whitelist  
--rw-r--r-- root       root               89 ./etc/shr-version  
+-rw-r--r-- 1000       crontab            89 ./etc/shr-version  
 drwxr-xr-x root       root             4096 ./etc/skel  
 -rwxr-xr-x root       root              410 ./etc/skel/.bashrc  
 -rwxr-xr-x root       root              152 ./etc/skel/.profile  
@@ -850,21 +850,21 @@ lrwxrwxrwx root       root               11 ./etc/terminfo/x/xterm -> xterm-colo
 drwxr-xr-x root       root             4096 ./etc/tmpfiles.d  
 -rw-r--r-- root       root              142 ./etc/tmpfiles.d/var-run.conf  
 -rw-r--r-- root       root              645 ./etc/ts.conf  
-drwxr-xr-x 1000       crontab          4096 ./etc/udev  
--rw-r--r-- 1000       crontab            41 ./etc/udev/mount.blacklist  
-drwxr-xr-x 1000       crontab          4096 ./etc/udev/rules.d  
+drwxr-xr-x root       root             4096 ./etc/udev  
+-rw-r--r-- root       root               41 ./etc/udev/mount.blacklist  
+drwxr-xr-x root       root             4096 ./etc/udev/rules.d  
 -rw-r--r-- root       root             2420 ./etc/udev/rules.d/60-gpsd.rules  
--rw-r--r-- 1000       crontab           748 ./etc/udev/rules.d/automount.rules  
--rw-r--r-- 1000       crontab           757 ./etc/udev/rules.d/autonet.rules  
--rw-r--r-- 1000       crontab           311 ./etc/udev/rules.d/charger.rules  
--rw-r--r-- 1000       crontab           145 ./etc/udev/rules.d/hso.rules  
--rw-r--r-- 1000       crontab           766 ./etc/udev/rules.d/input.rules  
--rw-r--r-- 1000       crontab           742 ./etc/udev/rules.d/localextra.rules  
+-rw-r--r-- root       root              748 ./etc/udev/rules.d/automount.rules  
+-rw-r--r-- root       root              757 ./etc/udev/rules.d/autonet.rules  
+-rw-r--r-- root       root              311 ./etc/udev/rules.d/charger.rules  
+-rw-r--r-- root       root              145 ./etc/udev/rules.d/hso.rules  
+-rw-r--r-- root       root              766 ./etc/udev/rules.d/input.rules  
+-rw-r--r-- root       root              742 ./etc/udev/rules.d/localextra.rules  
 -rw-r--r-- root       root              728 ./etc/udev/rules.d/modprobe.rules  
 -rw-r--r-- root       root              855 ./etc/udev/rules.d/touchscreen.rules  
-drwxr-xr-x 1000       crontab          4096 ./etc/udev/scripts  
--rwxr-xr-x 1000       crontab          1595 ./etc/udev/scripts/mount.sh  
--rwxr-xr-x 1000       crontab          1402 ./etc/udev/scripts/network.sh  
+drwxr-xr-x root       root             4096 ./etc/udev/scripts  
+-rwxr-xr-x root       root             1595 ./etc/udev/scripts/mount.sh  
+-rwxr-xr-x root       root             1402 ./etc/udev/scripts/network.sh  
 -rw-r--r-- root       root               44 ./etc/udev/udev.conf  
 drwxr-xr-x root       root             4096 ./etc/udhcpc.d  
 -rwxr-xr-x root       root             2548 ./etc/udhcpc.d/50default  
@@ -874,7 +874,7 @@ drwxr-xr-x root       root             4096 ./etc/update-fonts-common.d
 drwxr-xr-x root       root             4096 ./etc/xdg  
 drwxr-xr-x root       root             4096 ./etc/xdg/autostart  
 -rw-r--r-- root       root             6865 ./etc/xdg/autostart/gsettings-data-convert.desktop  
--rw-r--r-- root       root              176 ./etc/xdg/autostart/xinput-calibrator-autostart.desktop  
+-rw-r--r-- root       root              299 ./etc/xdg/autostart/xinput_calibrator.desktop  
 drwxr-xr-x root       root             4096 ./etc/xdg/menus  
 -rwxr-xr-x root       root             2455 ./etc/xdg/menus/applications.menu  
 -rw-r--r-- root       root             7853 ./etc/xdg/menus/enlightenment.menu  
@@ -1900,6 +1900,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/tail -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/tee -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/telnet -> ../../bin/busybox
 lrwxrwxrwx root       root               17 ./usr/bin/test -> ../../bin/busybox
+-rwxr-xr-x root       root            27436 ./usr/bin/tester  
 lrwxrwxrwx root       root               17 ./usr/bin/tftp -> ../../bin/busybox
 -rwxr-xr-x root       root            13620 ./usr/bin/tiffdiff  
 -rwxr-xr-x root       root            21744 ./usr/bin/tifficc  
@@ -1958,7 +1959,7 @@ lrwxrwxrwx root       root               17 ./usr/bin/xargs -> ../../bin/busybox
 -rwxr-xr-x root       root            10288 ./usr/bin/xhost  
 -rwxr-xr-x root       root            10928 ./usr/bin/xinit  
 -rwxr-xr-x root       root            37676 ./usr/bin/xinput  
--rwxr-xr-x root       root            36376 ./usr/bin/xinput_calibrator  
+-rwxr-xr-x root       root            39312 ./usr/bin/xinput_calibrator  
 -rwxr-xr-x root       root              960 ./usr/bin/xinput_calibrator_once.sh  
 -rwxr-xr-x root       root           165796 ./usr/bin/xkbcomp  
 -rwxr-xr-x root       root            14495 ./usr/bin/xkeystone  
@@ -12826,10 +12827,10 @@ drwxr-xr-x root       root            81920 ./var/lib/opkg/info
 -rw-r--r-- root       root              835 ./var/lib/opkg/info/libreadline6.control  
 -rw-r--r-- root       root              460 ./var/lib/opkg/info/libreadline6.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libreadline6.postinst  
--rw-r--r-- root       root              970 ./var/lib/opkg/info/librsvg-2-2.control  
+-rw-r--r-- root       root             1005 ./var/lib/opkg/info/librsvg-2-2.control  
 -rw-r--r-- root       root               53 ./var/lib/opkg/info/librsvg-2-2.list  
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/librsvg-2-2.postinst  
--rw-r--r-- root       root             1046 ./var/lib/opkg/info/librsvg-2-gtk.control  
+-rw-r--r-- root       root             1081 ./var/lib/opkg/info/librsvg-2-gtk.control  
 -rw-r--r-- root       root              104 ./var/lib/opkg/info/librsvg-2-gtk.list  
 -rwxr-xr-x root       root              423 ./var/lib/opkg/info/librsvg-2-gtk.postinst  
 -rw-r--r-- root       root              432 ./var/lib/opkg/info/libsamplerate0.control  
@@ -13622,13 +13623,13 @@ drwxr-xr-x root       root            81920 ./var/lib/opkg/info
 -rw-r--r-- root       root               15 ./var/lib/opkg/info/xhost.list  
 -rw-r--r-- root       root              698 ./var/lib/opkg/info/xinit.control  
 -rw-r--r-- root       root               78 ./var/lib/opkg/info/xinit.list  
--rw-r--r-- root       root              670 ./var/lib/opkg/info/xinput-calibrator-systemd.control  
+-rw-r--r-- root       root              623 ./var/lib/opkg/info/xinput-calibrator-systemd.control  
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/xinput-calibrator-systemd.list  
 -rwxr-xr-x root       root              206 ./var/lib/opkg/info/xinput-calibrator-systemd.postinst  
 -rwxr-xr-x root       root               54 ./var/lib/opkg/info/xinput-calibrator-systemd.postrm  
 -rwxr-xr-x root       root               79 ./var/lib/opkg/info/xinput-calibrator-systemd.prerm  
--rw-r--r-- root       root              802 ./var/lib/opkg/info/xinput-calibrator.control  
--rw-r--r-- root       root              269 ./var/lib/opkg/info/xinput-calibrator.list  
+-rw-r--r-- root       root              755 ./var/lib/opkg/info/xinput-calibrator.control  
+-rw-r--r-- root       root              275 ./var/lib/opkg/info/xinput-calibrator.list  
 -rw-r--r-- root       root              552 ./var/lib/opkg/info/xinput.control  
 -rw-r--r-- root       root               16 ./var/lib/opkg/info/xinput.list  
 -rw-r--r-- root       root              703 ./var/lib/opkg/info/xkbcomp.control  
@@ -13660,7 +13661,7 @@ drwxr-xr-x root       root            81920 ./var/lib/opkg/info
 -rw-r--r-- root       root              575 ./var/lib/opkg/info/xterm.control  
 -rw-r--r-- root       root              468 ./var/lib/opkg/info/xterm.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           213287 ./var/lib/opkg/status  
+-rw-r--r-- root       root           213379 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
