@@ -881,6 +881,7 @@ lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wa
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/fsoaudiod.service -> /lib/systemd/system/fsoaudiod.service
 lrwxrwxrwx root       root               38 ./etc/systemd/system/basic.target.wants/fsodeviced.service -> /lib/systemd/system/fsodeviced.service
 lrwxrwxrwx root       root               35 ./etc/systemd/system/basic.target.wants/fsotdld.service -> /lib/systemd/system/fsotdld.service
+lrwxrwxrwx root       root               35 ./etc/systemd/system/basic.target.wants/g_ether.service -> /lib/systemd/system/g_ether.service
 lrwxrwxrwx root       root               39 ./etc/systemd/system/basic.target.wants/gps-handler.service -> /lib/systemd/system/gps-handler.service
 lrwxrwxrwx root       root               37 ./etc/systemd/system/basic.target.wants/phonefsod.service -> /lib/systemd/system/phonefsod.service
 lrwxrwxrwx root       root                9 ./etc/systemd/system/bootmisc.service -> /dev/null
@@ -1204,6 +1205,7 @@ lrwxrwxrwx root       root               16 ./lib/systemd/system/default.target 
 -rw-r--r-- root       root              149 ./lib/systemd/system/fsoaudiod.service  
 -rw-r--r-- root       root              197 ./lib/systemd/system/fsodeviced.service  
 -rw-r--r-- root       root              160 ./lib/systemd/system/fsotdld.service  
+-rw-r--r-- root       root              156 ./lib/systemd/system/g_ether.service  
 -rw-r--r-- root       root              460 ./lib/systemd/system/getty.target  
 -rw-r--r-- root       root             1662 ./lib/systemd/system/getty@.service  
 -rw-r--r-- root       root              197 ./lib/systemd/system/gps-handler.service  
@@ -1820,6 +1822,7 @@ lrwxrwxrwx root       root               20 ./usr/bin/free -> /usr/bin/free.proc
 lrwxrwxrwx root       root                7 ./usr/bin/fsoraw -> fso-raw
 lrwxrwxrwx root       root               12 ./usr/bin/fuser -> fuser.psmisc
 -rwxr-xr-x root       root            20524 ./usr/bin/fuser.psmisc  
+-rwxr-xr-x root       root             2709 ./usr/bin/g_ether.sh  
 -rwxr-xr-x root       root            84904 ./usr/bin/gatttool  
 -rwxr-xr-x root       root           269660 ./usr/bin/gawk  
 -rwxr-xr-x root       root           269660 ./usr/bin/gawk-4.0.1  
@@ -16688,8 +16691,11 @@ drwxr-xr-x root       root            98304 ./var/lib/opkg/info
 -rw-r--r-- root       root              369 ./var/lib/opkg/info/systemd-compat-units.control  
 -rw-r--r-- root       root              338 ./var/lib/opkg/info/systemd-compat-units.list  
 -rwxr-xr-x root       root              501 ./var/lib/opkg/info/systemd-compat-units.postinst  
--rw-r--r-- root       root              366 ./var/lib/opkg/info/systemd-machine-units.control  
--rw-r--r-- root       root                0 ./var/lib/opkg/info/systemd-machine-units.list  
+-rw-r--r-- root       root              411 ./var/lib/opkg/info/systemd-machine-units.control  
+-rw-r--r-- root       root               56 ./var/lib/opkg/info/systemd-machine-units.list  
+-rwxr-xr-x root       root              186 ./var/lib/opkg/info/systemd-machine-units.postinst  
+-rwxr-xr-x root       root               44 ./var/lib/opkg/info/systemd-machine-units.postrm  
+-rwxr-xr-x root       root               69 ./var/lib/opkg/info/systemd-machine-units.prerm  
 -rw-r--r-- root       root              373 ./var/lib/opkg/info/systemd-serialgetty.control  
 -rw-r--r-- root       root              108 ./var/lib/opkg/info/systemd-serialgetty.list  
 -rw-r--r-- root       root              332 ./var/lib/opkg/info/systemd-speed-hacks.control  
@@ -16900,7 +16906,7 @@ drwxr-xr-x root       root            98304 ./var/lib/opkg/info
 -rw-r--r-- root       root              453 ./var/lib/opkg/info/xz.control  
 -rw-r--r-- root       root              362 ./var/lib/opkg/info/xz.list  
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists  
--rw-r--r-- root       root           243816 ./var/lib/opkg/status  
+-rw-r--r-- root       root           243825 ./var/lib/opkg/status  
 drwx------ root       root             4096 ./var/lib/polkit-1  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority  
 drwxr-xr-x root       root             4096 ./var/lib/polkit-1/localauthority/10-vendor.d  
