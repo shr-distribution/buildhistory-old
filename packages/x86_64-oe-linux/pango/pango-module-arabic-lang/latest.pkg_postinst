@@ -4,24 +4,14 @@ if ! [ -e $D/etc/pango ] ; then
 fi
 
 if [ "x$D" != "x" ]; then
-pango-querymodules $(ls -d -1 $D/usr/lib/pango/1.8.0/modules/*.so|\
-    sed -e "s:$D:$NATIVE_ROOT:g") >\
-    $D/etc/pango/pango.modules \
-    2>$D/etc/pango/pango.err
+	qemu-x86_64 $D$(readelf -l $D/usr/bin/pango-querymodules| grep "Requesting program interpreter"|sed -e 's/^.*\[.*: \(.*\)\]/\1/') --library-path $D/lib:$D/usr/lib $D/usr/bin/pango-querymodules \
+		$D/usr/lib/pango/1.8.0/modules/*.so \
+		> $D/etc/pango/pango.modules 2>/dev/null
 
-# pango-querymodules always returns 0, so we need to check if pango.err has
-# anything in it
-if [ -s $D/etc/pango/pango.err ]; then
-    rm $D/etc/pango/pango.err
-    exit 1
+	[ $? -ne 0 ] && exit 1
+
+	sed -i -e "s:$D::" $D/etc/pango/pango.modules
+
+	exit 0
 fi
-
-sed -i -e "s:$NATIVE_ROOT::g" $D/etc/pango/pango.modules
-
-# remove the empty pango.err
-rm $D/etc/pango/pango.err
-
-exit 0
-fi
-
 /usr/bin/pango-querymodules > /etc/pango/pango.modules
