@@ -1,4 +1,8 @@
 #!/bin/sh
 	update-alternatives --remove  syslog-init /etc/init.d/syslog.busybox
 	update-alternatives --remove  syslog-startup-conf /etc/syslog-startup.conf.busybox
-update-rc.d $D syslog remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D syslog remove
+else
+	update-rc.d syslog remove
+fi

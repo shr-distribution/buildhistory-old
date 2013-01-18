@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D connman remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D connman remove
+else
+	update-rc.d connman remove
+fi

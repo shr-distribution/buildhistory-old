@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D busybox-udhcpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D busybox-udhcpd remove
+else
+	update-rc.d busybox-udhcpd remove
+fi

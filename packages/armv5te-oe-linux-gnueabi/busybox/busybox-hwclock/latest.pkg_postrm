@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D hwclock.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D hwclock.sh remove
+else
+	update-rc.d hwclock.sh remove
+fi

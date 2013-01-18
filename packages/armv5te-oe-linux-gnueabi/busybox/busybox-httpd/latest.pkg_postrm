@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D busybox-httpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D busybox-httpd remove
+else
+	update-rc.d busybox-httpd remove
+fi

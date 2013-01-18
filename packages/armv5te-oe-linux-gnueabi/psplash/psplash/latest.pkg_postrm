@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D psplash.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D psplash.sh remove
+else
+	update-rc.d psplash.sh remove
+fi

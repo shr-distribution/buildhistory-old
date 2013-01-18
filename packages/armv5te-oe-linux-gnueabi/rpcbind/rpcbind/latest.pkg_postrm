@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D rpcbind remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D rpcbind remove
+else
+	update-rc.d rpcbind remove
+fi

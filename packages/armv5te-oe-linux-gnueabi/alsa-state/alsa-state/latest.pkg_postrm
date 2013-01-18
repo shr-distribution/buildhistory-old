@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D alsa-state remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D alsa-state remove
+else
+	update-rc.d alsa-state remove
+fi

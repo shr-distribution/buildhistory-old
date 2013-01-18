@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D networking remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D networking remove
+else
+	update-rc.d networking remove
+fi

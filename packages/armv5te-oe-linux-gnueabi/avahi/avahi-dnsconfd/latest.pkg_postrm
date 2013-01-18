@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D avahi-dnsconfd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D avahi-dnsconfd remove
+else
+	update-rc.d avahi-dnsconfd remove
+fi

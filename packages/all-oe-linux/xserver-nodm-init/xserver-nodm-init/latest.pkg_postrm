@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D xserver-nodm remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D xserver-nodm remove
+else
+	update-rc.d xserver-nodm remove
+fi
