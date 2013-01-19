@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D aurora-systemmanager remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D aurora-systemmanager remove
+else
+	update-rc.d aurora-systemmanager remove
+fi

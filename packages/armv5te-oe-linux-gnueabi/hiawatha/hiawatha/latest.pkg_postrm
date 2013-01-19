@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D hiawatha remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D hiawatha remove
+else
+	update-rc.d hiawatha remove
+fi

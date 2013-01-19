@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D tftpd-hpa remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D tftpd-hpa remove
+else
+	update-rc.d tftpd-hpa remove
+fi

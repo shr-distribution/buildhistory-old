@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D fsotdld remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D fsotdld remove
+else
+	update-rc.d fsotdld remove
+fi

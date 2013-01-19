@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D exquisite remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D exquisite remove
+else
+	update-rc.d exquisite remove
+fi

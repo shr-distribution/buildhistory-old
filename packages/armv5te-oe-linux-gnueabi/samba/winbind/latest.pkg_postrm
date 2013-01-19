@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D winbind remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D winbind remove
+else
+	update-rc.d winbind remove
+fi

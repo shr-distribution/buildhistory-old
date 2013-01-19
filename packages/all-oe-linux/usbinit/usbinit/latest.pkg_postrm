@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D usb-gether remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D usb-gether remove
+else
+	update-rc.d usb-gether remove
+fi

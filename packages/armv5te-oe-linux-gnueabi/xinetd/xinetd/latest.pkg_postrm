@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D xinetd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D xinetd remove
+else
+	update-rc.d xinetd remove
+fi

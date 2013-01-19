@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D fancontrol.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D fancontrol.sh remove
+else
+	update-rc.d fancontrol.sh remove
+fi

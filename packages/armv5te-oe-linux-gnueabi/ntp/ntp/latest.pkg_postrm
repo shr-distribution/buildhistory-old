@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D ntpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D ntpd remove
+else
+	update-rc.d ntpd remove
+fi

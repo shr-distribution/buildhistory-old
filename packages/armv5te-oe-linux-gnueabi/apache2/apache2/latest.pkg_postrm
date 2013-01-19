@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D apache2 remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D apache2 remove
+else
+	update-rc.d apache2 remove
+fi

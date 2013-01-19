@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D lcdproc remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D lcdproc remove
+else
+	update-rc.d lcdproc remove
+fi

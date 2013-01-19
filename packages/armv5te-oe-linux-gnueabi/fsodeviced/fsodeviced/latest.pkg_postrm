@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D fsodeviced remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D fsodeviced remove
+else
+	update-rc.d fsodeviced remove
+fi

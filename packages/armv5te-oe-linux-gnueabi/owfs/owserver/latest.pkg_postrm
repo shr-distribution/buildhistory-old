@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D owserver remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D owserver remove
+else
+	update-rc.d owserver remove
+fi

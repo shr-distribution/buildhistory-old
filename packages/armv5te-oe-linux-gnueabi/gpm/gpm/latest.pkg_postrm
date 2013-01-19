@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D gpm remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D gpm remove
+else
+	update-rc.d gpm remove
+fi

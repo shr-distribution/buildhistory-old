@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D php-fpm remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D php-fpm remove
+else
+	update-rc.d php-fpm remove
+fi

@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D zaurusd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D zaurusd remove
+else
+	update-rc.d zaurusd remove
+fi

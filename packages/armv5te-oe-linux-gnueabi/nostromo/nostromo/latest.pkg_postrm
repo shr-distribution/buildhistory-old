@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D nostromo remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D nostromo remove
+else
+	update-rc.d nostromo remove
+fi

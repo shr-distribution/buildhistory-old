@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D xl2tpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D xl2tpd remove
+else
+	update-rc.d xl2tpd remove
+fi

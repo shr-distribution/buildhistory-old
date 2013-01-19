@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D lcdd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D lcdd remove
+else
+	update-rc.d lcdd remove
+fi

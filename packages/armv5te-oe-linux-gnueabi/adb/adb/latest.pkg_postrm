@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D adbd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D adbd remove
+else
+	update-rc.d adbd remove
+fi

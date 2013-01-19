@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D ebtables remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D ebtables remove
+else
+	update-rc.d ebtables remove
+fi

@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D quagga remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D quagga remove
+else
+	update-rc.d quagga remove
+fi

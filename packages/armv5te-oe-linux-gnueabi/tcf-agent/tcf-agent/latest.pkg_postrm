@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D tcf-agent remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D tcf-agent remove
+else
+	update-rc.d tcf-agent remove
+fi

@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D hddtemp remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D hddtemp remove
+else
+	update-rc.d hddtemp remove
+fi

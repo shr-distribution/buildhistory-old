@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D fso-gpsd-sysv remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D fso-gpsd-sysv remove
+else
+	update-rc.d fso-gpsd-sysv remove
+fi

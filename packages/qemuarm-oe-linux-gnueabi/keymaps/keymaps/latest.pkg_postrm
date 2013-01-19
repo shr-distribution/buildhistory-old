@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D keymap.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D keymap.sh remove
+else
+	update-rc.d keymap.sh remove
+fi

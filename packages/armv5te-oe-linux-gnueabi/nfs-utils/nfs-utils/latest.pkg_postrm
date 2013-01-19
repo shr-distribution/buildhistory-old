@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D nfsserver remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D nfsserver remove
+else
+	update-rc.d nfsserver remove
+fi

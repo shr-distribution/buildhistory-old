@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D phonefsod remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D phonefsod remove
+else
+	update-rc.d phonefsod remove
+fi

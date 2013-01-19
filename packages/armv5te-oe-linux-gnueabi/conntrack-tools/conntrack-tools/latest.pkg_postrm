@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D conntrackd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D conntrackd remove
+else
+	update-rc.d conntrackd remove
+fi

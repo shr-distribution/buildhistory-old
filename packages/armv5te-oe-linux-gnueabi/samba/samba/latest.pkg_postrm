@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D samba remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D samba remove
+else
+	update-rc.d samba remove
+fi

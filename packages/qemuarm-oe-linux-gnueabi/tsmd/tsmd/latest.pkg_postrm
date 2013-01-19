@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D tsmd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D tsmd remove
+else
+	update-rc.d tsmd remove
+fi

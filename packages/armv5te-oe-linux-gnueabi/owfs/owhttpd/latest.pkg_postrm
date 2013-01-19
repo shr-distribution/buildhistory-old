@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D owhttpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D owhttpd remove
+else
+	update-rc.d owhttpd remove
+fi

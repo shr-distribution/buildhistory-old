@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D crond remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D crond remove
+else
+	update-rc.d crond remove
+fi

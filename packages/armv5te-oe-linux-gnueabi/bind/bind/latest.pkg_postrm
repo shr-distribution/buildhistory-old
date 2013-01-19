@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D bind remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D bind remove
+else
+	update-rc.d bind remove
+fi

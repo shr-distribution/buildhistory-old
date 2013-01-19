@@ -1,2 +1,6 @@
 	deluser distcc || true
-update-rc.d $D distcc remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D distcc remove
+else
+	update-rc.d distcc remove
+fi

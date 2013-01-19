@@ -4,4 +4,8 @@
 		OPT=""
 		/etc/init.d/snmpd stop
 	fi
-update-rc.d $D snmpd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D snmpd remove
+else
+	update-rc.d snmpd remove
+fi

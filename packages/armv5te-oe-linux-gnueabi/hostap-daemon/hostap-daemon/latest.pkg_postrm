@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D hostapd remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D hostapd remove
+else
+	update-rc.d hostapd remove
+fi
