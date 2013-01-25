@@ -1,7 +1,8 @@
 #!/bin/sh
 if [ -z "$D" ]; then
 	depmod -a 2.6.37
-	update-modules || true
+else
+	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/nokia900/usr/src/kernel/System.map-2.6.37 2.6.37
 fi
 
 if [ x"$D" = "x" ]; then
