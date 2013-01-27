@@ -1,7 +1,8 @@
 #!/bin/sh
 if [ -z "$D" ]; then
 	depmod -a 3.4.9
-	update-modules || true
+else
+	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/om-gta04/usr/src/kernel/System.map-3.4.9 3.4.9
 fi
 
 if [ x"$D" = "x" ]; then
