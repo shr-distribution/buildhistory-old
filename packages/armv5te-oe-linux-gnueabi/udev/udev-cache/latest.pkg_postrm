@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D udev-cache remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D udev-cache remove
+else
+	update-rc.d udev-cache remove
+fi
