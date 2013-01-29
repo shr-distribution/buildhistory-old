@@ -10,9 +10,3 @@ systemctl $OPTS enable lighttpd.service
 if [ -z "$D" -a enable = "enable" ]; then
     systemctl start lighttpd.service
 fi
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-update-rc.d $OPT lighttpd defaults 70

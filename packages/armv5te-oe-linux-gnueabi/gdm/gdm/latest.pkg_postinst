@@ -14,12 +14,6 @@ fi
 mkdir -p /etc/X11/
 echo "/usr/bin/gdm" > /etc/X11/default-display-manager
 
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-update-rc.d $OPT gdm start 99 5 2 . stop 20 0 1 6 .
 if [ "x$D" != "x" ]; then
     if [ ! -f $INTERCEPT_DIR/update_icon_cache ]; then
         cat << "EOF" > $INTERCEPT_DIR/update_icon_cache
