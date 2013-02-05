@@ -5,8 +5,8 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable bluetooth.service
+systemctl $OPTS disable bluetooth.service
 
-if [ -z "$D" -a enable = "enable" ]; then
+if [ -z "$D" -a disable = "enable" ]; then
     systemctl start bluetooth.service
 fi
