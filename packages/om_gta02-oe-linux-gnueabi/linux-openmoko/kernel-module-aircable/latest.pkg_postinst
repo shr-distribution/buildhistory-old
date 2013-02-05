@@ -1,6 +1,7 @@
 #!/bin/sh
 if [ -z "$D" ]; then
 	depmod -a 3.2.18
-	update-modules || true
+else
+	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/om-gta02/usr/src/kernel/System.map-3.2.18 3.2.18
 fi
 
