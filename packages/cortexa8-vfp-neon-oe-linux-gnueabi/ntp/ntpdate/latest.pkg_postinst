@@ -7,3 +7,14 @@ else
                 echo "30 * * * *    /usr/bin/ntpdate-sync silent" >> /var/spool/cron/root
         fi
 fi
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+systemctl $OPTS enable ntpdate.service
+
+if [ -z "$D" -a "enable" = "enable" ]; then
+    systemctl start ntpdate.service
+fi
