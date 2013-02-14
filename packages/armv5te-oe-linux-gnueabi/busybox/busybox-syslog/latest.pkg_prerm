@@ -4,3 +4,8 @@
 			/etc/init.d/syslog stop
 		fi
 	fi
+if [ -z "$D" ]; then
+    systemctl stop busybox-syslog.service
+fi
+
+systemctl disable busybox-syslog.service
