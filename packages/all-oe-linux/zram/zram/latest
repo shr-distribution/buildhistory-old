@@ -1,8 +1,9 @@
 PV = 0.1
 PR = r1
-PKGR = r1.8
-RDEPENDS = kernel-module-zram kmod util-linux-swaponoff
-RRECOMMENDS = zram-systemd
-PKGSIZE = 2399
-FILES = /etc/init.d
-FILELIST = /etc/init.d/zram
+PKGR = r1.0
+RPROVIDES = zram-systemd
+RDEPENDS = kernel-module-zram kmod systemd update-rc.d util-linux-swaponoff
+RRECOMMENDS = 
+PKGSIZE = 2642
+FILES = /etc/init.d /lib/systemd/system/zram.service
+FILELIST = /etc/init.d/zram /lib/systemd/system/zram.service

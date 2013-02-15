@@ -14,22 +14,20 @@ fi
 mkdir -p /etc/X11/
 echo "/usr/bin/gdm" > /etc/X11/default-display-manager
 
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+systemctl $OPTS enable gdm.service
+
+if [ -z "$D" -a "enable" = "enable" ]; then
+    systemctl start gdm.service
+fi
 if [ "x$D" != "x" ]; then
-    if [ ! -f $INTERCEPT_DIR/update_icon_cache ]; then
-        cat << "EOF" > $INTERCEPT_DIR/update_icon_cache
-#!/bin/sh
-
-# update native pixbuf loaders
-gdk-pixbuf-query-loaders --update-cache
-
-for icondir in $D/usr/share/icons/*/ ; do
-    if [ -d $icondir ] ; then
-        gtk-update-icon-cache -fqt  $icondir
-    fi
-done
-EOF
-    fi
-    exit 0
+    $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG}
+    exit 1
 fi
 
 # Update the pixbuf loaders in case they haven't been registered yet

@@ -2,21 +2,8 @@
     delgroup gdm || true
 	sed -i /gdm/d /etc/X11/default-display-manager || true
 if [ "x$D" != "x" ]; then
-    if [ ! -f $INTERCEPT_DIR/update_icon_cache ]; then
-        cat << "EOF" > $INTERCEPT_DIR/update_icon_cache
-#!/bin/sh
-
-# update native pixbuf loaders
-gdk-pixbuf-query-loaders --update-cache
-
-for icondir in $D/usr/share/icons/*/ ; do
-    if [ -d $icondir ] ; then
-        gtk-update-icon-cache -fqt  $icondir
-    fi
-done
-EOF
-    fi
-    exit 0
+    $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG}
+    exit 1
 fi
 
 for icondir in /usr/share/icons/* ; do

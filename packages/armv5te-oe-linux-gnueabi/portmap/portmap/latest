@@ -1,8 +1,9 @@
 PV = 6.0
 PR = r8
-PKGR = r8.10
-RDEPENDS = eglibc (>= 2.17) libwrap (>= 7.6)
-RRECOMMENDS = portmap-systemd
-PKGSIZE = 16959
-FILES = /usr/bin/* /sbin/* /usr/lib/portmap/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /lib/udev/rules.d /usr/lib/udev/rules.d /usr/share/portmap /usr/lib/portmap/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers
-FILELIST = /etc/init.d/portmap /sbin/portmap
+PKGR = r8.0
+RPROVIDES = portmap-systemd
+RDEPENDS = eglibc (>= 2.17) libwrap (>= 7.6) systemd update-rc.d
+RRECOMMENDS = 
+PKGSIZE = 17095
+FILES = /usr/bin/* /sbin/* /usr/lib/portmap/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /lib/udev/rules.d /usr/lib/udev/rules.d /usr/share/portmap /usr/lib/portmap/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers /lib/systemd/system/portmap.service
+FILELIST = /etc/init.d/portmap /lib/systemd/system/portmap.service /sbin/portmap
