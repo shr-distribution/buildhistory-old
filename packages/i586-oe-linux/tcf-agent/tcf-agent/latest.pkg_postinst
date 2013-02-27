@@ -1,0 +1,7 @@
+#!/bin/sh
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT tcf-agent start 999 3 5 . stop 20 0 1 2 6 .
