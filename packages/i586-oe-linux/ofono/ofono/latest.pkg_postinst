@@ -1,0 +1,12 @@
+#!/bin/sh
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+systemctl $OPTS disable ofono.service
+
+if [ -z "$D" -a "disable" = "enable" ]; then
+    systemctl start ofono.service
+fi

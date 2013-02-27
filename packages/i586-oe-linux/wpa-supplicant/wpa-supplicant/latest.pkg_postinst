@@ -1,0 +1,21 @@
+	# If we're offline, we don't need to do this.
+	if [ "x$D" != "x" ]; then
+		exit 0
+	fi
+
+	DBUSPID=`pidof dbus-daemon`
+
+	if [ "x$DBUSPID" != "x" ]; then
+		/etc/init.d/dbus-1 reload || true
+	fi
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+systemctl $OPTS disable wpa_supplicant.service wpa_supplicant-nl80211@.service wpa_supplicant-wired@.service
+
+if [ -z "$D" -a "disable" = "enable" ]; then
+    systemctl start wpa_supplicant.service wpa_supplicant-nl80211@.service wpa_supplicant-wired@.service
+fi
