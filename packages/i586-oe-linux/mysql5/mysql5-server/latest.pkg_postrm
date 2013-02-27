@@ -1,0 +1,6 @@
+	grep mysql /etc/passwd && deluser mysql
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D mysqld remove
+else
+	update-rc.d mysqld remove
+fi
