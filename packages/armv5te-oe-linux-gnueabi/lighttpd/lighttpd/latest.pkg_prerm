@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop lighttpd.service
+if test "x$D" = "x"; then
+	/etc/init.d/lighttpd stop
 fi
-
-systemctl disable lighttpd.service

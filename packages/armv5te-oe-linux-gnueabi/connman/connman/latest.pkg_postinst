@@ -1,12 +1,7 @@
 #!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
 fi
-
-systemctl $OPTS enable connman.service
-
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start connman.service
-fi
+update-rc.d $OPT connman start 05 5 2 3 . stop 22 0 1 6 .
