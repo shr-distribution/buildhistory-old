@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop zram.service
+if test "x$D" = "x"; then
+	/etc/init.d/zram stop
 fi
-
-systemctl disable zram.service

@@ -1,0 +1,8 @@
+#!/bin/sh
+	update-alternatives --remove  scp /usr/sbin/dropbearmulti
+	update-alternatives --remove  ssh /usr/sbin/dropbearmulti
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D dropbear remove
+else
+	update-rc.d dropbear remove
+fi
