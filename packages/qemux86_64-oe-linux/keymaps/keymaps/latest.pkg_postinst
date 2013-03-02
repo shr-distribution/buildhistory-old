@@ -1,7 +1,12 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT keymap.sh start 01 S .
+
+systemctl $OPTS enable keymaps.service
+
+if [ -z "$D" -a "enable" = "enable" ]; then
+    systemctl start keymaps.service
+fi

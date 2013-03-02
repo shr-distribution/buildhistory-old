@@ -1,7 +1,12 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT ntpd defaults
+
+systemctl $OPTS enable ntpd.service
+
+if [ -z "$D" -a "enable" = "enable" ]; then
+    systemctl start ntpd.service
+fi
