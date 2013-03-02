@@ -1,4 +1,6 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/ofono stop
+if [ -z "$D" ]; then
+    systemctl stop ofono.service
 fi
+
+systemctl disable ofono.service
