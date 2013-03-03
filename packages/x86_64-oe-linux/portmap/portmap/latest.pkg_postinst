@@ -1,7 +1,12 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT portmap start 43 S . start 32 0 6 . stop 81 1 .
+
+systemctl $OPTS disable portmap.service
+
+if [ -z "$D" -a "disable" = "enable" ]; then
+    systemctl start portmap.service
+fi

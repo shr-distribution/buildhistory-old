@@ -1,7 +1,12 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT autofs defaults
+
+systemctl $OPTS enable autofs.service
+
+if [ -z "$D" -a "enable" = "enable" ]; then
+    systemctl start autofs.service
+fi
