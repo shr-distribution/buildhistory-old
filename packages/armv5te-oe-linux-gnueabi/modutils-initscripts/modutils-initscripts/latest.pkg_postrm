@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D modutils.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D modutils.sh remove
+else
+	update-rc.d modutils.sh remove
+fi

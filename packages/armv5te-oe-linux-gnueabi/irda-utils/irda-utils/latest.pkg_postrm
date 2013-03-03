@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D irattach remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D irattach remove
+else
+	update-rc.d irattach remove
+fi

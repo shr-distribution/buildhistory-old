@@ -1,12 +1,16 @@
+#!/bin/sh
 if [ "x$D" != "x" ]; then
-  exit 1
+	$INTERCEPT_DIR/postinst_intercept update_pixbuf_cache ${PKG} libdir=/usr/lib bindir=/usr/bin
+	exit 1
 fi
 
-if [ -d /usr/lib/gtk-2.0/2.10.0/loaders ] ; then
-	export GDK_PIXBUF_MODULEDIR=/usr/lib/gtk-2.0/2.10.0/loaders
-else
-	export GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders
-fi
+# Update the pixbuf loaders in case they haven't been registered yet
+GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
 
-test -x /usr/bin/gdk-pixbuf-query-loaders && gdk-pixbuf-query-loaders > /etc/gtk-2.0/gdk-pixbuf.loaders
-test -x /usr/bin/gtk-update-icon-cache && gtk-update-icon-cache  -q /usr/share/icons/hicolor
+if [ -x /usr/bin/gtk-update-icon-cache ] && [ -d /usr/share/icons ]; then
+    for icondir in /usr/share/icons/*; do
+        if [ -d ${icondir} ]; then
+            gtk-update-icon-cache -t -q ${icondir}
+        fi
+    done
+fi

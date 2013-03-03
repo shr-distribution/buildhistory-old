@@ -1,4 +1,6 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/gpsd-sysv stop
+if [ -z "$D" ]; then
+    systemctl stop gpsd.socket
 fi
+
+systemctl disable gpsd.socket

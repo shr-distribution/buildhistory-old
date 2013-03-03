@@ -1,4 +1,6 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/sshd stop
+if [ -z "$D" ]; then
+    systemctl stop sshd.socket
 fi
+
+systemctl disable sshd.socket

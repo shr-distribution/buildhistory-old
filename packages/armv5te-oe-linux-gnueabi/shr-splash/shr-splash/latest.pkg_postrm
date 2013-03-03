@@ -1,2 +1,6 @@
 #!/bin/sh
-update-rc.d $D shr-splash.sh remove
+if [ "$D" != "" ]; then
+	update-rc.d -f -r $D shr-splash.sh remove
+else
+	update-rc.d shr-splash.sh remove
+fi
