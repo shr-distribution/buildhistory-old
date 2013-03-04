@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop xserver-nodm.service
+if test "x$D" = "x"; then
+	/etc/init.d/xserver-nodm stop
 fi
-
-systemctl disable xserver-nodm.service

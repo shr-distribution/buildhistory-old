@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop fsoaudiod.service
+if test "x$D" = "x"; then
+	/etc/init.d/fsoaudiod stop
 fi
-
-systemctl disable fsoaudiod.service
