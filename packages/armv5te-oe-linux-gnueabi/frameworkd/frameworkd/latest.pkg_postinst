@@ -1,4 +1,10 @@
 #!/bin/sh
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT frameworkd defaults 29
 OPTS=""
 
 if [ -n "$D" ]; then
@@ -7,6 +13,6 @@ fi
 
 systemctl $OPTS enable frameworkd.service
 
-if [ -z "$D" -a "enable" = "enable" ]; then
+if [ -z "$D" -a enable = "enable" ]; then
     systemctl start frameworkd.service
 fi
