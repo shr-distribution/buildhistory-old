@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop dropbear.socket
+if test "x$D" = "x"; then
+	/etc/init.d/dropbear stop
 fi
-
-systemctl disable dropbear.socket

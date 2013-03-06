@@ -1,12 +1,7 @@
 #!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
 fi
-
-systemctl $OPTS disable ofono.service
-
-if [ -z "$D" -a "disable" = "enable" ]; then
-    systemctl start ofono.service
-fi
+update-rc.d $OPT ofono defaults 22
