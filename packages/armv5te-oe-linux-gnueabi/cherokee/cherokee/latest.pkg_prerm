@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop cherokee.service
+if test "x$D" = "x"; then
+	/etc/init.d/cherokee stop
 fi
-
-systemctl disable cherokee.service

@@ -1,9 +1,7 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop gdm.service
+if test "x$D" = "x"; then
+	/etc/init.d/gdm stop
 fi
-
-systemctl disable gdm.service
 SCHEMA_LOCATION=/etc/gconf/schemas
 for SCHEMA in gdm-simple-greeter.schemas; do
 	if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then

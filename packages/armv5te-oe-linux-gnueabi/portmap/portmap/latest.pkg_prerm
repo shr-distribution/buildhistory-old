@@ -1,6 +1,4 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop portmap.service
+if test "x$D" = "x"; then
+	/etc/init.d/portmap stop
 fi
-
-systemctl disable portmap.service
