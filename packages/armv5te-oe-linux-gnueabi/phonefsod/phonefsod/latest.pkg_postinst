@@ -5,14 +5,3 @@ else
 	OPT="-s"
 fi
 update-rc.d $OPT phonefsod defaults 75
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-systemctl $OPTS enable phonefsod.service
-
-if [ -z "$D" -a enable = "enable" ]; then
-    systemctl start phonefsod.service
-fi
