@@ -1,6 +1,9 @@
 #!/bin/sh
-if [ "$D" != "" ]; then
-	update-rc.d -f -r $D alsa-state remove
+if test "$D" != ""; then
+	OPT="-f -r $D"
 else
-	update-rc.d alsa-state remove
+	OPT=""
+fi
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT alsa-state remove
 fi

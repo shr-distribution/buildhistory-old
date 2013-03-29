@@ -1,6 +1,9 @@
 #!/bin/sh
-if [ "$D" != "" ]; then
-	update-rc.d -f -r $D gpsd-sysv remove
+if test "$D" != ""; then
+	OPT="-f -r $D"
 else
-	update-rc.d gpsd-sysv remove
+	OPT=""
+fi
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT gpsd-sysv remove
 fi

@@ -1,6 +1,9 @@
 #!/bin/sh
-if [ "$D" != "" ]; then
-	update-rc.d -f -r $D tftpd-hpa remove
+if test "$D" != ""; then
+	OPT="-f -r $D"
 else
-	update-rc.d tftpd-hpa remove
+	OPT=""
+fi
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT tftpd-hpa remove
 fi

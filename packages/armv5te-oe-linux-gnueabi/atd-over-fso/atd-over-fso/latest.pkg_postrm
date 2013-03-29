@@ -1,7 +1,10 @@
 #!/bin/sh
-if [ "$D" != "" ]; then
-	update-rc.d -f -r $D atd remove
+if test "$D" != ""; then
+	OPT="-f -r $D"
 else
-	update-rc.d atd remove
+	OPT=""
+fi
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT atd remove
 fi
 /etc/init.d/dbus-1 reload

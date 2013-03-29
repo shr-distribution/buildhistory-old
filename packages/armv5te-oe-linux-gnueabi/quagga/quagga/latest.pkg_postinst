@@ -1,15 +1,22 @@
-	for f in bgpd babeld isisd ospfd ripngd zebra ripd ospf6d; do touch /etc/quagga/$f.conf; done
-	chown quagga:quaggavty /etc/quagga
-	chown quagga:quagga /etc/quagga/*.conf
-	chmod 750 /etc/quagga
-	chown 640 /etc/quagga/*.conf
-	/etc/init.d/populate-volatile.sh update
+    if [ "x$D" != "x" ] ; then
+        exit 1
+    fi
+    for f in bgpd babeld isisd ospfd ripngd zebra ripd ospf6d; do touch /etc/quagga/$f.conf; done
+    chown quagga:quaggavty /etc/quagga
+    chown quagga:quagga /etc/quagga/*.conf
+    chmod 750 /etc/quagga
+    chown 640 /etc/quagga/*.conf
+    if [ -z "$D" ] && [ -e /etc/init.d/populate-volatile.sh ] ; then
+        /etc/init.d/populate-volatile.sh update
+    fi
 if test "x$D" != "x"; then
 	OPT="-r $D"
 else
 	OPT="-s"
 fi
-update-rc.d $OPT ${INITSCRIPT_NAME} defaults
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT ${INITSCRIPT_NAME} defaults
+fi
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
 fi

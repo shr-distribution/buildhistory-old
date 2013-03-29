@@ -4,4 +4,6 @@ if test "x$D" != "x"; then
 else
 	OPT="-s"
 fi
-update-rc.d $OPT run-postinsts start 98 S .
+if type update-rc.d >/dev/null; then
+	update-rc.d $OPT run-postinsts start 98 S .
+fi
