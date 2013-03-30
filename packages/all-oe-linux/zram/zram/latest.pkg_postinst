@@ -1,9 +1,0 @@
-#!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-if type update-rc.d >/dev/null; then
-	update-rc.d $OPT zram start 05 2 3 4 5 . stop 22 0 1 6 .
-fi

@@ -1,11 +1,3 @@
 #!/bin/sh
 	update-alternatives --install /etc/init.d/syslog syslog-init /etc/init.d/syslog.busybox 50
 	update-alternatives --install /etc/syslog-startup.conf syslog-startup-conf /etc/syslog-startup.conf.busybox 50
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-if type update-rc.d >/dev/null; then
-	update-rc.d $OPT ${INITSCRIPT_NAME} defaults
-fi

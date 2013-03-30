@@ -1,9 +1,0 @@
-#!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-if type update-rc.d >/dev/null; then
-	update-rc.d $OPT xserver-nodm start 01 5 2 . stop 01 0 1 6 .
-fi
