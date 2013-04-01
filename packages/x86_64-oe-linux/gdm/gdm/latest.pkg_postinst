@@ -14,17 +14,6 @@ fi
 mkdir -p /etc/X11/
 echo "/usr/bin/gdm" > /etc/X11/default-display-manager
 
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-systemctl $OPTS enable gdm.service
-
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start gdm.service
-fi
 if [ "x$D" != "x" ]; then
     $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG}
     exit 1
