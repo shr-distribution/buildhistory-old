@@ -1,14 +1,6 @@
     deluser gdm || true
     delgroup gdm || true
 	sed -i /gdm/d /etc/X11/default-display-manager || true
-if test "$D" != ""; then
-	OPT="-f -r $D"
-else
-	OPT=""
-fi
-if type update-rc.d >/dev/null; then
-	update-rc.d $OPT gdm remove
-fi
 if [ "x$D" != "x" ]; then
     $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG}
     exit 1
