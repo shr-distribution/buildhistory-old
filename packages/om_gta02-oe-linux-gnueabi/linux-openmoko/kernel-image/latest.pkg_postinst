@@ -2,7 +2,7 @@ if [ ! -e "$D/lib/modules/3.2.18" ]; then
 	mkdir -p $D/lib/modules/3.2.18
 fi
 if [ -n "$D" ]; then
-	depmod -a -b $D -F /OE/shr-core/tmp-eglibc/sysroots/om-gta02/usr/src/kernel/System.map-3.2.18 3.2.18
+	depmodwrapper -a -b $D 3.2.18
 else
 	depmod -a 3.2.18
 fi
