@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop phonefsod.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop phonefsod.service
+	fi
 
-systemctl disable phonefsod.service
+	systemctl disable phonefsod.service
+fi
