@@ -5,8 +5,10 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable rpcbind.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable rpcbind.service
 
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start rpcbind.service
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart rpcbind.service
+	fi
 fi

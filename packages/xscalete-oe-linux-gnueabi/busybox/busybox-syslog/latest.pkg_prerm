@@ -4,8 +4,10 @@
 			/etc/init.d/syslog stop
 		fi
 	fi
-if [ -z "$D" ]; then
-    systemctl stop busybox-syslog.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop busybox-syslog.service
+	fi
 
-systemctl disable busybox-syslog.service
+	systemctl disable busybox-syslog.service
+fi

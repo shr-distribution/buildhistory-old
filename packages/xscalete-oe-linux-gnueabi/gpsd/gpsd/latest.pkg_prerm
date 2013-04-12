@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop gpsd.socket
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop gpsd.socket
+	fi
 
-systemctl disable gpsd.socket
+	systemctl disable gpsd.socket
+fi

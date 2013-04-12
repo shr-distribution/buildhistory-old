@@ -5,10 +5,12 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS disable bluetooth.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS disable bluetooth.service
 
-if [ -z "$D" -a "disable" = "enable" ]; then
-    systemctl start bluetooth.service
+	if [ -z "$D" -a "disable" = "enable" ]; then
+		systemctl restart bluetooth.service
+	fi
 fi
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
