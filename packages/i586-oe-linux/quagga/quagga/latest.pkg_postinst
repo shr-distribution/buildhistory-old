@@ -15,7 +15,7 @@ else
 	OPT="-s"
 fi
 if type update-rc.d >/dev/null 2>/dev/null; then
-	update-rc.d $OPT ${INITSCRIPT_NAME} defaults
+	update-rc.d $OPT quagga defaults 15 85
 fi
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi

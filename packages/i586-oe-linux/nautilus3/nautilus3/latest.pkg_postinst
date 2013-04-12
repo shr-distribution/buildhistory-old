@@ -4,7 +4,8 @@ fi
 
 glib-compile-schemas /usr/share/glib-2.0/schemas
 if [ "x$D" != "x" ]; then
-    $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG}
+    $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG} libdir=/usr/lib \
+        base_libdir=/lib
     exit 1
 fi
 
