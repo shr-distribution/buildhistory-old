@@ -13,8 +13,10 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable ntpdate.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable ntpdate.service
 
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start ntpdate.service
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart ntpdate.service
+	fi
 fi
