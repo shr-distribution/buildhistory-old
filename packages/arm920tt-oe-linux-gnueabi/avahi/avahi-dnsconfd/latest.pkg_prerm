@@ -1,8 +1,8 @@
 #!/bin/sh
 if type systemctl >/dev/null 2>/dev/null; then
 	if [ -z "$D" ]; then
-		systemctl stop uuidd.socket
+		systemctl stop avahi-dnsconfd.service
 	fi
 
-	systemctl disable uuidd.socket
+	systemctl disable avahi-dnsconfd.service
 fi
