@@ -5,8 +5,10 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable fsoaudiod.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable fsoaudiod.service
 
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start fsoaudiod.service
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart fsoaudiod.service
+	fi
 fi

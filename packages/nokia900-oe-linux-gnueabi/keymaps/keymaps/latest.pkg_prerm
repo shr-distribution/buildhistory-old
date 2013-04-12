@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop keymaps.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop keymaps.service
+	fi
 
-systemctl disable keymaps.service
+	systemctl disable keymaps.service
+fi

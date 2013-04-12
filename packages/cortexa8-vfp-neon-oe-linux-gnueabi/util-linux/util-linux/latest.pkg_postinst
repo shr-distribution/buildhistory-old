@@ -18,4 +18,17 @@
 	update-alternatives --install /sbin/hwclock hwclock /sbin/hwclock.util-linux 10
 	update-alternatives --install /usr/bin/utmpdump utmpdump /usr/bin/utmpdump.util-linux 100
 	update-alternatives --install /usr/bin/eject eject /usr/bin/eject.util-linux 100
-	update-alternatives --install /usr/bin/getopt getopt /bin/getopt 100
+	update-alternatives --install /bin/getopt getopt /usr/bin/getopt 100
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable uuidd.socket
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart uuidd.socket
+	fi
+fi

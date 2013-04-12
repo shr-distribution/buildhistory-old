@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop fsotdld.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop fsotdld.service
+	fi
 
-systemctl disable fsotdld.service
+	systemctl disable fsotdld.service
+fi
