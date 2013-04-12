@@ -5,8 +5,10 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable gateone.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable gateone.service
 
-if [ -z "$D" -a enable = "enable" ]; then
-    systemctl start gateone.service
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart gateone.service
+	fi
 fi

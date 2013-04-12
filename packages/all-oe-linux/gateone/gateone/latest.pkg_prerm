@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop gateone.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop gateone.service
+	fi
 
-systemctl disable gateone.service
+	systemctl disable gateone.service
+fi

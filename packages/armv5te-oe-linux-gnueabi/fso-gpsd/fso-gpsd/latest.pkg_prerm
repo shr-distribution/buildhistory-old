@@ -1,6 +1,8 @@
 #!/bin/sh
-if [ -z "$D" ]; then
-    systemctl stop fso-gpsd.service
-fi
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop fso-gpsd.service
+	fi
 
-systemctl disable fso-gpsd.service
+	systemctl disable fso-gpsd.service
+fi
