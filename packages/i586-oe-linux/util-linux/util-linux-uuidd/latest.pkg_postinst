@@ -6,9 +6,9 @@ if [ -n "$D" ]; then
 fi
 
 if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS enable avahi-daemon.service
+	systemctl $OPTS enable uuidd.service
 
 	if [ -z "$D" -a "enable" = "enable" ]; then
-		systemctl restart avahi-daemon.service
+		systemctl restart uuidd.service
 	fi
 fi
