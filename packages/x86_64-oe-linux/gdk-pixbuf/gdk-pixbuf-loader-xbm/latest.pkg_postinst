@@ -1,6 +1,7 @@
 #!/bin/sh
 if [ "x$D" != "x" ]; then
-	$INTERCEPT_DIR/postinst_intercept update_pixbuf_cache ${PKG} libdir=/usr/lib bindir=/usr/bin
+	$INTERCEPT_DIR/postinst_intercept update_pixbuf_cache ${PKG} libdir=/usr/lib \
+		bindir=/usr/bin base_libdir=/lib
 	exit 1
 fi
 
