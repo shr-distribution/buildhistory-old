@@ -1,9 +1,11 @@
 PV = 4.2.5
-PR = r2
-PKGR = r2.3
-RPROVIDES = 
-RDEPENDS = eglibc (>= 2.17) libcrypto (>= 1.0.0j)
-RRECOMMENDS = dhcp-server-config dhcp-server-systemd
-PKGSIZE = 1781026
-FILES = /usr/sbin/dhcpd /etc/init.d/dhcp-server
-FILELIST = /etc/init.d/dhcp-server /usr/sbin/dhcpd
+PR = r3
+PKGR = r3.0
+RPROVIDES = dhcp-server-systemd
+RDEPENDS = eglibc (>= 2.17) libcrypto (>= 1.0.1e)
+RRECOMMENDS = dhcp-server-config
+RREPLACES = dhcp-server-systemd
+RCONFLICTS = dhcp-server-systemd
+PKGSIZE = 1773384
+FILES = /usr/sbin/dhcpd /etc/init.d/dhcp-server /lib/systemd/system/dhcpd.service /lib/systemd/system/dhcpd.service
+FILELIST = /etc/init.d/dhcp-server /lib/systemd/system/dhcpd.service /usr/sbin/dhcpd

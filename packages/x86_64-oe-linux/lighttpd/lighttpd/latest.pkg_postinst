@@ -5,8 +5,10 @@ if [ -n "$D" ]; then
     OPTS="--root=$D"
 fi
 
-systemctl $OPTS enable lighttpd.service
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable lighttpd.service
 
-if [ -z "$D" -a enable = "enable" ]; then
-    systemctl start lighttpd.service
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart lighttpd.service
+	fi
 fi

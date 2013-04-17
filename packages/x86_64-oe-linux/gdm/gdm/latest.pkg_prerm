@@ -1,4 +1,11 @@
 #!/bin/sh
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop gdm.service
+	fi
+
+	systemctl disable gdm.service
+fi
 SCHEMA_LOCATION=/etc/gconf/schemas
 for SCHEMA in gdm-simple-greeter.schemas; do
 	if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then
