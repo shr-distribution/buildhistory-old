@@ -1,11 +1,11 @@
 #!/bin/sh
 if [ "x$D" != "x" ] && [ -f $D/var/lib/dpkg/status ]; then
-	install -d /home/jenkins/oe/shr-core-branches/shr-core/tmp-eglibc/work/armv5te-oe-linux-gnueabi/dpkg/1.16.9-r19.0/image//etc/rcS.d
+	install -d $D/etc/rcS.d
 
 	# this happens at S98 where our good 'ole packages script used to run
 	echo "#!/bin/sh
 dpkg --configure -a 
 rm -f /etc/rcS.d/S98run-postinsts
-" > /home/jenkins/oe/shr-core-branches/shr-core/tmp-eglibc/work/armv5te-oe-linux-gnueabi/dpkg/1.16.9-r19.0/image//etc/rcS.d/S98run-postinsts
-	chmod 0755 /home/jenkins/oe/shr-core-branches/shr-core/tmp-eglibc/work/armv5te-oe-linux-gnueabi/dpkg/1.16.9-r19.0/image//etc/rcS.d/S98run-postinsts
+" > $D/etc/rcS.d/S98run-postinsts
+	chmod 0755 $D/etc/rcS.d/S98run-postinsts
 fi
