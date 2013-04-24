@@ -2,7 +2,6 @@
 if [ "x$D" != "x" ] ; then
 	$INTERCEPT_DIR/postinst_intercept update_font_cache ${PKG} bindir=/usr/bin \
 		libdir=/usr/lib base_libdir=/lib
-	exit 1
+else
+	fc-cache
 fi
-
-fc-cache
