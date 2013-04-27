@@ -1,6 +1,8 @@
 #!/bin/sh
 if [ "x$D" != "x" ]; then
-        exit 1
+    $INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG} libdir=/usr/lib \
+        base_libdir=/lib
+    exit 1
 fi
 
 # Update the pixbuf loaders in case they haven't been registered yet
