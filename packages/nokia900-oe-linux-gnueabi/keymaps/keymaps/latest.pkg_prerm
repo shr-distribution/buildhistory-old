@@ -1,4 +1,8 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/keymap.sh stop
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop keymaps.service
+	fi
+
+	systemctl disable keymaps.service
 fi
