@@ -1,4 +1,8 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/frameworkd stop
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop frameworkd.service
+	fi
+
+	systemctl disable frameworkd.service
 fi

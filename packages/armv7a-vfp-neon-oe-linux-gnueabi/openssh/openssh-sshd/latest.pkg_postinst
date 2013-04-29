@@ -1,7 +1,14 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT sshd defaults 9
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable sshd.socket
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart sshd.socket
+	fi
+fi

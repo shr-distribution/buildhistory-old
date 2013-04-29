@@ -1,8 +1,11 @@
 #!/bin/sh
 if [ "x$D" != "x" ]; then
-    exit 1
+	$INTERCEPT_DIR/postinst_intercept update_pixbuf_cache ${PKG} libdir=/usr/lib \
+		bindir=/usr/bin base_libdir=/lib
+	exit 1
 fi
 
+# Update the pixbuf loaders in case they haven't been registered yet
 GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
 
 if [ -x /usr/bin/gtk-update-icon-cache ] && [ -d /usr/share/icons ]; then
@@ -12,4 +15,3 @@ if [ -x /usr/bin/gtk-update-icon-cache ] && [ -d /usr/share/icons ]; then
         fi
     done
 fi
-

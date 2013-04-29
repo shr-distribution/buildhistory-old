@@ -1,7 +1,14 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-update-rc.d $OPT gps-handler defaults 36 34
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable gps-handler.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart gps-handler.service
+	fi
+fi
