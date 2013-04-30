@@ -1,7 +1,8 @@
 #!/bin/sh
 if [ -z "$D" ]; then
 	depmod -a 2.6.39.4
-	update-modules || true
+else
+	depmodwrapper -a -b $D 2.6.39.4
 fi
 
 if [ x"$D" = "x" ]; then

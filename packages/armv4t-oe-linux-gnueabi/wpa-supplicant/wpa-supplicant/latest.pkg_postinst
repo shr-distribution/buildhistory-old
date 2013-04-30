@@ -3,8 +3,17 @@
 		exit 0
 	fi
 
-	DBUSPID=`pidof dbus-daemon`
+	killall -q -HUP dbus-daemon || true
+OPTS=""
 
-	if [ "x$DBUSPID" != "x" ]; then
-		/etc/init.d/dbus-1 reload || true
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS disable wpa_supplicant.service wpa_supplicant-nl80211@.service wpa_supplicant-wired@.service
+
+	if [ -z "$D" -a "disable" = "enable" ]; then
+		systemctl restart wpa_supplicant.service wpa_supplicant-nl80211@.service wpa_supplicant-wired@.service
 	fi
+fi

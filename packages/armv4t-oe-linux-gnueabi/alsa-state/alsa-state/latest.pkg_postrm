@@ -1,2 +1,9 @@
 #!/bin/sh
-update-rc.d $D alsa-state remove
+if test "$D" != ""; then
+	OPT="-f -r $D"
+else
+	OPT=""
+fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	update-rc.d $OPT alsa-state remove
+fi

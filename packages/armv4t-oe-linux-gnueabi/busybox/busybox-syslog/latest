@@ -1,7 +1,11 @@
 PV = 1.20.2
-PR = r6
-RDEPENDS = 
+PR = r13
+PKGR = r13.0
+RPROVIDES = busybox-syslog-systemd
+RDEPENDS = update-alternatives-cworth
 RRECOMMENDS = 
-PKGSIZE = 2362
-FILES = /etc/init.d/syslog* /etc/syslog-startup.conf*
-FILELIST = /etc/init.d/syslog.busybox /etc/syslog-startup.conf.busybox
+RREPLACES = busybox-syslog-systemd
+RCONFLICTS = busybox-syslog-systemd
+PKGSIZE = 2772
+FILES = /etc/init.d/syslog* /etc/syslog-startup.conf* /lib/systemd/system/syslog.service /etc/default/busybox-syslog /lib/systemd/system/syslog.service /lib/systemd/system/busybox-syslog.service /lib/systemd/system/busybox-klogd.service
+FILELIST = /etc/default/busybox-syslog /etc/init.d/syslog.busybox /etc/syslog-startup.conf.busybox /lib/systemd/system/busybox-klogd.service /lib/systemd/system/busybox-syslog.service /lib/systemd/system/syslog.service
