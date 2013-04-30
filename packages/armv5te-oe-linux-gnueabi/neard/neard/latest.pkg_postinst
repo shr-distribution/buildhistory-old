@@ -1,9 +1,14 @@
 #!/bin/sh
-if test "x$D" != "x"; then
-	OPT="-r $D"
-else
-	OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
 fi
-if type update-rc.d >/dev/null 2>/dev/null; then
-	update-rc.d $OPT neard defaults 64
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable neard.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart neard.service
+	fi
 fi
