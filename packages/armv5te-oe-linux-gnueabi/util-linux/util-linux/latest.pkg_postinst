@@ -1,15 +1,4 @@
 #!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-systemctl $OPTS enable uuidd.socket
-
-if [ -z "$D" -a "enable" = "enable" ]; then
-    systemctl start uuidd.socket
-fi
 	update-alternatives --install /bin/dmesg dmesg /bin/dmesg.util-linux 100
 	update-alternatives --install /bin/kill kill /bin/kill.util-linux 100
 	update-alternatives --install /bin/more more /bin/more.util-linux 100
@@ -29,3 +18,4 @@ fi
 	update-alternatives --install /sbin/hwclock hwclock /sbin/hwclock.util-linux 10
 	update-alternatives --install /usr/bin/utmpdump utmpdump /usr/bin/utmpdump.util-linux 100
 	update-alternatives --install /usr/bin/eject eject /usr/bin/eject.util-linux 100
+	update-alternatives --install /bin/getopt getopt /usr/bin/getopt 100
