@@ -1,7 +1,11 @@
 PV = 2.55
-PR = r1
-RDEPENDS = eglibc (>= 2.16) update-rc.d
-RRECOMMENDS = 
-PKGSIZE = 160048
-FILES = /usr/bin/* /usr/sbin/* /usr/libexec/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /usr/share/dnsmasq /usr/lib/dnsmasq/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers
-FILELIST = /etc/dnsmasq.conf /etc/init.d/dnsmasq /usr/bin/dnsmasq
+PR = r3
+PKGR = r3.0
+RPROVIDES = dnsmasq-systemd
+RDEPENDS = eglibc (>= 2.17)
+RRECOMMENDS = update-rc.d
+RREPLACES = dnsmasq-systemd
+RCONFLICTS = dnsmasq-systemd
+PKGSIZE = 160368
+FILES = /usr/bin/* /usr/sbin/* /usr/lib/dnsmasq/* /usr/lib/lib*.so.* /etc /com /var /bin/* /sbin/* /lib/*.so.* /lib/udev/rules.d /usr/lib/udev/rules.d /usr/share/dnsmasq /usr/lib/dnsmasq/* /usr/share/pixmaps /usr/share/applications /usr/share/idl /usr/share/omf /usr/share/sounds /usr/lib/bonobo/servers /lib/systemd/system/dnsmasq.service
+FILELIST = /etc/dnsmasq.conf /etc/init.d/dnsmasq /lib/systemd/system/dnsmasq.service /usr/bin/dnsmasq

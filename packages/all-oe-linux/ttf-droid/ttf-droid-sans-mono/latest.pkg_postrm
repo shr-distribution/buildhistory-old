@@ -1,3 +1,7 @@
-    if [ -z "$D" ]; then
-        update-fonts
-    fi
+#!/bin/sh
+if [ "x$D" != "x" ] ; then
+	$INTERCEPT_DIR/postinst_intercept update_font_cache ${PKG} mlprefix= bindir=/usr/bin \
+		libdir=/usr/lib base_libdir=/lib
+else
+	fc-cache
+fi
