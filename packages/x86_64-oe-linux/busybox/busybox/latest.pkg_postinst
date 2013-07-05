@@ -1,4 +1,38 @@
-#!/bin/sh
+	# This part of code is dedicated to the on target upgrade problem.
+	# It's known that if we don't make appropriate symlinks before update-alternatives calls,
+	# there will be errors indicating missing commands such as 'sed'.
+	# These symlinks will later be updated by update-alternatives calls.
+	test -n 2 > /dev/null || alias test='busybox test'
+	if test "x$D" = "x"; then
+		# Remove busybox.nosuid if it's a symlink, because this situation indicates
+		# that we're installing or upgrading to a one-binary busybox.
+		if test -h /bin/busybox.nosuid; then
+			rm -f /bin/busybox.nosuid
+		fi
+		for suffix in "" ".nosuid" ".suid"; do
+			if test -e /etc/busybox.links$suffix; then
+				while read link; do
+					if test ! -e "$link"; then
+						case "$link" in
+							/*/*/*)
+								to="../../bin/busybox$suffix"
+								;;
+							/bin/*)
+								to="busybox$suffix"
+								;;
+							/*/*)
+								to="../bin/busybox$suffix"
+								;;
+						esac
+						# we can use busybox here because even if we are using splitted busybox
+						# we've made a symlink from /bin/busybox to /bin/busybox.nosuid.
+						busybox rm -f $link
+						busybox ln -s $to $link
+					fi
+				done < /etc/busybox.links$suffix
+			fi
+		done
+	fi
 	update-alternatives --install /usr/bin/bunzip2 bunzip2 /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/bzcat bzcat /bin/busybox.nosuid 50
 	update-alternatives --install /bin/date date /bin/busybox.nosuid 50
@@ -25,8 +59,8 @@
 	update-alternatives --install /bin/sh sh /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/[ lbracket /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/[[ [[ /bin/busybox.nosuid 50
-	update-alternatives --install /bin/addgroup addgroup /bin/busybox.nosuid 50
-	update-alternatives --install /bin/adduser adduser /bin/busybox.nosuid 50
+	update-alternatives --install /usr/sbin/addgroup addgroup /bin/busybox.nosuid 50
+	update-alternatives --install /usr/sbin/adduser adduser /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/ar ar /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/awk awk /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/basename basename /bin/busybox.nosuid 50
@@ -45,8 +79,8 @@
 	update-alternatives --install /usr/bin/dc dc /bin/busybox.nosuid 50
 	update-alternatives --install /bin/dd dd /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/deallocvt deallocvt /bin/busybox.nosuid 50
-	update-alternatives --install /bin/delgroup delgroup /bin/busybox.nosuid 50
-	update-alternatives --install /bin/deluser deluser /bin/busybox.nosuid 50
+	update-alternatives --install /usr/sbin/delgroup delgroup /bin/busybox.nosuid 50
+	update-alternatives --install /usr/sbin/deluser deluser /bin/busybox.nosuid 50
 	update-alternatives --install /bin/df df /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/diff diff /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/dirname dirname /bin/busybox.nosuid 50
@@ -76,7 +110,7 @@
 	update-alternatives --install /sbin/ifconfig ifconfig /bin/busybox.nosuid 50
 	update-alternatives --install /sbin/ifdown ifdown /bin/busybox.nosuid 50
 	update-alternatives --install /sbin/ifup ifup /bin/busybox.nosuid 50
-	update-alternatives --install /bin/ip ip /bin/busybox.nosuid 50
+	update-alternatives --install /sbin/ip ip /bin/busybox.nosuid 50
 	update-alternatives --install /bin/kill kill /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/killall killall /bin/busybox.nosuid 50
 	update-alternatives --install /sbin/klogd klogd /bin/busybox.nosuid 50
@@ -125,6 +159,7 @@
 	update-alternatives --install /bin/sed sed /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/seq seq /bin/busybox.nosuid 50
 	update-alternatives --install /sbin/setconsole setconsole /bin/busybox.nosuid 50
+	update-alternatives --install /usr/bin/sha3sum sha3sum /bin/busybox.nosuid 50
 	update-alternatives --install /bin/sleep sleep /bin/busybox.nosuid 50
 	update-alternatives --install /usr/bin/sort sort /bin/busybox.nosuid 50
 	update-alternatives --install /sbin/start-stop-daemon start-stop-daemon /bin/busybox.nosuid 50
