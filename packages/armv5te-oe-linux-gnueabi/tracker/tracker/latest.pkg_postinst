@@ -1,0 +1,32 @@
+#!/bin/sh
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS disable  tracker-store.service tracker-miner-fs.service tracker-dbus.service 
+
+	if [ -z "$D" -a "disable" = "enable" ]; then
+		systemctl restart  tracker-store.service tracker-miner-fs.service tracker-dbus.service 
+	fi
+fi
+if [ "x$D" != "x" ]; then
+	$INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG} mlprefix= libdir=/usr/lib \
+		base_libdir=/lib
+else
+
+	# Update the pixbuf loaders in case they haven't been registered yet
+	GDK_PIXBUF_MODULEDIR=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders --update-cache
+
+	for icondir in /usr/share/icons/* ; do
+		if [ -d $icondir ] ; then
+			gtk-update-icon-cache -fqt  $icondir
+		fi
+	done
+fi
+	glib-compile-schemas $D/usr/share/glib-2.0/schemas
+if [ x"$D" = "x" ]; then
+	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
+fi

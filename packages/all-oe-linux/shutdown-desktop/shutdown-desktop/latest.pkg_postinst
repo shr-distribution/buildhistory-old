@@ -1,0 +1,3 @@
+    grep -q qemuarm $D/etc/hostname && \
+        sed -i $D/usr/share/applications/shutdown.desktop -e 's#^Exec=\(.*\)/halt#Exec=\1/reboot#' \
+        || true
