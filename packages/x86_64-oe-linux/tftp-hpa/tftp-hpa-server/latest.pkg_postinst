@@ -1,0 +1,9 @@
+#!/bin/sh
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	update-rc.d $OPT tftpd-hpa start 20 2 3 4 5 . stop 20 1 .
+fi
