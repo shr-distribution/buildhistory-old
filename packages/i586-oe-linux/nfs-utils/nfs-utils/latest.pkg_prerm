@@ -1,4 +1,8 @@
 #!/bin/sh
-if test "x$D" = "x"; then
-	/etc/init.d/nfsserver stop
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop nfs-server.service nfs-mountd.service nfs-statd.service
+	fi
+
+	systemctl disable nfs-server.service nfs-mountd.service nfs-statd.service
 fi
