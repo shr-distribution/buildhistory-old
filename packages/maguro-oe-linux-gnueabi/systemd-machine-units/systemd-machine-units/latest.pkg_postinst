@@ -6,9 +6,9 @@ if [ -n "$D" ]; then
 fi
 
 if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS enable rndissetup.service
+	systemctl $OPTS enable rndissetup.service pvrinit.service
 
 	if [ -z "$D" -a "enable" = "enable" ]; then
-		systemctl restart rndissetup.service
+		systemctl restart rndissetup.service pvrinit.service
 	fi
 fi
