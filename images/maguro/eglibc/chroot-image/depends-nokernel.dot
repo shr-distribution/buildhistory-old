@@ -1,10 +1,15 @@
 digraph depends {
     node [shape=plaintext]
-busybox -> busybox_syslog [style=dotted];
-busybox -> busybox_udhcpc [style=dotted];
-busybox -> libc6;
-busybox -> update_alternatives_cworth;
-busybox -> update_rc_d [style=dotted];
-busybox_syslog -> update_alternatives_cworth;
-run_postinsts -> update_rc_d [style=dotted];
+"android-tools" -> "libc6";
+"android-tools" -> "libcrypto1.0.0";
+"android-tools" -> "libz1";
+"busybox" -> "busybox-syslog" [style=dotted];
+"busybox" -> "busybox-udhcpc" [style=dotted];
+"busybox" -> "libc6";
+"busybox" -> "update-alternatives-cworth";
+"busybox" -> "update-rc.d" [style=dotted];
+"busybox-syslog" -> "update-alternatives-cworth";
+"libcrypto1.0.0" -> "libc6";
+"libz1" -> "libc6";
+"run-postinsts" -> "update-rc.d" [style=dotted];
 }
