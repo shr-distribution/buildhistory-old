@@ -1,11 +1,12 @@
-if [ ! -e "$D/lib/modules/3.2.18" ]; then
-	mkdir -p $D/lib/modules/3.2.18
-fi
-if [ -n "$D" ]; then
-	depmodwrapper -a -b $D 3.2.18
-else
-	depmod -a 3.2.18
-fi
+	update-alternatives --install /boot/uImage uImage uImage-3.2.18 30202 || true
+	if [ ! -e "$D/lib/modules/3.2.18" ]; then
+		mkdir -p $D/lib/modules/3.2.18
+	fi
+	if [ -n "$D" ]; then
+		depmodwrapper -a -b $D 3.2.18
+	else
+		depmod -a 3.2.18
+	fi
 
 # Get the lastest root file system value of boot args
 boot_arg=`cat /proc/cmdline |tr " " "\n"|grep "root=" |tail -n 1`

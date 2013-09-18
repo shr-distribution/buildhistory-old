@@ -6,9 +6,9 @@ if [ -n "$D" ]; then
 fi
 
 if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS enable xinput-calibrator.service
+	systemctl $OPTS enable systemd-binfmt.service
 
 	if [ -z "$D" -a "enable" = "enable" ]; then
-		systemctl restart xinput-calibrator.service
+		systemctl restart systemd-binfmt.service
 	fi
 fi
