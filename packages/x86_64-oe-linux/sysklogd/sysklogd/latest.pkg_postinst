@@ -3,15 +3,13 @@
 	update-alternatives --install /sbin/klogd klogd /sbin/klogd.sysklogd 10
 	update-alternatives --install /etc/init.d/syslog syslog-init /etc/init.d/syslog.sysklogd 10
 	update-alternatives --install /etc/syslog.conf syslog-conf /etc/syslog.conf.sysklogd 10
-IN_TARGET=`test "x$D" = "x"`
-
 # test if there is a previous init script there, ie, we are updating the package
 # if so, we stop the service and remove it before we install from the new package
 if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ $IN_TARGET -a `test -f "/etc/init.d/syslog"` ]; then
+	if [ -z "$D" -a `test -f "/etc/init.d/syslog"` ]; then
 		/etc/init.d/syslog stop
 	fi
-	if [ ! $IN_TARGET ]; then
+	if [ -n "$D" ]; then
 		OPT="-f -r $D"
 	else
 		OPT="-f"
@@ -19,7 +17,7 @@ if type update-rc.d >/dev/null 2>/dev/null; then
 	update-rc.d $OPT syslog remove
 fi
 
-if [ ! $IN_TARGET ]; then
+if [ -n "$D" ]; then
 	OPT="-r $D"
 else
 	OPT="-s"
