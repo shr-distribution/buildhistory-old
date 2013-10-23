@@ -5,15 +5,13 @@
             /etc/init.d/populate-volatile.sh update
         fi
     fi
-IN_TARGET=`test "x$D" = "x"`
-
 # test if there is a previous init script there, ie, we are updating the package
 # if so, we stop the service and remove it before we install from the new package
 if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ $IN_TARGET -a `test -f "/etc/init.d/nostromo"` ]; then
+	if [ -z "$D" -a `test -f "/etc/init.d/nostromo"` ]; then
 		/etc/init.d/nostromo stop
 	fi
-	if [ ! $IN_TARGET ]; then
+	if [ -n "$D" ]; then
 		OPT="-f -r $D"
 	else
 		OPT="-f"
@@ -21,7 +19,7 @@ if type update-rc.d >/dev/null 2>/dev/null; then
 	update-rc.d $OPT nostromo remove
 fi
 
-if [ ! $IN_TARGET ]; then
+if [ -n "$D" ]; then
 	OPT="-r $D"
 else
 	OPT="-s"
