@@ -1,11 +1,17 @@
 #!/bin/sh
-if [ "x$D" != "x" ] && [ -f $D/var/lib/opkg/status ]; then
+if false && \
+	[ "x$D" != "x" ] && [ -f $D/var/lib/opkg/status ]; then
 	install -d $D/usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/rcS.d
 
 	# this happens at S98 where our good 'ole packages script used to run
 	echo "#!/bin/sh
-opkg-cl configure 
-rm -f //usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/rcS.d/S98run-postinsts
+[ -e /usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/default/postinst ] && . /usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/default/postinst
+if [ \"\$POSTINST_LOGGING\" = \"1\" ]; then
+    opkg-cl configure >\$LOGFILE 2>&1
+else
+    opkg-cl configure
+fi
+rm -f /usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/rcS.d/S98run-postinsts
 " > $D/usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/rcS.d/S98run-postinsts
 	chmod 0755 $D/usr/local/oecore-i686/sysroots/i686-oesdk-linux/etc/rcS.d/S98run-postinsts
 fi
