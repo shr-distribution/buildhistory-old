@@ -2,7 +2,7 @@
 # test if there is a previous init script there, ie, we are updating the package
 # if so, we stop the service and remove it before we install from the new package
 if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -z "$D" -a `test -f "/etc/init.d/conntrackd"` ]; then
+	if [ -z "$D" -a -f "/etc/init.d/conntrackd" ]; then
 		/etc/init.d/conntrackd stop
 	fi
 	if [ -n "$D" ]; then
