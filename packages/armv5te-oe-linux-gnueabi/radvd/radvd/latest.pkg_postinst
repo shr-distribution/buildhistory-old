@@ -1,23 +1,11 @@
-    /etc/init.d/populate-volatile.sh update
-# test if there is a previous init script there, ie, we are updating the package
-# if so, we stop the service and remove it before we install from the new package
+    if [ -z "$D" -a -x /etc/init.d/populate-volatile.sh ]; then
+	/etc/init.d/populate-volatile.sh update
+    fi
 if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -z "$D" -a -f "/etc/init.d/radvd" ]; then
-		/etc/init.d/radvd stop
-	fi
 	if [ -n "$D" ]; then
-		OPT="-f -r $D"
+		OPT="-r $D"
 	else
-		OPT="-f"
+		OPT="-s"
 	fi
-	update-rc.d $OPT radvd remove
-fi
-
-if [ -n "$D" ]; then
-	OPT="-r $D"
-else
-	OPT="-s"
-fi
-if type update-rc.d >/dev/null 2>/dev/null; then
 	update-rc.d $OPT radvd defaults 20 80
 fi
