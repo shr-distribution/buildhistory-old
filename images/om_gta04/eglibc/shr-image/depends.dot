@@ -2301,8 +2301,6 @@ digraph depends {
 "libsysfs2" -> "libc6";
 "libsystemd-daemon0" -> "libc6";
 "libsystemd-id128-0" -> "libc6";
-"libsystemd-journal0" -> "libc6";
-"libsystemd-journal0" -> "liblzma5";
 "libtasn1-6" -> "libc6";
 "libtheora" -> "libc6";
 "libtheora" -> "libogg0";
@@ -3660,7 +3658,6 @@ digraph depends {
 "systemd" -> "kernel-module-autofs4" [style=dotted];
 "systemd" -> "kernel-module-ipv6" [style=dotted];
 "systemd" -> "kernel-module-unix" [style=dotted];
-"systemd" -> "kmod";
 "systemd" -> "libacl1";
 "systemd" -> "libattr1";
 "systemd" -> "libc6";
@@ -3671,11 +3668,8 @@ digraph depends {
 "systemd" -> "libpam";
 "systemd" -> "libsystemd-daemon0";
 "systemd" -> "libsystemd-id128-0";
-"systemd" -> "libsystemd-journal0";
 "systemd" -> "libudev1";
-"systemd" -> "libwrap0";
 "systemd" -> "shadow";
-"systemd" -> "systemd-binfmt";
 "systemd" -> "systemd-compat-units" [style=dotted];
 "systemd" -> "systemd-serialgetty" [style=dotted];
 "systemd" -> "update-alternatives-cworth";
@@ -3683,8 +3677,6 @@ digraph depends {
 "systemd" -> "util-linux-agetty" [style=dotted];
 "systemd" -> "util-linux-fsck" [style=dotted];
 "systemd" -> "util-linux-mount";
-"systemd-binfmt" -> "kernel-module-binfmt-misc" [style=dotted];
-"systemd-binfmt" -> "libc6";
 "systemd-machine-units" -> "gta04-gps-handler-systemd";
 "systemd-serialgetty" -> "systemd";
 "tcpdump" -> "libc6";
@@ -3696,10 +3688,10 @@ digraph depends {
 "udev" -> "libc6";
 "udev" -> "libkmod2";
 "udev" -> "libudev1";
+"udev" -> "udev-extraconf" [style=dotted];
 "udev" -> "udev-hwdb" [style=dotted];
 "udev" -> "udev-utils";
 "udev-extraconf" -> "udev";
-"udev-hwdb" -> "udev-utils";
 "udev-utils" -> "libacl1";
 "udev-utils" -> "libblkid1";
 "udev-utils" -> "libc6";
