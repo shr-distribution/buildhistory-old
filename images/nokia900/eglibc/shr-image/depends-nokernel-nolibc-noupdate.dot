@@ -2032,7 +2032,6 @@ digraph depends {
 "libstartup-notification-1-0" -> "libxcb1";
 "libstartup-notification-1-0" -> "libxdmcp6";
 "libswscale2" -> "libavutil51";
-"libsystemd-journal0" -> "liblzma5";
 "libtheora" -> "libogg0";
 "libtiff5" -> "libjpeg8";
 "libtiff5" -> "liblzma5";
@@ -3212,7 +3211,6 @@ digraph depends {
 "systemd" -> "kernel-module-autofs4" [style=dotted];
 "systemd" -> "kernel-module-ipv6" [style=dotted];
 "systemd" -> "kernel-module-unix" [style=dotted];
-"systemd" -> "kmod";
 "systemd" -> "libacl1";
 "systemd" -> "libattr1";
 "systemd" -> "libcap2";
@@ -3222,17 +3220,13 @@ digraph depends {
 "systemd" -> "libpam";
 "systemd" -> "libsystemd-daemon0";
 "systemd" -> "libsystemd-id128-0";
-"systemd" -> "libsystemd-journal0";
 "systemd" -> "libudev1";
-"systemd" -> "libwrap0";
 "systemd" -> "shadow";
-"systemd" -> "systemd-binfmt";
 "systemd" -> "systemd-compat-units" [style=dotted];
 "systemd" -> "systemd-serialgetty" [style=dotted];
 "systemd" -> "util-linux-agetty" [style=dotted];
 "systemd" -> "util-linux-fsck" [style=dotted];
 "systemd" -> "util-linux-mount";
-"systemd-binfmt" -> "kernel-module-binfmt-misc" [style=dotted];
 "systemd-machine-units" -> "phonet-utils";
 "systemd-serialgetty" -> "systemd";
 "tcpdump" -> "libpcap1";
@@ -3242,10 +3236,10 @@ digraph depends {
 "udev" -> "libblkid1";
 "udev" -> "libkmod2";
 "udev" -> "libudev1";
+"udev" -> "udev-extraconf" [style=dotted];
 "udev" -> "udev-hwdb" [style=dotted];
 "udev" -> "udev-utils";
 "udev-extraconf" -> "udev";
-"udev-hwdb" -> "udev-utils";
 "udev-utils" -> "libacl1";
 "udev-utils" -> "libblkid1";
 "udev-utils" -> "libkmod2";
