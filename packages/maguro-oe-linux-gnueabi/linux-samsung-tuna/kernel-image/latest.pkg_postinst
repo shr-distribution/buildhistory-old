@@ -1,9 +1,9 @@
-	update-alternatives --install /boot/zImage zImage zImage-3.0.31 30031 || true
-	if [ ! -e "$D/lib/modules/3.0.31" ]; then
-		mkdir -p $D/lib/modules/3.0.31
+	update-alternatives --install /boot/zImage zImage zImage-3.0.72 30072 || true
+	if [ ! -e "$D/lib/modules/3.0.72" ]; then
+		mkdir -p $D/lib/modules/3.0.72
 	fi
 	if [ -n "$D" ]; then
-		depmodwrapper -a -b $D 3.0.31
+		depmodwrapper -a -b $D 3.0.72
 	else
-		depmod -a 3.0.31
+		depmod -a 3.0.72
 	fi
