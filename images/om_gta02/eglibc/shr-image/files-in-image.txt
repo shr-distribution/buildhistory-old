@@ -2,7 +2,7 @@ drwxr-xr-x root       root             4096 .
 drwxr-xr-x root       root             4096 ./bin
 lrwxrwxrwx root       root               19 ./bin/ash -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               25 ./bin/base64 -> /usr/bin/base64.coreutils
--rwxr-xr-x root       root           638580 ./bin/bash
+-rwxr-xr-x root       root           638612 ./bin/bash
 lrwxrwxrwx root       root               14 ./bin/busybox -> busybox.nosuid
 -rwxr-xr-x root       root           429272 ./bin/busybox.nosuid
 -rwsr-xr-x root       root            44904 ./bin/busybox.suid
@@ -16,7 +16,7 @@ lrwxrwxrwx root       root               20 ./bin/chmod -> /bin/chmod.coreutils
 lrwxrwxrwx root       root               20 ./bin/chown -> /bin/chown.coreutils
 -rwxr-xr-x root       root            48216 ./bin/chown.coreutils
 lrwxrwxrwx root       root               17 ./bin/cp -> /bin/cp.coreutils
--rwxr-xr-x root       root            80432 ./bin/cp.coreutils
+-rwxr-xr-x root       root            80424 ./bin/cp.coreutils
 lrwxrwxrwx root       root               19 ./bin/cpio -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               19 ./bin/date -> /bin/date.coreutils
 -rwxr-xr-x root       root            46012 ./bin/date.coreutils
@@ -94,7 +94,7 @@ lrwxrwxrwx root       root               19 ./bin/sync -> /bin/sync.coreutils
 -rwxr-xr-x root       root            50720 ./bin/systemd-tmpfiles
 -rwxr-xr-x root       root            46592 ./bin/systemd-tty-ask-password-agent
 lrwxrwxrwx root       root               12 ./bin/tar -> /bin/tar.tar
--rwxr-xr-x root       root           266380 ./bin/tar.tar
+-rwxr-xr-x root       root           266372 ./bin/tar.tar
 lrwxrwxrwx root       root               20 ./bin/touch -> /bin/touch.coreutils
 -rwxr-xr-x root       root            43092 ./bin/touch.coreutils
 lrwxrwxrwx root       root               19 ./bin/true -> /bin/true.coreutils
@@ -598,6 +598,7 @@ drwxr-xr-x root       root             4096 ./etc/pam.d
 -rw-r--r-- root       root               46 ./etc/pam.d/screen
 -rwxr-xr-x root       root              297 ./etc/pam.d/sshd
 -rw-r--r-- root       root             2348 ./etc/pam.d/su
+-rw-r--r-- root       root              181 ./etc/pam.d/systemd-user
 -rw-r--r-- root       root              107 ./etc/pam.d/useradd
 -rw-r--r-- root       root              107 ./etc/pam.d/userdel
 -rw-r--r-- root       root              107 ./etc/pam.d/usermod
@@ -631,28 +632,31 @@ drwxr-xr-x root       root             4096 ./etc/profile.d
 -rw-r--r-- root       root             2932 ./etc/protocols
 drwxr-xr-x root       root             4096 ./etc/rc0.d
 lrwxrwxrwx root       root               23 ./etc/rc0.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
-lrwxrwxrwx root       root               20 ./etc/rc0.d/K40networking -> ../init.d/networking
+lrwxrwxrwx root       root               20 ./etc/rc0.d/K80networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc0.d/K97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc1.d
 lrwxrwxrwx root       root               23 ./etc/rc1.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
-lrwxrwxrwx root       root               20 ./etc/rc1.d/K40networking -> ../init.d/networking
+lrwxrwxrwx root       root               20 ./etc/rc1.d/K80networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc1.d/K97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc2.d
+lrwxrwxrwx root       root               20 ./etc/rc2.d/S10networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc2.d/S97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc3.d
+lrwxrwxrwx root       root               20 ./etc/rc3.d/S10networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc3.d/S97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc4.d
+lrwxrwxrwx root       root               20 ./etc/rc4.d/S10networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc4.d/S97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc5.d
+lrwxrwxrwx root       root               20 ./etc/rc5.d/S10networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc5.d/S97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rc6.d
 lrwxrwxrwx root       root               23 ./etc/rc6.d/K21shr-splash.sh -> ../init.d/shr-splash.sh
-lrwxrwxrwx root       root               20 ./etc/rc6.d/K40networking -> ../init.d/networking
+lrwxrwxrwx root       root               20 ./etc/rc6.d/K80networking -> ../init.d/networking
 lrwxrwxrwx root       root               13 ./etc/rc6.d/K97atd -> ../init.d/atd
 drwxr-xr-x root       root             4096 ./etc/rcS.d
 lrwxrwxrwx root       root               23 ./etc/rcS.d/S01shr-splash.sh -> ../init.d/shr-splash.sh
 lrwxrwxrwx root       root               21 ./etc/rcS.d/S39modutils.sh -> ../init.d/modutils.sh
-lrwxrwxrwx root       root               20 ./etc/rcS.d/S40networking -> ../init.d/networking
 -rw-r--r-- root       root              887 ./etc/rpc
 -rw-r--r-- root       root              370 ./etc/rsyncd.conf
 -r-------- root       root             1638 ./etc/securetty
@@ -673,7 +677,7 @@ drwxr-xr-x root       root             4096 ./etc/shr-settings
 -rw-r--r-- root       root              431 ./etc/shr-settings/backup.blacklist
 -rw-r--r-- root       root              636 ./etc/shr-settings/backup.conf
 -rw-r--r-- root       root              492 ./etc/shr-settings/backup.whitelist
--rw-r--r-- root       root              107 ./etc/shr-version
+-rw-r--r-- root       root              100 ./etc/shr-version
 drwxr-xr-x root       root             4096 ./etc/skel
 -rwxr-xr-x root       root              410 ./etc/skel/.bashrc
 -rwxr-xr-x root       root              152 ./etc/skel/.profile
@@ -986,7 +990,7 @@ lrwxrwxrwx root       root               14 ./lib/libanl.so.1 -> libanl-2.18.so
 lrwxrwxrwx root       root               16 ./lib/libattr.so.1 -> libattr.so.1.1.0
 -rw-r--r-- root       root            12012 ./lib/libattr.so.1.1.0
 lrwxrwxrwx root       root               17 ./lib/libblkid.so.1 -> libblkid.so.1.1.0
--rwxr-xr-x root       root           156116 ./lib/libblkid.so.1.1.0
+-rwxr-xr-x root       root           156164 ./lib/libblkid.so.1.1.0
 -rwxr-xr-x root       root          1254608 ./lib/libc-2.18.so
 lrwxrwxrwx root       root               12 ./lib/libc.so.6 -> libc-2.18.so
 lrwxrwxrwx root       root               14 ./lib/libcap.so.2 -> libcap.so.2.22
@@ -1035,7 +1039,7 @@ lrwxrwxrwx root       root               13 ./lib/librt.so.1 -> librt-2.18.so
 lrwxrwxrwx root       root               12 ./lib/libss.so.2 -> libss.so.2.0
 -rwxr-xr-x root       root            15692 ./lib/libss.so.2.0
 lrwxrwxrwx root       root               17 ./lib/libsysfs.so.2 -> libsysfs.so.2.0.1
--rwxr-xr-x root       root            24004 ./lib/libsysfs.so.2.0.1
+-rwxr-xr-x root       root            24008 ./lib/libsysfs.so.2.0.1
 lrwxrwxrwx root       root               27 ./lib/libsystemd-daemon.so.0 -> libsystemd-daemon.so.0.0.10
 -rwxr-xr-x root       root             9548 ./lib/libsystemd-daemon.so.0.0.10
 lrwxrwxrwx root       root               26 ./lib/libsystemd-id128.so.0 -> libsystemd-id128.so.0.0.26
@@ -1045,7 +1049,7 @@ lrwxrwxrwx root       root               28 ./lib/libsystemd-journal.so.0 -> lib
 -rwxr-xr-x root       root            26348 ./lib/libthread_db-1.0.so
 lrwxrwxrwx root       root               19 ./lib/libthread_db.so.1 -> libthread_db-1.0.so
 lrwxrwxrwx root       root               15 ./lib/libtinfo.so.5 -> libtinfo.so.5.9
--rwxr-xr-x root       root           106060 ./lib/libtinfo.so.5.9
+-rwxr-xr-x root       root           106056 ./lib/libtinfo.so.5.9
 lrwxrwxrwx root       root               16 ./lib/libudev.so.1 -> libudev.so.1.4.0
 -rwxr-xr-x root       root            54724 ./lib/libudev.so.1.4.0
 lrwxrwxrwx root       root               19 ./lib/libusb-0.1.so.4 -> libusb-0.1.so.4.4.4
@@ -1550,7 +1554,7 @@ lrwxrwxrwx root       root               11 ./sbin/depmod.kmod -> ../bin/kmod
 -rwxr-xr-x root       root           188996 ./sbin/e2fsck
 -rwxr-xr-x root       root            20120 ./sbin/e2image
 -rwxr-xr-x root       root             7108 ./sbin/e2undo
--rwxr-xr-x root       root            23020 ./sbin/e4defrag
+-rwxr-xr-x root       root            23004 ./sbin/e4defrag
 lrwxrwxrwx root       root               22 ./sbin/fdisk -> /sbin/fdisk.util-linux
 -rwxr-xr-x root       root           128616 ./sbin/fdisk.util-linux
 -rwxr-xr-x root       root            11172 ./sbin/filefrag
@@ -1586,11 +1590,11 @@ lrwxrwxrwx root       root               19 ./sbin/logread -> /bin/busybox.nosui
 -rwxr-xr-x root       root             6240 ./sbin/logsave
 lrwxrwxrwx root       root               19 ./sbin/losetup -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               15 ./sbin/lsmod -> /bin/lsmod.kmod
--rwxr-xr-x root       root            68212 ./sbin/mke2fs
--rwxr-xr-x root       root            68212 ./sbin/mkfs.ext2
--rwxr-xr-x root       root            68212 ./sbin/mkfs.ext3
--rwxr-xr-x root       root            68212 ./sbin/mkfs.ext4
--rwxr-xr-x root       root            68212 ./sbin/mkfs.ext4dev
+-rwxr-xr-x root       root            68228 ./sbin/mke2fs
+-rwxr-xr-x root       root            68228 ./sbin/mkfs.ext2
+-rwxr-xr-x root       root            68228 ./sbin/mkfs.ext3
+-rwxr-xr-x root       root            68228 ./sbin/mkfs.ext4
+-rwxr-xr-x root       root            68228 ./sbin/mkfs.ext4dev
 lrwxrwxrwx root       root               19 ./sbin/mkfs.minix -> /bin/busybox.nosuid
 -rwxr-xr-x root       root             4428 ./sbin/mklost+found
 lrwxrwxrwx root       root               19 ./sbin/mkswap -> /bin/busybox.nosuid
@@ -1631,7 +1635,7 @@ drwxr-xr-x root       root             4096 ./sys
 drwxrwxrwt root       root             4096 ./tmp
 drwxr-xr-x root       root             4096 ./usr
 drwxr-xr-x root       root            20480 ./usr/bin
--rwxr-xr-x root       root          1266820 ./usr/bin/FBReader
+-rwxr-xr-x root       root          1269760 ./usr/bin/FBReader
 lrwxrwxrwx root       root                4 ./usr/bin/X -> Xorg
 -rwxr-xr-x root       root          1337252 ./usr/bin/Xorg
 lrwxrwxrwx root       root               27 ./usr/bin/[ -> /usr/bin/lbracket.coreutils
@@ -1687,7 +1691,7 @@ lrwxrwxrwx root       root               25 ./usr/bin/csplit -> /usr/bin/csplit.
 -rwxr-xr-x root       root           125804 ./usr/bin/curl
 lrwxrwxrwx root       root               22 ./usr/bin/cut -> /usr/bin/cut.coreutils
 -rwxr-xr-x root       root            32912 ./usr/bin/cut.coreutils
--rwxr-xr-x root       root            13348 ./usr/bin/cvt
+-rwxr-xr-x root       root            13356 ./usr/bin/cvt
 -rwxr-xr-x root       root             6808 ./usr/bin/dbus-cleanup-sockets
 -rwxr-xr-x root       root           208156 ./usr/bin/dbus-daemon
 -rwxr-xr-x root       root             8720 ./usr/bin/dbus-daemon-proxy
@@ -1753,7 +1757,7 @@ lrwxrwxrwx root       root               25 ./usr/bin/expand -> /usr/bin/expand.
 -rwxr-xr-x root       root            23404 ./usr/bin/expand.coreutils
 -rwsr-xr-x root       root            12652 ./usr/bin/expiry
 lrwxrwxrwx root       root               23 ./usr/bin/expr -> /usr/bin/expr.coreutils
--rwxr-xr-x root       root            64148 ./usr/bin/expr.coreutils
+-rwxr-xr-x root       root            64140 ./usr/bin/expr.coreutils
 lrwxrwxrwx root       root               25 ./usr/bin/factor -> /usr/bin/factor.coreutils
 -rwxr-xr-x root       root            72444 ./usr/bin/factor.coreutils
 -rwxr-xr-x root       root            12004 ./usr/bin/faillog
@@ -1789,7 +1793,7 @@ lrwxrwxrwx root       root               21 ./usr/bin/fuser -> /usr/bin/fuser.ps
 -rwxr-xr-x root       root           285776 ./usr/bin/gawk-4.0.2
 -rwxr-xr-x root       root            35184 ./usr/bin/gconf-merge-tree
 -rwxr-xr-x root       root            44748 ./usr/bin/gconftool-2
--rwxr-xr-x root       root          2589888 ./usr/bin/gdb
+-rwxr-xr-x root       root          2589872 ./usr/bin/gdb
 -rwxr-xr-x root       root             5900 ./usr/bin/gdk-pixbuf-pixdata
 -rwxr-xr-x root       root             7256 ./usr/bin/gdk-pixbuf-query-loaders
 -rwxr-xr-x root       root            18028 ./usr/bin/gencat
@@ -1833,7 +1837,7 @@ lrwxrwxrwx root       root               25 ./usr/bin/hostid -> /usr/bin/hostid.
 -rwxr-xr-x root       root            42568 ./usr/bin/hostnamectl
 -rwxr-xr-x root       root            91644 ./usr/bin/htop
 -rwxr-xr-x root       root             7156 ./usr/bin/icc2ps
--rwxr-xr-x root       root            11848 ./usr/bin/icclink
+-rwxr-xr-x root       root            11840 ./usr/bin/icclink
 -rwxr-xr-x root       root            22720 ./usr/bin/icctrans
 -rwxr-xr-x root       root            46884 ./usr/bin/iconv
 -rwxr-xr-x root       root              310 ./usr/bin/ics_diff
@@ -1887,7 +1891,7 @@ lrwxrwxrwx root       root               19 ./usr/bin/microcom -> /bin/busybox.n
 lrwxrwxrwx root       root               25 ./usr/bin/mkfifo -> /usr/bin/mkfifo.coreutils
 -rwxr-xr-x root       root            20644 ./usr/bin/mkfifo.coreutils
 -rwxr-xr-x root       root            28656 ./usr/bin/mktemp.coreutils
--rwxr-xr-x root       root          2636144 ./usr/bin/mplayer
+-rwxr-xr-x root       root          2638872 ./usr/bin/mplayer
 -rwxr-xr-x root       root            26532 ./usr/bin/mpstat
 -rwxr-xr-x root       root             7568 ./usr/bin/mtdev-test
 -rwxr-xr-x root       root           121408 ./usr/bin/nano
@@ -1899,7 +1903,7 @@ lrwxrwxrwx root       root               22 ./usr/bin/newgrp -> /usr/bin/newgrp.
 lrwxrwxrwx root       root               23 ./usr/bin/nice -> /usr/bin/nice.coreutils
 -rwxr-xr-x root       root            22500 ./usr/bin/nice.coreutils
 lrwxrwxrwx root       root               21 ./usr/bin/nl -> /usr/bin/nl.coreutils
--rwxr-xr-x root       root            68372 ./usr/bin/nl.coreutils
+-rwxr-xr-x root       root            68364 ./usr/bin/nl.coreutils
 -rwxr-xr-x root       root            96728 ./usr/bin/nmon
 lrwxrwxrwx root       root               24 ./usr/bin/nohup -> /usr/bin/nohup.coreutils
 -rwxr-xr-x root       root            22508 ./usr/bin/nohup.coreutils
@@ -1945,7 +1949,7 @@ lrwxrwxrwx root       root               26 ./usr/bin/pathchk -> /usr/bin/pathch
 lrwxrwxrwx root       root               10 ./usr/bin/perl -> perl5.14.3
 -rwxr-xr-x root       root             5932 ./usr/bin/perl5.14.3
 lrwxrwxrwx root       root               21 ./usr/bin/pgrep -> /usr/bin/pgrep.procps
--r-xr-xr-x root       root            10684 ./usr/bin/pgrep.procps
+-r-xr-xr-x root       root            10672 ./usr/bin/pgrep.procps
 -rwxr-xr-x root       root            37032 ./usr/bin/phonefsod
 -rwxr-xr-x root       root             4708 ./usr/bin/phoneui-contacts
 -rwxr-xr-x root       root             4692 ./usr/bin/phoneui-dialer
@@ -1958,7 +1962,7 @@ lrwxrwxrwx root       root               21 ./usr/bin/pgrep -> /usr/bin/pgrep.pr
 lrwxrwxrwx root       root               24 ./usr/bin/pinky -> /usr/bin/pinky.coreutils
 -rwxr-xr-x root       root            26672 ./usr/bin/pinky.coreutils
 lrwxrwxrwx root       root               21 ./usr/bin/pkill -> /usr/bin/pkill.procps
--r-xr-xr-x root       root            10684 ./usr/bin/pkill.procps
+-r-xr-xr-x root       root            10672 ./usr/bin/pkill.procps
 -rwxr-xr-x root       root            13896 ./usr/bin/pldd
 lrwxrwxrwx root       root               20 ./usr/bin/pmap -> /usr/bin/pmap.procps
 -r-xr-xr-x root       root             8008 ./usr/bin/pmap.procps
@@ -2016,12 +2020,12 @@ lrwxrwxrwx root       root                3 ./usr/bin/rvim -> vim
 lrwxrwxrwx root       root               20 ./usr/bin/scp -> /usr/bin/scp.openssh
 -rwxr-xr-x root       root            47188 ./usr/bin/scp.openssh
 lrwxrwxrwx root       root               12 ./usr/bin/screen -> screen-4.0.3
--rwsr-xr-x root       root           229600 ./usr/bin/screen-4.0.3
+-rwsr-xr-x root       root           229608 ./usr/bin/screen-4.0.3
 -rwxr-xr-x root       root            91216 ./usr/bin/sdptool
 lrwxrwxrwx root       root               11 ./usr/bin/see -> run-mailcap
 lrwxrwxrwx root       root               22 ./usr/bin/seq -> /usr/bin/seq.coreutils
 -rwxr-xr-x root       root            26612 ./usr/bin/seq.coreutils
--rwxr-xr-x root       root           511020 ./usr/bin/serial_forward
+-rwxr-xr-x root       root           511028 ./usr/bin/serial_forward
 -rwxr-xr-x root       root            14672 ./usr/bin/setxkbmap
 lrwxrwxrwx root       root               13 ./usr/bin/sg -> newgrp.shadow
 lrwxrwxrwx root       root               26 ./usr/bin/sha1sum -> /usr/bin/sha1sum.coreutils
@@ -2149,7 +2153,7 @@ lrwxrwxrwx root       root               24 ./usr/bin/users -> /usr/bin/users.co
 lrwxrwxrwx root       root               23 ./usr/bin/vdir -> /usr/bin/vdir.coreutils
 -rwxr-xr-x root       root            90060 ./usr/bin/vdir.coreutils
 lrwxrwxrwx root       root                3 ./usr/bin/view -> vim
--rwxr-xr-x root       root          1197500 ./usr/bin/vim
+-rwxr-xr-x root       root          1197492 ./usr/bin/vim
 lrwxrwxrwx root       root                3 ./usr/bin/vimdiff -> vim
 -rwxr-xr-x root       root             2084 ./usr/bin/vimtutor
 lrwxrwxrwx root       root               17 ./usr/bin/vlock -> /bin/busybox.suid
@@ -2783,7 +2787,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/gstreamer-0.10
 -rwxr-xr-x root       root            14716 ./usr/lib/gstreamer-0.10/libgstivorbisdec.so
 -rwxr-xr-x root       root            35304 ./usr/lib/gstreamer-0.10/libgstmad.so
 -rwxr-xr-x root       root            12092 ./usr/lib/gstreamer-0.10/libgstnice.so
--rwxr-xr-x root       root           160820 ./usr/lib/gstreamer-0.10/libgstogg.so
+-rwxr-xr-x root       root           160796 ./usr/lib/gstreamer-0.10/libgstogg.so
 -rwxr-xr-x root       root           205668 ./usr/lib/gstreamer-0.10/libgstplaybin.so
 -rwxr-xr-x root       root             1301 ./usr/lib/gstreamer-0.10/libgstpython.la
 -rwxr-xr-x root       root            11752 ./usr/lib/gstreamer-0.10/libgstpython.so
@@ -2813,7 +2817,7 @@ lrwxrwxrwx root       root               14 ./usr/lib/libSM.so.6 -> libSM.so.6.0
 lrwxrwxrwx root       root               19 ./usr/lib/libX11-xcb.so.1 -> libX11-xcb.so.1.0.0
 -rwxr-xr-x root       root             3136 ./usr/lib/libX11-xcb.so.1.0.0
 lrwxrwxrwx root       root               15 ./usr/lib/libX11.so.6 -> libX11.so.6.3.0
--rwxr-xr-x root       root           965508 ./usr/lib/libX11.so.6.3.0
+-rwxr-xr-x root       root           965492 ./usr/lib/libX11.so.6.3.0
 lrwxrwxrwx root       root               15 ./usr/lib/libXau.so.6 -> libXau.so.6.0.0
 -rwxr-xr-x root       root             6664 ./usr/lib/libXau.so.6.0.0
 lrwxrwxrwx root       root               22 ./usr/lib/libXcomposite.so.1 -> libXcomposite.so.1.0.0
@@ -2867,7 +2871,7 @@ lrwxrwxrwx root       root               15 ./usr/lib/libass.so.4 -> libass.so.4
 lrwxrwxrwx root       root               23 ./usr/lib/libatk-1.0.so.0 -> libatk-1.0.so.0.21009.1
 -rwxr-xr-x root       root            94148 ./usr/lib/libatk-1.0.so.0.21009.1
 lrwxrwxrwx root       root               21 ./usr/lib/libavcodec.so.53 -> libavcodec.so.53.35.0
--rwxr-xr-x root       root          7551768 ./usr/lib/libavcodec.so.53.35.0
+-rwxr-xr-x root       root          7551960 ./usr/lib/libavcodec.so.53.35.0
 lrwxrwxrwx root       root               22 ./usr/lib/libavformat.so.53 -> libavformat.so.53.21.1
 -rwxr-xr-x root       root          1033476 ./usr/lib/libavformat.so.53.21.1
 lrwxrwxrwx root       root               20 ./usr/lib/libavutil.so.51 -> libavutil.so.51.22.1
@@ -2964,9 +2968,9 @@ lrwxrwxrwx root       root               17 ./usr/lib/libeukit.so.1 -> libeukit.
 lrwxrwxrwx root       root               16 ./usr/lib/libevas.so.1 -> libevas.so.1.7.9
 -rwxr-xr-x root       root           896304 ./usr/lib/libevas.so.1.7.9
 lrwxrwxrwx root       root               19 ./usr/lib/libewebkit.so.0 -> libewebkit.so.0.1.0
--rwxr-xr-x root       root           712220 ./usr/lib/libewebkit.so.0.1.0
+-rwxr-xr-x root       root           712100 ./usr/lib/libewebkit.so.0.1.0
 lrwxrwxrwx root       root               17 ./usr/lib/libexif.so.12 -> libexif.so.12.3.3
--rwxr-xr-x root       root           185592 ./usr/lib/libexif.so.12.3.3
+-rwxr-xr-x root       root           185656 ./usr/lib/libexif.so.12.3.3
 lrwxrwxrwx root       root               17 ./usr/lib/libexpat.so.1 -> libexpat.so.1.6.0
 -rwxr-xr-x root       root            94764 ./usr/lib/libexpat.so.1.6.0
 lrwxrwxrwx root       root               18 ./usr/lib/libexslt.so.0 -> libexslt.so.0.8.17
@@ -2982,7 +2986,7 @@ lrwxrwxrwx root       root               19 ./usr/lib/libfontenc.so.1 -> libfont
 lrwxrwxrwx root       root               15 ./usr/lib/libformw.so.5 -> libformw.so.5.9
 -rwxr-xr-x root       root            40588 ./usr/lib/libformw.so.5.9
 lrwxrwxrwx root       root               21 ./usr/lib/libfreetype.so.6 -> libfreetype.so.6.10.2
--rwxr-xr-x root       root           376504 ./usr/lib/libfreetype.so.6.10.2
+-rwxr-xr-x root       root           376492 ./usr/lib/libfreetype.so.6.10.2
 lrwxrwxrwx root       root               19 ./usr/lib/libfribidi.so.0 -> libfribidi.so.0.3.1
 -rwxr-xr-x root       root            80424 ./usr/lib/libfribidi.so.0.3.1
 lrwxrwxrwx root       root               20 ./usr/lib/libfso-glib.so.2 -> libfso-glib.so.2.0.0
@@ -3050,7 +3054,7 @@ lrwxrwxrwx root       root               24 ./usr/lib/libgstapp-0.10.so.0 -> lib
 lrwxrwxrwx root       root               26 ./usr/lib/libgstaudio-0.10.so.0 -> libgstaudio-0.10.so.0.25.0
 -rwxr-xr-x root       root           175792 ./usr/lib/libgstaudio-0.10.so.0.25.0
 lrwxrwxrwx root       root               25 ./usr/lib/libgstbase-0.10.so.0 -> libgstbase-0.10.so.0.30.0
--rwxr-xr-x root       root           266364 ./usr/lib/libgstbase-0.10.so.0.30.0
+-rwxr-xr-x root       root           266348 ./usr/lib/libgstbase-0.10.so.0.30.0
 lrwxrwxrwx root       root               26 ./usr/lib/libgstcheck-0.10.so.0 -> libgstcheck-0.10.so.0.30.0
 -rwxr-xr-x root       root            42180 ./usr/lib/libgstcheck-0.10.so.0.30.0
 lrwxrwxrwx root       root               31 ./usr/lib/libgstcontroller-0.10.so.0 -> libgstcontroller-0.10.so.0.30.0
@@ -3080,13 +3084,13 @@ lrwxrwxrwx root       root               26 ./usr/lib/libgstvideo-0.10.so.0 -> l
 lrwxrwxrwx root       root               26 ./usr/lib/libgthread-2.0.so.0 -> libgthread-2.0.so.0.3800.1
 -rwxr-xr-x root       root             3580 ./usr/lib/libgthread-2.0.so.0.3800.1
 lrwxrwxrwx root       root               27 ./usr/lib/libgtk-x11-2.0.so.0 -> libgtk-x11-2.0.so.0.2400.22
--rwxr-xr-x root       root          2988464 ./usr/lib/libgtk-x11-2.0.so.0.2400.22
+-rwxr-xr-x root       root          2988536 ./usr/lib/libgtk-x11-2.0.so.0.2400.22
 lrwxrwxrwx root       root               22 ./usr/lib/libharfbuzz.so.0 -> libharfbuzz.so.0.922.0
 -rwxr-xr-x root       root           233212 ./usr/lib/libharfbuzz.so.0.922.0
 lrwxrwxrwx root       root               17 ./usr/lib/libhistory.so.6 -> libhistory.so.6.2
 -rwxr-xr-x root       root            19764 ./usr/lib/libhistory.so.6.2
 lrwxrwxrwx root       root               17 ./usr/lib/libical.so.0 -> libical.so.0.48.0
--rwxr-xr-x root       root           241864 ./usr/lib/libical.so.0.48.0
+-rwxr-xr-x root       root           241888 ./usr/lib/libical.so.0.48.0
 lrwxrwxrwx root       root               19 ./usr/lib/libicalss.so.0 -> libicalss.so.0.48.0
 -rwxr-xr-x root       root            60612 ./usr/lib/libicalss.so.0.48.0
 lrwxrwxrwx root       root               21 ./usr/lib/libicalvcal.so.0 -> libicalvcal.so.0.48.0
@@ -3096,7 +3100,7 @@ lrwxrwxrwx root       root               18 ./usr/lib/libicudata.so.51 -> libicu
 lrwxrwxrwx root       root               18 ./usr/lib/libicui18n.so.51 -> libicui18n.so.51.2
 -rwxr-xr-x root       root          1521328 ./usr/lib/libicui18n.so.51.2
 lrwxrwxrwx root       root               16 ./usr/lib/libicuuc.so.51 -> libicuuc.so.51.2
--rwxr-xr-x root       root          1069332 ./usr/lib/libicuuc.so.51.2
+-rwxr-xr-x root       root          1069340 ./usr/lib/libicuuc.so.51.2
 lrwxrwxrwx root       root               19 ./usr/lib/libid3-3.8.so.3 -> libid3-3.8.so.3.0.0
 -rwxr-xr-x root       root           163704 ./usr/lib/libid3-3.8.so.3.0.0
 lrwxrwxrwx root       root               17 ./usr/lib/libidn.so.11 -> libidn.so.11.6.11
@@ -3108,7 +3112,7 @@ lrwxrwxrwx root       root               17 ./usr/lib/libip6tc.so.0 -> libip6tc.
 lrwxrwxrwx root       root               16 ./usr/lib/libiptc.so.0 -> libiptc.so.0.0.0
 -rwxr-xr-x root       root             2928 ./usr/lib/libiptc.so.0.0.0
 lrwxrwxrwx root       root               30 ./usr/lib/libjavascriptcore_efl.so.0 -> libjavascriptcore_efl.so.0.1.0
--rwxr-xr-x root       root          5442744 ./usr/lib/libjavascriptcore_efl.so.0.1.0
+-rwxr-xr-x root       root          5442768 ./usr/lib/libjavascriptcore_efl.so.0.1.0
 lrwxrwxrwx root       root               16 ./usr/lib/libjpeg.so.8 -> libjpeg.so.8.0.2
 -rwxr-xr-x root       root           174832 ./usr/lib/libjpeg.so.8.0.2
 lrwxrwxrwx root       root               16 ./usr/lib/libkmod.so.2 -> libkmod.so.2.2.5
@@ -3122,7 +3126,7 @@ lrwxrwxrwx root       root               21 ./usr/lib/liblinebreak.so.1 -> libli
 lrwxrwxrwx root       root               17 ./usr/lib/liblzma.so.5 -> liblzma.so.5.0.99
 -rwxr-xr-x root       root           109080 ./usr/lib/liblzma.so.5.0.99
 lrwxrwxrwx root       root               16 ./usr/lib/liblzo2.so.2 -> liblzo2.so.2.0.0
--rwxr-xr-x root       root            81020 ./usr/lib/liblzo2.so.2.0.0
+-rwxr-xr-x root       root            81012 ./usr/lib/liblzo2.so.2.0.0
 lrwxrwxrwx root       root               15 ./usr/lib/libmad.so.0 -> libmad.so.0.2.1
 -rwxr-xr-x root       root            84236 ./usr/lib/libmad.so.0.2.1
 lrwxrwxrwx root       root               17 ./usr/lib/libmagic.so.1 -> libmagic.so.1.0.0
@@ -3181,14 +3185,14 @@ lrwxrwxrwx root       root               21 ./usr/lib/libpixman-1.so.0 -> libpix
 lrwxrwxrwx root       root               18 ./usr/lib/libpng16.so.16 -> libpng16.so.16.6.0
 -rwxr-xr-x root       root           140348 ./usr/lib/libpng16.so.16.6.0
 lrwxrwxrwx root       root               20 ./usr/lib/libpoppler.so.37 -> libpoppler.so.37.0.0
--rwxr-xr-x root       root          1679644 ./usr/lib/libpoppler.so.37.0.0
+-rwxr-xr-x root       root          1680100 ./usr/lib/libpoppler.so.37.0.0
 lrwxrwxrwx root       root               16 ./usr/lib/libpopt.so.0 -> libpopt.so.0.0.0
 -rwxr-xr-x root       root            35120 ./usr/lib/libpopt.so.0.0.0
 lrwxrwxrwx root       root               21 ./usr/lib/libpostproc.so.52 -> libpostproc.so.52.0.0
 -rwxr-xr-x root       root            56484 ./usr/lib/libpostproc.so.52.0.0
 drwxr-xr-x root       root             4096 ./usr/lib/libproxy
 lrwxrwxrwx root       root               17 ./usr/lib/libproxy.so.1 -> libproxy.so.1.0.0
--rwxr-xr-x root       root            97812 ./usr/lib/libproxy.so.1.0.0
+-rwxr-xr-x root       root            94656 ./usr/lib/libproxy.so.1.0.0
 drwxr-xr-x root       root             4096 ./usr/lib/libproxy/0.4.7
 drwxr-xr-x root       root             4096 ./usr/lib/libproxy/0.4.7/modules
 -rwxr-xr-x root       root            31592 ./usr/lib/libproxy/0.4.7/modules/config_gnome3.so
@@ -3199,7 +3203,7 @@ lrwxrwxrwx root       root               18 ./usr/lib/libpurple.so.0 -> libpurpl
 -rwxr-xr-x root       root           779296 ./usr/lib/libpurple.so.0.7.9
 lrwxrwxrwx root       root               29 ./usr/lib/libpyglib-2.0-python.so.0 -> libpyglib-2.0-python.so.0.0.0
 -rwxr-xr-x root       root            13476 ./usr/lib/libpyglib-2.0-python.so.0.0.0
--r-xr-xr-x root       root          1203764 ./usr/lib/libpython2.7.so.1.0
+-r-xr-xr-x root       root          1203804 ./usr/lib/libpython2.7.so.1.0
 lrwxrwxrwx root       root               18 ./usr/lib/libreadline.so.6 -> libreadline.so.6.2
 -rwxr-xr-x root       root           163860 ./usr/lib/libreadline.so.6.2
 lrwxrwxrwx root       root               19 ./usr/lib/librsvg-2.so.2 -> librsvg-2.so.2.40.0
@@ -3219,7 +3223,7 @@ lrwxrwxrwx root       root               17 ./usr/lib/libspeex.so.1 -> libspeex.
 lrwxrwxrwx root       root               20 ./usr/lib/libspeexdsp.so.1 -> libspeexdsp.so.1.5.0
 -rwxr-xr-x root       root            64856 ./usr/lib/libspeexdsp.so.1.5.0
 lrwxrwxrwx root       root               19 ./usr/lib/libsqlite3.so.0 -> libsqlite3.so.0.8.6
--rwxr-xr-x root       root           453944 ./usr/lib/libsqlite3.so.0.8.6
+-rwxr-xr-x root       root           453984 ./usr/lib/libsqlite3.so.0.8.6
 -rwxr-xr-x root       root           254744 ./usr/lib/libssl.so.1.0.0
 lrwxrwxrwx root       root               34 ./usr/lib/libstartup-notification-1.so.0 -> libstartup-notification-1.so.0.0.0
 -rwxr-xr-x root       root            24188 ./usr/lib/libstartup-notification-1.so.0.0.0
@@ -3278,7 +3282,7 @@ lrwxrwxrwx root       root               22 ./usr/lib/libvorbisidec.so.1 -> libv
 lrwxrwxrwx root       root               18 ./usr/lib/libvte.so.9 -> libvte.so.9.2800.2
 -rwxr-xr-x root       root           520200 ./usr/lib/libvte.so.9.2800.2
 lrwxrwxrwx root       root               23 ./usr/lib/libwebcore_efl.so.0 -> libwebcore_efl.so.0.1.0
--rwxr-xr-x root       root         51354940 ./usr/lib/libwebcore_efl.so.0.1.0
+-rwxr-xr-x root       root         51354444 ./usr/lib/libwebcore_efl.so.0.1.0
 -rwxr-xr-x root       root           621332 ./usr/lib/libx264.so.133
 lrwxrwxrwx root       root               23 ./usr/lib/libxcb-keysyms.so.1 -> libxcb-keysyms.so.1.0.0
 -rwxr-xr-x root       root             5860 ./usr/lib/libxcb-keysyms.so.1.0.0
@@ -3305,7 +3309,7 @@ lrwxrwxrwx root       root               18 ./usr/lib/libyaml-0.so.2 -> libyaml-
 -rwxr-xr-x root       root            75700 ./usr/lib/libyaml-0.so.2.0.2
 -rwxr-xr-x root       root           531488 ./usr/lib/libzlcore.so.0.12.10
 lrwxrwxrwx root       root               20 ./usr/lib/libzlcore.so.0.13 -> libzlcore.so.0.12.10
--rwxr-xr-x root       root           215200 ./usr/lib/libzltext.so.0.12.10
+-rwxr-xr-x root       root           214980 ./usr/lib/libzltext.so.0.12.10
 lrwxrwxrwx root       root               20 ./usr/lib/libzltext.so.0.13 -> libzltext.so.0.12.10
 drwxr-xr-x root       root             4096 ./usr/lib/lightmediascanner
 drwxr-xr-x root       root             4096 ./usr/lib/lightmediascanner/plugins
@@ -4743,13 +4747,13 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/da
 -rw-r--r-- root       root             2633 ./usr/lib/python2.7/site-packages/dateutil/easter.py
 -rw-r--r-- root       root             2439 ./usr/lib/python2.7/site-packages/dateutil/easter.pyc
 -rw-r--r-- root       root            32464 ./usr/lib/python2.7/site-packages/dateutil/parser.py
--rw-r--r-- root       root            22001 ./usr/lib/python2.7/site-packages/dateutil/parser.pyc
+-rw-r--r-- root       root            22061 ./usr/lib/python2.7/site-packages/dateutil/parser.pyc
 -rw-r--r-- root       root            17135 ./usr/lib/python2.7/site-packages/dateutil/relativedelta.py
 -rw-r--r-- root       root            14279 ./usr/lib/python2.7/site-packages/dateutil/relativedelta.pyc
 -rw-r--r-- root       root            40402 ./usr/lib/python2.7/site-packages/dateutil/rrule.py
 -rw-r--r-- root       root            28496 ./usr/lib/python2.7/site-packages/dateutil/rrule.pyc
 -rw-r--r-- root       root            32741 ./usr/lib/python2.7/site-packages/dateutil/tz.py
--rw-r--r-- root       root            24497 ./usr/lib/python2.7/site-packages/dateutil/tz.pyc
+-rw-r--r-- root       root            24500 ./usr/lib/python2.7/site-packages/dateutil/tz.pyc
 -rw-r--r-- root       root             5828 ./usr/lib/python2.7/site-packages/dateutil/tzwin.py
 -rw-r--r-- root       root             6754 ./usr/lib/python2.7/site-packages/dateutil/tzwin.pyc
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/dbus
@@ -4822,7 +4826,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/ed
 -rw-r--r-- root       root             4421 ./usr/lib/python2.7/site-packages/edje/__init__.py
 -rw-r--r-- root       root             4864 ./usr/lib/python2.7/site-packages/edje/__init__.pyo
 -rwxr-xr-x root       root             3040 ./usr/lib/python2.7/site-packages/edje/c_edje.la
--rwxr-xr-x root       root           259308 ./usr/lib/python2.7/site-packages/edje/c_edje.so
+-rwxr-xr-x root       root           259316 ./usr/lib/python2.7/site-packages/edje/c_edje.so
 -rw-r--r-- root       root             1117 ./usr/lib/python2.7/site-packages/edje/decorators.py
 -rw-r--r-- root       root             1000 ./usr/lib/python2.7/site-packages/edje/decorators.pyo
 drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/edje/edit
@@ -5371,7 +5375,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/lx
 -rw-r--r-- root       root              319 ./usr/lib/python2.7/site-packages/lxml/html/ElementSoup.py
 -rw-r--r-- root       root              618 ./usr/lib/python2.7/site-packages/lxml/html/ElementSoup.pyc
 -rw-r--r-- root       root            58815 ./usr/lib/python2.7/site-packages/lxml/html/__init__.py
--rw-r--r-- root       root            59955 ./usr/lib/python2.7/site-packages/lxml/html/__init__.pyc
+-rw-r--r-- root       root            59960 ./usr/lib/python2.7/site-packages/lxml/html/__init__.pyc
 -rw-r--r-- root       root             2084 ./usr/lib/python2.7/site-packages/lxml/html/_diffcommand.py
 -rw-r--r-- root       root             2828 ./usr/lib/python2.7/site-packages/lxml/html/_diffcommand.pyc
 -rw-r--r-- root       root             3246 ./usr/lib/python2.7/site-packages/lxml/html/_html5builder.py
@@ -5385,7 +5389,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/lx
 -rw-r--r-- root       root             3801 ./usr/lib/python2.7/site-packages/lxml/html/defs.py
 -rw-r--r-- root       root             3575 ./usr/lib/python2.7/site-packages/lxml/html/defs.pyc
 -rw-r--r-- root       root            30321 ./usr/lib/python2.7/site-packages/lxml/html/diff.py
--rw-r--r-- root       root            28228 ./usr/lib/python2.7/site-packages/lxml/html/diff.pyc
+-rw-r--r-- root       root            28236 ./usr/lib/python2.7/site-packages/lxml/html/diff.pyc
 -rw-r--r-- root       root             9721 ./usr/lib/python2.7/site-packages/lxml/html/formfill.py
 -rw-r--r-- root       root             9777 ./usr/lib/python2.7/site-packages/lxml/html/formfill.pyc
 -rw-r--r-- root       root             6241 ./usr/lib/python2.7/site-packages/lxml/html/html5parser.py
@@ -5432,7 +5436,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/lx
 -rw-r--r-- root       root             3144 ./usr/lib/python2.7/site-packages/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt
 -rw-r--r-- root       root             9104 ./usr/lib/python2.7/site-packages/lxml/lxml.etree.h
 -rw-r--r-- root       root            16655 ./usr/lib/python2.7/site-packages/lxml/lxml.etree_api.h
--rwxr-xr-x root       root           213692 ./usr/lib/python2.7/site-packages/lxml/objectify.so
+-rwxr-xr-x root       root           216272 ./usr/lib/python2.7/site-packages/lxml/objectify.so
 -rw-r--r-- root       root               87 ./usr/lib/python2.7/site-packages/lxml/pyclasslookup.py
 -rw-r--r-- root       root              211 ./usr/lib/python2.7/site-packages/lxml/pyclasslookup.pyc
 -rw-r--r-- root       root             8364 ./usr/lib/python2.7/site-packages/lxml/sax.py
@@ -5539,7 +5543,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/python2.7/site-packages/sh
 -rw-r--r-- root       root              424 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_date.py
 -rw-r--r-- root       root             1167 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_date.pyc
 -rw-r--r-- root       root             4839 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_device_timeouts.py
--rw-r--r-- root       root             7399 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_device_timeouts.pyc
+-rw-r--r-- root       root             7403 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_device_timeouts.pyc
 -rw-r--r-- root       root             1421 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_display.py
 -rw-r--r-- root       root             2674 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_display.pyc
 -rw-r--r-- root       root             6004 ./usr/lib/python2.7/site-packages/shr_settings_modules/shr_elementary.py
@@ -6063,7 +6067,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/xtables
 -rwxr-xr-x root       root             4780 ./usr/lib/xtables/libxt_udp.so
 drwxr-xr-x root       root             4096 ./usr/lib/zlibrary
 drwxr-xr-x root       root             4096 ./usr/lib/zlibrary/ui
--rwxr-xr-x root       root           141424 ./usr/lib/zlibrary/ui/zlui-gtk.so
+-rwxr-xr-x root       root           141400 ./usr/lib/zlibrary/ui/zlui-gtk.so
 drwxr-xr-x root       root             4096 ./usr/sbin
 lrwxrwxrwx root       root               19 ./usr/sbin/addgroup -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               19 ./usr/sbin/adduser -> /bin/busybox.nosuid
@@ -6071,7 +6075,7 @@ lrwxrwxrwx root       root               19 ./usr/sbin/adduser -> /bin/busybox.n
 -rwxr-xr-x root       root            17544 ./usr/sbin/apmd
 -rwxr-xr-x root       root            11540 ./usr/sbin/atd
 -rwxr-xr-x root       root           102168 ./usr/sbin/bccmd
--rwxr-xr-x root       root           415884 ./usr/sbin/bluetoothd
+-rwxr-xr-x root       root           415916 ./usr/sbin/bluetoothd
 -rwxr-xr-x root       root            15352 ./usr/sbin/chat
 -rwxr-xr-x root       root            33404 ./usr/sbin/chgpasswd
 lrwxrwxrwx root       root               25 ./usr/sbin/chpasswd -> /usr/sbin/chpasswd.shadow
@@ -6093,7 +6097,7 @@ lrwxrwxrwx root       root               20 ./usr/sbin/fbset -> /usr/sbin/fbset.
 -rwxr-xr-x root       root             3884 ./usr/sbin/flash_otp_dump
 -rwxr-xr-x root       root             3900 ./usr/sbin/flash_otp_info
 -rwxr-xr-x root       root             4316 ./usr/sbin/flash_unlock
--rwxr-xr-x root       root             9320 ./usr/sbin/flashcp
+-rwxr-xr-x root       root             9336 ./usr/sbin/flashcp
 lrwxrwxrwx root       root                7 ./usr/sbin/fsck.msdos -> dosfsck
 lrwxrwxrwx root       root                7 ./usr/sbin/fsck.vfat -> dosfsck
 -rwxr-xr-x root       root             6816 ./usr/sbin/fsoaudiod
@@ -6133,7 +6137,7 @@ lrwxrwxrwx root       root               19 ./usr/sbin/loadfont -> /bin/busybox.
 -rwxr-xr-x root       root            51352 ./usr/sbin/logrotate
 -rwsr-xr-x root       root           101128 ./usr/sbin/lsof
 -rwxr-xr-x root       root             4836 ./usr/sbin/mioctl
--rwxr-xr-x root       root            27272 ./usr/sbin/mkdosfs
+-rwxr-xr-x root       root            27280 ./usr/sbin/mkdosfs
 -rwxr-xr-x root       root             9084 ./usr/sbin/mkdump
 lrwxrwxrwx root       root                7 ./usr/sbin/mkfs.msdos -> mkdosfs
 lrwxrwxrwx root       root                7 ./usr/sbin/mkfs.vfat -> mkdosfs
@@ -6170,7 +6174,7 @@ lrwxrwxrwx root       root               19 ./usr/sbin/rdate -> /bin/busybox.nos
 lrwxrwxrwx root       root               23 ./usr/sbin/rfkill -> /usr/sbin/rfkill.rfkill
 -rwxr-xr-x root       root             6600 ./usr/sbin/rfkill.rfkill
 -rwxr-xr-x root       root           505332 ./usr/sbin/s3c24xx-gpio
--rwxr-xr-x root       root           503948 ./usr/sbin/s3c64xx-gpio
+-rwxr-xr-x root       root           503956 ./usr/sbin/s3c64xx-gpio
 -rwxr-xr-x root       root           362600 ./usr/sbin/sshd
 -rwxr-xr-x root       root           579584 ./usr/sbin/tcpdump
 lrwxrwxrwx root       root               19 ./usr/sbin/udhcpd -> /bin/busybox.nosuid
@@ -15320,7 +15324,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root               50 ./var/lib/opkg/info/e-wm-locale-cs.list
 -rw-r--r-- root       root              444 ./var/lib/opkg/info/e-wm-menu-shr.control
 -rw-r--r-- root       root               33 ./var/lib/opkg/info/e-wm-menu-shr.list
--rw-r--r-- root       root              499 ./var/lib/opkg/info/e-wm-sysactions-shr.control
+-rw-r--r-- root       root              473 ./var/lib/opkg/info/e-wm-sysactions-shr.control
 -rw-r--r-- root       root              112 ./var/lib/opkg/info/e-wm-sysactions-shr.list
 -rw-r--r-- root       root              461 ./var/lib/opkg/info/e-wm-theme-default.control
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/e-wm-theme-default.list
@@ -15725,7 +15729,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root               24 ./var/lib/opkg/info/init-ifupdown.conffiles
 -rw-r--r-- root       root              537 ./var/lib/opkg/info/init-ifupdown.control
 -rw-r--r-- root       root               80 ./var/lib/opkg/info/init-ifupdown.list
--rwxr-xr-x root       root              177 ./var/lib/opkg/info/init-ifupdown.postinst
+-rwxr-xr-x root       root              183 ./var/lib/opkg/info/init-ifupdown.postinst
 -rwxr-xr-x root       root              153 ./var/lib/opkg/info/init-ifupdown.postrm
 -rwxr-xr-x root       root              242 ./var/lib/opkg/info/init-ifupdown.preinst
 -rwxr-xr-x root       root               63 ./var/lib/opkg/info/init-ifupdown.prerm
@@ -16020,7 +16024,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              583 ./var/lib/opkg/info/libasound2.control
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/libasound2.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libasound2.postinst
--rw-r--r-- root       root              653 ./var/lib/opkg/info/libass4.control
+-rw-r--r-- root       root              654 ./var/lib/opkg/info/libass4.control
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libass4.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libass4.postinst
 -rw-r--r-- root       root              480 ./var/lib/opkg/info/libatk-1.0-0.control
@@ -16045,7 +16049,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              938 ./var/lib/opkg/info/libblkid1.control
 -rw-r--r-- root       root               42 ./var/lib/opkg/info/libblkid1.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libblkid1.postinst
--rw-r--r-- root       root              731 ./var/lib/opkg/info/libbz2-0.control
+-rw-r--r-- root       root              732 ./var/lib/opkg/info/libbz2-0.control
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libbz2-0.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libbz2-0.postinst
 -rw-r--r-- root       root             1630 ./var/lib/opkg/info/libc6.control
@@ -16305,9 +16309,9 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              717 ./var/lib/opkg/info/libkmod2.control
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/libkmod2.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libkmod2.postinst
--rw-r--r-- root       root              597 ./var/lib/opkg/info/liblightmediascanner-test.control
+-rw-r--r-- root       root              598 ./var/lib/opkg/info/liblightmediascanner-test.control
 -rw-r--r-- root       root               18 ./var/lib/opkg/info/liblightmediascanner-test.list
--rw-r--r-- root       root              580 ./var/lib/opkg/info/liblightmediascanner0.control
+-rw-r--r-- root       root              581 ./var/lib/opkg/info/liblightmediascanner0.control
 -rw-r--r-- root       root             1100 ./var/lib/opkg/info/liblightmediascanner0.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/liblightmediascanner0.postinst
 -rw-r--r-- root       root              555 ./var/lib/opkg/info/liblinebreak1.control
@@ -16345,19 +16349,19 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              620 ./var/lib/opkg/info/libnice.control
 -rw-r--r-- root       root              118 ./var/lib/opkg/info/libnice.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnice.postinst
--rw-r--r-- root       root              609 ./var/lib/opkg/info/libnl-3-200.control
+-rw-r--r-- root       root              680 ./var/lib/opkg/info/libnl-3-200.control
 -rw-r--r-- root       root              102 ./var/lib/opkg/info/libnl-3-200.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-3-200.postinst
--rw-r--r-- root       root              684 ./var/lib/opkg/info/libnl-3-cli.control
+-rw-r--r-- root       root              755 ./var/lib/opkg/info/libnl-3-cli.control
 -rw-r--r-- root       root              352 ./var/lib/opkg/info/libnl-3-cli.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-3-cli.postinst
--rw-r--r-- root       root              706 ./var/lib/opkg/info/libnl-3-genl.control
+-rw-r--r-- root       root              777 ./var/lib/opkg/info/libnl-3-genl.control
 -rw-r--r-- root       root               88 ./var/lib/opkg/info/libnl-3-genl.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-3-genl.postinst
--rw-r--r-- root       root              633 ./var/lib/opkg/info/libnl-nf-3-200.control
+-rw-r--r-- root       root              704 ./var/lib/opkg/info/libnl-nf-3-200.control
 -rw-r--r-- root       root               59 ./var/lib/opkg/info/libnl-nf-3-200.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-nf-3-200.postinst
--rw-r--r-- root       root              605 ./var/lib/opkg/info/libnl-route-3-200.control
+-rw-r--r-- root       root              676 ./var/lib/opkg/info/libnl-route-3-200.control
 -rw-r--r-- root       root               65 ./var/lib/opkg/info/libnl-route-3-200.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libnl-route-3-200.postinst
 -rw-r--r-- root       root              500 ./var/lib/opkg/info/libogg0.control
@@ -16655,9 +16659,9 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              476 ./var/lib/opkg/info/libz1.control
 -rw-r--r-- root       root               34 ./var/lib/opkg/info/libz1.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libz1.postinst
--rw-r--r-- root       root              455 ./var/lib/opkg/info/linux-firmware-marvell-license.control
+-rw-r--r-- root       root              450 ./var/lib/opkg/info/linux-firmware-marvell-license.control
 -rw-r--r-- root       root               30 ./var/lib/opkg/info/linux-firmware-marvell-license.list
--rw-r--r-- root       root              491 ./var/lib/opkg/info/linux-firmware-sd8686.control
+-rw-r--r-- root       root              486 ./var/lib/opkg/info/linux-firmware-sd8686.control
 -rw-r--r-- root       root              177 ./var/lib/opkg/info/linux-firmware-sd8686.list
 -rw-r--r-- root       root              418 ./var/lib/opkg/info/locale-base-cs-cz.control
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/locale-base-cs-cz.list
@@ -16700,7 +16704,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              332 ./var/lib/opkg/info/mplayer-common.control
 -rw-r--r-- root       root               30 ./var/lib/opkg/info/mplayer-common.list
 -rw-r--r-- root       root               87 ./var/lib/opkg/info/mplayer2.conffiles
--rw-r--r-- root       root             1186 ./var/lib/opkg/info/mplayer2.control
+-rw-r--r-- root       root             1206 ./var/lib/opkg/info/mplayer2.control
 -rw-r--r-- root       root              132 ./var/lib/opkg/info/mplayer2.list
 -rw-r--r-- root       root              525 ./var/lib/opkg/info/mtd-utils.control
 -rw-r--r-- root       root              255 ./var/lib/opkg/info/mtd-utils.list
@@ -16729,7 +16733,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              166 ./var/lib/opkg/info/ntpdate.list
 -rwxr-xr-x root       root              469 ./var/lib/opkg/info/ntpdate.postinst
 -rwxr-xr-x root       root              155 ./var/lib/opkg/info/ntpdate.prerm
--rw-r--r-- root       root              922 ./var/lib/opkg/info/numptyphysics.control
+-rw-r--r-- root       root              923 ./var/lib/opkg/info/numptyphysics.control
 -rw-r--r-- root       root             3486 ./var/lib/opkg/info/numptyphysics.list
 -rw-r--r-- root       root              481 ./var/lib/opkg/info/obexd.control
 -rw-r--r-- root       root               78 ./var/lib/opkg/info/obexd.list
@@ -16941,7 +16945,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root               28 ./var/lib/opkg/info/powertop.list
 -rwxr-xr-x root       root              101 ./var/lib/opkg/info/powertop.postinst
 -rwxr-xr-x root       root               78 ./var/lib/opkg/info/powertop.postrm
--rw-r--r-- root       root              390 ./var/lib/opkg/info/ppp-dialin.control
+-rw-r--r-- root       root              386 ./var/lib/opkg/info/ppp-dialin.control
 -rw-r--r-- root       root               41 ./var/lib/opkg/info/ppp-dialin.list
 -rwxr-xr-x root       root             5690 ./var/lib/opkg/info/ppp-dialin.preinst
 -rw-r--r-- root       root               60 ./var/lib/opkg/info/ppp.conffiles
@@ -17162,7 +17166,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              110 ./var/lib/opkg/info/systemd-serialgetty.list
 -rw-r--r-- root       root              100 ./var/lib/opkg/info/systemd.conffiles
 -rw-r--r-- root       root             1204 ./var/lib/opkg/info/systemd.control
--rw-r--r-- root       root            12664 ./var/lib/opkg/info/systemd.list
+-rw-r--r-- root       root            12688 ./var/lib/opkg/info/systemd.list
 -rwxr-xr-x root       root              520 ./var/lib/opkg/info/systemd.postinst
 -rwxr-xr-x root       root              336 ./var/lib/opkg/info/systemd.postrm
 -rwxr-xr-x root       root             5441 ./var/lib/opkg/info/systemd.preinst
@@ -17339,7 +17343,7 @@ drwxr-xr-x root       root           102400 ./var/lib/opkg/info
 -rw-r--r-- root       root              530 ./var/lib/opkg/info/xz-locale-cs.control
 -rw-r--r-- root       root               39 ./var/lib/opkg/info/xz-locale-cs.list
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists
--rw-r--r-- root       root           232108 ./var/lib/opkg/status
+-rw-r--r-- root       root           232093 ./var/lib/opkg/status
 drwxr-xr-x root       root             4096 ./var/lib/systemd
 drwxr-xr-x root       root             4096 ./var/local
 drwxr-xr-x root       root             4096 ./var/lock
@@ -17358,81 +17362,81 @@ drwxr-xr-x root       root             4096 ./var/tmp
 drwxr-xr-x root       root             4096 ./var/volatile
 drwxr-xr-x root       root             4096 ./var/volatile/log
 drwxrwxrwt root       root             4096 ./var/volatile/tmp
-crw-rw---- root       plugdev           10, 03:34 ./dev/apm_bios
-crw-rw--w- root       tty                5, 03:34 ./dev/console
-crw------- root       root              29, 03:34 ./dev/fb0
-brw-rw---- root       disk               3, 03:34 ./dev/hda
-brw-rw---- root       disk               3, 03:34 ./dev/hda1
-brw-rw---- root       disk               3, 03:34 ./dev/hda10
-brw-rw---- root       disk               3, 03:34 ./dev/hda11
-brw-rw---- root       disk               3, 03:34 ./dev/hda12
-brw-rw---- root       disk               3, 03:34 ./dev/hda13
-brw-rw---- root       disk               3, 03:34 ./dev/hda14
-brw-rw---- root       disk               3, 03:34 ./dev/hda15
-brw-rw---- root       disk               3, 03:34 ./dev/hda16
-brw-rw---- root       disk               3, 03:34 ./dev/hda17
-brw-rw---- root       disk               3, 03:34 ./dev/hda18
-brw-rw---- root       disk               3, 03:34 ./dev/hda19
-brw-rw---- root       disk               3, 03:34 ./dev/hda2
-brw-rw---- root       disk               3, 03:34 ./dev/hda3
-brw-rw---- root       disk               3, 03:34 ./dev/hda4
-brw-rw---- root       disk               3, 03:34 ./dev/hda5
-brw-rw---- root       disk               3, 03:34 ./dev/hda6
-brw-rw---- root       disk               3, 03:34 ./dev/hda7
-brw-rw---- root       disk               3, 03:34 ./dev/hda8
-brw-rw---- root       disk               3, 03:34 ./dev/hda9
-crw-rw---- root       root              13, 03:34 ./dev/input/event0
-crw-rw---- root       root              13, 03:34 ./dev/input/event1
-crw-rw---- root       root              13, 03:34 ./dev/input/event2
-crw-rw---- root       root              13, 03:34 ./dev/input/event3
-crw-rw---- root       root              13, 03:34 ./dev/input/event4
-crw-rw---- root       root              13, 03:34 ./dev/input/event5
-crw-rw---- root       root              13, 03:34 ./dev/input/event6
-crw-rw---- root       root              13, 03:34 ./dev/input/event7
-crw-r----- root       kmem               1, 03:34 ./dev/kmem
-crw-r----- root       kmem               1, 03:34 ./dev/mem
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p1
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p2
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p3
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p4
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p5
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p6
-brw-rw---- root       disk             179, 03:34 ./dev/mmcblk0p7
-crw-rw---- root       disk              90, 03:34 ./dev/mtd0
-crw-rw---- root       disk              90, 03:34 ./dev/mtd1
-crw-rw---- root       disk              90, 03:34 ./dev/mtd2
-crw-rw---- root       disk              90, 03:34 ./dev/mtd3
-crw-rw---- root       disk              90, 03:34 ./dev/mtd4
-crw-rw---- root       disk              90, 03:34 ./dev/mtd5
-crw-rw---- root       disk              90, 03:34 ./dev/mtd6
-crw-rw---- root       disk              90, 03:34 ./dev/mtd7
-brw-r----- root       root              31, 03:34 ./dev/mtdblock0
-brw-r----- root       root              31, 03:34 ./dev/mtdblock1
-brw-r----- root       root              31, 03:34 ./dev/mtdblock2
-brw-r----- root       root              31, 03:34 ./dev/mtdblock3
-brw-r----- root       root              31, 03:34 ./dev/mtdblock4
-brw-r----- root       root              31, 03:34 ./dev/mtdblock5
-brw-r----- root       root              31, 03:34 ./dev/mtdblock6
-brw-r----- root       root              31, 03:34 ./dev/mtdblock7
-crw-rw-rw- root       root               1, 03:34 ./dev/null
-crw-r--r-- root       root               5, 03:34 ./dev/ptmx
-brw-r----- root       root               1, 03:34 ./dev/ram0
-brw-r----- root       root               1, 03:34 ./dev/ram1
-brw-r----- root       root               1, 03:34 ./dev/ram2
-brw-r----- root       root               1, 03:34 ./dev/ram3
-crw-r--r-- root       root               1, 03:34 ./dev/random
-crw-rw--w- root       tty                5, 03:34 ./dev/tty
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty0
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty1
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty2
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty3
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty4
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty5
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty6
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty7
-crw-rw-rw- root       tty                4, 03:34 ./dev/tty8
-crw-r----- root       tty                4, 03:34 ./dev/ttyS0
-crw-r----- root       tty              204, 03:34 ./dev/ttySA0
-crw-r--r-- root       root               1, 03:34 ./dev/urandom
-crw-r--r-- root       root               1, 03:34 ./dev/zero
+crw-rw---- root       plugdev           10, 13:02 ./dev/apm_bios
+crw-rw--w- root       tty                5, 13:02 ./dev/console
+crw------- root       root              29, 13:02 ./dev/fb0
+brw-rw---- root       disk               3, 13:02 ./dev/hda
+brw-rw---- root       disk               3, 13:02 ./dev/hda1
+brw-rw---- root       disk               3, 13:02 ./dev/hda10
+brw-rw---- root       disk               3, 13:02 ./dev/hda11
+brw-rw---- root       disk               3, 13:02 ./dev/hda12
+brw-rw---- root       disk               3, 13:02 ./dev/hda13
+brw-rw---- root       disk               3, 13:02 ./dev/hda14
+brw-rw---- root       disk               3, 13:02 ./dev/hda15
+brw-rw---- root       disk               3, 13:02 ./dev/hda16
+brw-rw---- root       disk               3, 13:02 ./dev/hda17
+brw-rw---- root       disk               3, 13:02 ./dev/hda18
+brw-rw---- root       disk               3, 13:02 ./dev/hda19
+brw-rw---- root       disk               3, 13:02 ./dev/hda2
+brw-rw---- root       disk               3, 13:02 ./dev/hda3
+brw-rw---- root       disk               3, 13:02 ./dev/hda4
+brw-rw---- root       disk               3, 13:02 ./dev/hda5
+brw-rw---- root       disk               3, 13:02 ./dev/hda6
+brw-rw---- root       disk               3, 13:02 ./dev/hda7
+brw-rw---- root       disk               3, 13:02 ./dev/hda8
+brw-rw---- root       disk               3, 13:02 ./dev/hda9
+crw-rw---- root       root              13, 13:02 ./dev/input/event0
+crw-rw---- root       root              13, 13:02 ./dev/input/event1
+crw-rw---- root       root              13, 13:02 ./dev/input/event2
+crw-rw---- root       root              13, 13:02 ./dev/input/event3
+crw-rw---- root       root              13, 13:02 ./dev/input/event4
+crw-rw---- root       root              13, 13:02 ./dev/input/event5
+crw-rw---- root       root              13, 13:02 ./dev/input/event6
+crw-rw---- root       root              13, 13:02 ./dev/input/event7
+crw-r----- root       kmem               1, 13:02 ./dev/kmem
+crw-r----- root       kmem               1, 13:02 ./dev/mem
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p1
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p2
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p3
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p4
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p5
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p6
+brw-rw---- root       disk             179, 13:02 ./dev/mmcblk0p7
+crw-rw---- root       disk              90, 13:02 ./dev/mtd0
+crw-rw---- root       disk              90, 13:02 ./dev/mtd1
+crw-rw---- root       disk              90, 13:02 ./dev/mtd2
+crw-rw---- root       disk              90, 13:02 ./dev/mtd3
+crw-rw---- root       disk              90, 13:02 ./dev/mtd4
+crw-rw---- root       disk              90, 13:02 ./dev/mtd5
+crw-rw---- root       disk              90, 13:02 ./dev/mtd6
+crw-rw---- root       disk              90, 13:02 ./dev/mtd7
+brw-r----- root       root              31, 13:02 ./dev/mtdblock0
+brw-r----- root       root              31, 13:02 ./dev/mtdblock1
+brw-r----- root       root              31, 13:02 ./dev/mtdblock2
+brw-r----- root       root              31, 13:02 ./dev/mtdblock3
+brw-r----- root       root              31, 13:02 ./dev/mtdblock4
+brw-r----- root       root              31, 13:02 ./dev/mtdblock5
+brw-r----- root       root              31, 13:02 ./dev/mtdblock6
+brw-r----- root       root              31, 13:02 ./dev/mtdblock7
+crw-rw-rw- root       root               1, 13:02 ./dev/null
+crw-r--r-- root       root               5, 13:02 ./dev/ptmx
+brw-r----- root       root               1, 13:02 ./dev/ram0
+brw-r----- root       root               1, 13:02 ./dev/ram1
+brw-r----- root       root               1, 13:02 ./dev/ram2
+brw-r----- root       root               1, 13:02 ./dev/ram3
+crw-r--r-- root       root               1, 13:02 ./dev/random
+crw-rw--w- root       tty                5, 13:02 ./dev/tty
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty0
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty1
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty2
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty3
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty4
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty5
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty6
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty7
+crw-rw-rw- root       tty                4, 13:02 ./dev/tty8
+crw-r----- root       tty                4, 13:02 ./dev/ttyS0
+crw-r----- root       tty              204, 13:02 ./dev/ttySA0
+crw-r--r-- root       root               1, 13:02 ./dev/urandom
+crw-r--r-- root       root               1, 13:02 ./dev/zero
