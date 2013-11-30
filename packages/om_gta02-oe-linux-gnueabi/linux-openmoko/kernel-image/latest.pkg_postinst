@@ -1,11 +1,11 @@
-	update-alternatives --install /boot/uImage uImage uImage-3.2.18 30202 || true
-	if [ ! -e "$D/lib/modules/3.2.18" ]; then
-		mkdir -p $D/lib/modules/3.2.18
+	update-alternatives --install /boot/uImage uImage uImage-3.2.52 30202 || true
+	if [ ! -e "$D/lib/modules/3.2.52" ]; then
+		mkdir -p $D/lib/modules/3.2.52
 	fi
 	if [ -n "$D" ]; then
-		depmodwrapper -a -b $D 3.2.18
+		depmodwrapper -a -b $D 3.2.52
 	else
-		depmod -a 3.2.18
+		depmod -a 3.2.52
 	fi
 
 # Get the lastest root file system value of boot args
@@ -27,12 +27,12 @@ elif test "empty$has_mtdblock" != "empty" -o "empty$has_ubi" != "empty"; then
             exit 1
         fi
 
-        if [ ! -f /boot/uImage-3.2.18 ] ; then
+        if [ ! -f /boot/uImage-3.2.52 ] ; then
             exit 1
         fi
 
         /usr/sbin/flash_eraseall $MTD_KERNEL_PARTITION
-        /usr/sbin/nandwrite -p $MTD_KERNEL_PARTITION /boot/uImage-3.2.18
+        /usr/sbin/nandwrite -p $MTD_KERNEL_PARTITION /boot/uImage-3.2.52
     else
         touch /etc/default/flashkernel
     fi
