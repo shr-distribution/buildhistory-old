@@ -1,9 +1,9 @@
-	update-alternatives --install /boot/uImage uImage uImage-3.4.9 30409 || true
-	if [ ! -e "$D/lib/modules/3.4.9" ]; then
-		mkdir -p $D/lib/modules/3.4.9
+	update-alternatives --install /boot/uImage uImage uImage-3.12.0 31200 || true
+	if [ ! -e "$D/lib/modules/3.12.0" ]; then
+		mkdir -p $D/lib/modules/3.12.0
 	fi
 	if [ -n "$D" ]; then
-		depmodwrapper -a -b $D 3.4.9
+		depmodwrapper -a -b $D 3.12.0
 	else
-		depmod -a 3.4.9
+		depmod -a 3.12.0
 	fi
