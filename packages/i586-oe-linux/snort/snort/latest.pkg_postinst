@@ -1,5 +1,9 @@
-	grep -q ^snort: /etc/group || addgroup snort
-	grep -q ^snort: /etc/passwd || \
-		adduser --disabled-password --home=/var/log/snort/ --system \
-			--ingroup snort --no-create-home -g "snort" snort
-	/etc/init.d/populate-volatile.sh update
+#!/bin/sh
+if type update-rc.d >/dev/null 2>/dev/null; then
+	if [ -n "$D" ]; then
+		OPT="-r $D"
+	else
+		OPT="-s"
+	fi
+	update-rc.d $OPT snort defaults
+fi
