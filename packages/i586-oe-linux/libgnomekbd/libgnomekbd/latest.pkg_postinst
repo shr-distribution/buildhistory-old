@@ -1,17 +1,1 @@
-#!/bin/sh
-if [ "x$D" != "x" ]; then
-	export GCONF_CONFIG_SOURCE="xml::$D/etc/gconf/gconf.xml.defaults"
-else
-	export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-fi
-
-SCHEMA_LOCATION=$D/etc/gconf/schemas
-for SCHEMA in desktop_gnome_peripherals_keyboard_xkb.schemas; do
-	if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then
-		HOME=$D/root gconftool-2 \
-			--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null
-	fi
-done
-if [ x"$D" = "x" ]; then
-	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
-fi
+#!/bin/sh\nif [ "x$D" != "x" ]; then\n\texport GCONF_CONFIG_SOURCE="xml::$D/etc/gconf/gconf.xml.defaults"\nelse\n\texport GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`\nfi\n\nSCHEMA_LOCATION=$D/etc/gconf/schemas\nfor SCHEMA in desktop_gnome_peripherals_keyboard_xkb.schemas; do\n\tif [ -e $SCHEMA_LOCATION/$SCHEMA ]; then\n\t\tHOME=$D/root gconftool-2 \\\n\t\t\t--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null\n\tfi\ndone\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n

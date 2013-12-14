@@ -1,8 +1,1 @@
-#!/bin/sh
-if type systemctl >/dev/null 2>/dev/null; then
-	if [ -z "$D" ]; then
-		systemctl stop sshd.socket sshd@.service sshdgenkeys.service
-	fi
-
-	systemctl disable sshd.socket sshd@.service sshdgenkeys.service
-fi
+#!/bin/sh\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop sshd.socket sshd@.service sshdgenkeys.service\n\tfi\n\n\tsystemctl disable sshd.socket sshd@.service sshdgenkeys.service\nfi\n
