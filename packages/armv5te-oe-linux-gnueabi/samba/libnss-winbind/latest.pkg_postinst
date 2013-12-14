@@ -1,10 +1,1 @@
-    # add wins to the list of resolvers
-    ns=$D/etc/nsswitch.conf
-    if ! grep "hosts:.*wins" $ns > /dev/null; then
-    hosts="`grep '^hosts:' $ns`"
-    hosts=`echo "$hosts" | sed 's/\[/\\\\[/g; s/\]/\\\\]/g'`
-    sed -i "s/$hosts/$hosts wins/" "$ns"
-    fi
-if [ x"$D" = "x" ]; then
-	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
-fi
+    # add wins to the list of resolvers\n    ns=$D/etc/nsswitch.conf\n    if ! grep "hosts:.*wins" $ns > /dev/null; then\n    hosts="`grep \'^hosts:\' $ns`"\n    hosts=`echo "$hosts" | sed \'s/\\[/\\\\\\\\[/g; s/\\]/\\\\\\\\]/g\'`\n    sed -i "s/$hosts/$hosts wins/" "$ns"\n    fi\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n

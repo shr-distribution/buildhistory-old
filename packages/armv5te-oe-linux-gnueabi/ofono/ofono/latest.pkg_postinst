@@ -1,14 +1,1 @@
-#!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS disable ofono.service
-
-	if [ -z "$D" -a "disable" = "enable" ]; then
-		systemctl restart ofono.service
-	fi
-fi
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS disable ofono.service\n\n\tif [ -z "$D" -a "disable" = "enable" ]; then\n\t\tsystemctl restart ofono.service\n\tfi\nfi\n
