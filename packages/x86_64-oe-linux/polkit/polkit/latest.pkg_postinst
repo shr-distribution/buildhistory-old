@@ -1,17 +1,1 @@
-#!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS disable polkit.service
-
-	if [ -z "$D" -a "disable" = "enable" ]; then
-		systemctl restart polkit.service
-	fi
-fi
-if [ x"$D" = "x" ]; then
-	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
-fi
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS disable polkit.service\n\n\tif [ -z "$D" -a "disable" = "enable" ]; then\n\t\tsystemctl restart polkit.service\n\tfi\nfi\nif [ x"$D" = "x" ]; then\n\tif [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi\nfi\n
