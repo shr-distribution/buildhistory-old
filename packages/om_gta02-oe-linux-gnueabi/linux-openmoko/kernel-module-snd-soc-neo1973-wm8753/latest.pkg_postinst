@@ -1,1 +1,1 @@
-#!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.2.52\nelse\n\tdepmodwrapper -a -b $D 3.2.52\nfi\n\nif [ x"$D" = "x" ]; then\n\tmodprobe snd-soc-s3c24xx snd_soc_s3c24xx_i2s snd-soc-dfbmcs320 snd-soc-wm8753 snd-soc-neo1973-wm8753 || true\nfi\n
+#!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.2.52\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\nif [ x"$D" = "x" ]; then\n\tmodprobe snd-soc-s3c24xx snd_soc_s3c24xx_i2s snd-soc-dfbmcs320 snd-soc-wm8753 snd-soc-neo1973-wm8753 || true\nfi\n
