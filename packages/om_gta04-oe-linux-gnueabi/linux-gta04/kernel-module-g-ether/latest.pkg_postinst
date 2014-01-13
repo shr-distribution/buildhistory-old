@@ -1,10 +1,1 @@
-#!/bin/sh
-if [ -z "$D" ]; then
-	depmod -a 3.12.0
-else
-	depmodwrapper -a -b $D 3.12.0
-fi
-
-if [ x"$D" = "x" ]; then
-	modprobe g_ether || true
-fi
+#!/bin/sh\nif [ -z "$D" ]; then\n\tdepmod -a 3.12.0\nelse\n\t# image.bbclass will call depmodwrapper after everything is installed,\n\t# no need to do it here as well\n\t:\nfi\n\nif [ x"$D" = "x" ]; then\n\tmodprobe g_ether || true\nfi\n
