@@ -1,14 +1,1 @@
-#!/bin/sh
-OPTS=""
-
-if [ -n "$D" ]; then
-    OPTS="--root=$D"
-fi
-
-if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS enable frameworkd.service
-
-	if [ -z "$D" -a "enable" = "enable" ]; then
-		systemctl restart frameworkd.service
-	fi
-fi
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS enable frameworkd.service\n\n\tif [ -z "$D" -a "enable" = "enable" ]; then\n\t\tsystemctl restart frameworkd.service\n\tfi\nfi\n

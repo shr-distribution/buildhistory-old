@@ -1,8 +1,1 @@
-#!/bin/sh
-if type systemctl >/dev/null 2>/dev/null; then
-	if [ -z "$D" ]; then
-		systemctl stop nokia-n900-cmt-gpio.service
-	fi
-
-	systemctl disable nokia-n900-cmt-gpio.service
-fi
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop nokia-n900-cmt-gpio.service\n\tfi\n\n\tsystemctl $OPTS disable nokia-n900-cmt-gpio.service\nfi\n
