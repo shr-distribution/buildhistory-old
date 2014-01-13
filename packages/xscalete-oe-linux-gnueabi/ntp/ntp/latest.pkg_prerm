@@ -1,8 +1,1 @@
-#!/bin/sh
-if type systemctl >/dev/null 2>/dev/null; then
-	if [ -z "$D" ]; then
-		systemctl stop ntpd.service
-	fi
-
-	systemctl disable ntpd.service
-fi
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop ntpd.service\n\tfi\n\n\tsystemctl $OPTS disable ntpd.service\nfi\n
