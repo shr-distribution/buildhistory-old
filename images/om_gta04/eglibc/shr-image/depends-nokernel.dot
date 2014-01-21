@@ -44,7 +44,7 @@ digraph depends {
 "bash" -> "base-files";
 "bash" -> "libc6";
 "bash" -> "libtinfo5";
-"bash" -> "update-alternatives-cworth";
+"bash" -> "update-alternatives-opkg";
 "bluez4" -> "libc6";
 "bluez4" -> "libdbus-1-3";
 "bluez4" -> "libglib-2.0-0";
@@ -55,14 +55,14 @@ digraph depends {
 "busybox" -> "busybox-syslog" [style=dotted];
 "busybox" -> "busybox-udhcpc" [style=dotted];
 "busybox" -> "libc6";
-"busybox" -> "update-alternatives-cworth";
+"busybox" -> "update-alternatives-opkg";
 "busybox" -> "update-rc.d" [style=dotted];
-"busybox-syslog" -> "update-alternatives-cworth";
+"busybox-syslog" -> "update-alternatives-opkg";
 "coreutils" -> "libattr1";
 "coreutils" -> "libc6";
 "coreutils" -> "libcap2";
 "coreutils" -> "libgmp10";
-"coreutils" -> "update-alternatives-cworth";
+"coreutils" -> "update-alternatives-opkg";
 "coreutils-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "cronie" -> "base-files";
 "cronie" -> "base-passwd";
@@ -162,7 +162,7 @@ digraph depends {
 "e-wm" -> "mime-support";
 "e-wm" -> "setxkbmap";
 "e-wm" -> "shared-mime-info";
-"e-wm" -> "update-alternatives-cworth";
+"e-wm" -> "update-alternatives-opkg";
 "e-wm-config-default" -> "e-wm-theme-default" [style=dotted];
 "e-wm-config-illume2-shr" -> "e-wm-menu-shr" [style=dotted];
 "e-wm-config-illume2-shr" -> "e-wm-sysactions-shr" [style=dotted];
@@ -665,7 +665,7 @@ digraph depends {
 "fbreader" -> "pango";
 "fbset" -> "fbset-modes" [style=dotted];
 "fbset" -> "libc6";
-"fbset" -> "update-alternatives-cworth";
+"fbset" -> "update-alternatives-opkg";
 "ffalarms" -> "alsa-utils-amixer";
 "ffalarms" -> "atd";
 "ffalarms" -> "ecore-con";
@@ -716,7 +716,7 @@ digraph depends {
 "file" -> "libc6";
 "file" -> "libz1";
 "findutils" -> "libc6";
-"findutils" -> "update-alternatives-cworth";
+"findutils" -> "update-alternatives-opkg";
 "findutils-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "fontconfig-utils" -> "libc6";
 "fontconfig-utils" -> "libfontconfig1";
@@ -909,10 +909,10 @@ digraph depends {
 "fsousaged" -> "libnl-route-3-200";
 "fsousaged" -> "libz1";
 "fuser" -> "libc6";
-"fuser" -> "update-alternatives-cworth";
+"fuser" -> "update-alternatives-opkg";
 "gawk" -> "gawk-common";
 "gawk" -> "libc6";
-"gawk" -> "update-alternatives-cworth";
+"gawk" -> "update-alternatives-opkg";
 "gawk-common" -> "libc6";
 "gconf" -> "dbus-x11";
 "gconf" -> "libc6";
@@ -991,11 +991,11 @@ digraph depends {
 "gpsd-gpsctl" -> "libgpsd20";
 "gpsd-gpsctl" -> "libusb-1.0-0";
 "gpsd-machine-conf" -> "gta04-gps-handler";
-"gpsd-machine-conf" -> "update-alternatives-cworth";
+"gpsd-machine-conf" -> "update-alternatives-opkg";
 "gpsd-udev" -> "gpsd-conf";
 "gpsd-udev" -> "udev";
 "grep" -> "libc6";
-"grep" -> "update-alternatives-cworth";
+"grep" -> "update-alternatives-opkg";
 "grep-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "gst-plugins-base-alsa" -> "gst-plugins-base";
 "gst-plugins-base-alsa" -> "gstreamer";
@@ -1141,7 +1141,6 @@ digraph depends {
 "gtk+-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "gtk+-locale-en-gb" -> "virtual-locale-en-gb" [style=dotted];
 "gtk-immodule-xim" -> "gdk-pixbuf";
-"gtk-immodule-xim" -> "harfbuzz";
 "gtk-immodule-xim" -> "libatk-1.0-0";
 "gtk-immodule-xim" -> "libc6";
 "gtk-immodule-xim" -> "libcairo2";
@@ -1151,6 +1150,7 @@ digraph depends {
 "gtk-immodule-xim" -> "libfreetype6";
 "gtk-immodule-xim" -> "libglib-2.0-0";
 "gtk-immodule-xim" -> "libgtk-2.0";
+"gtk-immodule-xim" -> "libharfbuzz0";
 "gtk-immodule-xim" -> "libpixman-1-0";
 "gtk-immodule-xim" -> "libpng16-16";
 "gtk-immodule-xim" -> "libx11-6";
@@ -1170,13 +1170,8 @@ digraph depends {
 "gtk-immodule-xim" -> "pango";
 "gtk-theme-e17lookalike" -> "gtk-theme-e17lookalike-gtkrc";
 "gtk-theme-e17lookalike" -> "libgtk-2.0";
-"harfbuzz" -> "libc6";
-"harfbuzz" -> "libcairo2";
-"harfbuzz" -> "libfreetype6";
-"harfbuzz" -> "libgcc1";
-"harfbuzz" -> "libglib-2.0-0";
 "hdparm" -> "libc6";
-"hdparm" -> "update-alternatives-cworth";
+"hdparm" -> "update-alternatives-opkg";
 "htop" -> "libc6";
 "htop" -> "libncursesw5";
 "htop" -> "libtinfo5";
@@ -1284,10 +1279,10 @@ digraph depends {
 "kernel-module-usb-f-rndis" -> "kernel-module-u-rndis";
 "kernel-module-usbnet" -> "kernel-module-mii";
 "killall" -> "libc6";
-"killall" -> "update-alternatives-cworth";
+"killall" -> "update-alternatives-opkg";
 "kmod" -> "libc6";
 "kmod" -> "libz1";
-"kmod" -> "update-alternatives-cworth";
+"kmod" -> "update-alternatives-opkg";
 "lame" -> "libc6";
 "lame" -> "libtinfo5";
 "libacl1" -> "libattr1";
@@ -1664,7 +1659,6 @@ digraph depends {
 "libgisi0" -> "libglib-2.0-0";
 "libgisi0" -> "libz1";
 "libglade-2.0-0" -> "gdk-pixbuf";
-"libglade-2.0-0" -> "harfbuzz";
 "libglade-2.0-0" -> "libatk-1.0-0";
 "libglade-2.0-0" -> "libc6";
 "libglade-2.0-0" -> "libcairo2";
@@ -1674,6 +1668,7 @@ digraph depends {
 "libglade-2.0-0" -> "libfreetype6";
 "libglade-2.0-0" -> "libglib-2.0-0";
 "libglade-2.0-0" -> "libgtk-2.0";
+"libglade-2.0-0" -> "libharfbuzz0";
 "libglade-2.0-0" -> "libpixman-1-0";
 "libglade-2.0-0" -> "libpng16-16";
 "libglade-2.0-0" -> "libx11-6";
@@ -1796,7 +1791,6 @@ digraph depends {
 "libgtk-2.0" -> "gdk-pixbuf-loader-png" [style=dotted];
 "libgtk-2.0" -> "gdk-pixbuf-loader-xpm" [style=dotted];
 "libgtk-2.0" -> "glibc-gconv-iso8859-1" [style=dotted];
-"libgtk-2.0" -> "harfbuzz";
 "libgtk-2.0" -> "libatk-1.0-0";
 "libgtk-2.0" -> "libc6";
 "libgtk-2.0" -> "libcairo2";
@@ -1806,6 +1800,7 @@ digraph depends {
 "libgtk-2.0" -> "libfontconfig1";
 "libgtk-2.0" -> "libfreetype6";
 "libgtk-2.0" -> "libglib-2.0-0";
+"libgtk-2.0" -> "libharfbuzz0";
 "libgtk-2.0" -> "libpixman-1-0";
 "libgtk-2.0" -> "libpng16-16";
 "libgtk-2.0" -> "libx11-6";
@@ -1824,7 +1819,10 @@ digraph depends {
 "libgtk-2.0" -> "libz1";
 "libgtk-2.0" -> "pango";
 "libgtk-2.0" -> "shared-mime-info" [style=dotted];
-"libgtk-2.0" -> "update-alternatives-cworth";
+"libgtk-2.0" -> "update-alternatives-opkg";
+"libharfbuzz0" -> "libc6";
+"libharfbuzz0" -> "libfreetype6";
+"libharfbuzz0" -> "libglib-2.0-0";
 "libical" -> "libc6";
 "libice6" -> "libc6";
 "libidn-locale-cs" -> "virtual-locale-cs" [style=dotted];
@@ -2064,7 +2062,6 @@ digraph depends {
 "libreadline6" -> "libc6";
 "libreadline6" -> "libtinfo5";
 "librsvg-2-2" -> "gdk-pixbuf";
-"librsvg-2-2" -> "harfbuzz";
 "librsvg-2-2" -> "libc6";
 "librsvg-2-2" -> "libcairo2";
 "librsvg-2-2" -> "libcroco";
@@ -2073,6 +2070,7 @@ digraph depends {
 "librsvg-2-2" -> "libfontconfig1";
 "librsvg-2-2" -> "libfreetype6";
 "librsvg-2-2" -> "libglib-2.0-0";
+"librsvg-2-2" -> "libharfbuzz0";
 "librsvg-2-2" -> "libpixman-1-0";
 "librsvg-2-2" -> "libpng16-16";
 "librsvg-2-2" -> "libx11-6";
@@ -2087,7 +2085,6 @@ digraph depends {
 "librsvg-2-2" -> "libz1";
 "librsvg-2-2" -> "pango";
 "librsvg-2-gtk" -> "gdk-pixbuf";
-"librsvg-2-gtk" -> "harfbuzz";
 "librsvg-2-gtk" -> "libc6";
 "librsvg-2-gtk" -> "libcairo2";
 "librsvg-2-gtk" -> "libcroco";
@@ -2096,6 +2093,7 @@ digraph depends {
 "librsvg-2-gtk" -> "libfontconfig1";
 "librsvg-2-gtk" -> "libfreetype6";
 "librsvg-2-gtk" -> "libglib-2.0-0";
+"librsvg-2-gtk" -> "libharfbuzz0";
 "librsvg-2-gtk" -> "libpixman-1-0";
 "librsvg-2-gtk" -> "libpng16-16";
 "librsvg-2-gtk" -> "librsvg-2-2";
@@ -2184,7 +2182,6 @@ digraph depends {
 "libvorbisidec1" -> "libc6";
 "libvorbisidec1" -> "libogg0";
 "libvte9" -> "gdk-pixbuf";
-"libvte9" -> "harfbuzz";
 "libvte9" -> "libatk-1.0-0";
 "libvte9" -> "libc6";
 "libvte9" -> "libcairo2";
@@ -2194,6 +2191,7 @@ digraph depends {
 "libvte9" -> "libfreetype6";
 "libvte9" -> "libglib-2.0-0";
 "libvte9" -> "libgtk-2.0";
+"libvte9" -> "libharfbuzz0";
 "libvte9" -> "libncurses5";
 "libvte9" -> "libpixman-1-0";
 "libvte9" -> "libpng16-16";
@@ -2384,7 +2382,6 @@ digraph depends {
 "make" -> "libc6";
 "make-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "matchbox-keyboard-im" -> "gdk-pixbuf";
-"matchbox-keyboard-im" -> "harfbuzz";
 "matchbox-keyboard-im" -> "libatk-1.0-0";
 "matchbox-keyboard-im" -> "libc6";
 "matchbox-keyboard-im" -> "libcairo2";
@@ -2394,6 +2391,7 @@ digraph depends {
 "matchbox-keyboard-im" -> "libfreetype6";
 "matchbox-keyboard-im" -> "libglib-2.0-0";
 "matchbox-keyboard-im" -> "libgtk-2.0";
+"matchbox-keyboard-im" -> "libharfbuzz0";
 "matchbox-keyboard-im" -> "libpixman-1-0";
 "matchbox-keyboard-im" -> "libpng16-16";
 "matchbox-keyboard-im" -> "libx11-6";
@@ -2509,12 +2507,12 @@ digraph depends {
 "openssh-keygen" -> "libc6";
 "openssh-keygen" -> "libcrypto1.0.0";
 "openssh-scp" -> "libc6";
-"openssh-scp" -> "update-alternatives-cworth";
+"openssh-scp" -> "update-alternatives-opkg";
 "openssh-sftp-server" -> "libc6";
 "openssh-ssh" -> "libc6";
 "openssh-ssh" -> "libcrypto1.0.0";
 "openssh-ssh" -> "libz1";
-"openssh-ssh" -> "update-alternatives-cworth";
+"openssh-ssh" -> "update-alternatives-opkg";
 "openssh-sshd" -> "base-files";
 "openssh-sshd" -> "base-passwd";
 "openssh-sshd" -> "libc6";
@@ -2541,7 +2539,7 @@ digraph depends {
 "opkg" -> "libc6";
 "opkg" -> "libopkg1";
 "opkg" -> "opkg-config-base";
-"opkg" -> "update-alternatives-cworth";
+"opkg" -> "update-alternatives-opkg";
 "packagegroup-base" -> "kernel-module-input" [style=dotted];
 "packagegroup-base" -> "kernel-module-nls-utf8" [style=dotted];
 "packagegroup-base" -> "kernel-module-rtc-dev" [style=dotted];
@@ -2672,7 +2670,7 @@ digraph depends {
 "packagegroup-core-boot" -> "systemd-machine-units";
 "packagegroup-core-boot" -> "udev";
 "packagegroup-core-boot" -> "udev-extraconf";
-"packagegroup-core-boot" -> "update-alternatives-cworth";
+"packagegroup-core-boot" -> "update-alternatives-opkg";
 "packagegroup-core-boot" -> "util-linux-agetty";
 "packagegroup-core-ssh-openssh" -> "openssh";
 "packagegroup-core-x11-utils" -> "xauth";
@@ -2872,7 +2870,6 @@ digraph depends {
 "pam-plugin-unix" -> "libpam";
 "pam-plugin-warn" -> "libc6";
 "pam-plugin-warn" -> "libpam";
-"pango" -> "harfbuzz";
 "pango" -> "libc6";
 "pango" -> "libcairo2";
 "pango" -> "libexpat1";
@@ -2880,6 +2877,7 @@ digraph depends {
 "pango" -> "libfontconfig1";
 "pango" -> "libfreetype6";
 "pango" -> "libglib-2.0-0";
+"pango" -> "libharfbuzz0";
 "pango" -> "libpixman-1-0";
 "pango" -> "libpng16-16";
 "pango" -> "libx11-6";
@@ -2893,13 +2891,13 @@ digraph depends {
 "pango" -> "libxrender1";
 "pango" -> "libz1";
 "pango" -> "pango-module-basic-fc" [style=dotted];
-"pango-module-basic-fc" -> "harfbuzz";
 "pango-module-basic-fc" -> "libc6";
 "pango-module-basic-fc" -> "libexpat1";
 "pango-module-basic-fc" -> "libffi6";
 "pango-module-basic-fc" -> "libfontconfig1";
 "pango-module-basic-fc" -> "libfreetype6";
 "pango-module-basic-fc" -> "libglib-2.0-0";
+"pango-module-basic-fc" -> "libharfbuzz0";
 "pango-module-basic-fc" -> "pango";
 "perl" -> "libc6";
 "perl" -> "libperl5";
@@ -2926,7 +2924,6 @@ digraph depends {
 "phoneuid" -> "libshr-glib0";
 "pidgin" -> "gdk-pixbuf";
 "pidgin" -> "gstreamer";
-"pidgin" -> "harfbuzz";
 "pidgin" -> "libatk-1.0-0";
 "pidgin" -> "libc6";
 "pidgin" -> "libcairo2";
@@ -2937,6 +2934,7 @@ digraph depends {
 "pidgin" -> "libfreetype6";
 "pidgin" -> "libglib-2.0-0";
 "pidgin" -> "libgtk-2.0";
+"pidgin" -> "libharfbuzz0";
 "pidgin" -> "libice6";
 "pidgin" -> "libpixman-1-0";
 "pidgin" -> "libpng16-16";
@@ -2967,7 +2965,7 @@ digraph depends {
 "powertop" -> "libpci3";
 "powertop" -> "libstdc++6";
 "powertop" -> "libtinfo5";
-"powertop" -> "update-alternatives-cworth";
+"powertop" -> "update-alternatives-opkg";
 "powertop-locale-cs-cz" -> "virtual-locale-cs-cz" [style=dotted];
 "powertop-locale-en-gb" -> "virtual-locale-en-gb" [style=dotted];
 "powertop-locale-en-us" -> "virtual-locale-en-us" [style=dotted];
@@ -2980,7 +2978,7 @@ digraph depends {
 "procps" -> "libc6";
 "procps" -> "libncurses5";
 "procps" -> "libtinfo5";
-"procps" -> "update-alternatives-cworth";
+"procps" -> "update-alternatives-opkg";
 "psmisc" -> "fuser";
 "psmisc" -> "killall";
 "psmisc" -> "pstree";
@@ -3178,7 +3176,6 @@ digraph depends {
 "python-pygps" -> "python-curses";
 "python-pygps" -> "python-json";
 "python-pygtk" -> "gdk-pixbuf";
-"python-pygtk" -> "harfbuzz";
 "python-pygtk" -> "libatk-1.0-0";
 "python-pygtk" -> "libc6";
 "python-pygtk" -> "libcairo2";
@@ -3189,6 +3186,7 @@ digraph depends {
 "python-pygtk" -> "libglade-2.0-0";
 "python-pygtk" -> "libglib-2.0-0";
 "python-pygtk" -> "libgtk-2.0";
+"python-pygtk" -> "libharfbuzz0";
 "python-pygtk" -> "libpixman-1-0";
 "python-pygtk" -> "libpng16-16";
 "python-pygtk" -> "libx11-6";
@@ -3271,7 +3269,7 @@ digraph depends {
 "python-zlib" -> "libz1";
 "python-zlib" -> "python-core";
 "rfkill" -> "libc6";
-"rfkill" -> "update-alternatives-cworth";
+"rfkill" -> "update-alternatives-opkg";
 "rgb" -> "libc6";
 "rpcbind" -> "libc6";
 "rpcbind" -> "libtirpc1";
@@ -3303,7 +3301,7 @@ digraph depends {
 "shadow" -> "pam-plugin-securetty";
 "shadow" -> "pam-plugin-shells";
 "shadow" -> "shadow-securetty";
-"shadow" -> "update-alternatives-cworth";
+"shadow" -> "update-alternatives-opkg";
 "shadow-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "shared-mime-info" -> "libc6";
 "shared-mime-info" -> "libglib-2.0-0";
@@ -3384,7 +3382,7 @@ digraph depends {
 "shr-splash" -> "shr-splash-theme-logo" [style=dotted];
 "shr-splash" -> "update-rc.d" [style=dotted];
 "shr-splash-theme-logo" -> "shr-splash";
-"shr-splash-theme-logo" -> "update-alternatives-cworth";
+"shr-splash-theme-logo" -> "update-alternatives-opkg";
 "shr-theme-gry" -> "e-wm-theme-illume-gry";
 "shr-theme-gry" -> "elementary-theme-gry";
 "shr-wizard" -> "e-wm";
@@ -3507,7 +3505,7 @@ digraph depends {
 "systemd" -> "systemd-binfmt";
 "systemd" -> "systemd-compat-units" [style=dotted];
 "systemd" -> "systemd-serialgetty" [style=dotted];
-"systemd" -> "update-alternatives-cworth";
+"systemd" -> "update-alternatives-opkg";
 "systemd" -> "update-rc.d" [style=dotted];
 "systemd" -> "util-linux-agetty" [style=dotted];
 "systemd" -> "util-linux-fsck" [style=dotted];
@@ -3517,7 +3515,7 @@ digraph depends {
 "systemd-machine-units" -> "gta04-gps-handler-systemd";
 "systemd-serialgetty" -> "systemd";
 "tar" -> "libc6";
-"tar" -> "update-alternatives-cworth";
+"tar" -> "update-alternatives-opkg";
 "tar-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "tcpdump" -> "libc6";
 "tcpdump" -> "libpcap1";
@@ -3542,7 +3540,7 @@ digraph depends {
 "terminology" -> "libeo1";
 "terminology" -> "terminology-themes";
 "time" -> "libc6";
-"time" -> "update-alternatives-cworth";
+"time" -> "update-alternatives-opkg";
 "ttf-dejavu-sans" -> "ttf-dejavu-common";
 "ttf-dejavu-sans-mono" -> "ttf-dejavu-common";
 "udev" -> "libacl1";
@@ -3563,20 +3561,20 @@ digraph depends {
 "usbutils" -> "libz1";
 "usbutils" -> "usbutils-ids";
 "util-linux-agetty" -> "libc6";
-"util-linux-agetty" -> "update-alternatives-cworth";
+"util-linux-agetty" -> "update-alternatives-opkg";
 "util-linux-fdisk" -> "libblkid1";
 "util-linux-fdisk" -> "libc6";
 "util-linux-fdisk" -> "libuuid1";
-"util-linux-fdisk" -> "update-alternatives-cworth";
+"util-linux-fdisk" -> "update-alternatives-opkg";
 "util-linux-fsck" -> "libblkid1";
 "util-linux-fsck" -> "libc6";
 "util-linux-fsck" -> "libmount1";
-"util-linux-fsck" -> "update-alternatives-cworth";
+"util-linux-fsck" -> "update-alternatives-opkg";
 "util-linux-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "util-linux-mcookie" -> "libc6";
 "util-linux-mount" -> "libc6";
 "util-linux-mount" -> "libmount1";
-"util-linux-mount" -> "update-alternatives-cworth";
+"util-linux-mount" -> "update-alternatives-opkg";
 "vagalume" -> "curl";
 "vagalume" -> "dbus-x11" [style=dotted];
 "vagalume" -> "gdk-pixbuf";
@@ -3604,7 +3602,7 @@ digraph depends {
 "vala-terminal" -> "ttf-liberation-mono";
 "vim" -> "libc6";
 "vim" -> "libtinfo5";
-"vim" -> "update-alternatives-cworth";
+"vim" -> "update-alternatives-opkg";
 "vim" -> "vim-data" [style=dotted];
 "vim" -> "vim-help" [style=dotted];
 "vim" -> "vim-syntax" [style=dotted];
