@@ -1,1 +1,1 @@
-#!/bin/sh\nif type update-rc.d >/dev/null 2>/dev/null; then\n\tif [ -n "$D" ]; then\n\t\tOPT="-r $D"\n\telse\n\t\tOPT="-s"\n\tfi\n\tupdate-rc.d $OPT distcc defaults\nfi\n
+#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS enable distccd.service\n\n\tif [ -z "$D" -a "enable" = "enable" ]; then\n\t\tsystemctl restart distccd.service\n\tfi\nfi\n
