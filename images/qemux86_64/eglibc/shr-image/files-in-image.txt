@@ -4,7 +4,7 @@ lrwxrwxrwx root       root               19 ./bin/ash -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               25 ./bin/base64 -> /usr/bin/base64.coreutils
 -rwxr-xr-x root       root           950960 ./bin/bash
 lrwxrwxrwx root       root               14 ./bin/busybox -> busybox.nosuid
--rwxr-xr-x root       root           525320 ./bin/busybox.nosuid
+-rwxr-xr-x root       root           539624 ./bin/busybox.nosuid
 -rwsr-xr-x root       root            52712 ./bin/busybox.suid
 lrwxrwxrwx root       root               18 ./bin/cat -> /bin/cat.coreutils
 -rwxr-xr-x root       root            52648 ./bin/cat.coreutils
@@ -76,10 +76,12 @@ lrwxrwxrwx root       root               17 ./bin/rm -> /bin/rm.coreutils
 -rwxr-xr-x root       root            61832 ./bin/rm.coreutils
 lrwxrwxrwx root       root               20 ./bin/rmdir -> /bin/rmdir.coreutils
 -rwxr-xr-x root       root            45160 ./bin/rmdir.coreutils
+lrwxrwxrwx root       root               19 ./bin/run-parts -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               19 ./bin/sed -> /bin/busybox.nosuid
 lrwxrwxrwx root       root                9 ./bin/sh -> /bin/bash
 lrwxrwxrwx root       root               20 ./bin/sleep -> /bin/sleep.coreutils
 -rwxr-xr-x root       root            32456 ./bin/sleep.coreutils
+lrwxrwxrwx root       root               19 ./bin/stat -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               19 ./bin/stty -> /bin/stty.coreutils
 -rwxr-xr-x root       root            69864 ./bin/stty.coreutils
 lrwxrwxrwx root       root               14 ./bin/su -> /bin/su.shadow
@@ -162,7 +164,7 @@ drwxr-xr-x root       root             4096 ./etc/bluetooth
 -rw-r--r-- root       root             2440 ./etc/bluetooth/main.conf
 -rw-r--r-- root       root              120 ./etc/bluetooth/network.conf
 -rw-r--r-- root       root              297 ./etc/bluetooth/rfcomm.conf
--rw-r--r-- root       root             2236 ./etc/busybox.links.nosuid
+-rw-r--r-- root       root             2250 ./etc/busybox.links.nosuid
 -rw-r--r-- root       root               91 ./etc/busybox.links.suid
 drwxr-xr-x root       root             4096 ./etc/ca-certificates
 -rw-r--r-- root       root             6752 ./etc/ca-certificates.conf
@@ -1469,6 +1471,7 @@ lrwxrwxrwx root       root               21 ./sbin/fsck -> /sbin/fsck.util-linux
 lrwxrwxrwx root       root               27 ./sbin/fsck.minix -> /sbin/fsck.minix.util-linux
 -rwxr-xr-x root       root            62288 ./sbin/fsck.minix.util-linux
 -rwxr-xr-x root       root            29160 ./sbin/fsck.util-linux
+lrwxrwxrwx root       root               19 ./sbin/fstrim -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               12 ./sbin/getty -> /sbin/agetty
 lrwxrwxrwx root       root               14 ./sbin/halt -> /bin/systemctl
 lrwxrwxrwx root       root               19 ./sbin/hwclock -> /bin/busybox.nosuid
@@ -1479,7 +1482,7 @@ lrwxrwxrwx root       root               20 ./sbin/init -> /lib/systemd/systemd
 lrwxrwxrwx root       root               17 ./sbin/insmod -> /sbin/insmod.kmod
 lrwxrwxrwx root       root               11 ./sbin/insmod.kmod -> ../bin/kmod
 lrwxrwxrwx root       root               19 ./sbin/ip -> /bin/busybox.nosuid
--rwxr-xr-x root       root            79440 ./sbin/iwconfig
+-rwxr-xr-x root       root            80976 ./sbin/iwconfig
 lrwxrwxrwx root       root                8 ./sbin/iwgetid -> iwconfig
 lrwxrwxrwx root       root                8 ./sbin/iwlist -> iwconfig
 lrwxrwxrwx root       root                8 ./sbin/iwpriv -> iwconfig
@@ -1894,7 +1897,6 @@ lrwxrwxrwx root       root                4 ./usr/bin/rnano -> nano
 -rwxr-xr-x root       root           416608 ./usr/bin/rsync
 -rwxr-xr-x root       root              167 ./usr/bin/run-calibrate.sh
 -rwxr-xr-x root       root            16898 ./usr/bin/run-mailcap
-lrwxrwxrwx root       root               19 ./usr/bin/run-parts -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               25 ./usr/bin/runcon -> /usr/bin/runcon.coreutils
 -rwxr-xr-x root       root            32720 ./usr/bin/runcon.coreutils
 lrwxrwxrwx root       root                3 ./usr/bin/rview -> vim
@@ -1946,7 +1948,6 @@ lrwxrwxrwx root       root               20 ./usr/bin/ssh -> /usr/bin/ssh.openss
 -rwxr-xr-x root       root           222072 ./usr/bin/ssh-keygen
 -rwxr-xr-x root       root           429408 ./usr/bin/ssh.openssh
 -rwxr-xr-x root       root             4819 ./usr/bin/startx
-lrwxrwxrwx root       root               23 ./usr/bin/stat -> /usr/bin/stat.coreutils
 -rwxr-xr-x root       root            81192 ./usr/bin/stat.coreutils
 lrwxrwxrwx root       root               25 ./usr/bin/stdbuf -> /usr/bin/stdbuf.coreutils
 -rwxr-xr-x root       root            68784 ./usr/bin/stdbuf.coreutils
@@ -3092,8 +3093,8 @@ lrwxrwxrwx root       root               23 ./usr/lib/libphone-utils.so.0 -> lib
 -rwxr-xr-x root       root            20120 ./usr/lib/libphone-utils.so.0.0.0
 lrwxrwxrwx root       root               21 ./usr/lib/libpixman-1.so.0 -> libpixman-1.so.0.32.4
 -rwxr-xr-x root       root           694872 ./usr/lib/libpixman-1.so.0.32.4
-lrwxrwxrwx root       root               18 ./usr/lib/libpng16.so.16 -> libpng16.so.16.7.0
--rwxr-xr-x root       root           202240 ./usr/lib/libpng16.so.16.7.0
+lrwxrwxrwx root       root               18 ./usr/lib/libpng16.so.16 -> libpng16.so.16.8.0
+-rwxr-xr-x root       root           201840 ./usr/lib/libpng16.so.16.8.0
 lrwxrwxrwx root       root               16 ./usr/lib/libpopt.so.0 -> libpopt.so.0.0.0
 -rwxr-xr-x root       root            48840 ./usr/lib/libpopt.so.0.0.0
 lrwxrwxrwx root       root               21 ./usr/lib/libpostproc.so.52 -> libpostproc.so.52.0.0
@@ -3341,7 +3342,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/opkg/alternatives
 -rw-r--r-- root       root               42 ./usr/lib/opkg/alternatives/deallocvt
 -rw-r--r-- root       root               42 ./usr/lib/opkg/alternatives/delgroup
 -rw-r--r-- root       root               41 ./usr/lib/opkg/alternatives/deluser
--rw-r--r-- root       root               34 ./usr/lib/opkg/alternatives/depmod
+-rw-r--r-- root       root               57 ./usr/lib/opkg/alternatives/depmod
 -rw-r--r-- root       root               57 ./usr/lib/opkg/alternatives/df
 -rw-r--r-- root       root               37 ./usr/lib/opkg/alternatives/diff
 -rw-r--r-- root       root               40 ./usr/lib/opkg/alternatives/dir
@@ -3369,6 +3370,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/opkg/alternatives
 -rw-r--r-- root       root               62 ./usr/lib/opkg/alternatives/free
 -rw-r--r-- root       root               60 ./usr/lib/opkg/alternatives/fsck
 -rw-r--r-- root       root               72 ./usr/lib/opkg/alternatives/fsck.minix
+-rw-r--r-- root       root               36 ./usr/lib/opkg/alternatives/fstrim
 -rw-r--r-- root       root               63 ./usr/lib/opkg/alternatives/fuser
 -rw-r--r-- root       root               52 ./usr/lib/opkg/alternatives/getty
 -rw-r--r-- root       root               47 ./usr/lib/opkg/alternatives/gpsd-defaults
@@ -3465,7 +3467,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/opkg/alternatives
 -rw-r--r-- root       root               59 ./usr/lib/opkg/alternatives/rmdir
 -rw-r--r-- root       root               55 ./usr/lib/opkg/alternatives/rmmod
 -rw-r--r-- root       root               35 ./usr/lib/opkg/alternatives/route
--rw-r--r-- root       root               42 ./usr/lib/opkg/alternatives/run-parts
+-rw-r--r-- root       root               38 ./usr/lib/opkg/alternatives/run-parts
 -rw-r--r-- root       root               46 ./usr/lib/opkg/alternatives/runcon
 -rw-r--r-- root       root               34 ./usr/lib/opkg/alternatives/runlevel
 -rw-r--r-- root       root               37 ./usr/lib/opkg/alternatives/scp
@@ -3488,7 +3490,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/opkg/alternatives
 -rw-r--r-- root       root               44 ./usr/lib/opkg/alternatives/split
 -rw-r--r-- root       root               37 ./usr/lib/opkg/alternatives/ssh
 -rw-r--r-- root       root               47 ./usr/lib/opkg/alternatives/start-stop-daemon
--rw-r--r-- root       root               65 ./usr/lib/opkg/alternatives/stat
+-rw-r--r-- root       root               33 ./usr/lib/opkg/alternatives/stat
 -rw-r--r-- root       root               46 ./usr/lib/opkg/alternatives/stdbuf
 -rw-r--r-- root       root               40 ./usr/lib/opkg/alternatives/strings
 -rw-r--r-- root       root               57 ./usr/lib/opkg/alternatives/stty
@@ -3535,7 +3537,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/opkg/alternatives
 -rw-r--r-- root       root               33 ./usr/lib/opkg/alternatives/vigr
 -rw-r--r-- root       root               33 ./usr/lib/opkg/alternatives/vipw
 -rw-r--r-- root       root               36 ./usr/lib/opkg/alternatives/vlock
--rw-r--r-- root       root               64 ./usr/lib/opkg/alternatives/watch
+-rw-r--r-- root       root               41 ./usr/lib/opkg/alternatives/watch
 -rw-r--r-- root       root               61 ./usr/lib/opkg/alternatives/wc
 -rw-r--r-- root       root               37 ./usr/lib/opkg/alternatives/wget
 -rw-r--r-- root       root               38 ./usr/lib/opkg/alternatives/which
@@ -6367,6 +6369,7 @@ lrwxrwxrwx root       root               19 ./usr/sbin/udhcpd -> /bin/busybox.no
 -rwxr-xr-x root       root            28104 ./usr/sbin/unix_update
 -rwxr-xr-x root       root             4657 ./usr/sbin/update-ca-certificates
 -rwxr-xr-x root       root             6270 ./usr/sbin/update-mime
+-rwxr-xr-x root       root             4804 ./usr/sbin/update-rc.d
 -rwxr-xr-x root       root            83688 ./usr/sbin/useradd
 -rwxr-xr-x root       root            57032 ./usr/sbin/userdel
 -rwxr-xr-x root       root            80200 ./usr/sbin/usermod
@@ -15208,17 +15211,17 @@ drwxr-xr-x root       root            86016 ./var/lib/opkg/info
 -rwxr-xr-x root       root              327 ./var/lib/opkg/info/bluez4.postinst
 -rwxr-xr-x root       root              220 ./var/lib/opkg/info/bluez4.prerm
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/busybox-syslog.conffiles
--rw-r--r-- root       root             2137 ./var/lib/opkg/info/busybox-syslog.control
+-rw-r--r-- root       root             1735 ./var/lib/opkg/info/busybox-syslog.control
 -rw-r--r-- root       root              173 ./var/lib/opkg/info/busybox-syslog.list
 -rwxr-xr-x root       root              343 ./var/lib/opkg/info/busybox-syslog.postinst
 -rwxr-xr-x root       root               78 ./var/lib/opkg/info/busybox-syslog.postrm
 -rwxr-xr-x root       root              352 ./var/lib/opkg/info/busybox-syslog.prerm
--rw-r--r-- root       root             2003 ./var/lib/opkg/info/busybox-udhcpc.control
+-rw-r--r-- root       root             1601 ./var/lib/opkg/info/busybox-udhcpc.control
 -rw-r--r-- root       root               91 ./var/lib/opkg/info/busybox-udhcpc.list
--rw-r--r-- root       root             2103 ./var/lib/opkg/info/busybox.control
+-rw-r--r-- root       root             1701 ./var/lib/opkg/info/busybox.control
 -rw-r--r-- root       root              109 ./var/lib/opkg/info/busybox.list
--rwxr-xr-x root       root            13946 ./var/lib/opkg/info/busybox.postinst
--rwxr-xr-x root       root             9900 ./var/lib/opkg/info/busybox.postrm
+-rwxr-xr-x root       root            14082 ./var/lib/opkg/info/busybox.postinst
+-rwxr-xr-x root       root            10016 ./var/lib/opkg/info/busybox.postrm
 -rwxr-xr-x root       root              762 ./var/lib/opkg/info/busybox.prerm
 -rw-r--r-- root       root               26 ./var/lib/opkg/info/ca-certificates.conffiles
 -rw-r--r-- root       root              720 ./var/lib/opkg/info/ca-certificates.control
@@ -16937,6 +16940,8 @@ drwxr-xr-x root       root            86016 ./var/lib/opkg/info
 -rw-r--r-- root       root             1695 ./var/lib/opkg/info/udev.list
 -rw-r--r-- root       root              561 ./var/lib/opkg/info/update-alternatives-opkg.control
 -rw-r--r-- root       root               29 ./var/lib/opkg/info/update-alternatives-opkg.list
+-rw-r--r-- root       root              497 ./var/lib/opkg/info/update-rc.d.control
+-rw-r--r-- root       root               22 ./var/lib/opkg/info/update-rc.d.list
 -rw-r--r-- root       root              950 ./var/lib/opkg/info/util-linux-agetty.control
 -rw-r--r-- root       root               13 ./var/lib/opkg/info/util-linux-agetty.list
 -rwxr-xr-x root       root               76 ./var/lib/opkg/info/util-linux-agetty.postinst
@@ -16989,7 +16994,7 @@ drwxr-xr-x root       root            86016 ./var/lib/opkg/info
 -rw-r--r-- root       root               77 ./var/lib/opkg/info/vte-termcap.list
 -rw-r--r-- root       root              602 ./var/lib/opkg/info/watchdog.control
 -rw-r--r-- root       root               83 ./var/lib/opkg/info/watchdog.list
--rw-r--r-- root       root              711 ./var/lib/opkg/info/wireless-tools.control
+-rw-r--r-- root       root              721 ./var/lib/opkg/info/wireless-tools.control
 -rw-r--r-- root       root               67 ./var/lib/opkg/info/wireless-tools.list
 -rw-r--r-- root       root              438 ./var/lib/opkg/info/wmiconfig.control
 -rw-r--r-- root       root               19 ./var/lib/opkg/info/wmiconfig.list
@@ -17054,7 +17059,7 @@ drwxr-xr-x root       root            86016 ./var/lib/opkg/info
 -rw-r--r-- root       root              569 ./var/lib/opkg/info/xz-locale-cs.control
 -rw-r--r-- root       root               39 ./var/lib/opkg/info/xz-locale-cs.list
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists
--rw-r--r-- root       root           199920 ./var/lib/opkg/status
+-rw-r--r-- root       root           199964 ./var/lib/opkg/status
 drwxr-xr-x root       root             4096 ./var/lib/systemd
 drwxr-xr-x root       root             4096 ./var/local
 drwxr-xr-x root       root             4096 ./var/lock
