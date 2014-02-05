@@ -1,1 +1,8 @@
-\tif test "x$D" = "x"; then\n\tif test "$1" = "upgrade" -o "$1" = "remove"; then\n\t\t/etc/init.d/syslog stop\n\tfi\n\tfi\nif [ -z "$D" ]; then\n\t/etc/init.d/syslog stop\nfi\n
+	if test "x$D" = "x"; then
+	if test "$1" = "upgrade" -o "$1" = "remove"; then
+		/etc/init.d/syslog stop
+	fi
+	fi
+if [ -z "$D" ]; then
+	/etc/init.d/syslog stop
+fi

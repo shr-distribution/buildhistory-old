@@ -1,1 +1,14 @@
-#!/bin/sh\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tif [ -z "$D" ]; then\n\t\tsystemctl stop opkg-configure.service\n\tfi\n\n\tsystemctl $OPTS disable opkg-configure.service\nfi\n
+#!/bin/sh
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop opkg-configure.service
+	fi
+
+	systemctl $OPTS disable opkg-configure.service
+fi
