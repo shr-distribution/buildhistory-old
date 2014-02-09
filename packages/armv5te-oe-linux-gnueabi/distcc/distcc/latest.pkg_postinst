@@ -6,9 +6,9 @@ if [ -n "$D" ]; then
 fi
 
 if type systemctl >/dev/null 2>/dev/null; then
-	systemctl $OPTS enable distccd.service
+	systemctl $OPTS enable distcc.service
 
 	if [ -z "$D" -a "enable" = "enable" ]; then
-		systemctl restart distccd.service
+		systemctl restart distcc.service
 	fi
 fi
