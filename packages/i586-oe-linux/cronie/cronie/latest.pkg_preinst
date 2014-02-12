@@ -115,12 +115,11 @@ if test "x$D" != "x"; then
 	# Installing into a sysroot
 	SYSROOT="$D"
 	OPT="--root $D"
+fi
 
-	# Add groups and users defined for all recipe packages
-	GROUPADD_PARAM="--system crontab"
-	USERADD_PARAM=""
-	GROUPMEMS_PARAM=""
-else
+# If we're not doing a special SSTATE/SYSROOT install
+# then set the values, otherwise use the environment
+if test "x$UA_SYSROOT" = "x"; then
 	# Installing onto a target
 	# Add groups and users defined only for this package
 	GROUPADD_PARAM="${GROUPADD_PARAM}"
