@@ -3,20 +3,15 @@ if ! [ -e $D/etc/pango ] ; then
 	mkdir -p $D/etc/pango
 fi
 
-if [ -n "$D" ]; then
+if [ "x$D" != "x" ]; then
 	PSEUDO_UNLOAD=1 qemu-i386 -L $D -E LD_LIBRARY_PATH=$D/usr/lib:$D/lib $D/usr/bin/pango-querymodules \
 		$D/usr/lib/pango/1.8.0/modules/*.so \
 		> $D/etc/pango/pango.modules 2>/dev/null
 
-	if [ $? -ne 0 ] ; then
-		echo "qemu_run_binary call /usr/bin/pango-querymodules $D/usr/lib/pango/1.8.0/modules/*.so > $D/etc/pango/pango.modules failed"
-		exit 1
-	fi
+	[ $? -ne 0 ] && exit 1
 
 	sed -i -e "s:$D::" $D/etc/pango/pango.modules
 
 	exit 0
-else
-	/usr/bin/pango-querymodules > /etc/pango/pango.modules
 fi
-
+/usr/bin/pango-querymodules > /etc/pango/pango.modules
