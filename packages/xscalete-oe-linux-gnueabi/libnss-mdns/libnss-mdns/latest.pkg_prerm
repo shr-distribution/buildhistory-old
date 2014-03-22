@@ -1,1 +1,3 @@
-\tsed -e \'/^hosts:/s/\\s*\\<mdns4\\>//\' \\\n\t\t-e \'/^hosts:/s/\\s*mdns4_minimal\\s\\+\\[NOTFOUND=return\\]//\' \\\n\t\t-i $D/etc/nsswitch.conf\n
+	sed -e '/^hosts:/s/\s*\<mdns4\>//' \
+		-e '/^hosts:/s/\s*mdns4_minimal\s\+\[NOTFOUND=return\]//' \
+		-i $D/etc/nsswitch.conf
