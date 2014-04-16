@@ -502,6 +502,10 @@ digraph depends {
 "elfe" -> "libxss1";
 "elfe" -> "libxtst6";
 "elfe" -> "libz1";
+"elfutils" -> "libasm1";
+"elfutils" -> "libc6";
+"elfutils" -> "libdw1";
+"elfutils" -> "libelf1";
 "embryo" -> "eina";
 "embryo" -> "libc6";
 "emtooth2" -> "bluez4";
@@ -665,15 +669,21 @@ digraph depends {
 "evtest" -> "libc6";
 "evtest" -> "libxml2";
 "fbreader" -> "gdk-pixbuf";
+"fbreader" -> "libatk-1.0-0";
 "fbreader" -> "libbz2-0";
 "fbreader" -> "libc6";
+"fbreader" -> "libcairo2";
 "fbreader" -> "libcurl5";
 "fbreader" -> "libexpat1";
+"fbreader" -> "libfontconfig1";
+"fbreader" -> "libfreetype6";
 "fbreader" -> "libfribidi0";
 "fbreader" -> "libgcc1";
 "fbreader" -> "libglib-2.0-0";
 "fbreader" -> "libgtk-2.0";
+"fbreader" -> "libjpeg8";
 "fbreader" -> "liblinebreak1";
+"fbreader" -> "libpng16-16";
 "fbreader" -> "libsqlite3-0";
 "fbreader" -> "libstdc++6";
 "fbreader" -> "libz1";
@@ -1279,6 +1289,8 @@ digraph depends {
 "libaprutil-1-0" -> "libexpat1";
 "libaprutil-1-0" -> "libgdbm4";
 "libaprutil-1-0" -> "libuuid1";
+"libasm1" -> "libc6";
+"libasm1" -> "libelf1";
 "libasound-module-bluez" -> "libasound2";
 "libasound-module-bluez" -> "libc6";
 "libasound2" -> "alsa-conf-base";
@@ -1360,6 +1372,10 @@ digraph depends {
 "libdmx1" -> "libxext6";
 "libdrm2" -> "libc6";
 "libdvdread4" -> "libc6";
+"libdw1" -> "libbz2-0";
+"libdw1" -> "libc6";
+"libdw1" -> "libelf1";
+"libdw1" -> "libz1";
 "libe2p2" -> "libc6";
 "libecore-avahi-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "libecore1" -> "ecore-audio";
@@ -1532,6 +1548,7 @@ digraph depends {
 "libeldbus1" -> "libecore1";
 "libeldbus1" -> "libeo1";
 "libeldbus1" -> "libglib-2.0-0";
+"libelf1" -> "libc6";
 "libemotion1" -> "ecore-con";
 "libemotion1" -> "ecore-file";
 "libemotion1" -> "eeze";
@@ -2392,7 +2409,9 @@ digraph depends {
 "logrotate" -> "libc6";
 "logrotate" -> "libpopt0";
 "lsof" -> "libc6";
+"ltrace" -> "elfutils";
 "ltrace" -> "libc6";
+"ltrace" -> "libelf1";
 "make" -> "libc6";
 "make-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "matchbox-keyboard-im" -> "gdk-pixbuf";
@@ -2656,7 +2675,7 @@ digraph depends {
 "packagegroup-boot" -> "busybox";
 "packagegroup-boot" -> "formfactor" [style=dotted];
 "packagegroup-boot" -> "kernel" [style=dotted];
-"packagegroup-boot" -> "kernel-image-3.10.32-ltsi-yocto-standard";
+"packagegroup-boot" -> "kernel-image-3.10.35-ltsi-yocto-standard";
 "packagegroup-boot" -> "kexecboot-cfg" [style=dotted];
 "packagegroup-boot" -> "keymaps";
 "packagegroup-boot" -> "netbase";
@@ -2689,7 +2708,7 @@ digraph depends {
 "packagegroup-core-boot" -> "base-passwd";
 "packagegroup-core-boot" -> "busybox";
 "packagegroup-core-boot" -> "formfactor" [style=dotted];
-"packagegroup-core-boot" -> "kernel-image-3.10.32-ltsi-yocto-standard";
+"packagegroup-core-boot" -> "kernel-image-3.10.35-ltsi-yocto-standard";
 "packagegroup-core-boot" -> "kexecboot-cfg" [style=dotted];
 "packagegroup-core-boot" -> "keymaps";
 "packagegroup-core-boot" -> "netbase";
