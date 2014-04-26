@@ -26,16 +26,6 @@ for SCHEMA in gnome-control-center.schemas control-center.schemas fontilus.schem
 			--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null
 	fi
 done
-if [ "$1" = configure ]; then
-	UPDATEMIMEDB=`which update-mime-database`
-	if [ -x "$UPDATEMIMEDB" ] ; then
-		echo "Updating MIME database... this may take a while."
-		$UPDATEMIMEDB $D/usr/share/mime
-	else
-		echo "Missing update-mime-database, update of mime database failed!"
-		exit 1
-	fi
-fi
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
 fi
