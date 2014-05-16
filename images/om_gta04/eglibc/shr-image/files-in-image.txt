@@ -229,7 +229,7 @@ lrwxrwxrwx root       root               25 ./etc/default/gpsd -> /etc/default/g
 drwxr-xr-x root       root             4096 ./etc/default/volatiles
 -rw-r--r-- root       root               48 ./etc/default/volatiles/99_dbus
 -rw-r--r-- root       root               40 ./etc/default/volatiles/99_pam
--rw-r--r-- root       root               36 ./etc/default/volatiles/99_sshd
+-rw-r--r-- root       root               75 ./etc/default/volatiles/99_sshd
 -rw-r--r-- root       root               34 ./etc/default/volatiles/99_sysstat
 -rw-r--r-- root       root               46 ./etc/default/volatiles/99_wpa_supplicant
 -rwxr-xr-x root       root               16 ./etc/default/xserver-nodm
@@ -660,7 +660,7 @@ drwxr-xr-x root       root             4096 ./etc/ssh
 -rw-r--r-- root       root           242153 ./etc/ssh/moduli
 -rw-r--r-- root       root             1494 ./etc/ssh/ssh_config
 -rw-r--r-- root       root             3276 ./etc/ssh/sshd_config
--rw-r--r-- root       root             3221 ./etc/ssh/sshd_config_readonly
+-rw-r--r-- root       root             3225 ./etc/ssh/sshd_config_readonly
 drwxr-xr-x root       root             4096 ./etc/ssl
 drwxr-xr-x root       root            12288 ./etc/ssl/certs
 lrwxrwxrwx root       root               55 ./etc/ssl/certs/A-Trust-nQual-03.pem -> /usr/share/ca-certificates/mozilla/A-Trust-nQual-03.crt
@@ -1030,7 +1030,7 @@ lrwxrwxrwx root       root               16 ./lib/libudev.so.1 -> libudev.so.1.4
 lrwxrwxrwx root       root               19 ./lib/libusb-0.1.so.4 -> libusb-0.1.so.4.4.4
 -rwxr-xr-x root       root            11992 ./lib/libusb-0.1.so.4.4.4
 lrwxrwxrwx root       root               19 ./lib/libusb-1.0.so.0 -> libusb-1.0.so.0.1.0
--rwxr-xr-x root       root            36808 ./lib/libusb-1.0.so.0.1.0
+-rwxr-xr-x root       root            60256 ./lib/libusb-1.0.so.0.1.0
 -rwxr-xr-x root       root             9800 ./lib/libutil-2.19.so
 lrwxrwxrwx root       root               15 ./lib/libutil.so.1 -> libutil-2.19.so
 lrwxrwxrwx root       root               16 ./lib/libuuid.so.1 -> libuuid.so.1.3.0
@@ -1189,8 +1189,8 @@ lrwxrwxrwx root       root               23 ./lib/systemd/system/dbus-org.freede
 lrwxrwxrwx root       root               22 ./lib/systemd/system/dbus-org.freedesktop.login1.service -> systemd-logind.service
 lrwxrwxrwx root       root               24 ./lib/systemd/system/dbus-org.freedesktop.machine1.service -> systemd-machined.service
 lrwxrwxrwx root       root               25 ./lib/systemd/system/dbus-org.freedesktop.timedate1.service -> systemd-timedated.service
--rw-r--r-- root       root              353 ./lib/systemd/system/dbus.service
--rw-r--r-- root       root              106 ./lib/systemd/system/dbus.socket
+-rwxr-xr-x root       root              366 ./lib/systemd/system/dbus.service
+-rwxr-xr-x root       root              106 ./lib/systemd/system/dbus.socket
 drwxr-xr-x root       root             4096 ./lib/systemd/system/dbus.target.wants
 lrwxrwxrwx root       root               14 ./lib/systemd/system/dbus.target.wants/dbus.socket -> ../dbus.socket
 -rw-r--r-- root       root              978 ./lib/systemd/system/debug-shell.service
@@ -1574,7 +1574,7 @@ lrwxrwxrwx root       root               18 ./sbin/modinfo -> /sbin/modinfo.kmod
 lrwxrwxrwx root       root               11 ./sbin/modinfo.kmod -> ../bin/kmod
 lrwxrwxrwx root       root               19 ./sbin/modprobe -> /sbin/modprobe.kmod
 lrwxrwxrwx root       root               11 ./sbin/modprobe.kmod -> ../bin/kmod
--r-s--x--x root       root            62008 ./sbin/mount.nfs
+-r-s--x--x root       root            62352 ./sbin/mount.nfs
 lrwxrwxrwx root       root                9 ./sbin/mount.nfs4 -> mount.nfs
 -rwxr-xr-x root       root             3648 ./sbin/nologin
 lrwxrwxrwx root       root               19 ./sbin/pivot_root -> /bin/busybox.nosuid
@@ -1665,11 +1665,12 @@ lrwxrwxrwx root       root               22 ./usr/bin/cut -> /usr/bin/cut.coreut
 -rwxr-xr-x root       root            24920 ./usr/bin/cut.coreutils
 -rwxr-xr-x root       root             8572 ./usr/bin/cvt
 -rwxr-xr-x root       root             6784 ./usr/bin/dbus-cleanup-sockets
--rwxr-xr-x root       root           228964 ./usr/bin/dbus-daemon
+-rwxr-xr-x root       root           228920 ./usr/bin/dbus-daemon
 -rwxr-xr-x root       root             8168 ./usr/bin/dbus-daemon-proxy
--rwxr-xr-x root       root            17924 ./usr/bin/dbus-launch
+-rwxr-xr-x root       root            16176 ./usr/bin/dbus-launch
 -rwxr-xr-x root       root            10348 ./usr/bin/dbus-monitor
--rwxr-xr-x root       root            12376 ./usr/bin/dbus-send
+-rwxr-xr-x root       root             7560 ./usr/bin/dbus-run-session
+-rwxr-xr-x root       root            13184 ./usr/bin/dbus-send
 -rwxr-xr-x root       root             5008 ./usr/bin/dbus-uuidgen
 lrwxrwxrwx root       root               19 ./usr/bin/dc -> /bin/busybox.nosuid
 -rwxr-xr-x root       root            13372 ./usr/bin/ddcmon
@@ -2048,7 +2049,7 @@ lrwxrwxrwx root       root               24 ./usr/bin/split -> /usr/bin/split.co
 -rwxr-xr-x root       root            22176 ./usr/bin/sprof
 lrwxrwxrwx root       root               20 ./usr/bin/ssh -> /usr/bin/ssh.openssh
 -rwxr-xr-x root       root           362448 ./usr/bin/ssh-keygen
--rwxr-xr-x root       root           514104 ./usr/bin/ssh.openssh
+-rwxr-xr-x root       root           518200 ./usr/bin/ssh.openssh
 -rwxr-xr-x root       root             4838 ./usr/bin/startx
 lrwxrwxrwx root       root               25 ./usr/bin/stdbuf -> /usr/bin/stdbuf.coreutils
 -rwxr-xr-x root       root            35120 ./usr/bin/stdbuf.coreutils
@@ -2374,7 +2375,7 @@ drwxr-xr-x root       root             4096 ./usr/lib/cornucopia/modules/tests
 -rwxr-xr-x root       root              927 ./usr/lib/cornucopia/modules/tests/pluginc.la
 -rwxr-xr-x root       root             4584 ./usr/lib/cornucopia/modules/tests/pluginc.so
 drwxr-xr-x root       root             4096 ./usr/lib/dbus
--rwsr-xr-x root       root           168988 ./usr/lib/dbus/dbus-daemon-launch-helper
+-rwsr-xr-x root       messagebus     163272 ./usr/lib/dbus/dbus-daemon-launch-helper
 -rwxr-xr-x root       root             7012 ./usr/lib/e2initrd_helper
 drwxr-xr-x root       root             4096 ./usr/lib/ecore
 drwxr-xr-x root       root             4096 ./usr/lib/ecore/system
@@ -3034,8 +3035,8 @@ lrwxrwxrwx root       root               21 ./usr/lib/libcroco-0.6.so.3 -> libcr
 -rwxr-xr-x root       root           148808 ./usr/lib/libcroco-0.6.so.3.0.1
 lrwxrwxrwx root       root               16 ./usr/lib/libcurl.so.5 -> libcurl.so.5.3.0
 -rwxr-xr-x root       root           219560 ./usr/lib/libcurl.so.5.3.0
-lrwxrwxrwx root       root               18 ./usr/lib/libdbus-1.so.3 -> libdbus-1.so.3.7.6
--rwxr-xr-x root       root           168044 ./usr/lib/libdbus-1.so.3.7.6
+lrwxrwxrwx root       root               18 ./usr/lib/libdbus-1.so.3 -> libdbus-1.so.3.8.4
+-rwxr-xr-x root       root           167544 ./usr/lib/libdbus-1.so.3.8.4
 lrwxrwxrwx root       root               23 ./usr/lib/libdbus-glib-1.so.2 -> libdbus-glib-1.so.2.2.2
 -rwxr-xr-x root       root            94552 ./usr/lib/libdbus-glib-1.so.2.2.2
 lrwxrwxrwx root       root               15 ./usr/lib/libdmx.so.1 -> libdmx.so.1.0.0
@@ -6658,8 +6659,8 @@ lrwxrwxrwx root       root               27 ./usr/sbin/powertop -> /usr/sbin/pow
 lrwxrwxrwx root       root               19 ./usr/sbin/rdate -> /bin/busybox.nosuid
 lrwxrwxrwx root       root               23 ./usr/sbin/rfkill -> /usr/sbin/rfkill.rfkill
 -rwxr-xr-x root       root             6760 ./usr/sbin/rfkill.rfkill
--rwxr-xr-x root       root            23816 ./usr/sbin/rpc.idmapd
--rwxr-xr-x root       root            43812 ./usr/sbin/rpc.statd
+-rwxr-xr-x root       root            23860 ./usr/sbin/rpc.idmapd
+-rwxr-xr-x root       root            43848 ./usr/sbin/rpc.statd
 -rwxr-xr-x root       root            31168 ./usr/sbin/rpcbind
 -rwxr-xr-x root       root            17308 ./usr/sbin/rpcinfo
 -rwxr-xr-x root       root             1413 ./usr/sbin/run-postinsts
@@ -6668,7 +6669,7 @@ lrwxrwxrwx root       root               23 ./usr/sbin/rfkill -> /usr/sbin/rfkil
 -rwxr-xr-x root       root            10488 ./usr/sbin/showmount
 -rwxr-xr-x root       root            31140 ./usr/sbin/sm-notify
 -rwxr-xr-x root       root           588972 ./usr/sbin/sshd
--rwxr-xr-x root       root              298 ./usr/sbin/start-statd
+-rwxr-xr-x root       root              349 ./usr/sbin/start-statd
 -rwxr-xr-x root       root           526596 ./usr/sbin/tcpdump
 lrwxrwxrwx root       root               19 ./usr/sbin/udhcpd -> /bin/busybox.nosuid
 -rwsr-xr-x root       root            18660 ./usr/sbin/unix_chkpwd
@@ -15502,7 +15503,7 @@ drwx------ root       root             4096 ./var/cache/ldconfig
 drwxr-xr-x root       root             4096 ./var/lib
 drwxr-xr-x root       root             4096 ./var/lib/alsa
 -rw-r--r-- root       root               28 ./var/lib/alsa/asound.state
-drwxr-xr-x root       root             4096 ./var/lib/dbus
+drwxr-xr-x messagebus messagebus       4096 ./var/lib/dbus
 -rw-r--r-- root       root                0 ./var/lib/logrotate.status
 drwxr-xr-x root       root             4096 ./var/lib/misc
 drwxr-xr-x root       root             4096 ./var/lib/nfs
@@ -15595,10 +15596,10 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 -rw-r--r-- root       root              578 ./var/lib/opkg/info/curl.control
 -rw-r--r-- root       root               14 ./var/lib/opkg/info/curl.list
 -rw-r--r-- root       root               49 ./var/lib/opkg/info/dbus-1.conffiles
--rw-r--r-- root       root             1051 ./var/lib/opkg/info/dbus-1.control
--rw-r--r-- root       root              776 ./var/lib/opkg/info/dbus-1.list
+-rw-r--r-- root       root             1048 ./var/lib/opkg/info/dbus-1.control
+-rw-r--r-- root       root              802 ./var/lib/opkg/info/dbus-1.list
 -rwxr-xr-x root       root              299 ./var/lib/opkg/info/dbus-1.postinst
--rwxr-xr-x root       root             5542 ./var/lib/opkg/info/dbus-1.preinst
+-rwxr-xr-x root       root             5575 ./var/lib/opkg/info/dbus-1.preinst
 -rw-r--r-- root       root              482 ./var/lib/opkg/info/dbus-daemon-proxy.control
 -rw-r--r-- root       root               27 ./var/lib/opkg/info/dbus-daemon-proxy.list
 -rw-r--r-- root       root              473 ./var/lib/opkg/info/devmem2.control
@@ -16265,7 +16266,7 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 -rw-r--r-- root       root              666 ./var/lib/opkg/info/libcurl5.control
 -rw-r--r-- root       root               48 ./var/lib/opkg/info/libcurl5.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libcurl5.postinst
--rw-r--r-- root       root              860 ./var/lib/opkg/info/libdbus-1-3.control
+-rw-r--r-- root       root              858 ./var/lib/opkg/info/libdbus-1-3.control
 -rw-r--r-- root       root               52 ./var/lib/opkg/info/libdbus-1-3.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libdbus-1-3.postinst
 -rw-r--r-- root       root              753 ./var/lib/opkg/info/libdbus-glib-1-2.control
@@ -16744,7 +16745,7 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 -rw-r--r-- root       root              561 ./var/lib/opkg/info/libusb-0.1-4.control
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libusb-0.1-4.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libusb-0.1-4.postinst
--rw-r--r-- root       root              484 ./var/lib/opkg/info/libusb-1.0-0.control
+-rw-r--r-- root       root              483 ./var/lib/opkg/info/libusb-1.0-0.control
 -rw-r--r-- root       root               46 ./var/lib/opkg/info/libusb-1.0-0.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/libusb-1.0-0.postinst
 -rw-r--r-- root       root              938 ./var/lib/opkg/info/libuuid1.control
@@ -16941,7 +16942,7 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 -rw-r--r-- root       root              463 ./var/lib/opkg/info/nettle.control
 -rw-r--r-- root       root              190 ./var/lib/opkg/info/nettle.list
 -rwxr-xr-x root       root               90 ./var/lib/opkg/info/nettle.postinst
--rw-r--r-- root       root              957 ./var/lib/opkg/info/nfs-utils-client.control
+-rw-r--r-- root       root              956 ./var/lib/opkg/info/nfs-utils-client.control
 -rw-r--r-- root       root              469 ./var/lib/opkg/info/nfs-utils-client.list
 -rwxr-xr-x root       root             5530 ./var/lib/opkg/info/nfs-utils-client.preinst
 -rw-r--r-- root       root              499 ./var/lib/opkg/info/nmon.control
@@ -16957,26 +16958,26 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 -rw-r--r-- root       root               78 ./var/lib/opkg/info/obexd.list
 -rw-r--r-- root       root              480 ./var/lib/opkg/info/om-neon.control
 -rw-r--r-- root       root              719 ./var/lib/opkg/info/om-neon.list
--rw-r--r-- root       root              836 ./var/lib/opkg/info/openssh-keygen.control
+-rw-r--r-- root       root              965 ./var/lib/opkg/info/openssh-keygen.control
 -rw-r--r-- root       root               20 ./var/lib/opkg/info/openssh-keygen.list
--rw-r--r-- root       root              809 ./var/lib/opkg/info/openssh-scp.control
+-rw-r--r-- root       root              938 ./var/lib/opkg/info/openssh-scp.control
 -rw-r--r-- root       root               21 ./var/lib/opkg/info/openssh-scp.list
 -rwxr-xr-x root       root               82 ./var/lib/opkg/info/openssh-scp.postinst
 -rwxr-xr-x root       root               66 ./var/lib/opkg/info/openssh-scp.postrm
--rw-r--r-- root       root              791 ./var/lib/opkg/info/openssh-sftp-server.control
+-rw-r--r-- root       root              920 ./var/lib/opkg/info/openssh-sftp-server.control
 -rw-r--r-- root       root               47 ./var/lib/opkg/info/openssh-sftp-server.list
 -rw-r--r-- root       root               20 ./var/lib/opkg/info/openssh-ssh.conffiles
--rw-r--r-- root       root              869 ./var/lib/opkg/info/openssh-ssh.control
+-rw-r--r-- root       root              998 ./var/lib/opkg/info/openssh-ssh.control
 -rw-r--r-- root       root               51 ./var/lib/opkg/info/openssh-ssh.list
 -rwxr-xr-x root       root               82 ./var/lib/opkg/info/openssh-ssh.postinst
 -rwxr-xr-x root       root               66 ./var/lib/opkg/info/openssh-ssh.postrm
 -rw-r--r-- root       root               21 ./var/lib/opkg/info/openssh-sshd.conffiles
--rw-r--r-- root       root             1068 ./var/lib/opkg/info/openssh-sshd.control
+-rw-r--r-- root       root             1197 ./var/lib/opkg/info/openssh-sshd.control
 -rw-r--r-- root       root              235 ./var/lib/opkg/info/openssh-sshd.list
 -rwxr-xr-x root       root              233 ./var/lib/opkg/info/openssh-sshd.postinst
--rwxr-xr-x root       root             5502 ./var/lib/opkg/info/openssh-sshd.preinst
+-rwxr-xr-x root       root             5535 ./var/lib/opkg/info/openssh-sshd.preinst
 -rwxr-xr-x root       root              208 ./var/lib/opkg/info/openssh-sshd.prerm
--rw-r--r-- root       root              862 ./var/lib/opkg/info/openssh.control
+-rw-r--r-- root       root              991 ./var/lib/opkg/info/openssh.control
 -rw-r--r-- root       root                0 ./var/lib/opkg/info/openssh.list
 -rw-r--r-- root       root               25 ./var/lib/opkg/info/openssl-conf.conffiles
 -rw-r--r-- root       root             1205 ./var/lib/opkg/info/openssl-conf.control
@@ -17569,9 +17570,9 @@ drwxr-xr-x root       root            90112 ./var/lib/opkg/info
 drwxr-xr-x root       root             4096 ./var/lib/opkg/lists
 -rw-r--r-- 1026       1026                0 ./var/lib/opkg/lists/oe
 -rw-r--r-- root       root           109418 ./var/lib/opkg/lists/oe-all
--rw-r--r-- root       root          6704499 ./var/lib/opkg/lists/oe-cortexa8t2-vfp-neon
+-rw-r--r-- root       root          6705813 ./var/lib/opkg/lists/oe-cortexa8t2-vfp-neon
 -rw-r--r-- root       root           306357 ./var/lib/opkg/lists/oe-om_gta04
--rw-r--r-- root       root           223280 ./var/lib/opkg/status
+-rw-r--r-- root       root           223313 ./var/lib/opkg/status
 drwxr-xr-x root       root             4096 ./var/lib/systemd
 drwxr-xr-x root       root             4096 ./var/local
 drwxr-xr-x root       root             4096 ./var/lock
