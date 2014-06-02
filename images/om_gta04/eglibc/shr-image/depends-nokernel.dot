@@ -276,6 +276,7 @@ digraph depends {
 "ecore-evas" -> "libssl1.0.0";
 "ecore-evas" -> "libstdc++6";
 "ecore-evas" -> "libz1";
+"ecore-evas" -> "luajit";
 "ecore-file" -> "ecore-con";
 "ecore-file" -> "eina";
 "ecore-file" -> "libc6";
@@ -312,6 +313,7 @@ digraph depends {
 "ecore-imf-evas" -> "libssl1.0.0";
 "ecore-imf-evas" -> "libstdc++6";
 "ecore-imf-evas" -> "libz1";
+"ecore-imf-evas" -> "luajit";
 "ecore-input" -> "eina";
 "ecore-input" -> "libc6";
 "ecore-input" -> "libecore1";
@@ -335,6 +337,7 @@ digraph depends {
 "ecore-input-evas" -> "libssl1.0.0";
 "ecore-input-evas" -> "libstdc++6";
 "ecore-input-evas" -> "libz1";
+"ecore-input-evas" -> "luajit";
 "ecore-ipc" -> "ecore-con";
 "ecore-ipc" -> "eina";
 "ecore-ipc" -> "libc6";
@@ -383,6 +386,7 @@ digraph depends {
 "eeze" -> "libudev1";
 "eeze" -> "libuuid1";
 "eeze" -> "libz1";
+"efl-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "eglibc-gconv-iso8859-1" -> "eglibc-gconv";
 "eglibc-gconv-iso8859-1" -> "libc6";
 "eglibc-gconv-utf-16" -> "eglibc-gconv";
@@ -448,6 +452,7 @@ digraph depends {
 "elementary" -> "libxss1";
 "elementary" -> "libxtst6";
 "elementary" -> "libz1";
+"elementary" -> "luajit";
 "elementary-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "elementary-theme-gry" -> "e-wm-theme-illume-gry" [style=dotted];
 "elfe" -> "ecore-con";
@@ -642,6 +647,7 @@ digraph depends {
 "ethumb" -> "libudev1";
 "ethumb" -> "libuuid1";
 "ethumb" -> "libz1";
+"ethumb" -> "luajit";
 "evas" -> "eina";
 "evas" -> "libc6";
 "evas" -> "libcrypto1.0.0";
@@ -677,6 +683,7 @@ digraph depends {
 "evas" -> "libxext6";
 "evas" -> "libxrender1";
 "evas" -> "libz1";
+"evas" -> "luajit";
 "eve" -> "ecore-evas";
 "eve" -> "ecore-file";
 "eve" -> "eina";
@@ -1430,7 +1437,6 @@ digraph depends {
 "libdw1" -> "libelf1";
 "libdw1" -> "libz1";
 "libe2p2" -> "libc6";
-"libecore-avahi-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "libecore1" -> "ecore-audio";
 "libecore1" -> "ecore-con";
 "libecore1" -> "ecore-evas";
@@ -1474,6 +1480,7 @@ digraph depends {
 "libecore1" -> "libxss1";
 "libecore1" -> "libxtst6";
 "libecore1" -> "libz1";
+"libecore1" -> "luajit";
 "libedbus1" -> "eina";
 "libedbus1" -> "libc6";
 "libedbus1" -> "libdbus-1-3";
@@ -1489,6 +1496,7 @@ digraph depends {
 "libedje-utils" -> "libedje1";
 "libedje-utils" -> "libeet1";
 "libedje-utils" -> "libeio1";
+"libedje-utils" -> "luajit";
 "libedje1" -> "ecore-con";
 "libedje1" -> "ecore-evas";
 "libedje1" -> "ecore-file";
@@ -1521,6 +1529,7 @@ digraph depends {
 "libedje1" -> "libudev1";
 "libedje1" -> "libuuid1";
 "libedje1" -> "libz1";
+"libedje1" -> "luajit";
 "libeet1" -> "eina";
 "libeet1" -> "libc6";
 "libeet1" -> "libcrypto1.0.0";
@@ -1627,6 +1636,7 @@ digraph depends {
 "libemotion1" -> "libudev1";
 "libemotion1" -> "libuuid1";
 "libemotion1" -> "libz1";
+"libemotion1" -> "luajit";
 "libeo1" -> "eina";
 "libeo1" -> "libc6";
 "liberation-fonts" -> "fontconfig-utils";
@@ -2526,6 +2536,8 @@ digraph depends {
 "ltrace" -> "elfutils";
 "ltrace" -> "libc6";
 "ltrace" -> "libelf1";
+"luajit" -> "libc6";
+"luajit" -> "libgcc1";
 "make" -> "libc6";
 "make-locale-cs" -> "virtual-locale-cs" [style=dotted];
 "matchbox-keyboard-im" -> "gdk-pixbuf";
@@ -3188,6 +3200,8 @@ digraph depends {
 "python-difflib" -> "python-lang";
 "python-difflib" -> "python-re";
 "python-ecore" -> "ecore-file";
+"python-ecore" -> "ecore-input";
+"python-ecore" -> "ecore-x";
 "python-ecore" -> "libc6";
 "python-ecore" -> "libecore1";
 "python-ecore" -> "libpython2.7-1.0";
