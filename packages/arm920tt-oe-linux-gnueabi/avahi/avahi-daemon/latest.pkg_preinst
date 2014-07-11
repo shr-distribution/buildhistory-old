@@ -23,7 +23,6 @@ perform_groupadd () {
 			group_exists="`grep "^$groupname:" $rootdir/etc/group || true`"
 			if test "x$group_exists" = "x"; then
 				bbwarn "groupadd command did not succeed. Retrying..."
-				sleep 1
 			else
 				break
 			fi
@@ -31,6 +30,7 @@ perform_groupadd () {
 			if test $count = $retries; then
 				bbfatal "Tried running groupadd command $retries times without scucess, giving up"
 			fi
+                        sleep $count
 		done
 	else
 		bbwarn "group $groupname already exists, not re-creating it"
@@ -50,7 +50,6 @@ perform_useradd () {
 		       user_exists="`grep "^$username:" $rootdir/etc/passwd || true`"
 		       if test "x$user_exists" = "x"; then
 			       bbwarn "useradd command did not succeed. Retrying..."
-			       sleep 1
 		       else
 			       break
 		       fi
@@ -58,6 +57,7 @@ perform_useradd () {
 		       if test $count = $retries; then
 				bbfatal "Tried running useradd command $retries times without scucess, giving up"
 		       fi
+		       sleep $count
 	       done
 	else
 		bbwarn "user $username already exists, not re-creating it"
@@ -87,7 +87,6 @@ perform_groupmems () {
 			mem_exists="`grep "^$groupname:[^:]*:[^:]*:\([^,]*,\)*$username\(,[^,]*\)*" $rootdir/etc/group || true`"
 			if test "x$mem_exists" = "x"; then
 				bbwarn "groupmems command did not succeed. Retrying..."
-				sleep 1
 			else
 				break
 			fi
@@ -99,6 +98,7 @@ perform_groupmems () {
 				fi
 				bbfatal "Tried running groupmems command $retries times without scucess, giving up"
 			fi
+			sleep $count
 		done
 	else
 		bbwarn "group $groupname already contains $username, not re-adding it"

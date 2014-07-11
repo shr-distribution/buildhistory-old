@@ -1,12 +1,4 @@
-	update-alternatives --install /boot/uImage uImage uImage-3.2.52 30202 || true
-	if [ ! -e "$D/lib/modules/3.2.52" ]; then
-		mkdir -p $D/lib/modules/3.2.52
-	fi
-	if [ -n "$D" ]; then
-		depmodwrapper -a -b $D 3.2.52
-	else
-		depmod -a 3.2.52
-	fi
+	update-alternatives --install /boot/uImage uImage /boot/uImage-3.2.52 30202 || true
 
 # Get the lastest root file system value of boot args
 boot_arg=`cat /proc/cmdline |tr " " "\n"|grep "root=" |tail -n 1`
