@@ -1,1 +1,0 @@
-#!/bin/sh\n\tupdate-alternatives --install /etc/syslog.conf syslog-conf /etc/syslog.conf.busybox 50\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS enable busybox-syslog.service\n\n\tif [ -z "$D" -a "enable" = "enable" ]; then\n\t\tsystemctl restart busybox-syslog.service\n\tfi\nfi\n

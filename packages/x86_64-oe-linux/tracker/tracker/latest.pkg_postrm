@@ -1,1 +1,0 @@
-#!/bin/sh\nif [ "x$D" != "x" ]; then\n\t$INTERCEPT_DIR/postinst_intercept update_icon_cache ${PKG} mlprefix= libdir=/usr/lib \\\n\t\tbase_libdir=/lib\nelse\n\tfor icondir in /usr/share/icons/* ; do\n\t\tif [ -d $icondir ] ; then\n\t\t\tgtk-update-icon-cache -qt  $icondir\n\t\tfi\n\tdone\nfi\n\tglib-compile-schemas $D/usr/share/glib-2.0/schemas\n

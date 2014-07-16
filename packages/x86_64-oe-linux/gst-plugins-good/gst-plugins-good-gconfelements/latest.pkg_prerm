@@ -1,1 +1,0 @@
-#!/bin/sh\nSCHEMA_LOCATION=/etc/gconf/schemas\nfor SCHEMA in gstreamer-0.10.schemas; do\n\tif [ -e $SCHEMA_LOCATION/$SCHEMA ]; then\n\t\tHOME=/root GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` \\\n\t\t\tgconftool-2 \\\n\t\t\t--makefile-uninstall-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null\n\tfi\ndone\n

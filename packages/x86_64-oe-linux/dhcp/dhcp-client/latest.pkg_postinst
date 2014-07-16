@@ -1,1 +1,0 @@
-    mkdir -p $D//var/lib/dhcp\nOPTS=""\n\nif [ -n "$D" ]; then\n    OPTS="--root=$D"\nfi\n\nif type systemctl >/dev/null 2>/dev/null; then\n\tsystemctl $OPTS disable dhclient.service\n\n\tif [ -z "$D" -a "disable" = "enable" ]; then\n\t\tsystemctl restart dhclient.service\n\tfi\nfi\n

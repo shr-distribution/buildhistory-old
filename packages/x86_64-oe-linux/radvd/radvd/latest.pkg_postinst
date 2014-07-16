@@ -1,1 +1,0 @@
-    if [ -z "$D" -a -x /etc/init.d/populate-volatile.sh ]; then\n\t/etc/init.d/populate-volatile.sh update\n    fi\nif type update-rc.d >/dev/null 2>/dev/null; then\n\tif [ -n "$D" ]; then\n\t\tOPT="-r $D"\n\telse\n\t\tOPT="-s"\n\tfi\n\tupdate-rc.d $OPT radvd defaults 20 80\nfi\n
