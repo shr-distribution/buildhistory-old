@@ -1,0 +1,17 @@
+#!/bin/sh
+	update-alternatives --install /sbin/syslogd rsyslogd /usr/sbin/rsyslogd 110
+	update-alternatives --install /etc/syslog.conf syslog-conf /etc/rsyslog.conf 110
+	update-alternatives --install /etc/logrotate.d/syslog syslog-logrotate /etc/logrotate.rsyslog 110
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable rsyslog.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart rsyslog.service
+	fi
+fi

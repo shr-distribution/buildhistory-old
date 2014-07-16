@@ -1,0 +1,7 @@
+    if [ -z "$D" ]; then
+        if [ -e /sys/fs/cgroup/systemd ]; then
+            systemd-tmpfiles --create /etc/tmpfiles.d/nostromo.conf
+        elif [ -e /etc/init.d/populate-volatile.sh ]; then
+            /etc/init.d/populate-volatile.sh update
+        fi
+    fi

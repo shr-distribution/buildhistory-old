@@ -1,0 +1,23 @@
+    if [ "x$D" = "x" ]; then
+	install-catalog \
+		--add /etc/sgml/sgml-ent.cat \
+		/usr/share/sgml/sgml-iso-entities-8879.1986/catalog
+
+	install-catalog \
+		--add /etc/sgml/sgml-docbook.cat \
+		/etc/sgml/sgml-ent.cat
+    else
+	if ! grep -q /usr/share/sgml/sgml-iso-entities-8879.1986/catalog $D/etc/sgml/sgml-ent.cat; then
+	    echo "CATALOG /usr/share/sgml/sgml-iso-entities-8879.1986/catalog" >> $D/etc/sgml/sgml-ent.cat
+	fi
+	if ! grep -q /etc/sgml/sgml-ent.cat $D/etc/sgml/catalog; then
+	    echo "CATALOG /etc/sgml/sgml-ent.cat" >> $D/etc/sgml/catalog
+	fi
+
+	if ! grep -q /etc/sgml/sgml-ent.cat $D/etc/sgml/sgml-docbook.cat; then
+	    echo "CATALOG /etc/sgml/sgml-ent.cat" >> $D/etc/sgml/sgml-docbook.cat
+	fi
+	if ! grep -q /etc/sgml/sgml-docbook.cat $D/etc/sgml/catalog; then
+	    echo "CATALOG /etc/sgml/sgml-docbook.cat" >> $D/etc/sgml/catalog
+	fi
+    fi
