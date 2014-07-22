@@ -1,0 +1,27 @@
+	if [ "x$D" = "x" ]; then
+		touch /etc/aliases
+		newaliases
+
+		# generate virtual_alias, default is hash
+		touch /etc/postfix/virtual_alias
+		postmap /etc/postfix/virtual_alias
+	else
+		touch $D/etc/aliases
+		newaliases -C $D/etc/postfix/main.cf -oA$D/etc/aliases
+		touch $D/etc/postfix/virtual_alias
+		postmap -c $D/etc/postfix $D/etc/postfix/virtual_alias
+	fi
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS disable postfix.service
+
+	if [ -z "$D" -a "disable" = "enable" ]; then
+		systemctl restart postfix.service
+	fi
+fi
+	update-alternatives --install /usr/sbin/sendmail sendmail /usr/sbin/sendmail.postfix 120

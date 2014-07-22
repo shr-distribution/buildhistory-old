@@ -1,0 +1,8 @@
+	if [ -n "$D" ]; then
+		exit 0
+	fi
+	if type systemd-tmpfiles >/dev/null; then
+		systemd-tmpfiles --create
+	elif [ -e /etc/init.d/populate-volatile.sh ]; then
+		/etc/init.d/populate-volatile.sh update
+	fi
