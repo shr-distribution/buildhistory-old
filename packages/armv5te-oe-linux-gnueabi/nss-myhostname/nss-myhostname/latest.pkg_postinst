@@ -1,6 +1,6 @@
 	sed -e '/^hosts:/s/\s*\<myhostname\>//' \
 		-e 's/\(^hosts:.*\)\(\<files\>\)\(.*\)\(\<dns\>\)\(.*\)/\1\2 myhostname \3\4\5/' \
-		-i $D/etc/nsswitch.conf
+		-i /home/jenkins/oe/world/shr-core/tmp-eglibc/work/armv5te-oe-linux-gnueabi/nss-myhostname/0.3-r0/image/etc/nsswitch.conf
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
 fi
