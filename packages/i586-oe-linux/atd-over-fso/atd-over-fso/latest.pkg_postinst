@@ -1,0 +1,16 @@
+#!/bin/sh
+    if [ -z "$D" ]; then
+        if type update-rc.d >/dev/null 2>/dev/null; then
+            if [ -f /etc/init.d/dbus-1 ]; then
+                /etc/init.d/dbus-1 reload || true
+            fi
+        fi
+    fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	if [ -n "$D" ]; then
+		OPT="-r $D"
+	else
+		OPT="-s"
+	fi
+	update-rc.d $OPT atd defaults 97
+fi

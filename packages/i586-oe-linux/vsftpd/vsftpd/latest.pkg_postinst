@@ -6,3 +6,11 @@
 	elif [ -e /etc/init.d/populate-volatile.sh ]; then
 		/etc/init.d/populate-volatile.sh update
 	fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	if [ -n "$D" ]; then
+		OPT="-r $D"
+	else
+		OPT="-s"
+	fi
+	update-rc.d $OPT vsftpd defaults 80
+fi
