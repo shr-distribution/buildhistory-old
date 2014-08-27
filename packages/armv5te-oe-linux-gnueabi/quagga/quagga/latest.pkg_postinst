@@ -1,6 +1,14 @@
     if [ -z "$D" ] && [ -e /etc/init.d/populate-volatile.sh ] ; then
         /etc/init.d/populate-volatile.sh update
     fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	if [ -n "$D" ]; then
+		OPT="-r $D"
+	else
+		OPT="-s"
+	fi
+	update-rc.d $OPT quagga defaults 15 85
+fi
 if [ x"$D" = "x" ]; then
 	if [ -x /sbin/ldconfig ]; then /sbin/ldconfig ; fi
 fi
