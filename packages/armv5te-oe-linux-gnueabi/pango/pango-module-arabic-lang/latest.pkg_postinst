@@ -4,7 +4,7 @@ if ! [ -e $D/etc/pango ] ; then
 fi
 
 if [ "x$D" != "x" ]; then
-	PSEUDO_UNLOAD=1 qemu-arm -r 2.6.16 -L $D -E LD_LIBRARY_PATH=$D/usr/lib:$D/lib $D/usr/bin/pango-querymodules \
+	PSEUDO_UNLOAD=1 qemu-arm -r 2.6.32 -L $D -E LD_LIBRARY_PATH=$D/usr/lib:$D/lib $D/usr/bin/pango-querymodules \
 		$D/usr/lib/pango/1.8.0/modules/*.so \
 		> $D/etc/pango/pango.modules 2>/dev/null
 
