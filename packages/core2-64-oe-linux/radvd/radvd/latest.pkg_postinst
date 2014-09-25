@@ -1,11 +1,16 @@
     if [ -z "$D" -a -x /etc/init.d/populate-volatile.sh ]; then
 	/etc/init.d/populate-volatile.sh update
     fi
-if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -n "$D" ]; then
-		OPT="-r $D"
-	else
-		OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS disable radvd.service
+
+	if [ -z "$D" -a "disable" = "enable" ]; then
+		systemctl restart radvd.service
 	fi
-	update-rc.d $OPT radvd defaults 20 80
 fi
