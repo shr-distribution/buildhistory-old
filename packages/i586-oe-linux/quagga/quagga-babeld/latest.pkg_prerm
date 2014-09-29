@@ -1,1 +1,14 @@
     /etc/init.d/quagga stop babeld
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	if [ -z "$D" ]; then
+		systemctl stop babeld.service
+	fi
+
+	systemctl $OPTS disable babeld.service
+fi
