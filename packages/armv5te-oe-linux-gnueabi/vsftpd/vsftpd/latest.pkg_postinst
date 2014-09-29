@@ -1,16 +1,20 @@
-	if [ -n "$D" ]; then
-		exit 0
-	fi
+    if [ -z "$D" ]; then
 	if type systemd-tmpfiles >/dev/null; then
-		systemd-tmpfiles --create
+	    systemd-tmpfiles --create
 	elif [ -e /etc/init.d/populate-volatile.sh ]; then
-		/etc/init.d/populate-volatile.sh update
+	    /etc/init.d/populate-volatile.sh update
 	fi
-if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -n "$D" ]; then
-		OPT="-r $D"
-	else
-		OPT="-s"
+    fi
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable vsftpd.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart vsftpd.service
 	fi
-	update-rc.d $OPT vsftpd defaults 80
 fi
