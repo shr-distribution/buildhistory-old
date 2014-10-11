@@ -7,8 +7,8 @@ fi
 
 if type systemctl >/dev/null 2>/dev/null; then
 	if [ -z "$D" ]; then
-		systemctl stop rpcbind.service
+		systemctl stop rpcbind.service rpcbind.socket
 	fi
 
-	systemctl $OPTS disable rpcbind.service
+	systemctl $OPTS disable rpcbind.service rpcbind.socket
 fi
