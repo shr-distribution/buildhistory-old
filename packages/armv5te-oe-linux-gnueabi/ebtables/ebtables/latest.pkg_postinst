@@ -1,9 +1,14 @@
 #!/bin/sh
-if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -n "$D" ]; then
-		OPT="-r $D"
-	else
-		OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable ebtables.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart ebtables.service
 	fi
-	update-rc.d $OPT ebtables start 41 S . stop 41 6 .
 fi
