@@ -1,9 +1,14 @@
 #!/bin/sh
-if type update-rc.d >/dev/null 2>/dev/null; then
-	if [ -n "$D" ]; then
-		OPT="-r $D"
-	else
-		OPT="-s"
+OPTS=""
+
+if [ -n "$D" ]; then
+    OPTS="--root=$D"
+fi
+
+if type systemctl >/dev/null 2>/dev/null; then
+	systemctl $OPTS enable xinetd.service
+
+	if [ -z "$D" -a "enable" = "enable" ]; then
+		systemctl restart xinetd.service
 	fi
-	update-rc.d $OPT xinetd defaults
 fi
