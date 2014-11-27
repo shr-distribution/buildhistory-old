@@ -115,6 +115,8 @@ if test "x$D" != "x"; then
 	# Installing into a sysroot
 	SYSROOT="$D"
 	OPT="--root $D"
+	# user/group lookups should match useradd/groupadd --root
+	export PSEUDO_PASSWD="$SYSROOT:/home/jenkins/oe/world/shr-core/tmp-glibc/sysroots/x86_64-linux"
 fi
 
 # If we're not doing a special SSTATE/SYSROOT install
